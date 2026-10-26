@@ -1,0 +1,1315 @@
+<!doctype html>
+<html lang="en" data-hfav="split">
+<head>
+<meta charset="utf-8">
+<title>Batter N' Life Boutique</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Lora:wght@400;500;600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F1E7D8; --bg2:#E8DBC7; --card:#F8F1E6; --blush:#EBDAD3;
+  --gold:#D9BF84; --gold-hover:#CDAF6C; --gold-line:#C9A961;
+  --mahogany:#996661; --mauve:#AC7D78;
+  --ink:#2B231E; --ink-soft:#54473E; --line:#DCCAB0;
+  --serif:"Playfair Display","Didot","Georgia",serif;
+  --text:"Lora","Georgia",serif;
+  --sec-pad:clamp(32px,4vw,50px); --h2:clamp(2.4rem,4.2vw,3.5rem); --h2-gap:24px; --p-gap:16px; --btn-gap:26px; --head-gap:30px;
+  --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--text);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+h1,h2,h3{font-family:var(--serif);font-weight:800;line-height:1.02;margin:0;text-transform:uppercase;letter-spacing:.005em}
+h1 .pop,h2 .pop,h3 .pop{color:var(--mahogany)}
+p{margin:0}
+.kicker{display:block;font-family:var(--sans);font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;font-weight:500;color:var(--mahogany);margin-bottom:14px}
+.heart-rule{display:flex;align-items:center;gap:14px;color:var(--mahogany);justify-content:center}
+.heart-rule::before,.heart-rule::after{content:"";height:1px;width:64px;background:var(--gold-line)}
+.heart-rule svg{width:15px;height:15px}
+.heart-rule.left{justify-content:flex-start}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:15px 30px;font-family:var(--sans);font-size:.84rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;text-decoration:none;border:1px solid var(--gold);transition:background .2s,color .2s,border-color .2s}
+.btn.solid{background:var(--gold);color:var(--ink)}
+.btn.solid:hover{background:var(--gold-hover);border-color:var(--gold-hover)}
+.btn.line{color:var(--ink);border-color:var(--ink);background:transparent}
+.btn.line:hover{background:var(--ink);color:var(--card)}
+
+/* header: logo top-left, nav right */
+header.site{background:var(--card);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:14px}
+.logo img{width:clamp(150px,15vw,200px);height:auto;opacity:.85}
+header.site nav{display:flex;flex-wrap:wrap;gap:6px clamp(16px,2.2vw,30px);font-family:var(--sans);font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+header.site nav a{text-decoration:none;padding-block:6px;border-bottom:1.5px solid transparent}
+header.site nav a:hover,header.site nav a[aria-current]{color:var(--mahogany);border-bottom-color:var(--mahogany)}
+.soc{display:flex;gap:14px;color:var(--mahogany)}
+.soc a{display:grid;place-items:center}
+.soc svg{width:17px;height:17px}
+.soc a:hover{color:var(--ink)}
+.head-right{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
+.head-right .soc{order:-1}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);min-height:600px}
+.hero .ph img{width:100%;height:100%;object-fit:cover}
+.hero .tx{background:var(--bg2);display:flex;flex-direction:column;justify-content:center;padding:clamp(72px,10.7vw,150px) clamp(24px,6vw,88px)}
+.hero h1{font-size:clamp(2.6rem,4.4vw,4.1rem)}
+.hero p.lede{margin-top:22px;color:var(--ink-soft);max-width:30em}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.hero .heart-rule{margin-top:34px}
+
+/* ===== Section defaults (from "Life beyond buttercream"): every section, including new ones, uses these ===== */
+section{padding-block:var(--sec-pad)}
+section h2{font-size:var(--h2);margin-bottom:var(--h2-gap)}
+section p{color:var(--ink-soft)}
+section p+p{margin-top:var(--p-gap)}
+section .btn{margin-top:var(--btn-gap)}
+.sec-head{text-align:center;max-width:660px;margin:0 auto var(--head-gap)}
+.sec-head .heart-rule{margin-top:14px}
+
+/* intro */
+.intro .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,90px);align-items:center}
+.intro .frame{position:relative;padding:0 26px 26px 0}
+.intro .frame::before{content:"";position:absolute;inset:26px 0 0 26px;background:#E2CBC3;border:1px solid var(--mauve)}
+.intro .frame img{position:relative;aspect-ratio:4/5;object-fit:cover;width:100%}
+.intro .sig{font-family:var(--serif);font-weight:700;font-size:1.3rem;color:var(--mahogany);margin-top:22px}
+
+/* bake gallery */
+.bake{background:var(--bg2)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:290px 290px;gap:14px}
+.gallery img{width:100%;height:100%;object-fit:cover;background:#e3d6c2}
+.gallery .big{grid-column:span 2;grid-row:span 2}
+.gallery .gzoom{overflow:hidden;min-height:0}
+.gallery .gzoom img{display:block}
+.center-cta{text-align:center;margin-top:var(--head-gap)}
+.center-cta .btn{margin-top:0}
+
+/* two worlds: photo, then text below */
+.worlds .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+
+.world{background:var(--card);text-decoration:none;display:block}
+.world img{width:100%;height:380px;object-fit:cover}
+.world .in{padding:28px 30px 32px}
+.world h3{font-size:1.9rem}
+.world p{margin-top:10px;color:var(--ink-soft)}
+.world .go{display:inline-block;margin-top:16px;font-family:var(--sans);font-size:.76rem;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--mahogany);border-bottom:1px solid var(--mahogany);padding-bottom:3px}
+.world .soon{display:inline-block;margin-bottom:12px;background:var(--mauve);color:#fff;font-family:var(--sans);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;padding:6px 12px}
+
+/* favorites */
+.faves{background:var(--blush)}
+.shelf{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.item img.thumb{width:100%;aspect-ratio:1;object-fit:cover;margin-bottom:16px}
+.item{background:var(--card);padding:18px 18px 22px;text-align:center;text-decoration:none;transition:transform .2s}
+.item:hover{transform:translateY(-4px)}
+.item .thumb{aspect-ratio:1;background:var(--bg);display:grid;place-items:center;color:var(--mauve);margin-bottom:16px}
+.item .thumb svg{width:64px;height:64px}
+.item b{display:block;font-family:var(--serif);font-weight:700;font-size:1.15rem}
+.item span{font-family:var(--sans);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mahogany)}
+
+/* stats */
+.stats{background:var(--ink);color:#fff;padding-block:var(--sec-pad)}
+.stats .wrap{display:grid;grid-template-columns:1.3fr repeat(4,1fr);gap:24px;align-items:center}
+.stats h2{font-size:2rem}
+.stats h2 small{display:block;font-family:var(--sans);font-weight:500;font-size:.78rem;letter-spacing:.3em;color:#F1E3C4;margin-bottom:8px}
+.stat{text-align:center;border-left:1px solid rgba(255,255,255,.3);padding-block:8px}
+.stat strong{display:block;font-family:var(--serif);font-weight:700;font-size:2.8rem;line-height:1}
+.stat span{font-family:var(--sans);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;opacity:.85}
+
+/* collaborate: photo beside text */
+.collab .box{display:grid;grid-template-columns:1fr 1fr;background:var(--card);border:1px solid var(--line)}
+.collab .box img{width:100%;height:100%;min-height:420px;object-fit:cover}
+.collab .tx{padding:clamp(36px,6vw,72px);display:flex;flex-direction:column;justify-content:center}
+.collab p{max-width:28em}
+.collab .btn{align-self:flex-start}
+
+/* footer */
+footer{background:var(--ink);color:#E9DFCF;padding-block:56px 26px;border-top:3px solid var(--gold-line)}
+footer .top{display:grid;grid-template-columns:1fr;gap:26px;justify-items:center;text-align:center}
+footer .top nav{justify-self:center;justify-content:center}
+footer .fbrand .tag{margin:6px 0 0;font-size:.95rem!important;letter-spacing:.14em!important}
+footer .flogo{background:var(--bg);padding:12px 18px}
+footer .flogo img{width:150px}
+footer .tag{font-family:var(--serif);font-weight:700;font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em;color:#E7CFC9}
+footer nav{display:flex;flex-wrap:wrap;gap:10px 28px;font-family:var(--sans);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase}
+footer nav a{text-decoration:none}
+footer nav a:hover{color:var(--gold)}
+footer .base{margin-top:40px;padding-top:20px;border-top:1px solid rgba(217,191,132,.25);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:var(--sans);font-size:.8rem;opacity:.75}
+
+
+/* centered mahogany tab bar */
+.head-right{flex-direction:row!important;align-items:center!important}
+header.site>.wrap>.head-right{align-self:flex-start;margin-top:6px}
+.tabbar{background:var(--mahogany)}
+header.site .tabbar .wrap{display:flex;justify-content:center;padding-block:0}
+header.site .tabbar nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px clamp(18px,3vw,40px);font-family:var(--sans);font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+header.site .tabbar nav a{color:#FBF2EC;text-decoration:none;padding:14px 2px 12px;border-bottom:2px solid transparent}
+header.site .tabbar nav a:hover,header.site .tabbar nav a[aria-current]{color:#fff;border-bottom-color:var(--gold)}
+
+/* one-row mahogany header */
+header.bar{background:var(--card);color:var(--ink);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;box-shadow:0 2px 14px rgba(43,35,30,.06)}
+header.bar .wrap{max-width:1400px;display:flex;align-items:center;gap:clamp(16px,2.4vw,36px);padding-block:12px}
+header.bar .logo img{width:clamp(140px,13vw,180px);height:auto;opacity:.85}
+header.bar .divider{width:1.5px;align-self:stretch;margin-block:8px;min-height:44px;background:var(--gold-line)}
+header.bar nav{flex:1;display:flex;justify-content:center;flex-wrap:wrap;gap:6px clamp(18px,3vw,48px);font-family:var(--sans);font-size:.84rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+header.bar nav a{color:var(--ink);text-decoration:none;padding:8px 6px;border-bottom:1.5px solid transparent}
+header.bar nav a:hover,header.bar nav a[aria-current]{color:var(--mahogany);border-bottom-color:var(--mahogany)}
+header.bar .icons{display:flex;align-items:center;gap:clamp(12px,1.4vw,20px)}
+header.bar .icons a,header.bar .search{color:var(--ink);display:grid;place-items:center;background:none;border:0;padding:0;cursor:pointer}
+header.bar .icons a:hover,header.bar .search:hover{color:var(--mahogany)}
+header.bar .icons svg{width:21px;height:21px}
+header.bar .search{margin-left:clamp(4px,1vw,14px)}
+
+
+/* three-zone header: logo left, tabs centered on the page, socials far right */
+header.bar .wrap{max-width:none;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-inline:clamp(16px,3vw,48px)}
+header.bar .brand{display:flex;align-items:stretch;gap:clamp(16px,2vw,28px);justify-self:start}
+header.bar nav{flex:none}
+header.bar .icons{justify-self:end}
+
+
+/* keep logo, tabs and socials on one row; tighter tab spacing */
+header.bar nav{flex-wrap:nowrap!important;gap:clamp(10px,1.6vw,26px)!important;letter-spacing:.1em!important;font-size:clamp(.72rem,.9vw,.84rem)!important}
+header.bar nav a{padding-inline:4px!important;white-space:nowrap}
+header.bar .wrap{column-gap:clamp(14px,2vw,32px)}
+@media (max-width:900px){header.bar .divider{display:none}header.bar .logo img{width:120px}header.bar .icons{gap:10px}header.bar .icons svg{width:18px;height:18px}}
+@media (max-width:760px){
+  header.bar .wrap{grid-template-columns:1fr auto}
+  header.bar nav{grid-column:1/-1;grid-row:2;flex-wrap:wrap!important;justify-content:center;border-top:1px solid rgba(201,169,97,.45);padding-top:6px}
+}
+@media (max-width:520px){header.bar{position:static}header.bar .icons{gap:12px}header.bar .icons svg{width:19px;height:19px}}
+
+.mom-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mom-row img{width:100%;height:420px;object-fit:cover}
+@media (max-width:760px){.mom-row{grid-template-columns:1fr 1fr}.mom-row img{height:260px}.mom-row img:first-child{grid-column:span 2}}
+
+/* hero 100px shorter than the photo's natural height, same width */
+@media (min-width:961px){.hero{height:auto;min-height:0}.hero .ph{position:relative;overflow:hidden}.hero .ph img{position:absolute;inset:0}}
+
+/* every section's photos 100px shorter (cropped, never stretched) */
+@media (min-width:961px){
+  .intro .frame img{aspect-ratio:auto;height:450px}
+  .gallery{grid-template-columns:repeat(4,1fr);grid-template-rows:240px 240px}
+  .gallery .big{grid-column:1;grid-row:1 / span 2}
+  .gallery .gzoom img{transform:scale(1.15);transform-origin:50% 48%}
+  .gallery .g-wide{grid-column:3 / span 2;grid-row:2}
+  .gallery img{object-position:50% 40%}
+  .gallery img[data-k="pirate"]{object-position:50% 15%}
+  .gallery img[data-k="burger"]{object-position:50% 50%}
+  .gallery img[data-k="tiered"]{object-position:50% 50%}
+  .gallery img[data-k="soccer"]{object-position:50% 30%}
+  .mom-row img{height:320px}
+  .item img.thumb{aspect-ratio:auto;height:221px}
+  .collab .box{height:374px}
+  .collab .box img{min-height:0;height:374px}
+  .collab .tx{padding-block:20px}
+}
+@media (max-width:960px){
+  header.site .wrap{flex-direction:column;gap:10px}
+  .head-right{align-items:center;gap:10px}
+  header.site nav{justify-content:center}
+  .hero,.intro .wrap,.worlds .grid,.collab .box{grid-template-columns:1fr}
+  .hero .ph{height:400px}
+  .hero h1{font-size:clamp(2rem,9vw,2.8rem)}
+  .hero .tx{padding:48px 20px}
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gallery img{aspect-ratio:4/5}.gallery .big{grid-column:span 2;grid-row:auto}.gallery .big img{aspect-ratio:1}
+  .gallery > :last-child{grid-column:span 2;aspect-ratio:2/1}
+  .shelf{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats .wrap{grid-template-columns:1fr 1fr}.stats h2{grid-column:span 2;text-align:center}
+  .stat{border-left:none}
+  .collab .box img{min-height:300px}
+  footer .top{grid-template-columns:1fr;justify-items:center;text-align:center}
+  footer nav{justify-content:center}
+}
+
+/* cream frame on Family and Collab photos (same as the favorites cards) */
+.mom-row img,.collab .box img{background:var(--card);padding:18px;box-sizing:border-box}
+/* Family photos: no border; staggered over a soft patterned band */
+.worlds{overflow-x:clip;overflow-y:visible}
+.mom-row{position:relative;isolation:isolate;padding-block:44px 20px}
+.mom-row img{background:none!important;padding:0!important;box-shadow:0 14px 30px rgba(43,35,30,.16)}
+@media (min-width:761px){.mom-row img:nth-child(2){transform:translateY(-28px)}}
+
+/* Sweet Creations: tighter spacing */
+.bake .gallery{gap:5px}
+
+.hero .cta{flex-wrap:nowrap}
+.hero .cta .btn{flex:0 1 200px;min-width:0;justify-content:center;padding-inline:14px;white-space:nowrap}
+
+/* logo: lettering with flat gold N' */
+header.bar .logo{display:flex;align-items:center;text-decoration:none}
+header.bar .logo img{width:clamp(150px,14vw,200px)}
+footer .flogo img{width:170px}
+
+/* titles in Jost (trial) */
+h1, h2, h3, .item b, footer .tag{font-family:var(--sans)!important;font-weight:600!important;letter-spacing:.02em!important;line-height:1.05}
+
+/* Sweet Creations: 3 + 3 grid, every photo the same size */
+.bake .gallery{grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:none!important;grid-auto-rows:auto}
+.bake .gallery > *{grid-column:auto!important;grid-row:auto!important;aspect-ratio:9/11!important;height:auto!important;width:100%}
+.bake .gallery .gzoom img{transform:scale(1.35);transform-origin:50% 55%}
+.bake .gallery img[data-k="soccer"]{object-position:50% 35%}
+.bake .gallery img[data-k="pirate"]{object-position:50% 20%}
+@media (max-width:760px){.bake .gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important}.bake .gallery > *{aspect-ratio:9/11!important}}
+
+/* pirate cake: shifted up, zoomed out ~10px with a soft blurred fill at the edges */
+.bake .gallery .gfill{position:relative;overflow:hidden}
+.bake .gallery .gfill::before{content:"";position:absolute;inset:-24px;background:var(--bg) center/cover;filter:blur(16px)}
+.bake .gallery .gfill img{position:relative;display:block;width:100%;height:100%;padding:0 10px;box-sizing:border-box;background:transparent;object-fit:cover;object-position:50% 25%!important}
+
+.bake .gallery .gz-soccer img{transform:translateY(22px) scale(1.3);transform-origin:50% 52%}
+
+.bake .gallery .gz-flower img{transform:translateY(-12px) scale(1.1);transform-origin:50% 62%}
+
+
+/* Sweet Creations: smaller tiles, same 9:12 ratio */
+.bake .gallery{max-width:860px;margin-inline:auto}
+
+/* more room above the story section */
+section.intro{padding-top:75px}
+@media (max-width:760px){section.intro{padding-top:48px}}
+
+/* more space above the story section */
+section.intro{padding-top:64px}
+@media (min-width:961px){section.intro{padding-top:100px}}
+
+/* tab jumps land below the sticky top bar */
+section[id],main [id]{scroll-margin-top:var(--navh,85px)}
+
+/* Sweet Creations with 5 photos: 3 on top, 2 centered below */
+.bake .gallery{display:flex!important;flex-wrap:wrap;justify-content:center}
+.bake .gallery > *{flex:0 0 calc((100% - 10px)/3)!important;width:calc((100% - 10px)/3)!important;max-width:calc((100% - 10px)/3)!important;aspect-ratio:9/11!important;height:auto!important;min-height:0!important}
+@media (max-width:760px){.bake .gallery > *{flex-basis:calc((100% - 5px)/2)!important;width:calc((100% - 5px)/2)!important;max-width:calc((100% - 5px)/2)!important}}
+.bake .gallery > div > img{width:100%;height:100%;object-fit:cover}
+
+/* Sweet Creations with 4 photos: one row of 4, same tile size */
+.bake .gallery{max-width:1147px!important}
+.bake .gallery > *{flex-basis:calc((100% - 15px)/4)!important;width:calc((100% - 15px)/4)!important;max-width:calc((100% - 15px)/4)!important}
+@media (max-width:760px){.bake .gallery > *{flex-basis:calc((100% - 5px)/2)!important;width:calc((100% - 5px)/2)!important;max-width:calc((100% - 5px)/2)!important}}
+
+/* Sweet Creations with 3 photos: one row of 3 */
+.bake .gallery{max-width:860px!important}
+.bake .gallery > *{flex-basis:calc((100% - 10px)/3)!important;width:calc((100% - 10px)/3)!important;max-width:calc((100% - 10px)/3)!important}
+@media (max-width:760px){.bake .gallery > *{flex-basis:calc((100% - 5px)/2)!important;width:calc((100% - 5px)/2)!important;max-width:calc((100% - 5px)/2)!important}}
+
+/* every section: 125px of space above its content (desktop); tab jumps land just below the top bar */
+@media (min-width:961px){
+  main > section{min-height:calc(100vh - var(--navh,85px));display:flex;flex-direction:column;justify-content:center;padding-block:60px!important;box-sizing:border-box}
+  main > section > .wrap{width:100%}
+}
+main > section, main > section[id]{scroll-margin-top:var(--navh,85px)!important}
+
+/* Home tab / logo: go to the very top so the whole photo shows */
+main#home{scroll-margin-top:var(--navh,85px)}
+
+/* ===== background texture preview ===== */
+:root{--tex:none;--texsize:auto}
+:root{--tex:url("img/logo_doodle2.png")!important;--texsize:1300px auto!important}
+main > section,.hero .tx{background-image:var(--tex)!important;background-size:var(--texsize)!important;background-repeat:repeat!important}
+
+/* ===== wave borders between sections ===== */
+main > section,.stats,footer{position:relative;isolation:isolate}
+main > section::before,.stats::before,footer::before{content:"";position:absolute;pointer-events:none;left:0;right:0;top:-38px;height:40px;z-index:2;background:var(--wavec,var(--bg));-webkit-mask:var(--wm) var(--wmpos,center)/var(--wms,100% 100%) var(--wmr,no-repeat);mask:var(--wm) var(--wmpos,center)/var(--wms,100% 100%) var(--wmr,no-repeat)}
+section.intro,section.worlds,section.collab{--wavec:var(--bg)}
+section.bake{--wavec:var(--bg2)}
+section.faves{--wavec:var(--blush)}
+.stats,footer{--wavec:var(--ink)}
+footer{border-top:none!important}
+
+/* ===== border: layered waves ===== */
+:root{--wm:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201440%2060%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%2046C180%2030%20360%2030%20540%2044S900%2058%201080%2042%201320%2026%201440%2038V60H0Z%22/%3E%3C/svg%3E")}
+main > section::after,.stats::after,footer::after{content:"";position:absolute;pointer-events:none;left:0;right:0;top:-38px;height:40px;z-index:1;
+  background:color-mix(in srgb,var(--wavec,var(--bg)) 78%,#996661);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201440%2060%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%2030C200%204%20400%206%20600%2026S1000%2050%201200%2026%201380%2010%201440%2016V60H0Z%22/%3E%3C/svg%3E") center/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201440%2060%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%2030C200%204%20400%206%20600%2026S1000%2050%201200%2026%201380%2010%201440%2016V60H0Z%22/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.stats::after,footer::after{background:color-mix(in srgb,var(--ink) 70%,#996661)}
+
+
+
+/* Contact: one connected card that pops */
+.collab .cbox{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);background:var(--card);box-shadow:0 22px 50px rgba(43,35,30,.14)}
+.collab .cbox::before{content:"";position:absolute;inset:22px -22px -22px 22px;z-index:-1;background:#E2CBC3;border:1px solid var(--mauve)}
+.collab .cphoto{position:relative;min-height:560px}
+.collab .cphoto{overflow:hidden}
+.collab .cphoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 80%;padding:0!important;background:none!important;transform:scale(1.18);transform-origin:50% 85%}
+.collab .cbody{display:flex;flex-direction:column}
+.collab .cbody .tx{padding:clamp(30px,4vw,52px) clamp(28px,4.5vw,60px);flex:1;display:flex;flex-direction:column;justify-content:center}
+.collab .community{background:var(--mahogany);color:#FBF2EC;padding:26px clamp(28px,4.5vw,60px) 30px}
+.collab .community h3{font-size:1.35rem;margin:0 0 16px;color:#fff;letter-spacing:.04em}
+.collab .community h3 small{display:inline;font-family:var(--sans);font-weight:500;font-size:1.35rem;letter-spacing:.04em;color:#F3DFC0;margin-right:.35em;text-transform:uppercase}
+.collab .stats4{display:grid;grid-template-columns:repeat(4,1fr)}
+.collab .community .stat{text-align:center;border-left:1px solid rgba(255,255,255,.28);padding-block:2px}
+.collab .community .stat:first-child{border-left:none}
+.collab .community .stat strong{display:block;font-family:var(--sans);font-weight:600;font-size:clamp(1.5rem,2.1vw,2rem);line-height:1.05;color:#fff}
+.collab .community .stat span{display:block;margin:6px auto 0;max-width:11em;line-height:1.35;font-family:var(--sans);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#F3DFC0}
+@media (max-width:960px){.collab .cbox{grid-template-columns:1fr}.collab .cphoto{min-height:380px}.collab .cbox::before{inset:14px -10px -14px 10px}}
+@media (max-width:520px){.collab .community h3,.collab .community h3 small{font-size:1.05rem}.collab .stats4{grid-template-columns:1fr 1fr;row-gap:16px}.collab .community .stat:nth-child(odd){border-left:none}}
+
+/* community band: centered, a bit more space between stats */
+.collab .community{text-align:center}
+.collab .community h3{text-align:center}
+.collab .stats4{column-gap:0;width:100%}
+.collab .community .stat{padding-inline:18px}
+.collab .community{padding-inline:clamp(20px,3vw,40px)!important}
+@media (max-width:520px){.collab .stats4{row-gap:20px}}
+
+/* ===== Favorites cards: shadow & lift ===== */
+.item{box-shadow:0 12px 28px rgba(43,35,30,.14),0 2px 6px rgba(43,35,30,.06);transition:transform .25s,box-shadow .25s}
+.item:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(43,35,30,.2),0 4px 10px rgba(43,35,30,.08)}
+@media (prefers-reduced-motion:reduce){.item,.item:hover{transition:none;transform:none}}
+
+footer .fname{margin:0;font-family:var(--sans);font-weight:600;font-size:1.5rem;letter-spacing:.08em;text-transform:uppercase;color:#F8F1E6;white-space:nowrap}
+
+section.intro,section.worlds,section.collab{background-color:var(--bg)}
+
+/* bolder paragraph text */
+main p{font-weight:500}
+
+/* contact form */
+.cdialog{border:none;padding:0;background:transparent;max-width:min(760px,calc(100vw - 24px));width:100%;max-height:calc(100vh - 32px);overflow:auto}
+.cdialog::backdrop{background:rgba(43,35,30,.55)}
+.cdialog[open]{animation:cpop .22s ease-out}
+@keyframes cpop{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.cdialog[open]{animation:none}}
+.cform{position:relative;margin:0;background:var(--bg);background-image:var(--tex);background-size:var(--texsize);padding:clamp(26px,4vw,44px);box-shadow:0 20px 50px rgba(43,35,30,.3)}
+.cclose{position:absolute;top:10px;right:14px;background:none;border:0;font-size:2rem;line-height:1;color:var(--ink);cursor:pointer;padding:4px 8px}
+.cclose:hover{color:var(--mahogany)}
+.cform h3{font-size:clamp(1.6rem,2.6vw,2.1rem);text-align:center}
+.cform .cform-sub{text-align:center;margin:10px auto 26px;max-width:32em}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+.cgrid .full{grid-column:1/-1}
+.cgrid label{display:flex;flex-direction:column;gap:7px;font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.cgrid input,.cgrid textarea{font:500 1rem/1.5 var(--text);color:var(--ink);background:#FFFDF9;border:1px solid var(--line);padding:12px 14px;border-radius:0;letter-spacing:0;text-transform:none;width:100%}
+.cgrid textarea{resize:vertical;min-height:130px}
+.cgrid input:focus,.cgrid textarea:focus{outline:2px solid var(--mahogany);outline-offset:1px;border-color:var(--mahogany)}
+.cform .btn{margin:22px auto 0;display:flex;width:max-content;cursor:pointer;font-family:var(--sans)}
+.cform-err{color:#8B3A34;text-align:center;margin-top:14px!important;font-weight:600}
+.cform-done{margin-top:18px;text-align:center;background:var(--mahogany);color:#fff;padding:14px 18px;font-family:var(--sans)}
+@media (max-width:620px){.cgrid{grid-template-columns:1fr}}
+
+/* mobile menu */
+.menu-btn{display:none;background:none;border:0;padding:6px;cursor:pointer;color:var(--ink)}
+.menu-btn svg{width:26px;height:26px;display:block}
+@media (max-width:760px){
+  .menu-btn{display:block;justify-self:end;grid-column:3;grid-row:1}
+  header.bar .wrap{grid-template-columns:auto 1fr auto!important;row-gap:0}
+  header.bar .icons{grid-column:2;grid-row:1;justify-self:end;margin-right:6px}
+  header.bar nav{display:none!important}
+  header.bar.open nav{display:flex!important;grid-column:1/-1;grid-row:2;flex-direction:column;align-items:stretch;gap:0!important;border-top:1px solid var(--line);margin-top:10px;padding-top:4px}
+  header.bar.open nav a{padding:13px 4px!important;border-bottom:1px solid var(--line)!important;font-size:.86rem!important}
+  header.bar.open nav a:last-child{border-bottom:none!important}
+}
+
+.cform .cform-sub{margin-bottom:8px!important}
+.cform .cform-order{text-align:center;margin:0 auto 24px;font-family:var(--sans);font-size:.92rem;font-weight:500;color:var(--ink)}
+.cform .cform-order a{color:var(--mahogany);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+/* ===== multi-page ===== */
+main[hidden]{display:none!important}
+main > section.phead{--wavec:var(--bg2);min-height:0!important;display:block!important;padding-block:clamp(32px,3.6vw,51px)!important;background-color:var(--bg2);text-align:center}
+.phead .wrap{max-width:760px}
+.phead h1{font-size:clamp(2.4rem,5vw,3.8rem)}
+.phead p{margin:16px auto 0;max-width:34em}
+.phead p a{color:var(--mahogany);font-weight:600}
+.phead .heart-rule{margin-top:18px}
+main > section.phead + section{min-height:0!important;padding-block:clamp(56px,7vw,96px)!important}
+.storytext .sig{font-family:var(--sans);font-weight:600;color:var(--mahogany);font-size:1.15rem;margin-top:22px}
+.bgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.bgrid figure{margin:0;aspect-ratio:9/11;overflow:hidden;background:#e3d6c2}
+.bgrid img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.bgrid figure:hover img{transform:scale(1.04)}
+.order-note{text-align:center;margin-top:14px!important;font-family:var(--sans);font-weight:500;font-size:.98rem;color:var(--ink)}
+.order-note a{color:var(--mahogany);font-weight:600}
+.soon-note{max-width:560px;margin:40px auto 0;text-align:center;background:var(--card);padding:26px 28px;box-shadow:0 12px 28px rgba(43,35,30,.1)}
+.soon-note .kicker{margin-bottom:8px}
+.disclose{text-align:center;font-family:var(--sans);font-size:.8rem;margin-top:18px!important;opacity:.8}
+@media (max-width:960px){.bgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){.bgrid img{transition:none}}
+
+/* Bake Life: tips */
+main > section.tipsp{--wavec:var(--bg);background-color:var(--bg);min-height:0!important;padding-block:clamp(56px,7vw,96px)!important}
+.tips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;max-width:860px;margin-inline:auto}
+.tip{background:var(--card);display:flex;flex-direction:column;box-shadow:0 12px 28px rgba(43,35,30,.12),0 2px 6px rgba(43,35,30,.05);transition:transform .25s,box-shadow .25s}
+.tip:hover{transform:translateY(-5px);box-shadow:0 20px 38px rgba(43,35,30,.18)}
+.tip-img{aspect-ratio:4/3;overflow:hidden}
+.tip-img img{width:100%;height:100%;object-fit:cover}
+.tip-body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1;text-align:left}
+.tip .soon{align-self:flex-start;background:var(--mahogany);color:#fff;font-family:var(--sans);font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:5px 10px;margin-bottom:12px}
+.tip h3{font-size:1.25rem;margin:0 0 10px}
+.tip p{font-size:.95rem;flex:1}
+.tip-link{margin-top:16px;align-self:flex-start;font-family:var(--sans);font-weight:600;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mahogany);text-decoration:none;border-bottom:1.5px solid var(--mahogany);padding-bottom:3px}
+@media (max-width:960px){.tips{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
+@media (prefers-reduced-motion:reduce){.tip,.tip:hover{transition:none;transform:none}}
+
+/* reel popups */
+.rdialog{border:none;padding:0;background:transparent;max-width:min(860px,calc(100vw - 24px));width:100%;max-height:calc(100vh - 32px);overflow:auto}
+.rdialog::backdrop{background:rgba(43,35,30,.55)}
+.rdialog[open]{animation:cpop .22s ease-out}
+@media (prefers-reduced-motion:reduce){.rdialog[open]{animation:none}}
+.rbox{position:relative;background:var(--bg);background-image:var(--tex);background-size:var(--texsize);padding:clamp(26px,4vw,44px);text-align:center;box-shadow:0 20px 50px rgba(43,35,30,.3)}
+.rbox h3{font-size:clamp(1.6rem,2.6vw,2.1rem)}
+.rbox .rsub{margin:10px auto 26px;max-width:32em}
+.reels{display:grid;grid-template-columns:repeat(4,minmax(0,170px));justify-content:center;gap:16px}
+@media (max-width:820px){.reels{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.reel{display:block;background:var(--card);text-decoration:none;color:var(--ink);text-align:left;box-shadow:0 10px 24px rgba(43,35,30,.12);transition:transform .25s,box-shadow .25s}
+.reel:hover{transform:translateY(-4px);box-shadow:0 18px 34px rgba(43,35,30,.18)}
+.reel-thumb{position:relative;aspect-ratio:4/5;width:100%;display:grid;place-items:center;background:linear-gradient(160deg,#E9D2CB,#C09690);background-size:cover;background-position:center}
+.reel-thumb svg{width:46px;height:46px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.2))}
+.reel-n{position:absolute;top:10px;left:10px;background:rgba(43,35,30,.7);color:#fff;font-family:var(--sans);font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:4px 8px}
+.reel-body{padding:12px 14px 14px}
+.reel-body h4{margin:0 0 6px;font-family:var(--sans);font-size:.88rem;font-weight:600;text-transform:none;letter-spacing:0;line-height:1.3}
+.reel-body span{display:block;line-height:1.4;font-family:var(--sans);font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mahogany)}
+.tip .soon.live{background:var(--gold);color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.reel,.reel:hover{transition:none;transform:none}}
+
+/* ===== Favorites: mosaic gallery ===== */
+.shelf{grid-template-columns:2fr 1fr 1fr!important;grid-template-rows:auto auto;gap:14px}
+.shelf .item{padding:0;display:flex;flex-direction:column;overflow:hidden}
+.shelf .item img.thumb{aspect-ratio:auto;flex:1;min-height:0;height:auto!important;margin:0!important}
+.shelf .item b{padding:12px 10px}
+.shelf .item:nth-child(1){grid-row:1 / span 2}
+.shelf .item:nth-child(1) img.thumb{min-height:420px}
+.shelf .item:nth-child(2){grid-column:2 / span 2}
+.shelf .item:nth-child(2) img.thumb{aspect-ratio:2/1}
+.shelf .item:nth-child(3) img.thumb,.shelf .item:nth-child(4) img.thumb{aspect-ratio:1}
+@media (max-width:760px){
+  .shelf{grid-template-columns:1fr 1fr!important}
+  .shelf .item:nth-child(1){grid-row:auto;grid-column:1 / -1}
+  .shelf .item:nth-child(1) img.thumb{min-height:0;aspect-ratio:4/3}
+  .shelf .item:nth-child(2){grid-column:1 / -1}
+}
+
+/* ===== Bake Life gallery style preview ===== */
+/* 2 masonry */
+/* 3 feature */
+/* 4 carousel */
+/* 5 arches */
+@media (max-width:960px){
+}
+
+/* inline contact form */
+.cform-inline{margin:64px auto 0;max-width:760px;box-shadow:0 14px 34px rgba(43,35,30,.12)}
+.cgrid input,.cgrid textarea,.cgrid select{border:1px solid var(--mahogany)!important}
+.cgrid select{font:500 1rem/1.5 var(--text);color:var(--ink);background:#FFFDF9;padding:12px 40px 12px 14px;border-radius:0;letter-spacing:0;text-transform:none;width:100%;appearance:none;-webkit-appearance:none;
+  background-image:linear-gradient(45deg,transparent 50%,var(--mahogany) 50%),linear-gradient(135deg,var(--mahogany) 50%,transparent 50%);background-position:calc(100% - 20px) 52%,calc(100% - 14px) 52%;background-size:6px 6px;background-repeat:no-repeat;cursor:pointer}
+.cgrid select:focus{outline:2px solid var(--mahogany);outline-offset:1px}
+
+/* Contact page: shorter card so the form shows on first screen */
+main[data-page="contact"] > section.phead{padding-block:clamp(26px,2.5vw,35px)!important}
+main[data-page="contact"] > section.phead + section{padding-top:clamp(28px,2.6vw,36px)!important}
+main[data-page="contact"] .collab .cphoto{min-height:300px}
+main[data-page="contact"] .collab .community{padding-block:18px 20px}
+main[data-page="contact"] .collab .community h3{margin-bottom:10px}
+main[data-page="contact"] .collab .cbody .tx{padding-block:16px 20px}
+main[data-page="contact"] .collab .cbody .tx h2{font-size:clamp(2rem,3.2vw,2.6rem);margin-bottom:12px}
+main[data-page="contact"] .cform-inline{margin-top:36px}
+
+/* Bake Life cake carousel + lightbox */
+.bcar{position:relative}
+.bcar .bgrid{display:flex!important;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+.bcar .bgrid::-webkit-scrollbar{display:none}
+.bcar .bgrid figure{flex:0 0 calc((100% - 24px)/3);aspect-ratio:9/11;scroll-snap-align:start;cursor:zoom-in}
+.bcar-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:48px;height:48px;border-radius:50%;border:1px solid var(--mahogany);background:var(--card);color:var(--mahogany);display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 16px rgba(43,35,30,.16);transition:background .2s,color .2s,opacity .2s}
+.bcar-btn svg{width:22px;height:22px}
+.bcar-btn:hover{background:var(--mahogany);color:#fff}
+.bcar-btn:disabled{opacity:.35;cursor:default;pointer-events:none}
+.bcar-btn.prev{left:-24px}.bcar-btn.next{right:-24px}
+@media (max-width:960px){.bcar .bgrid figure{flex-basis:calc((100% - 12px)/2)}}
+@media (max-width:600px){.bcar .bgrid figure{flex-basis:82%}.bcar-btn{width:40px;height:40px}.bcar-btn.prev{left:-10px}.bcar-btn.next{right:-10px}}
+.lbox{border:0;padding:0;margin:0;width:100vw;height:100vh;max-width:none;max-height:none;background:rgba(43,35,30,.9);color:#fff}
+.lbox::backdrop{background:transparent}
+.lbox[open]{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(8px,2vw,28px);padding:clamp(12px,3vw,40px)}
+.lbox figure{margin:0;display:grid;justify-items:center;gap:12px;min-width:0}
+.lbox img{display:block;max-width:100%;max-height:82vh;object-fit:contain;box-shadow:0 18px 50px rgba(0,0,0,.4)}
+.lbox figcaption{font-family:var(--sans);font-size:.8rem;letter-spacing:.18em;color:#EBDAD3}
+.lbox-btn{width:64px;height:64px;border-radius:50%;border:1px solid var(--gold);background:rgba(248,241,230,.08);color:var(--gold);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s}
+.lbox-btn svg{width:30px;height:30px}
+.lbox-btn:hover{background:var(--gold);color:var(--ink)}
+.lbox button:focus:not(:focus-visible){outline:none}
+.lbox-x{position:absolute;top:16px;right:18px;width:46px;height:46px;border:0;background:transparent;color:#fff;font-size:2rem;line-height:1;cursor:pointer}
+@media (max-width:600px){.lbox[open]{grid-template-columns:1fr;grid-template-rows:1fr auto}.lbox figure{grid-row:1}.lbox .lbox-prev,.lbox .lbox-next{grid-row:2;width:52px;height:52px}.lbox[open]{grid-template-columns:1fr 1fr}.lbox figure{grid-column:1/-1}.lbox .lbox-prev{justify-self:end}.lbox .lbox-next{justify-self:start}}
+.order-cta{text-align:center;margin-top:clamp(28px,3vw,40px)}
+.order-cta .order-btn{margin-top:0;padding:11px 22px;font-size:.74rem;letter-spacing:.16em}
+.bcar .bgrid img{transform:scale(var(--z,1));transform-origin:var(--zo,50% 50%)}
+.bcar .bgrid figure:hover img{transform:scale(calc(var(--z,1) * 1.04))}
+
+/* Temporary photo adjuster */
+.adj-bar[hidden]{display:none!important}
+.adj-bar{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:61;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:calc(100vw - 24px);background:var(--mahogany);color:#FBF2EC;padding:8px 10px;font-family:var(--sans);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 10px 26px rgba(43,35,30,.25)}
+.adj-bar button{font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit;background:transparent;border:1px solid rgba(251,242,236,.5);padding:8px 12px;cursor:pointer}
+.adj-bar button.on,.adj-bar .adj-copy{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.adj-bar .adj-copy,.adj-bar .adj-hint{display:none}
+html.adj .adj-bar .adj-copy,html.adj .adj-bar .adj-hint{display:inline-block}
+.adj-hint{text-transform:none;letter-spacing:.02em;font-size:.8rem;opacity:.9}
+html:not([data-route="bake"]) .adj-bar,html:not([data-route="bake"]) .adj-out{display:none!important}
+html.adj .bcar .bgrid figure{cursor:grab;outline:2px dashed var(--gold);outline-offset:-2px;position:relative;touch-action:none}
+html.adj .bcar .bgrid figure.drag{cursor:grabbing}
+html.adj .bcar .bgrid figure img{transition:none!important;pointer-events:none;user-select:none;-webkit-user-drag:none}
+html.adj .bcar .bgrid figure:hover img{transform:scale(var(--z,1))}
+.adj-ctl{display:none;position:absolute;right:8px;bottom:8px;gap:6px;z-index:3}
+html.adj .adj-ctl{display:flex}
+.adj-ctl button{width:36px;height:36px;border-radius:50%;border:1px solid var(--mahogany);background:var(--card);color:var(--mahogany);font:600 1.1rem/1 var(--sans);cursor:pointer;display:grid;place-items:center}
+.adj-ctl button:hover{background:var(--mahogany);color:#fff}
+.adj-ctl .rs{width:auto;border-radius:18px;padding:0 10px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
+.adj-out{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);z-index:62;width:min(560px,calc(100vw - 32px));background:var(--card);border:1px solid var(--mahogany);padding:14px;box-shadow:0 14px 34px rgba(43,35,30,.25);font-family:var(--sans);font-size:.85rem;color:var(--ink)}
+.adj-out[hidden]{display:none}
+.adj-out textarea{width:100%;height:150px;margin-top:8px;font:13px/1.45 ui-monospace,Menlo,monospace;border:1px solid var(--mahogany);background:#FFFDF9;padding:8px;color:var(--ink)}
+.adj-out button{margin-top:8px;font:inherit;border:1px solid var(--mahogany);background:transparent;color:var(--mahogany);padding:6px 12px;cursor:pointer}
+.bakep .sec-head{margin-bottom:clamp(28px,3vw,44px)}
+footer .fname .flogo{background:none!important;box-shadow:none!important;border:0!important;display:block;width:clamp(200px,20vw,260px);height:auto;margin:0 auto}
+main[data-page="mom"] > section{min-height:0!important}
+main[data-page="mom"] > section.momp{padding-block:clamp(48px,5vw,72px) clamp(56px,7vw,96px)!important}
+.storyp .wrap{row-gap:clamp(24px,3vw,40px);align-items:center}
+.storyp .story-title{grid-column:1/-1;text-align:center;margin:0}
+.storyp .frame{transform:translateY(13px)}
+.storyp .story-cta{grid-column:2;margin-top:calc(-1 * clamp(24px,3vw,40px) + 24px)}
+.storyp .story-cta .btn{margin-top:0}
+.storyp .storytext .sig{margin-bottom:0}
+@media (max-width:960px){.storyp .story-cta{grid-column:auto}.storyp .frame{transform:none}}
+
+/* Home favorites: compact layouts (temporary switcher) */
+html[data-hfav] main > section#favorites{min-height:0!important;padding-block:clamp(56px,6vw,84px)!important}
+html[data-hfav] #favorites .shelf .item b{display:none!important}
+html[data-hfav] #favorites .shelf .item{grid-row:auto!important;grid-column:auto!important;box-shadow:none!important;border:0!important;background:transparent!important;transform:none!important}
+html[data-hfav] #favorites .shelf .item img.thumb{min-height:0!important;width:100%;height:100%!important;object-fit:cover;flex:none;aspect-ratio:auto!important;transition:transform .5s}
+html[data-hfav] #favorites .shelf .item{overflow:hidden}
+html[data-hfav] #favorites .shelf .item:hover img.thumb{transform:scale(1.05)}
+/* 1 collage row */
+html[data-hfav="row"] #favorites .shelf{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:none!important;gap:10px!important;max-width:1000px;margin-inline:auto}
+html[data-hfav="row"] #favorites .shelf .item{aspect-ratio:1}
+/* 2 strip */
+html[data-hfav="strip"] #favorites .shelf{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:none!important;gap:0!important}
+html[data-hfav="strip"] #favorites .shelf .item{height:clamp(160px,17vw,230px)}
+/* 3 scrapbook */
+html[data-hfav="scrap"] #favorites .shelf{display:flex!important;justify-content:center;align-items:center;gap:0!important;padding-block:18px}
+html[data-hfav="scrap"] #favorites .shelf .item{width:clamp(130px,17vw,220px);aspect-ratio:4/5;border:8px solid #FFFDF9!important;box-shadow:0 12px 26px rgba(43,35,30,.18)!important;margin-inline:-14px;position:relative}
+html[data-hfav="scrap"] #favorites .shelf .item:nth-child(1){transform:rotate(-6deg)!important;z-index:1}
+html[data-hfav="scrap"] #favorites .shelf .item:nth-child(2){transform:rotate(3deg) translateY(-10px)!important;z-index:2}
+html[data-hfav="scrap"] #favorites .shelf .item:nth-child(3){transform:rotate(-2deg) translateY(8px)!important;z-index:3}
+html[data-hfav="scrap"] #favorites .shelf .item:nth-child(4){transform:rotate(5deg)!important;z-index:2}
+html[data-hfav="scrap"] #favorites .shelf .item:hover{z-index:5;transform:rotate(0) scale(1.04)!important}
+html[data-hfav="scrap"] #favorites .shelf .item:hover img.thumb{transform:none}
+/* 4 split: text left, 2x2 right */
+html[data-hfav="split"] #favorites .wrap{display:grid;grid-template-columns:1fr 1.1fr;column-gap:clamp(32px,5vw,70px);align-items:center}
+html[data-hfav="split"] #favorites .sec-head{text-align:left;margin:0;grid-column:1;grid-row:1}
+html[data-hfav="split"] #favorites .sec-head p{margin-inline:0}
+html[data-hfav="split"] #favorites .sec-head .heart-rule{justify-content:flex-start}
+html[data-hfav="split"] #favorites .center-cta{grid-column:1;grid-row:2;text-align:left;justify-content:flex-start;align-self:start;margin-top:20px}
+html[data-hfav="split"] #favorites .disclose{grid-column:1/-1;grid-row:3}
+html[data-hfav="split"] #favorites .shelf{grid-column:2;grid-row:1 / span 2;grid-template-columns:1fr 1fr!important;grid-template-rows:none!important;gap:10px!important;max-width:460px;width:100%;justify-self:end}
+html[data-hfav="split"] #favorites .shelf .item{aspect-ratio:1}
+@media (max-width:760px){
+  html[data-hfav="row"] #favorites .shelf{grid-template-columns:1fr 1fr!important}
+  html[data-hfav="strip"] #favorites .shelf{grid-template-columns:1fr 1fr!important}
+  html[data-hfav="strip"] #favorites .shelf .item{height:140px}
+  html[data-hfav="scrap"] #favorites .shelf .item{width:24vw;border-width:5px!important;margin-inline:-8px}
+  html[data-hfav="split"] #favorites .wrap{display:block}
+  html[data-hfav="split"] #favorites .sec-head,html[data-hfav="split"] #favorites .center-cta{text-align:center;justify-content:center}
+  html[data-hfav="split"] #favorites .shelf{margin:24px auto 0}
+}
+
+/* Home Beyond the Batter: scrapbook photos */
+#mom .mom-row{display:flex!important;justify-content:center;align-items:center;gap:0!important;padding-block:30px 26px!important}
+#mom .mom-row img{width:clamp(220px,25vw,330px)!important;height:auto!important;aspect-ratio:4/5;object-fit:cover;border:10px solid #FFFDF9;box-shadow:0 14px 30px rgba(43,35,30,.2)!important;margin-inline:-18px;position:relative;transition:transform .35s}
+#mom .mom-row img:nth-child(1){transform:rotate(-5deg)!important;z-index:1}
+#mom .mom-row img:nth-child(2){transform:rotate(2deg) translateY(-14px)!important;z-index:2}
+#mom .mom-row img:nth-child(3){transform:rotate(6deg)!important;z-index:1}
+#mom .mom-row img:hover{transform:rotate(0) scale(1.04)!important;z-index:3}
+@media (max-width:760px){#mom .mom-row img{width:33vw!important;border-width:6px;margin-inline:-9px}#mom .mom-row img:first-child{grid-column:auto}}
+.momp .sec-head{margin-bottom:clamp(8px,1.5vw,20px)}
+
+/* Arrange-order mode */
+.adj-bar .arr-copy,.adj-bar .arr-hint{display:none}
+html.arr .adj-bar .arr-copy,html.arr .adj-bar .arr-hint{display:inline-block}
+html.arr .adj-bar .arr-copy,.adj-bar .arr-toggle.on{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+html.arr .adj-bar .adj-toggle,html.adj .adj-bar .arr-toggle{display:none}
+html.arr .bcar .bgrid{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;overflow:visible;counter-reset:pic;padding-bottom:90px}
+html.arr .bcar .bgrid figure{flex:none!important;width:auto;cursor:grab;position:relative;counter-increment:pic;touch-action:none;user-select:none}
+html.arr .bcar .bgrid figure::after{content:counter(pic);position:absolute;top:6px;left:6px;z-index:3;min-width:26px;height:26px;padding:0 6px;border-radius:13px;background:var(--mahogany);color:#fff;font:600 .78rem/26px var(--sans);text-align:center}
+html.arr .bcar .bgrid figure img{pointer-events:none;-webkit-user-drag:none}
+html.arr .bcar .bgrid figure:hover img{transform:scale(var(--z,1))}
+html.arr .bcar-btn{display:none!important}
+.sortable-ghost{opacity:.35}
+@media (max-width:760px){html.arr .bcar .bgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}}
+
+/* ===== Gallery styles (switcher) ===== */
+html:not(.arr):not(.adj) .bcar{display:none}
+html.arr .gstage,html.adj .gstage{display:none}
+.gstage{position:relative;--gap:12px}
+.gstage figure{margin:0;overflow:hidden;background:#e3d6c2;cursor:zoom-in;position:relative}
+.gstage figure img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(var(--z,1));transform-origin:var(--zo,50% 50%);transition:transform .5s}
+.gstage figure:hover img{transform:scale(calc(var(--z,1) * 1.04))}
+.gstage .adj-ctl{display:none!important}
+.g-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:48px;height:48px;border-radius:50%;border:1px solid var(--mahogany);background:var(--card);color:var(--mahogany);display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 16px rgba(43,35,30,.16);transition:background .2s,color .2s}
+.g-btn svg{width:22px;height:22px}.g-btn:hover{background:var(--mahogany);color:#fff}
+.g-btn.prev{left:-24px}.g-btn.next{right:-24px}
+.g-view{overflow:hidden}
+.g-track{display:flex;gap:var(--gap);will-change:transform}
+.g-track figure{flex:0 0 var(--w);aspect-ratio:9/11}
+.g-count{text-align:center;margin-top:16px;font-family:var(--sans);font-size:.78rem;letter-spacing:.2em;color:var(--ink-soft)}
+/* spotlight */
+.g-spot .g-track{align-items:center;padding-block:24px}
+.g-spot .g-track figure{transform:scale(.8);opacity:.5;transition:transform .5s,opacity .5s,box-shadow .5s}
+.g-spot .g-track figure.c{transform:scale(1.08);opacity:1;box-shadow:0 18px 40px rgba(43,35,30,.22);z-index:2}
+/* marquee */
+.g-marq .g-view{-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.g-marq .g-track{width:max-content;animation:gmarq var(--dur,240s) linear infinite}
+.g-marq .g-track figure{flex:0 0 clamp(180px,19vw,270px)}
+.g-marq:hover .g-track,.g-marq.hold .g-track{animation-play-state:paused}
+.g-marq .g-row2 .g-track{animation-direction:reverse;margin-top:var(--gap)}
+@keyframes gmarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.g-marq .g-track{animation-duration:900s}}
+/* feature */
+.g-feat{display:grid;gap:14px}
+.g-main{position:relative;height:clamp(380px,46vw,600px);background:var(--card);box-shadow:0 14px 34px rgba(43,35,30,.12)}
+.g-main figure{position:absolute;inset:0;background:transparent;cursor:zoom-in}
+.g-main figure img{object-fit:contain;transform:none!important;transition:opacity .35s}
+.g-main .g-btn.prev{left:14px}.g-main .g-btn.next{right:14px}
+.g-thumbs{display:flex;gap:8px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;padding:4px 2px}
+.g-thumbs::-webkit-scrollbar{display:none}
+.g-thumbs figure{flex:0 0 clamp(64px,8vw,96px);aspect-ratio:1;opacity:.55;cursor:pointer;outline:2px solid transparent;outline-offset:2px;transition:opacity .2s,outline-color .2s}
+.g-thumbs figure.on{opacity:1;outline-color:var(--mahogany)}
+.g-thumbs figure:hover{opacity:.9}
+/* grid + more */
+.g-grid .g-cells{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.g-grid .g-cells figure{aspect-ratio:9/11}
+.g-grid .g-cells figure.hide{display:none}
+.g-more{text-align:center;margin-top:24px}
+.g-more .btn{margin-top:0}
+@media (max-width:760px){.g-grid .g-cells{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.g-btn{width:40px;height:40px}.g-btn.prev{left:-8px}.g-btn.next{right:-8px}.g-main{height:440px}}
+.gsw{display:none!important;position:fixed;left:50%;bottom:72px;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 24px);z-index:61;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;background:var(--ink);color:#FBF2EC;padding:8px 10px 8px 16px;font-family:var(--sans);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 10px 26px rgba(43,35,30,.25)}
+.gsw button{font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit;background:transparent;border:1px solid rgba(251,242,236,.45);padding:7px 11px;cursor:pointer}
+.gsw button[aria-pressed="true"]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
+
+/* ===== Collage styles (every tile 9:11) ===== */
+.g-cview{overflow:hidden}
+.g-ctrack{display:flex;will-change:transform}
+.g-cview{max-width:996px;margin-inline:auto}
+.g-col-stagger .g-cview{max-width:876px}
+.g-ctrack>.g-board{flex:0 0 100%;min-width:0;box-sizing:border-box;padding:4px 8px 14px;max-width:none!important;margin:0!important}
+.g-col{position:relative}
+.g-board{transition:opacity .22s ease;margin-inline:auto}
+.g-board.fade{opacity:0}
+.g-board figure{aspect-ratio:9/11;width:100%;min-height:0;align-self:start;box-shadow:0 8px 20px rgba(43,35,30,.12)}
+.g-board figure img{position:absolute;inset:0}
+.g-col-mosaic .g-board{display:grid;grid-template-columns:calc((100% - 28.18px) / 2 + 8.18px) calc((100% - 28.18px) / 4) calc((100% - 28.18px) / 4);gap:10px;max-width:980px}
+.g-col-mosaic .t1{grid-row:1/3}
+.g-col-center .g-board{display:grid;grid-template-columns:calc((100% - 28.18px) / 4) calc((100% - 28.18px) / 2 + 8.18px) calc((100% - 28.18px) / 4);gap:10px;max-width:980px}
+.g-col-center .t1{grid-column:2;grid-row:1/3}
+.g-col-center .t2{grid-column:1;grid-row:1}.g-col-center .t3{grid-column:1;grid-row:2}
+.g-col-center .t4{grid-column:3;grid-row:1}.g-col-center .t5{grid-column:3;grid-row:2}
+.g-col-stagger .g-board{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:860px;padding-bottom:calc((min(860px,100%) - 24px) / 3 * 11 / 18)}
+.g-col-stagger .t1{grid-column:1;grid-row:1}.g-col-stagger .t2{grid-column:1;grid-row:2}
+.g-col-stagger .t3{grid-column:2;grid-row:1;transform:translateY(50%)}.g-col-stagger .t4{grid-column:2;grid-row:2;transform:translateY(50%)}
+.g-col-stagger .t5{grid-column:3;grid-row:1}.g-col-stagger .t6{grid-column:3;grid-row:2}
+.g-col-scrap .g-board{display:flex;justify-content:center;align-items:center;padding-block:34px 24px;min-height:clamp(340px,34vw,480px)}
+.g-col-scrap .g-board figure{box-sizing:content-box;width:clamp(150px,19vw,250px);border:10px solid #FFFDF9;box-shadow:0 14px 30px rgba(43,35,30,.2);margin-inline:-16px;transition:transform .3s}
+.g-col-scrap .t1{transform:rotate(-7deg) translateY(10px);z-index:1}.g-col-scrap .t2{transform:rotate(3deg) translateY(-12px);z-index:2}.g-col-scrap .t3{transform:rotate(-2deg) translateY(4px);z-index:3}.g-col-scrap .t4{transform:rotate(5deg) translateY(-8px);z-index:2}.g-col-scrap .t5{transform:rotate(-4deg) translateY(12px);z-index:1}
+.g-col-scrap .g-board figure:hover{transform:rotate(0) scale(1.06);z-index:5}
+.g-col-scrap .g-board figure:hover img{transform:scale(var(--z,1))}
+@media (max-width:760px){
+ .g-col-mosaic .g-board,.g-col-center .g-board{grid-template-columns:1fr 1fr;gap:8px}
+ .g-col-mosaic .t1,.g-col-center .t1{grid-column:1/-1!important;grid-row:auto!important;aspect-ratio:9/11;height:auto}
+ .g-col-center .t2,.g-col-center .t3,.g-col-center .t4,.g-col-center .t5{grid-column:auto;grid-row:auto}
+ .g-col-stagger .g-board{gap:8px}
+ .g-col-scrap .g-board{flex-wrap:wrap;padding-block:20px}
+ .g-col-scrap .g-board figure{width:38vw;border-width:6px;margin:-6px}
+}
+</style>
+</head>
+<body>
+
+<header class="bar"><div class="wrap">
+  <div class="brand"><a class="logo" href="#/" aria-label="Batter N' Life home"><img src="img/logo_letters_flat.png" alt="Batter N' Life"></a>
+  <span class="divider" aria-hidden="true"></span></div>
+  <nav aria-label="Main" id="main-nav">
+    <a href="#/" aria-current="page">Home</a><a href="#/story">My Story</a><a href="#/bake">Bake Life</a><a href="#/mom">Mom Life</a><a href="#/favorites">Favorites</a><a href="#/contact">Contact</a>
+  </nav>
+  <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <div class="icons" aria-label="Social media">
+      <a href="https://www.instagram.com/batternlife" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a>
+      <a href="https://www.youtube.com/@batternlife" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3z"/></svg></a>
+      <a href="https://www.tiktok.com/@batternlife" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M16 3c.3 2.2 1.9 3.9 4 4.1v3.1c-1.5 0-2.9-.5-4-1.3v6.4a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6 0 .9.1v3.2a2.5 2.5 0 1 0 1.6 2.3V3H16z"/></svg></a>
+      <a href="https://www.facebook.com/batternlife" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M14 8h3V4.5h-3c-2.5 0-4 1.6-4 4.1V11H7.5v3.5H10V21h3.6v-6.5h2.9l.5-3.5h-3.4V8.9c0-.6.3-.9.9-.9z"/></svg></a>
+  </div>
+</div></header>
+
+<main id="home" data-page="home">
+  <div class="hero">
+    <div class="ph"><img style="object-position:50% 85%" src="img/kitchen2.jpg" alt="Bright kitchen counter with a pink stand mixer, piping bag and fresh cookies"></div>
+    <div class="tx">
+      <span class="kicker">Baking · Family · Real Life</span>
+      <h1>Where <span class="pop">buttercream</span> meets <span class="pop">motherhood</span></h1>
+      <p class="lede">Desserts, baking and decorating tips, homeschool mornings, mom life, favorite finds, and the sweet, messy middle of everyday life.</p>
+      <div class="cta">
+        <a class="btn solid" href="#/bake">Bake Life <span aria-hidden="true">→</span></a>
+        <a class="btn solid" href="#/mom">Mom Life <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+
+  <section class="intro" id="story"><div class="wrap">
+    <div class="frame"><img src="img/curls.jpg" alt="Portrait of the baker behind Batter N' Life"></div>
+    <div>
+      <h2>Hi, I'm <span class="pop">Melinda.</span> Nice to meet you.</h2>
+      <p>I'm a wife, mom of four, self-taught baker, and homeschool teacher. Between decorating cakes, homeschooling, and keeping up with…</p>
+      <!-- "With love, from my kitchen ♥" moves to the end of the My Story page when it is built -->
+      <a class="btn solid" href="#/story">Read My Story <span aria-hidden="true">→</span></a>
+    </div>
+  </div></section>
+
+  <section class="bake" id="bake"><div class="wrap">
+    <div class="sec-head">
+      <h2>Sweet <span class="pop">Creations</span></h2>
+      <p>Cakes, desserts, and decorating inspiration. The heart of Batter N' Life starts here. I specialize in custom celebration cakes, each one designed to make your special day a little sweeter.</p>
+      <div class="heart-rule"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.7 4.5c2.1 0 3.8 1.2 5.3 3 1.5-1.8 3.2-3 5.3-3 3.7 0 5.8 3.7 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg></div>
+    </div>
+    <div class="gallery">
+      <div class="big gzoom"><img src="img/rose2.jpg" alt="Tall heart-shaped cake covered in red buttercream roses"></div>
+      <div class="gzoom gz-soccer"><img data-k="soccer" src="img/gal_soccer.jpg" alt="Soccer ball 40th birthday cake with a navy and gold crest"></div>
+      <img src="img/ruffle2.jpg" alt="Pastel ruffled cake on a gold stand">
+    </div>
+    <div class="center-cta"><a class="btn solid" href="#/bake">See More <span aria-hidden="true">→</span></a></div>
+  </div></section>
+
+  <section class="worlds" id="mom"><div class="wrap">
+    <div class="sec-head">
+      <h2>Beyond the <span class="pop">Batter</span></h2>
+      <p>Life with four kids is full, busy, and beautiful. Here you'll find our homeschool days, family routines, and the real, sweet, messy moments in between.</p>
+    </div>
+    <div class="mom-row">
+      <img style="object-position:50% 30%" src="img/fam_table.jpg" alt="Mom working on her laptop and planner at the dining table with a mug of cocoa">
+      <img style="object-position:30% 60%" src="img/fam_play.jpg" alt="Sunny living room with a basket of teddy bears and wooden blocks on the floor">
+      <img style="object-position:50% 50%" src="img/fam_entry.jpg" alt="Entryway bench with kids' backpacks and a diaper bag on hooks, family shoes and baby shoes lined up below">
+    </div>
+    <div class="center-cta"><a class="btn solid" href="#/mom">Mom Life <span aria-hidden="true">→</span></a></div>
+  </div></section>
+
+  <section class="faves" id="favorites"><div class="wrap">
+    <div class="sec-head">
+      <h2>Shop My <span class="pop">Favorites</span></h2>
+      <p>The tools, pans and everyday things I actually use and love.</p>
+    </div>
+    <div class="shelf">
+      <a class="item" href="#/favorites"><img class="thumb" src="img/fav_tools.jpg" alt="Flat lay of baking tools and ingredients: cupcakes, piping bags and tips, whisks, measuring spoons, flour and sprinkles"><b>Baking Essentials</b></a>
+      <a class="item" href="#/favorites"><img class="thumb" src="img/fav_baby.jpg" alt="Folded knit baby blankets with booties and a teether"><b>Baby &amp; Kids</b></a>
+      <a class="item" href="#/favorites"><img class="thumb" src="img/fav_home.jpg" alt="Warm, neutral entryway with a wood console and woven baskets"><b>Home &amp; Everyday</b></a>
+      <a class="item" href="#/favorites"><img class="thumb" src="img/fav_skin.jpg" alt="Skincare bottles, jars and a scrunchie on a wooden tray by a mirror"><b>Skin &amp; Hair Care</b></a>
+    </div>
+    <div class="center-cta"><a class="btn solid" href="#/favorites">Shop All Favorites <span aria-hidden="true">→</span></a></div>
+  </div></section>
+
+  <section class="collab" id="collaborate"><div class="wrap"><div class="cbox">
+    <div class="cphoto"><img src="img/collab_desk.jpg" alt="Kitchen counter with stand mixer, cupcake, laptop and a weekly planner listing cake orders, content, family and homeschool"></div>
+    <div class="cbody">
+      <div class="community">
+        <h3><small>Our growing</small>Community</h3>
+        <div class="stats4">
+          <div class="stat"><strong>11.6K+</strong><span>Social community</span></div>
+          <div class="stat"><strong>1M+</strong><span>Total content views</span></div>
+          <div class="stat"><strong>600+</strong><span>Custom cakes created</span></div>
+          <div class="stat"><strong>10+</strong><span>Years of baking</span></div>
+        </div>
+      </div>
+      <div class="tx">
+        <span class="kicker">Like what you see?</span>
+        <h2>Let's work <span class="pop">together!</span></h2>
+        <p>Life isn't always perfectly decorated, but there's always something sweet in the mix.</p>
+        <a class="btn solid" href="#/contact">Contact <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+  </div></section>
+</main>
+<main data-page="story" hidden>
+  <section class="phead"><div class="wrap">
+    <span class="kicker">My Story</span>
+    <h1>Hi, I'm <span class="pop">Melinda</span></h1>
+    <p>Wife, mom of four, self-taught baker, and homeschool teacher.</p>
+    <div class="heart-rule"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.7 4.5c2.1 0 3.8 1.2 5.3 3 1.5-1.8 3.2-3 5.3-3 3.7 0 5.8 3.7 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg></div>
+  </div></section>
+  <section class="intro storyp"><div class="wrap">
+    <h2 class="story-title">Life beyond <span class="pop">buttercream</span></h2>
+    <div class="frame"><img src="img/curls.jpg" alt="Portrait of Melinda, the baker behind Batter N' Life"></div>
+    <div class="storytext">
+      <p>I'm a wife, mom of four, self-taught baker, and homeschool teacher. Between decorating cakes, homeschooling, and keeping up with everyday life, there's always something going on.</p>
+      <p>My love for baking turned into something I never expected. Over 10 years later, I've created more than 600 custom cakes for birthdays, celebrations and every sweet moment in between.</p>
+      <p>During the day, I'm teaching the kids, and at night, I'm in the kitchen baking. But wifing and momming never stops! Batter N' Life is my little corner to share it all: the baking, the busy days, and the sweet moments in between.</p>
+      <p>Thank you for being here, whether you came for the buttercream or the motherhood.</p>
+      <p class="sig">With love, from my kitchen ♥</p>
+    </div>
+    <div class="story-cta"><a class="btn solid" href="#/contact">Let's Connect <span aria-hidden="true">→</span></a></div>
+  </div></section>
+</main>
+
+<main data-page="bake" hidden>
+  <section class="phead"><div class="wrap">
+    <span class="kicker">Bake Life</span>
+    <h1>Sweet <span class="pop">Creations</span></h1>
+    <p>Custom celebration cakes, desserts and decorating inspiration. Each one designed to make your special day a little sweeter.</p>
+    <div class="heart-rule"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.7 4.5c2.1 0 3.8 1.2 5.3 3 1.5-1.8 3.2-3 5.3-3 3.7 0 5.8 3.7 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg></div>
+  </div></section>
+  <section class="bake bakep"><div class="wrap">
+    <div class="sec-head">
+      <h2>Cake <span class="pop">Gallery</span></h2>
+    </div>
+    <div class="bcar">
+    <button type="button" class="bcar-btn prev" aria-label="Previous cakes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="bgrid">
+      <figure style="--z:1.35;--zo:50.5% 59.5%"><img data-k="rose2" src="img/rose2.jpg" alt="Tall heart-shaped cake covered in red buttercream roses" style="object-position:50.5% 47.5%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:61.6% 25%"><img data-k="gal_sunflower" src="img/gal_sunflower.jpg" alt="Tall yellow cake with piped buttercream sunflowers and gold leaf" style="object-position:49.6% 15%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50.5% 54.4%"><img data-k="gal_n43" src="img/gal_n43.jpg" alt="Two-tier pastel watercolor &quot;Oh Baby&quot; cake with flowers, gold butterflies and cakesicles" style="object-position:50.5% 54.4%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:50% 38.6%"><img data-k="ruffle2" src="img/ruffle2.jpg" alt="Pastel ruffled cake on a gold stand" style="object-position:50% 38.6%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50.7% 58.7%"><img data-k="flower" src="img/flower.jpg" alt="White cake with hand-piped wildflowers" style="object-position:50.7% 52.7%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:48.9% 46%"><img data-k="pirate" src="img/pirate2.jpg" alt="Pirate adventure themed birthday cake" style="object-position:48.9% 46%" loading="lazy"></figure>
+      <figure style="--z:1.37;--zo:52.6% 40.1%"><img data-k="gal_soccer" src="img/gal_soccer.jpg" alt="Soccer ball 40th birthday cake with a navy and gold crest" style="object-position:52.6% 36.1%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:50% 50%"><img data-k="gal_burger" src="img/gal_burger.jpg" alt="3D tomato-and-burger character birthday cake" style="object-position:50% 45%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:50% 50%"><img data-k="gal_n62" src="img/gal_n62.jpg" alt="Two-tier hot air balloon cake with clouds, airplanes and bunting" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:50.3% 67.1%"><img data-k="gal_n50" src="img/gal_n50.jpg" alt="Two-tier Hawaiian birthday cake with hibiscus flowers, ocean waves and bamboo" style="object-position:50.3% 67.1%" loading="lazy"></figure>
+      <figure style="--z:1.4;--zo:52.1% 65.3%"><img data-k="gal_n54" src="img/gal_n54.jpg" alt="Three-tier white wedding cake with navy and coral brushstrokes, gold leaf, a floating top tier and red and white roses" style="object-position:58.1% 53.3%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:46.2% 53.5%"><img data-k="gal_n64" src="img/gal_n64.jpg" alt="Three-tier ivory wedding cake with a cascade of purple and lavender flowers" style="object-position:46.2% 53.5%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50.4% 56.8%"><img data-k="gal_tiered" src="img/gal_tiered.jpg" alt="Black tiered cake with cascading red roses and gold butterflies" style="object-position:50.4% 54.8%" loading="lazy"></figure>
+      <figure style="--z:1.65;--zo:49.9% 21.2%"><img data-k="gal_n31" src="img/gal_n31.jpg" alt="Four-tier black wedding cake with red and ivory roses" style="object-position:56.9% 39.2%" loading="lazy"></figure>
+      <figure style="--z:2.45;--zo:50.9% 35%"><img data-k="gal_n55" src="img/gal_n55.jpg" alt="Three-tier semi-naked rustic wedding cake with white roses and greenery on a barrel table" style="object-position:50.9% 47%" loading="lazy"></figure>
+      <figure style="--z:1.25;--zo:56.4% 62.1%"><img data-k="gal_n05" src="img/gal_n05.jpg" alt="Chocolate drip cake loaded with donuts, chocolate bars and gold leaf" style="object-position:56.4% 62.1%" loading="lazy"></figure>
+      <figure style="--z:1.35;--zo:54.9% 63.5%"><img data-k="gal_n48" src="img/gal_n48.jpg" alt="Peanut butter drip cake topped with peanut butter cups and swirls" style="object-position:54.9% 63.5%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:50% 50%"><img data-k="gal_n39" src="img/gal_n39.jpg" alt="Chocolate drip cake piled with glazed donuts, candy bars and gold leaf" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:50% 50%"><img data-k="gal_n28" src="img/gal_n28.jpg" alt="Chocolate drip cake loaded with cookies, candy bars and gold leaf" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:55.2% 61.4%"><img data-k="gal_n29" src="img/gal_n29.jpg" alt="Tall chocolate drip cake topped with brownies and gold leaf" style="object-position:55.2% 61.4%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50% 50%"><img data-k="gal_n63" src="img/gal_n63.jpg" alt="Two-tier black and white cake with white sugar flowers and a crystal design" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.3;--zo:50.4% 64.3%"><img data-k="gal_n08" src="img/gal_n08.jpg" alt="Two-tier pink drip cake with peonies, white flowers and pink chocolate-dipped strawberries" style="object-position:50.4% 64.3%" loading="lazy"></figure>
+      <figure style="--z:1.35;--zo:51.1% 83%"><img data-k="gal_n13" src="img/gal_n13.jpg" alt="Semi-naked cake with teal watercolor, gold leaf and a cascade of white roses and eucalyptus" style="object-position:51.1% 83%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:50% 50%"><img data-k="gal_n18" src="img/gal_n18.jpg" alt="White anniversary cake with purple watercolor strokes, fresh roses and a &quot;We Still Do&quot; topper" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.35;--zo:48.5% 53.5%"><img data-k="gal_n14" src="img/gal_n14.jpg" alt="Tall pink watercolor drip cake with a gold name topper, roses, dried florals, a fondant rainbow and macarons" style="object-position:48.5% 53.5%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:54% 50.1%"><img data-k="gal_n44" src="img/gal_n44.jpg" alt="Pink drip cake with gold-wrapped chocolates, chocolate hearts and pink swirls" style="object-position:54% 50.1%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:49.9% 28.6%"><img data-k="gal_n23" src="img/gal_n23.jpg" alt="White and blue football team drip cake with blue-dipped strawberries" style="object-position:49.9% 28.6%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:47.9% 59.5%"><img data-k="gal_n03" src="img/gal_n03.jpg" alt="Rainbow striped drip cake topped with lollipops, candy twists and ice cream cones" style="object-position:47.9% 59.5%" loading="lazy"></figure>
+      <figure style="--z:1.25;--zo:46% 60.2%"><img data-k="gal_n04" src="img/gal_n04.jpg" alt="White cake with black chocolate drip, red buttercream swirls and red, yellow and black sprinkles" style="object-position:46% 60.2%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:49.8% 69.1%"><img data-k="gal_n30" src="img/gal_n30.jpg" alt="Halloween cake with black and white stripes, green drip and spooky sprinkles" style="object-position:49.8% 69.1%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:46.6% 51.7%"><img data-k="gal_n56" src="img/gal_n56.jpg" alt="White confirmation cake with a gold cross and dove, red roses and gold leaf" style="object-position:46.6% 51.7%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:50.4% 57.7%"><img data-k="gal_n19" src="img/gal_n19.jpg" alt="Purple buttercream cake with a gold rose design, white roses and gold pearls" style="object-position:50.4% 57.7%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:100% 9.1%"><img data-k="gal_n35" src="img/gal_n35.jpg" alt="Terracotta flower pot 80th birthday cake with pink roses, cookie-crumb soil and a garden trowel" style="object-position:100% 9.1%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:50% 50%"><img data-k="gal_n25" src="img/gal_n25.jpg" alt="White and blue watercolor birthday cake with blue peonies and gold leaf" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.3;--zo:59% 71.5%"><img data-k="gal_n06" src="img/gal_n06.jpg" alt="White buttercream cake with pink, navy and gold brushstrokes and a cluster of pink and blue flowers" style="object-position:59% 71.5%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:51.5% 42.6%"><img data-k="gal_n60" src="img/gal_n60.jpg" alt="Two-tier pastel rainbow and butterfly cake with pink and green flowers" style="object-position:51.5% 42.6%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:49.8% 59.8%"><img data-k="gal_n20" src="img/gal_n20.jpg" alt="Two-tier winter princess sixth birthday cake with a tiara and white snowy trees" style="object-position:49.8% 59.8%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:50.2% 45.1%"><img data-k="gal_n52" src="img/gal_n52.jpg" alt="Two-tier unicorn spa-day sixth birthday cake with a gold horn and cucumber eyes" style="object-position:50.2% 45.1%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:50% 50%"><img data-k="gal_n38" src="img/gal_n38.jpg" alt="Two-tier purple storybook house birthday cake with a gate, flowers and butterflies" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:50% 50%"><img data-k="gal_n61" src="img/gal_n61.jpg" alt="Two-tier pink and blue third birthday cake with donuts, cones and chocolate treats" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:58.2% 56.2%"><img data-k="gal_n58" src="img/gal_n58.jpg" alt="Pink pumpkin-shaped cake with pink roses and a gold stem" style="object-position:58.2% 56.2%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:50.1% 70.4%"><img data-k="gal_n46" src="img/gal_n46.jpg" alt="Black and gold &quot;King&quot; cake with a sculpted golden crown and gold-leaf fault line" style="object-position:50.1% 70.4%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50% 50%"><img data-k="gal_n22" src="img/gal_n22.jpg" alt="Rose gold &quot;Thirty&quot; birthday cake topped with pink and black macarons" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.25;--zo:55.4% 91.8%"><img data-k="gal_n02" src="img/gal_n02.jpg" alt="Brown and pink designer gift box cake with a fondant bow and gold monogram pattern" style="object-position:55.4% 91.8%" loading="lazy"></figure>
+      <figure style="--z:1.25;--zo:50.1% 47.9%"><img data-k="gal_n59" src="img/gal_n59.jpg" alt="White and gold leaf cake topped with a sculpted golden crown" style="object-position:50.1% 47.9%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:50% 50%"><img data-k="gal_n16" src="img/gal_n16.jpg" alt="Black 80s-themed cake covered in neon piping, retro game and boombox designs and a cassette topper" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50% 62.6%"><img data-k="gal_n10" src="img/gal_n10.jpg" alt="Blue superhero fifth birthday cake with a red drip, comic-style toppers and sprinkles" style="object-position:50% 62.6%" loading="lazy"></figure>
+      <figure style="--z:1.25;--zo:48.3% 50.4%"><img data-k="gal_n21" src="img/gal_n21.jpg" alt="Blue and red 13th birthday cake with sneakers, basketballs, gold leaf and candy" style="object-position:48.3% 50.4%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:67.5% 48.6%"><img data-k="gal_n01" src="img/gal_n01.jpg" alt="Tall blue and white striped cake topped with cookies, swirls and colorful sprinkles" style="object-position:67.5% 48.6%" loading="lazy"></figure>
+      <figure style="--z:1.3;--zo:55.8% 57.4%"><img data-k="gal_n11" src="img/gal_n11.jpg" alt="Blue 80s-themed 40th birthday cake with a boombox, cassette and retro toppers" style="object-position:55.8% 57.4%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:50% 50%"><img data-k="gal_n24" src="img/gal_n24.jpg" alt="Two-tier Baby-Q baby shower cake with a grill top, gingham and sunflowers" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:50% 50%"><img data-k="gal_n17" src="img/gal_n17.jpg" alt="White quilted graduation cake with a maroon university monogram, grad cap and diploma" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:100% 99.2%"><img data-k="gal_n12" src="img/gal_n12.jpg" alt="Two-tier safari print cake with giraffe, leopard and zebra patterns and green palm leaves" style="object-position:100% 99.2%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50.5% 43.2%"><img data-k="gal_n42" src="img/gal_n42.jpg" alt="Two-tier games-themed cake with a golden torch, medals, rings and stars" style="object-position:50.5% 43.2%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:48.7% 56.5%"><img data-k="gal_n26" src="img/gal_n26.jpg" alt="Green watermelon character cake with a ladybug and antennae" style="object-position:48.7% 56.5%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:41% 60.4%"><img data-k="gal_n32" src="img/gal_n32.jpg" alt="Two-tier ivory 70th birthday cake with gold leopard print and pampas grass" style="object-position:41% 60.4%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:42.9% 28.9%"><img data-k="gal_n37" src="img/gal_n37.jpg" alt="Cognac-themed cake with a bottle topper and chocolate-dipped strawberries" style="object-position:42.9% 28.9%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:49% 62.1%"><img data-k="gal_n09" src="img/gal_n09.jpg" alt="Pink coffee-cup themed drip cake with strawberries, a straw and an upside-down cup on top" style="object-position:49% 62.1%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50.8% 57.8%"><img data-k="gal_n34" src="img/gal_n34.jpg" alt="Two-tier purple ruffle first communion cake with a bible and rosary" style="object-position:50.8% 57.8%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:50% 50%"><img data-k="gal_n51" src="img/gal_n51.jpg" alt="Leopard print heart cake with a June calendar, crown and matching cupcakes" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:59.1% 25.4%"><img data-k="gal_n33" src="img/gal_n33.jpg" alt="Two-tier neon laser tag 10th birthday cake with targets, warning signs and a light-up topper" style="object-position:59.1% 25.4%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:50.1% 57.4%"><img data-k="gal_n47" src="img/gal_n47.jpg" alt="Two-tier superhero fourth birthday cake with a city skyline and red, blue and gold spheres" style="object-position:50.1% 57.4%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:47.2% 55.7%"><img data-k="gal_n36" src="img/gal_n36.jpg" alt="Halloween striped drip cake with a towering stack of spooky treats, donuts and cake pops" style="object-position:47.2% 55.7%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:54.9% 71.3%"><img data-k="gal_n40" src="img/gal_n40.jpg" alt="Two-tier monster truck fifth birthday cake with chocolate mud, flames and matching cupcakes" style="object-position:54.9% 71.3%" loading="lazy"></figure>
+      <figure style="--z:1.3;--zo:50.5% 31.3%"><img data-k="gal_n41" src="img/gal_n41.jpg" alt="Orange foam-dart themed eighth birthday cake with a target and colorful splats" style="object-position:50.5% 31.3%" loading="lazy"></figure>
+    </div>
+    <button type="button" class="bcar-btn next" aria-label="Next cakes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+    <div class="gstage" aria-label="Cake gallery"></div>
+    <div class="order-cta">
+      <a class="btn solid order-btn" href="#/contact" data-order>Click Here to Submit an Order</a>
+    </div>
+  </div></section>
+  <section class="tipsp"><div class="wrap">
+    <div class="sec-head">
+      <h2>From My <span class="pop">Kitchen</span></h2>
+      <p>What I've learned from 600+ custom cakes, shared to help you on your own baking journey.</p>
+    </div>
+    <div class="tips">
+      <article class="tip" data-reels-card="reels-wish">
+        <div class="tip-img"><img src="img/planner.jpg" alt="Planner, notebooks and laptop on the kitchen counter" loading="lazy"></div>
+        <div class="tip-body">
+          <h3>What I Wish I Knew</h3>
+          <p>The lessons I'd share with myself on day one of starting a baking business, from pricing and planning to saying yes (and no).</p>
+          <a class="tip-link" href="#" data-reels="reels-wish">Watch the reels <span aria-hidden="true">→</span></a></div>
+      </article>
+      <article class="tip" data-reels-card="reels-deco">
+        <div class="tip-img"><img src="img/tip_deco.jpg" alt="Cake decorating tools on a wooden counter: turntable, piping bag, offset spatulas, cake leveler, bench scraper and a cake board with dowels" loading="lazy" style="object-position:50% 65%"></div>
+        <div class="tip-body">
+          <h3>Decorating &amp; Process</h3>
+          <p>My process from start to finish: baking, filling, stacking, piping and getting those smooth buttercream finishes.</p>
+          <a class="tip-link" href="#" data-reels="reels-deco">Watch the reels <span aria-hidden="true">→</span></a></div>
+      </article>
+    </div>
+  </div></section>
+</main>
+
+<main data-page="mom" hidden>
+  <section class="phead"><div class="wrap">
+    <span class="kicker">Mom Life</span>
+    <h1>Beyond the <span class="pop">Batter</span></h1>
+    <p>Life with four kids is full, busy, and beautiful. Homeschool days, family routines, and the real, sweet, messy moments in between.</p>
+    <div class="heart-rule"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.7 4.5c2.1 0 3.8 1.2 5.3 3 1.5-1.8 3.2-3 5.3-3 3.7 0 5.8 3.7 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg></div>
+  </div></section>
+  <section class="tipsp momreels"><div class="wrap">
+    <div class="sec-head">
+      <h2>The Daily <span class="pop">Mix</span></h2>
+      <p>A peek into our homeschool days, family routines and the everyday moments in between.</p>
+    </div>
+    <div class="tips">
+      <article class="tip">
+        <div class="tip-img"><img src="img/fam_table.jpg" alt="Mom working on her laptop and planner at the dining table with a mug of cocoa" loading="lazy" style="object-position:50% 30%"></div>
+        <div class="tip-body"><span class="soon">Reels coming soon</span>
+          <h3>Homeschool Days</h3>
+          <p>How we homeschool four kids: our lessons, schedules, and what a real school day looks like at our house.</p></div>
+      </article>
+      <article class="tip">
+        <div class="tip-img"><img src="img/fam_play.jpg" alt="Sunny living room with a basket of teddy bears and wooden blocks on the floor" loading="lazy" style="object-position:30% 60%"></div>
+        <div class="tip-body"><span class="soon">Reels coming soon</span>
+          <h3>Routines &amp; Real Life</h3>
+          <p>Morning routines, busy evenings, and all the wifing and momming in between.</p></div>
+      </article>
+    </div>
+  </div></section>
+  <section class="worlds momp"><div class="wrap">
+    <div class="sec-head">
+      <h2>Life in <span class="pop">Pictures</span></h2>
+    </div>
+    <div class="mom-row">
+      <img style="object-position:30% 60%" src="img/fam_play.jpg" alt="Sunny living room with a basket of teddy bears and wooden blocks on the floor">
+      <img style="object-position:45% 22%" src="img/fam_bake.jpg" alt="Melinda frosting sprinkle sugar cookies at a white marble kitchen island">
+      <img style="object-position:50% 50%" src="img/fam_entry.jpg" alt="Entryway bench with kids' backpacks and a diaper bag on hooks, family shoes and baby shoes lined up below">
+    </div>
+  </div></section>
+</main>
+
+<main data-page="favorites" hidden>
+  <section class="phead"><div class="wrap">
+    <span class="kicker">Favorites</span>
+    <h1>Shop My <span class="pop">Favorites</span></h1>
+    <p>The tools, pans and everyday things I actually use and love.</p>
+    <div class="heart-rule"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.7 4.5c2.1 0 3.8 1.2 5.3 3 1.5-1.8 3.2-3 5.3-3 3.7 0 5.8 3.7 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg></div>
+  </div></section>
+  <section class="faves favp"><div class="wrap">
+    <div class="shelf">
+      <a class="item" href="https://www.amazon.com/shop/batternlife/list/FE43IYTSRGB7?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img class="thumb" src="img/fav_tools.jpg" alt="Flat lay of baking tools and ingredients: cupcakes, piping bags and tips, whisks, measuring spoons, flour and sprinkles"><b>Baking Essentials</b></a>
+      <a class="item" href="https://www.amazon.com/shop/batternlife/list/3VZD4BW7Q3N2P?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img class="thumb" src="img/fav_baby.jpg" alt="Folded knit baby blankets with booties and a teether"><b>Baby &amp; Kids</b></a>
+      <a class="item" href="https://www.amazon.com/shop/batternlife/list/2LW1DBUF70SBA?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img class="thumb" src="img/fav_home.jpg" alt="Warm, neutral entryway with a wood console and woven baskets"><b>Home &amp; Everyday</b></a>
+      <a class="item" href="https://www.amazon.com/shop/batternlife/list/3VO4QY6M2GB7A?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img class="thumb" src="img/fav_skin.jpg" alt="Skincare bottles, jars and a scrunchie on a wooden tray by a mirror"><b>Skin &amp; Hair Care</b></a>
+    </div>
+    <div class="center-cta"><a class="btn solid" href="https://a.co/d/0biQYnAP" target="_blank" rel="noopener sponsored">Visit My Amazon Shop <span aria-hidden="true">→</span></a></div>
+  </div></section>
+</main>
+
+<main data-page="contact" hidden>
+  <section class="phead"><div class="wrap">
+    <span class="kicker">Contact</span>
+    <h1>Work With <span class="pop">Me</span></h1>
+    <p>Dessert orders, brand collaborations, partnerships, or just to say hi. Fill out the form below and I'll get back to you.</p>
+    <div class="heart-rule"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.7 4.5c2.1 0 3.8 1.2 5.3 3 1.5-1.8 3.2-3 5.3-3 3.7 0 5.8 3.7 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg></div>
+  </div></section>
+  <section class="collab contactp"><div class="wrap"><div class="cbox">
+    <div class="cphoto"><img src="img/collab_desk.jpg" alt="Kitchen counter with stand mixer, cupcake, laptop and a weekly planner listing cake orders, content, family and homeschool"></div>
+    <div class="cbody">
+      <div class="community">
+        <h3><small>Our growing</small>Community</h3>
+        <div class="stats4">
+          <div class="stat"><strong>11.6K+</strong><span>Social community</span></div>
+          <div class="stat"><strong>1M+</strong><span>Total content views</span></div>
+          <div class="stat"><strong>600+</strong><span>Custom cakes created</span></div>
+          <div class="stat"><strong>10+</strong><span>Years of baking</span></div>
+        </div>
+      </div>
+      <div class="tx">
+        <span class="kicker">Like what you see?</span>
+        <h2>Let's work <span class="pop">together!</span></h2>
+        <p>Life isn't always perfectly decorated, but there's always something sweet in the mix.</p>
+      </div>
+    </div>
+  </div>
+  <form class="cform cform-inline" id="contact-form" novalidate>
+    <h3>Send me a <span class="pop">message</span></h3>
+    <p class="cform-sub">Dessert orders, brand collaborations, or just to say hi. I'd love to hear from you.</p>
+    <div class="cgrid">
+      <label class="full">Name or Business<input type="text" name="name" autocomplete="name" required></label>
+      <label>Contact Number<input type="tel" name="phone" autocomplete="tel" inputmode="tel"></label>
+      <label>Email<input type="email" name="email" autocomplete="email" required></label>
+      <label class="full">Reason for Contact
+        <select name="reason" required>
+          <option value="" selected disabled>Choose one…</option>
+          <option value="Dessert Order">Dessert Order</option>
+          <option value="Collaboration">Collaboration</option>
+          <option value="Other">Other</option>
+        </select></label>
+      <label class="full">Message<textarea name="message" rows="5" required></textarea></label>
+    </div>
+    <p class="cform-err" role="alert" hidden>Please fill in your name, a valid email, a reason, and a message.</p>
+    <button class="btn solid" type="submit">Submit <span aria-hidden="true">→</span></button>
+    <div class="cform-done" role="status" hidden><strong>Almost done!</strong> Your email app is opening with your message ready to send to <span class="cf-to"></span>. Just press send.</div>
+  </form>
+  </div></section>
+</main>
+
+
+<footer><div class="wrap">
+  <div class="top">
+    <div class="fbrand"><p class="fname"><img class="flogo" src="img/logo_letters_light.png" alt="Batter N' Life"></p><p class="tag">Something sweet in the mix</p></div>
+    <nav aria-label="Footer"><a href="#/">Home</a><a href="#/story">My Story</a><a href="#/bake">Bake Life</a><a href="#/mom">Mom Life</a><a href="#/favorites">Favorites</a><a href="#/contact">Contact</a></nav>
+  </div>
+  <div class="base"><span>© 2026 Batter N' Life. All rights reserved. As an Amazon Associate, I earn from qualifying purchases.</span><span>Contact · Privacy Policy · Terms</span></div>
+</div></footer>
+
+<script>
+(function(){var h=document.querySelector('header.bar');function set(){if(h)document.documentElement.style.setProperty('--navh',h.offsetHeight+'px')}set();window.addEventListener('resize',set);window.addEventListener('load',set)})();
+</script>
+
+
+
+
+
+
+<dialog class="rdialog" id="reels-wish" aria-labelledby="rw-title">
+  <div class="rbox">
+    <button class="cclose" type="button" aria-label="Close">×</button>
+    <span class="kicker">Tips &amp; Advice</span>
+    <h3 id="rw-title">What I Wish <span class="pop">I Knew</span></h3>
+    <p class="rsub">The lessons I'd share with myself on day one of starting a baking business.</p>
+    <div class="reels">
+      <a class="reel" href="https://www.instagram.com/p/DdtxjcdO9y-/" target="_blank" rel="noopener">
+        <div class="reel-thumb"><span class="reel-n">Reel 1</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
+        <div class="reel-body"><h4>What I Wish I Knew, Part 1</h4><span>Watch on Instagram ↗</span></div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/p/Dez83EjBDQp/" target="_blank" rel="noopener">
+        <div class="reel-thumb"><span class="reel-n">Reel 2</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
+        <div class="reel-body"><h4>What I Wish I Knew, Part 2</h4><span>Watch on Instagram ↗</span></div>
+      </a>
+    </div>
+  </div>
+</dialog>
+<dialog class="rdialog" id="reels-deco" aria-labelledby="rd-title">
+  <div class="rbox">
+    <button class="cclose" type="button" aria-label="Close">×</button>
+    <span class="kicker">Tips &amp; Advice</span>
+    <h3 id="rd-title">Decorating &amp; <span class="pop">Process</span></h3>
+    <p class="rsub">My process from start to finish: baking, filling, stacking, piping and getting those smooth buttercream finishes.</p>
+    <div class="reels">
+      <a class="reel" href="https://www.instagram.com/reel/DeZ3zgNhq5Y/" target="_blank" rel="noopener">
+        <div class="reel-thumb"><span class="reel-n">Reel 1</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
+        <div class="reel-body"><h4>Decorating Video 1</h4><span>Watch on Instagram ↗</span></div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/Dd2w3j9hESq/" target="_blank" rel="noopener">
+        <div class="reel-thumb"><span class="reel-n">Reel 2</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
+        <div class="reel-body"><h4>Decorating Video 2</h4><span>Watch on Instagram ↗</span></div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/Deid4emM6J3/" target="_blank" rel="noopener">
+        <div class="reel-thumb"><span class="reel-n">Reel 3</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
+        <div class="reel-body"><h4>Decorating Video 3</h4><span>Watch on Instagram ↗</span></div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/DeITxUsBn1i/" target="_blank" rel="noopener">
+        <div class="reel-thumb"><span class="reel-n">Reel 4</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
+        <div class="reel-body"><h4>Decorating Video 4</h4><span>Watch on Instagram ↗</span></div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/Dd-QfneMdRM/" target="_blank" rel="noopener">
+        <div class="reel-thumb"><span class="reel-n">Reel 5</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
+        <div class="reel-body"><h4>Decorating Video 5</h4><span>Watch on Instagram ↗</span></div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/DdpNaSGhYLj/" target="_blank" rel="noopener">
+        <div class="reel-thumb"><span class="reel-n">Reel 6</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
+        <div class="reel-body"><h4>Decorating Video 6</h4><span>Watch on Instagram ↗</span></div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/DaMQ_M8MFUe/" target="_blank" rel="noopener">
+        <div class="reel-thumb"><span class="reel-n">Reel 7</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
+        <div class="reel-body"><h4>Decorating Video 7</h4><span>Watch on Instagram ↗</span></div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/DT3JpWMjtGW/" target="_blank" rel="noopener">
+        <div class="reel-thumb"><span class="reel-n">Reel 8</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
+        <div class="reel-body"><h4>Decorating Video 8</h4><span>Watch on Instagram ↗</span></div>
+      </a>
+    </div>
+  </div>
+</dialog>
+<script>
+(function(){
+  var h=document.querySelector('header.bar'),b=h&&h.querySelector('.menu-btn');
+  var open='<path d="M4 7h16M4 12h16M4 17h16"/>',close='<path d="M6 6l12 12M18 6L6 18"/>';
+  function set(o){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');b.querySelector('svg').innerHTML=o?close:open}
+  if(b){b.addEventListener('click',function(){set(!h.classList.contains('open'))});h.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){set(false)})})}
+  document.querySelectorAll('[data-reels]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var r=document.getElementById(a.dataset.reels);if(r)r.showModal()})});
+  document.querySelectorAll('[data-reels-card]').forEach(function(c){c.style.cursor='pointer';c.addEventListener('click',function(e){if(e.target.closest('a'))return;var r=document.getElementById(c.dataset.reelsCard);if(r)r.showModal()})});
+  document.querySelectorAll('.rdialog').forEach(function(r){r.querySelector('.cclose').addEventListener('click',function(){r.close()});r.addEventListener('click',function(e){if(e.target===r)r.close()})});
+  var f=document.getElementById('contact-form');
+  if(f){f.addEventListener('submit',function(e){e.preventDefault();var err=f.querySelector('.cform-err'),done=f.querySelector('.cform-done'),el=f.elements;
+    var ok=el['name'].value.trim()&&el['email'].value.trim()&&el['email'].checkValidity()&&el['reason'].value&&el['message'].value.trim();
+    err.hidden=!!ok;done.hidden=true;if(!ok)return;
+    var to=el['reason'].value==='Dessert Order'?'batternbaked@gmail.com':'batternlife@gmail.com';
+    var subj=el['reason'].value+' from '+el['name'].value.trim();
+    var body='Name or Business: '+el['name'].value.trim()+'\nContact Number: '+(el['phone'].value.trim()||'-')+'\nEmail: '+el['email'].value.trim()+'\nReason: '+el['reason'].value+'\n\n'+el['message'].value.trim();
+    f.querySelector('.cf-to').textContent=to;done.hidden=false;
+    window.location.href='mailto:'+to+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+  })}
+})();
+</script>
+<script>
+(function(){
+  var pages=document.querySelectorAll('main[data-page]'),tabs=document.querySelectorAll('header.bar nav a');
+  function route(){
+    var h=location.hash,name=(h.indexOf('#/')===0?h.slice(2):'')||'home';
+    if(!document.querySelector('main[data-page="'+name+'"]'))name='home';
+    pages.forEach(function(m){m.hidden=m.getAttribute('data-page')!==name});document.documentElement.setAttribute('data-route',name);
+    tabs.forEach(function(a){var t=a.getAttribute('href').slice(2)||'home';if(t===name)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',route);route();
+  document.querySelector('header.bar .logo').setAttribute('href','#/');
+})();
+</script>
+
+
+<dialog class="lbox" aria-label="Cake photo">
+  <button type="button" class="lbox-x" aria-label="Close">&times;</button>
+  <button type="button" class="lbox-btn lbox-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button type="button" class="lbox-btn lbox-next" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+</dialog>
+<script>
+(function(){var c=document.querySelector('.bcar');if(!c)return;var g=c.querySelector('.bgrid'),pv=c.querySelector('.prev'),nx=c.querySelector('.next');
+function upd(){pv.disabled=false;nx.disabled=false}
+function step(d){var atEnd=g.scrollLeft+g.clientWidth>=g.scrollWidth-4,atStart=g.scrollLeft<4;if(d>0&&atEnd){g.scrollTo({left:0,behavior:'smooth'})}else if(d<0&&atStart){g.scrollTo({left:g.scrollWidth,behavior:'smooth'})}else{g.scrollBy({left:d*(g.clientWidth+12),behavior:'smooth'})}}
+pv.addEventListener('click',function(){step(-1)});nx.addEventListener('click',function(){step(1)});
+g.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);setTimeout(upd,50);
+new MutationObserver(function(){setTimeout(upd,60)}).observe(document.documentElement,{attributes:true,attributeFilter:['data-route']});
+var imgs=[].slice.call(g.querySelectorAll('img')),d=document.querySelector('.lbox'),li=d.querySelector('img'),cap=d.querySelector('figcaption'),k=0;
+function show(i){imgs=[].slice.call(g.querySelectorAll('img'));k=(i+imgs.length)%imgs.length;li.src=imgs[k].dataset.full||imgs[k].src;li.alt=imgs[k].alt;cap.textContent=(k+1)+' / '+imgs.length}
+imgs.forEach(function(im,i){im.parentNode.tabIndex=0;im.parentNode.setAttribute('role','button');im.parentNode.setAttribute('aria-label','Open larger: '+im.alt);
+function op(){if(document.documentElement.classList.contains('arr'))return;show([].slice.call(g.querySelectorAll('img')).indexOf(im));d.showModal()}im.parentNode.addEventListener('click',op);im.parentNode.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();op()}})});
+d.querySelector('.lbox-prev').addEventListener('click',function(){show(k-1)});d.querySelector('.lbox-next').addEventListener('click',function(){show(k+1)});
+d.querySelector('.lbox-x').addEventListener('click',function(){d.close()});
+d.addEventListener('click',function(e){if(e.target===d)d.close()});
+d.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')show(k-1);if(e.key==='ArrowRight')show(k+1)});
+var x0=null;d.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});d.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)show(k+(dx<0?1:-1));x0=null});
+})();
+</script>
+<script>
+document.querySelectorAll('[data-order]').forEach(function(a){a.addEventListener('click',function(){setTimeout(function(){var f=document.getElementById('contact-form');if(!f)return;var sel=f.querySelector('select[name=reason]');if(sel){sel.value='Dessert Order';sel.dispatchEvent(new Event('change',{bubbles:true}))}var nav=document.querySelector('header.bar');window.scrollTo({top:f.getBoundingClientRect().top+scrollY-(nav?nav.offsetHeight:0)-16,behavior:'smooth'})},120)})});
+</script>
+<div class="adj-bar" hidden role="group" aria-label="Adjust gallery photos"><button type="button" class="adj-toggle">Adjust Photos</button><span class="adj-hint">Drag a photo to move it · + / − to zoom</span><button type="button" class="adj-copy">Copy My Settings</button><button type="button" class="arr-toggle">Arrange Order</button><span class="arr-hint">Drag photos into the order you want</span><button type="button" class="arr-copy">Copy My Order</button></div>
+<div class="adj-out" hidden><strong>Your photo settings</strong>: paste these to Claude to make them permanent.<textarea readonly></textarea><button type="button" class="adj-close">Close</button></div>
+<script>
+(function(){var R=document.documentElement,g=document.querySelector('.bcar .bgrid');if(!g)return;var KEY='bnl-adj-v2',figs=[].slice.call(g.querySelectorAll('figure'));
+function pp(v,d){var m=(v||'').match(/(-?[\d.]+)%\s+(-?[\d.]+)%/);return m?[+m[1],+m[2]]:d}
+var st={};figs.forEach(function(f){var im=f.querySelector('img'),k=im.dataset.k;st[k]={op:pp(im.style.objectPosition,[50,50]),zo:pp(f.style.getPropertyValue('--zo'),[50,50]),z:parseFloat(f.style.getPropertyValue('--z'))||1}});
+try{var sv=JSON.parse(localStorage.getItem(KEY)||'null');if(sv)for(var k in sv)if(st[k])st[k]=sv[k]}catch(e){}
+function cl(v){return Math.max(0,Math.min(100,Math.round(v*10)/10))}
+function apply(f){var im=f.querySelector('img'),s=st[im.dataset.k];im.style.objectPosition=s.op[0]+'% '+s.op[1]+'%';f.style.setProperty('--zo',s.zo[0]+'% '+s.zo[1]+'%');f.style.setProperty('--z',s.z)}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+figs.forEach(function(f){apply(f);var c=document.createElement('div');c.className='adj-ctl';c.innerHTML='<button type="button" data-a="-" aria-label="Zoom out">−</button><button type="button" data-a="+" aria-label="Zoom in">+</button><button type="button" class="rs" data-a="r">Reset</button>';f.appendChild(c);
+ c.addEventListener('pointerdown',function(e){e.stopPropagation()});
+ c.addEventListener('click',function(e){e.stopPropagation();var b=e.target.closest('button');if(!b)return;var s=st[f.querySelector('img').dataset.k];if(b.dataset.a==='+')s.z=Math.min(3,Math.round((s.z+.05)*100)/100);if(b.dataset.a==='-')s.z=Math.max(1,Math.round((s.z-.05)*100)/100);if(b.dataset.a==='r'){s.op=[50,50];s.zo=[50,50];s.z=1}apply(f);save()});
+ var sx,sy,s0;f.addEventListener('pointerdown',function(e){if(!R.classList.contains('adj'))return;e.preventDefault();var s=st[f.querySelector('img').dataset.k];sx=e.clientX;sy=e.clientY;s0=JSON.parse(JSON.stringify(s));f.setPointerCapture(e.pointerId);f.classList.add('drag')});
+ f.addEventListener('pointermove',function(e){if(!f.classList.contains('drag'))return;var s=st[f.querySelector('img').dataset.k],k=150/s.z,dx=-(e.clientX-sx)/f.clientWidth*k,dy=-(e.clientY-sy)/f.clientHeight*k;s.op=[cl(s0.op[0]+dx),cl(s0.op[1]+dy)];s.zo=[cl(s0.zo[0]+dx),cl(s0.zo[1]+dy)];apply(f)});
+ function end(){if(f.classList.contains('drag')){f.classList.remove('drag');save()}}f.addEventListener('pointerup',end);f.addEventListener('pointercancel',end);
+ f.addEventListener('click',function(e){if(R.classList.contains('adj')&&!e.target.closest('.adj-ctl')){e.stopImmediatePropagation();e.preventDefault()}},true);
+ f.addEventListener('wheel',function(e){if(!R.classList.contains('adj'))return;e.preventDefault();var s=st[f.querySelector('img').dataset.k];s.z=Math.max(1,Math.min(3,Math.round((s.z+(e.deltaY<0?.03:-.03))*100)/100));apply(f);save()},{passive:false});
+});
+var tg=document.querySelector('.adj-toggle'),out=document.querySelector('.adj-out'),ta=out.querySelector('textarea');
+tg.addEventListener('click',function(){var on=R.classList.toggle('adj');tg.classList.toggle('on',on);tg.textContent=on?'Done Adjusting':'Adjust Photos';if(!on)out.hidden=true});
+document.querySelector('.adj-copy').addEventListener('click',function(){var t='Photo settings:\n'+figs.map(function(f){var im=f.querySelector('img'),s=st[im.dataset.k];return im.dataset.k+' | pos '+s.op[0]+'% '+s.op[1]+'% | origin '+s.zo[0]+'% '+s.zo[1]+'% | zoom '+s.z}).join('\n');ta.value=t;out.hidden=false;ta.focus();ta.select();try{navigator.clipboard&&navigator.clipboard.writeText(t)}catch(e){}});
+out.querySelector('.adj-close').addEventListener('click',function(){out.hidden=true});
+})();
+</script>
+<script>
+document.querySelectorAll('a.logo,a[href="#/"]').forEach(function(a){a.addEventListener('click',function(e){var h=location.hash;if(h===''||h==='#'||h==='#/'||h==='#/home'){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})}else{e.preventDefault();location.hash='#/'}})});
+</script>
+<script>
+(function(){var R=document.documentElement,g=document.querySelector('.bcar .bgrid');if(!g)return;var KEY='bnl-order-v2';
+function figs(){return [].slice.call(g.querySelectorAll('figure'))}
+try{var o=JSON.parse(localStorage.getItem(KEY)||'null');if(o&&o.length){var m={};figs().forEach(function(f){m[f.querySelector('img').dataset.k]=f});o.forEach(function(k){if(m[k]){g.appendChild(m[k]);delete m[k]}});for(var k in m)g.appendChild(m[k])}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(figs().map(function(f){return f.querySelector('img').dataset.k})))}catch(e){}}
+var tg=document.querySelector('.arr-toggle'),out=document.querySelector('.adj-out'),ta=out.querySelector('textarea');
+tg.addEventListener('click',function(){var on=R.classList.toggle('arr');tg.classList.toggle('on',on);tg.textContent=on?'Done Arranging':'Arrange Order';
+ if(on){g.scrollLeft=0;var hb=document.querySelector('header.bar');window.scrollTo({top:g.getBoundingClientRect().top+scrollY-(hb?hb.offsetHeight:0)-20,behavior:'smooth'})}else{out.hidden=true}});
+var drag=null,ghost=null,ox=0,oy=0;
+g.addEventListener('pointerdown',function(e){if(!R.classList.contains('arr'))return;var f=e.target.closest('figure');if(!f)return;e.preventDefault();var r=f.getBoundingClientRect();ox=e.clientX-r.left;oy=e.clientY-r.top;drag=f;
+ ghost=f.cloneNode(true);ghost.className='arr-ghost';ghost.style.cssText='position:fixed;z-index:200;pointer-events:none;margin:0;width:'+r.width+'px;height:'+r.height+'px;left:'+r.left+'px;top:'+r.top+'px;box-shadow:0 18px 40px rgba(43,35,30,.35);transform:rotate(2deg);opacity:.95;overflow:hidden';document.body.appendChild(ghost);f.classList.add('sortable-ghost');g.setPointerCapture(e.pointerId)});
+g.addEventListener('pointermove',function(e){if(!drag)return;if(e.clientY<130)window.scrollBy(0,-14);else if(e.clientY>innerHeight-110)window.scrollBy(0,14);ghost.style.left=(e.clientX-ox)+'px';ghost.style.top=(e.clientY-oy)+'px';
+ var el=document.elementFromPoint(e.clientX,e.clientY),t=el&&el.closest&&el.closest('.bcar .bgrid figure');if(!t||t===drag)return;var r=t.getBoundingClientRect(),after=(e.clientX-r.left)>r.width/2;g.insertBefore(drag,after?t.nextSibling:t)});
+function end(){if(!drag)return;drag.classList.remove('sortable-ghost');drag=null;if(ghost){ghost.remove();ghost=null}save()}
+g.addEventListener('pointerup',end);g.addEventListener('pointercancel',end);
+document.querySelector('.arr-copy').addEventListener('click',function(){var t='Cake gallery order:\n'+figs().map(function(f,i){var im=f.querySelector('img');return (i+1)+'. '+im.dataset.k+' ('+im.alt.split(' with ')[0]+')'}).join('\n');ta.value=t;out.querySelector('strong').textContent='Your gallery order';out.hidden=false;ta.focus();ta.select();try{navigator.clipboard&&navigator.clipboard.writeText(t)}catch(e){}});
+})();
+</script>
+<div class="gsw" hidden role="group" aria-label="Gallery style">Gallery
+  <button type="button" data-g="loop">1 Carousel</button><button type="button" data-g="spot">2 Spotlight</button><button type="button" data-g="marq">3 Gliding Strip</button><button type="button" data-g="feat">4 Feature + Thumbs</button><button type="button" data-g="grid">5 Grid + See More</button><button type="button" data-g="c_mosaic">6 Collage: Mosaic</button><button type="button" data-g="c_center">7 Collage: Center Feature</button><button type="button" data-g="c_stagger">8 Collage: Staggered</button><button type="button" data-g="c_scrap">9 Collage: Scrapbook</button>
+</div>
+<script>
+(function(){var R=document.documentElement,src=document.querySelector('.bcar .bgrid'),st=document.querySelector('.gstage');if(!src||!st)return;
+var L='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',RR='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',mode='loop',busy=false;
+function figs(){return [].slice.call(src.querySelectorAll('figure'))}
+function clone(f,i){var c=f.cloneNode(true);c.removeAttribute('tabindex');c.removeAttribute('role');c.removeAttribute('aria-label');var x=c.querySelector('.adj-ctl');if(x)x.remove();c.classList.remove('sortable-ghost');c.dataset.i=i;var im=c.querySelector('img');im.loading='lazy';return c}
+function open(i){var f=figs()[i];if(f)f.click()}
+function btns(box,p,n){var a=document.createElement('button');a.type='button';a.className='g-btn prev';a.setAttribute('aria-label','Previous');a.innerHTML=L;var b=document.createElement('button');b.type='button';b.className='g-btn next';b.setAttribute('aria-label','Next');b.innerHTML=RR;a.onclick=p;b.onclick=n;box.appendChild(a);box.appendChild(b)}
+function swipe(el,p,n){var x0=null;el.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});el.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>40)(d<0?n:p)();x0=null})}
+function vis(m){var w=innerWidth;if(m==='spot')return w>960?5:3;return w>960?3:(w>600?2:1)}
+function rotator(spot){var fs=figs(),v=vis(spot?'spot':'loop'),step=spot?1:v,box=document.createElement('div');box.className=spot?'g-spot':'g-loop';
+ var view=document.createElement('div');view.className='g-view';var tr=document.createElement('div');tr.className='g-track';view.appendChild(tr);box.appendChild(view);
+ fs.forEach(function(f,i){var c=clone(f,i);c.onclick=function(){open(+c.dataset.i)};tr.appendChild(c)});
+ if(spot){for(var k=0;k<Math.floor(v/2);k++)tr.insertBefore(tr.lastElementChild,tr.firstElementChild)}
+ var cnt=document.createElement('div');cnt.className='g-count';box.appendChild(cnt);
+ function size(){var gap=12,w=(view.clientWidth-gap*(v-1))/v;box.style.setProperty('--w',w+'px');return w+gap}
+ function mark(){var ch=tr.children,ci=spot?Math.floor(v/2):0;[].forEach.call(ch,function(c){c.classList.remove('c')});if(spot)ch[ci].classList.add('c');var first=+ch[ci].dataset.i;cnt.textContent=spot?(first+1)+' / '+fs.length:(first+1)+'–'+Math.min(first+v,fs.length+first)%(fs.length+1||1)+' of '+fs.length;if(!spot){var last=(first+v-1)%fs.length;cnt.textContent=(v===1?(first+1):(first+1)+'–'+(last+1))+' of '+fs.length}}
+ function next(){if(busy)return;busy=true;var d=size()*step;if(spot){tr.children[Math.floor(v/2)].classList.remove('c');tr.children[Math.floor(v/2)+1].classList.add('c')}
+  tr.style.transition='transform .55s ease';tr.style.transform='translateX(-'+d+'px)';
+  setTimeout(function(){tr.style.transition='none';for(var k=0;k<step;k++)tr.appendChild(tr.firstElementChild);tr.style.transform='translateX(0)';void tr.offsetWidth;mark();busy=false},570)}
+ function prev(){if(busy)return;busy=true;var d=size()*step;for(var k=0;k<step;k++)tr.insertBefore(tr.lastElementChild,tr.firstElementChild);tr.style.transition='none';tr.style.transform='translateX(-'+d+'px)';void tr.offsetWidth;
+  if(spot){[].forEach.call(tr.children,function(c){c.classList.remove('c')});tr.children[Math.floor(v/2)].classList.add('c')}
+  tr.style.transition='transform .55s ease';tr.style.transform='translateX(0)';setTimeout(function(){mark();busy=false},570)}
+ btns(box,prev,next);swipe(view,prev,next);st.appendChild(box);size();mark()}
+function marq(){var fs=figs(),box=document.createElement('div');box.className='g-marq';var half=Math.ceil(fs.length/2);
+ [[0,half],[half,fs.length]].forEach(function(r,ri){var row=document.createElement('div');row.className='g-view'+(ri?' g-row2':'');var tr=document.createElement('div');tr.className='g-track';
+  for(var rep=0;rep<2;rep++)fs.slice(r[0],r[1]).forEach(function(f,j){var c=clone(f,r[0]+j);c.onclick=function(){open(+c.dataset.i)};if(rep)c.setAttribute('aria-hidden','true');tr.appendChild(c)});
+  tr.style.setProperty('--dur',((r[1]-r[0])*5)+'s');row.appendChild(tr);box.appendChild(row)});
+ box.addEventListener('touchstart',function(){box.classList.add('hold')},{passive:true});box.addEventListener('touchend',function(){setTimeout(function(){box.classList.remove('hold')},1500)});
+ st.appendChild(box)}
+function feat(){var fs=figs(),k=0,box=document.createElement('div');box.className='g-feat';var main=document.createElement('div');main.className='g-main';var th=document.createElement('div');th.className='g-thumbs';
+ var mf=document.createElement('figure'),mi=document.createElement('img');mf.appendChild(mi);main.appendChild(mf);mf.onclick=function(){open(k)};
+ fs.forEach(function(f,i){var c=clone(f,i);c.onclick=function(){show(i)};th.appendChild(c)});
+ function show(i){k=(i+fs.length)%fs.length;var im=fs[k].querySelector('img');mi.src=im.dataset.full||im.src;mi.alt=im.alt;[].forEach.call(th.children,function(c,j){c.classList.toggle('on',j===k)});var t=th.children[k];th.scrollLeft=t.offsetLeft-th.clientWidth/2+t.clientWidth/2;cnt.textContent=(k+1)+' / '+fs.length}
+ btns(main,function(){show(k-1)},function(){show(k+1)});swipe(main,function(){show(k-1)},function(){show(k+1)});
+ var cnt=document.createElement('div');cnt.className='g-count';box.appendChild(main);box.appendChild(th);box.appendChild(cnt);st.appendChild(box);show(0)}
+function grid(){var fs=figs(),per=innerWidth>760?12:8,shown=per,box=document.createElement('div');box.className='g-grid';var cells=document.createElement('div');cells.className='g-cells';
+ fs.forEach(function(f,i){var c=clone(f,i);c.onclick=function(){open(i)};cells.appendChild(c)});
+ var mo=document.createElement('div');mo.className='g-more';var b=document.createElement('button');b.type='button';b.className='btn solid';mo.appendChild(b);
+ function upd(){[].forEach.call(cells.children,function(c,i){c.classList.toggle('hide',i>=shown)});if(shown>=fs.length){b.textContent='Show Less';}else b.textContent='See More Cakes ('+(fs.length-shown)+' more)'}
+ b.onclick=function(){if(shown>=fs.length){shown=per;upd();box.scrollIntoView({behavior:'smooth',block:'start'})}else{shown=Math.min(fs.length,shown+per);upd()}};
+ box.appendChild(cells);box.appendChild(mo);st.appendChild(box);upd()}
+function collage(kind){var fs=figs(),n=(kind==='stagger')?6:5,pages=Math.ceil(fs.length/n),p=0,box=document.createElement('div');box.className='g-col g-col-'+kind;
+ var view=document.createElement('div');view.className='g-cview';var tr=document.createElement('div');tr.className='g-ctrack';view.appendChild(tr);box.appendChild(view);var cnt=document.createElement('div');cnt.className='g-count',moving=false;
+ function board(pg){pg=(pg%pages+pages)%pages;var b=document.createElement('div');b.className='g-board';for(var j=0;j<n;j++){var i=pg*n+j;if(i>=fs.length)i=i%fs.length;var c=clone(fs[i],i);c.classList.add('t'+(j+1));(function(ii){c.onclick=function(){if(!moving)open(ii)}})(i);b.appendChild(c)}return b}
+ function build(){tr.innerHTML='';tr.appendChild(board(p-1));tr.appendChild(board(p));tr.appendChild(board(p+1));tr.style.transition='none';tr.style.transform='translateX(-100%)';void tr.offsetWidth;
+  cnt.textContent='Set '+(p+1)+' of '+pages+'  ·  cakes '+(p*n+1)+'–'+Math.min(p*n+n,fs.length)+' of '+fs.length}
+ function go(d){if(moving)return;moving=true;tr.style.transition='transform .6s ease';tr.style.transform='translateX('+(d>0?'-200%':'0%')+')';
+  setTimeout(function(){p=((p+d)%pages+pages)%pages;build();moving=false},620)}
+ btns(box,function(){go(-1)},function(){go(1)});swipe(view,function(){go(-1)},function(){go(1)});box.appendChild(cnt);st.appendChild(box);build()}
+function render(){st.innerHTML='';busy=false;({loop:function(){rotator(false)},spot:function(){rotator(true)},marq:marq,feat:feat,grid:grid,c_mosaic:function(){collage('mosaic')},c_center:function(){collage('center')},c_stagger:function(){collage('stagger')},c_scrap:function(){collage('scrap')}})[mode]()}
+var bs=document.querySelectorAll('.gsw button');function pick(m){mode=m;bs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.g===m)});render()}
+bs.forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.g)})});
+var was='';new MutationObserver(function(){var now=(R.classList.contains('arr')?'a':'')+(R.classList.contains('adj')?'d':'');if(was&&!now)render();was=now}).observe(R,{attributes:true,attributeFilter:['class']});
+var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(render,250)});
+new MutationObserver(function(){if(R.dataset.route==='bake')setTimeout(render,30)}).observe(R,{attributes:true,attributeFilter:['data-route']});
+setTimeout(function(){pick('c_center')},60);
+})();
+</script>
+</body>
+</html>
