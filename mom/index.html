@@ -762,6 +762,53 @@ main > section.menup{min-height:0!important;padding-block:clamp(48px,6vw,84px)!i
 .oform label i{font-style:normal;text-transform:none;letter-spacing:0;color:var(--ink-soft);font-weight:400}
 .cform-note{font-family:var(--text);font-size:.95rem;color:var(--ink-soft);margin:14px 0 0}
 .oform input[type=date]{min-height:48px}
+
+/* Orders: steps first */
+.menup .order-steps{margin:0 0 clamp(48px,6vw,80px)}
+/* ===== Menu display styles (switcher) ===== */
+.menu-tabs{display:none}
+/* 2 Tabs */
+html[data-mstyle="tabs"] .menu-tabs{display:flex;justify-content:center;gap:0;margin-top:clamp(22px,3vw,34px);border-bottom:1px solid var(--gold);flex-wrap:wrap}
+.menu-tabs button{font:600 .82rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;background:none;border:0;border-bottom:3px solid transparent;padding:14px 22px;color:var(--ink-soft);cursor:pointer;margin-bottom:-1px}
+.menu-tabs button[aria-selected="true"]{color:var(--mahogany);border-bottom-color:var(--mahogany)}
+html[data-mstyle="tabs"] .menu-grid{display:block;max-width:900px;margin:24px auto 0}
+html[data-mstyle="tabs"] .menu-card{display:none}
+html[data-mstyle="tabs"] .menu-card.on{display:block}
+html[data-mstyle="tabs"] .menu-card h3{display:none}
+html[data-mstyle="tabs"] .menu-card ul{columns:3 200px;column-gap:28px}
+html[data-mstyle="tabs"] .menu-card li{break-inside:avoid}
+/* 3 Chips */
+html[data-mstyle="chips"] .menu-grid{display:block;max-width:1000px;margin-inline:auto}
+html[data-mstyle="chips"] .menu-card{background:none;border:0;box-shadow:none;padding:0;margin-top:clamp(26px,3vw,40px);text-align:center}
+html[data-mstyle="chips"] .menu-card h3{border:0;padding:0;margin-bottom:16px}
+html[data-mstyle="chips"] .menu-card ul{columns:auto!important;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+html[data-mstyle="chips"] .menu-card li{border:1px solid rgba(153,102,97,.45);background:var(--card);border-radius:999px;padding:9px 18px;font-size:.95rem;box-shadow:0 4px 10px rgba(43,35,30,.06)}
+html[data-mstyle="chips"] .menu-card li::before{display:none}
+html[data-mstyle="chips"] .mc-bc li{background:var(--blush)}
+html[data-mstyle="chips"] .mc-fill li{background:#F4E8CC;border-color:var(--gold)}
+/* 4 Classic printed menu */
+html[data-mstyle="classic"] .menu-grid{display:block;max-width:880px;margin:clamp(24px,3vw,40px) auto 0;background:var(--card);border:1px solid var(--gold);outline:1px solid var(--gold);outline-offset:-10px;padding:clamp(34px,5vw,64px) clamp(22px,5vw,64px);box-shadow:0 16px 36px rgba(43,35,30,.1)}
+html[data-mstyle="classic"] .menu-card{background:none;border:0;box-shadow:none;padding:0;text-align:center}
+html[data-mstyle="classic"] .menu-card+.menu-card{margin-top:34px;padding-top:30px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23996661' d='M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.7 4.5c2.1 0 3.8 1.2 5.3 3 1.5-1.8 3.2-3 5.3-3 3.7 0 5.8 3.7 4.3 7.2C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") top center/14px no-repeat}
+html[data-mstyle="classic"] .menu-card h3{border:0;padding:0;margin-bottom:14px;font-family:var(--serif);letter-spacing:.06em}
+html[data-mstyle="classic"] .menu-card ul{columns:auto!important;display:flex;flex-wrap:wrap;justify-content:center;font-size:1.02rem;line-height:1.9}
+html[data-mstyle="classic"] .menu-card li{border:0;padding:0 4px}
+html[data-mstyle="classic"] .menu-card li::before{display:none}
+html[data-mstyle="classic"] .menu-card li:not(:last-child)::after{content:"·";color:var(--gold);font-weight:700;margin-left:10px}
+/* 5 Accordion */
+html[data-mstyle="accordion"] .menu-grid{display:block;max-width:860px;margin:clamp(24px,3vw,40px) auto 0}
+html[data-mstyle="accordion"] .menu-card{padding:0;margin-bottom:12px}
+html[data-mstyle="accordion"] .menu-card h3{margin:0;border:0;padding:20px 56px 20px 24px;text-align:left;cursor:pointer;position:relative}
+html[data-mstyle="accordion"] .menu-card h3::after{content:"+";position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:1.6rem;color:var(--mahogany);font-weight:400}
+html[data-mstyle="accordion"] .menu-card.on h3::after{content:"–"}
+html[data-mstyle="accordion"] .menu-card ul{display:none;padding:0 24px 22px;columns:3 190px;column-gap:24px}
+html[data-mstyle="accordion"] .menu-card.on ul{display:block}
+html[data-mstyle="accordion"] .menu-card li{break-inside:avoid}
+.msw{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 24px);z-index:61;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;background:var(--ink);color:#FBF2EC;padding:8px 10px 8px 16px;font-family:var(--sans);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 10px 26px rgba(43,35,30,.25)}
+.msw button{font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit;background:transparent;border:1px solid rgba(251,242,236,.45);padding:7px 11px;cursor:pointer}
+.msw button[aria-pressed="true"]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+html:not([data-route="orders"]) .msw{display:none}
+.msw{display:none!important} /* msw-hide: style switcher is preview-only */
 </style>
 </head>
 <body>
@@ -1047,12 +1094,6 @@ main > section.menup{min-height:0!important;padding-block:clamp(48px,6vw,84px)!i
     <div class="heart-rule"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.7 4.5c2.1 0 3.8 1.2 5.3 3 1.5-1.8 3.2-3 5.3-3 3.7 0 5.8 3.7 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg></div>
   </div></section>
   <section class="menup"><div class="wrap">
-    <div class="sec-head"><h2>The <span class="pop">Menu</span></h2></div>
-    <div class="menu-grid">
-      <article class="menu-card mc-cake"><h3>Cake <span class="pop">Flavors</span></h3><ul><li>Classic Vanilla</li><li>Vanilla Bean</li><li>Brown Butter Vanilla</li><li>Decadent Chocolate</li><li>Classic Marble</li><li>Funfetti</li><li>Red Velvet</li><li>Banana</li><li>Pumpkin</li><li>Old-Fashioned Spice</li><li>Carrot</li><li>Lemon</li><li>Coconut</li><li>Party-Fetti <em>(Funfetti Oreo)</em></li><li>Double Stuf Oreo <em>(Cookies N’ Creme)</em></li><li>Strawberry</li><li>Strawberry Lemon</li><li>Pineapple</li><li>Vanilla Latte</li><li>Chocolate Mocha</li><li>Wedding Cake <em>(White Vanilla Almond)</em></li><li>Bizcocho Mojadito <em>(Puerto Rican Almond Cake)</em></li><li>Bizcocho Dominicano <em>(Dominican Cake)</em></li></ul></article>
-      <article class="menu-card mc-bc"><h3>Buttercream <span class="pop">Flavors</span></h3><ul><li>Classic Vanilla</li><li>Vanilla Bean</li><li>Triple Chocolate</li><li>Funfetti</li><li>Cream Cheese</li><li>Coconut</li><li>Peanut Butter Cup</li><li>Strawberry</li><li>Chocolate Cream Cheese</li><li>Raspberry</li><li>Lemon</li><li>Nutella</li><li>Dulce de Leche</li><li>S’mores</li><li>Snickerdoodle</li><li>Coffee</li><li>Salted Caramel</li><li>Brown Butter</li><li>White Chocolate</li></ul></article>
-      <article class="menu-card mc-fill"><h3>Specialty <span class="pop">Fillings</span></h3><ul><li>Chocolate Bars &amp; Candies</li><li>Fresh Seasonal Fruit</li><li>Fruit Preserves</li><li>Velvety Hazelnut Cream</li><li>Creamy Almond Butter</li><li>Salted Caramel</li><li>Dulce de Leche</li><li>Silky Chocolate Ganache</li></ul></article>
-    </div>
     <div class="order-steps">
       <h2>How to <span class="pop">Order</span></h2>
       <ol>
@@ -1060,6 +1101,13 @@ main > section.menup{min-height:0!important;padding-block:clamp(48px,6vw,84px)!i
         <li><b>Send your details</b><span>Tell me your date, number of servings, theme and any inspiration photos.</span></li>
         <li><b>Get your quote</b><span>I’ll reply with pricing and availability to confirm your order.</span></li>
       </ol>
+    </div>
+    <div class="sec-head"><h2>The <span class="pop">Menu</span></h2></div>
+    <div class="menu-tabs" role="tablist" aria-label="Menu sections"><button type="button" role="tab" data-t="0" aria-selected="true">Cake Flavors</button><button type="button" role="tab" data-t="1">Buttercream</button><button type="button" role="tab" data-t="2">Fillings</button></div>
+    <div class="menu-grid">
+      <article class="menu-card mc-cake"><h3>Cake <span class="pop">Flavors</span></h3><ul><li>Classic Vanilla</li><li>Vanilla Bean</li><li>Brown Butter Vanilla</li><li>Decadent Chocolate</li><li>Classic Marble</li><li>Funfetti</li><li>Red Velvet</li><li>Banana</li><li>Pumpkin</li><li>Old-Fashioned Spice</li><li>Carrot</li><li>Lemon</li><li>Coconut</li><li>Party-Fetti <em>(Funfetti Oreo)</em></li><li>Double Stuf Oreo <em>(Cookies N’ Creme)</em></li><li>Strawberry</li><li>Strawberry Lemon</li><li>Pineapple</li><li>Vanilla Latte</li><li>Chocolate Mocha</li><li>Wedding Cake <em>(White Vanilla Almond)</em></li><li>Bizcocho Mojadito <em>(Puerto Rican Almond Cake)</em></li><li>Bizcocho Dominicano <em>(Dominican Cake)</em></li></ul></article>
+      <article class="menu-card mc-bc"><h3>Buttercream <span class="pop">Flavors</span></h3><ul><li>Classic Vanilla</li><li>Vanilla Bean</li><li>Triple Chocolate</li><li>Funfetti</li><li>Cream Cheese</li><li>Coconut</li><li>Peanut Butter Cup</li><li>Strawberry</li><li>Chocolate Cream Cheese</li><li>Raspberry</li><li>Lemon</li><li>Nutella</li><li>Dulce de Leche</li><li>S’mores</li><li>Snickerdoodle</li><li>Coffee</li><li>Salted Caramel</li><li>Brown Butter</li><li>White Chocolate</li></ul></article>
+      <article class="menu-card mc-fill"><h3>Specialty <span class="pop">Fillings</span></h3><ul><li>Chocolate Bars &amp; Candies</li><li>Fresh Seasonal Fruit</li><li>Fruit Preserves</li><li>Velvety Hazelnut Cream</li><li>Creamy Almond Butter</li><li>Salted Caramel</li><li>Dulce de Leche</li><li>Silky Chocolate Ganache</li></ul></article>
     </div>
     <form class="cform cform-inline oform" id="order-form" novalidate>
       <h3>Start your <span class="pop">order</span></h3>
@@ -1073,9 +1121,9 @@ main > section.menup{min-height:0!important;padding-block:clamp(48px,6vw,84px)!i
           <select name="occasion"><option value="" selected>Choose one…</option><option>Birthday</option><option>Wedding</option><option>Anniversary</option><option>Baby Shower</option><option>Gender Reveal</option><option>Graduation</option><option>Holiday</option><option>Other</option></select></label>
         <label>Number of Servings<input type="text" name="servings" inputmode="numeric" placeholder="e.g. 25"></label>
         <label>Pickup or Delivery
-          <select name="pickup"><option value="" selected>Choose one…</option><option>Pickup</option><option>Delivery</option><option>Not sure yet</option></select></label>
-        <label class="full">Cake Flavor<select name="cake"><option value="" selected>Choose a flavor…</option><option>Classic Vanilla</option><option>Vanilla Bean</option><option>Brown Butter Vanilla</option><option>Decadent Chocolate</option><option>Classic Marble</option><option>Funfetti</option><option>Red Velvet</option><option>Banana</option><option>Pumpkin</option><option>Old-Fashioned Spice</option><option>Carrot</option><option>Lemon</option><option>Coconut</option><option>Party-Fetti (Funfetti Oreo)</option><option>Double Stuf Oreo (Cookies N’ Creme)</option><option>Strawberry</option><option>Strawberry Lemon</option><option>Pineapple</option><option>Vanilla Latte</option><option>Chocolate Mocha</option><option>Wedding Cake (White Vanilla Almond)</option><option>Bizcocho Mojadito (Puerto Rican Almond Cake)</option><option>Bizcocho Dominicano (Dominican Cake)</option><option>Not sure yet</option></select></label>
-        <label>Buttercream<select name="buttercream"><option value="" selected>Choose a buttercream…</option><option>Classic Vanilla</option><option>Vanilla Bean</option><option>Triple Chocolate</option><option>Funfetti</option><option>Cream Cheese</option><option>Coconut</option><option>Peanut Butter Cup</option><option>Strawberry</option><option>Chocolate Cream Cheese</option><option>Raspberry</option><option>Lemon</option><option>Nutella</option><option>Dulce de Leche</option><option>S’mores</option><option>Snickerdoodle</option><option>Coffee</option><option>Salted Caramel</option><option>Brown Butter</option><option>White Chocolate</option><option>Not sure yet</option></select></label>
+          <select name="pickup"><option value="" selected>Choose one…</option><option>Pickup</option><option>Delivery</option><option>Other</option></select></label>
+        <label class="full">Cake Flavor<select name="cake"><option value="" selected>Choose a flavor…</option><option>Classic Vanilla</option><option>Vanilla Bean</option><option>Brown Butter Vanilla</option><option>Decadent Chocolate</option><option>Classic Marble</option><option>Funfetti</option><option>Red Velvet</option><option>Banana</option><option>Pumpkin</option><option>Old-Fashioned Spice</option><option>Carrot</option><option>Lemon</option><option>Coconut</option><option>Party-Fetti (Funfetti Oreo)</option><option>Double Stuf Oreo (Cookies N’ Creme)</option><option>Strawberry</option><option>Strawberry Lemon</option><option>Pineapple</option><option>Vanilla Latte</option><option>Chocolate Mocha</option><option>Wedding Cake (White Vanilla Almond)</option><option>Bizcocho Mojadito (Puerto Rican Almond Cake)</option><option>Bizcocho Dominicano (Dominican Cake)</option><option>Other</option></select></label>
+        <label>Buttercream<select name="buttercream"><option value="" selected>Choose a buttercream…</option><option>Classic Vanilla</option><option>Vanilla Bean</option><option>Triple Chocolate</option><option>Funfetti</option><option>Cream Cheese</option><option>Coconut</option><option>Peanut Butter Cup</option><option>Strawberry</option><option>Chocolate Cream Cheese</option><option>Raspberry</option><option>Lemon</option><option>Nutella</option><option>Dulce de Leche</option><option>S’mores</option><option>Snickerdoodle</option><option>Coffee</option><option>Salted Caramel</option><option>Brown Butter</option><option>White Chocolate</option><option>Other</option></select></label>
         <label>Filling (Optional)<select name="filling"><option value="" selected>No filling</option><option>Chocolate Bars &amp; Candies</option><option>Fresh Seasonal Fruit</option><option>Fruit Preserves</option><option>Velvety Hazelnut Cream</option><option>Creamy Almond Butter</option><option>Salted Caramel</option><option>Dulce de Leche</option><option>Silky Chocolate Ganache</option></select></label>
         <label class="full">Design, Theme &amp; Colors<textarea name="message" rows="5" required placeholder="Tell me about your cake: theme, colors, number of tiers, names or messages, and anything else."></textarea></label>
       </div>
@@ -1423,6 +1471,17 @@ f.addEventListener('submit',function(e){e.preventDefault();var el=f.elements,err
  var body='Name: '+v('name')+'\nContact Number: '+(v('phone')||'-')+'\nEmail: '+v('email')+'\n\nEvent Date: '+d+'\nOccasion: '+(v('occasion')||'-')+'\nServings: '+(v('servings')||'-')+'\nPickup or Delivery: '+(v('pickup')||'-')+'\n\nCake Flavor: '+(v('cake')||'-')+'\nButtercream: '+(v('buttercream')||'-')+'\nFilling: '+(v('filling')||'None')+'\n\nDesign, Theme & Colors:\n'+v('message');
  var subj='Cake Order Request: '+v('name')+' ('+d+')';done.hidden=false;
  window.location.href='mailto:batternbaked@gmail.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body)})})();
+</script>
+<div class="msw" role="group" aria-label="Menu style">Menu style
+  <button type="button" data-m="cards">1 Cards</button><button type="button" data-m="tabs">2 Tabs</button><button type="button" data-m="chips">3 Flavor Chips</button><button type="button" data-m="classic">4 Classic Menu</button><button type="button" data-m="accordion">5 Accordion</button>
+</div>
+<script>
+(function(){var R=document.documentElement,cards=[].slice.call(document.querySelectorAll('.menu-card')),tabs=[].slice.call(document.querySelectorAll('.menu-tabs button')),bs=document.querySelectorAll('.msw button');
+function tab(i){cards.forEach(function(c,j){c.classList.toggle('on',j===i)});tabs.forEach(function(t,j){t.setAttribute('aria-selected',j===i)})}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){tab(i)})});
+cards.forEach(function(c){c.querySelector('h3').addEventListener('click',function(){if(R.dataset.mstyle==='accordion')c.classList.toggle('on')})});
+function pick(m){R.setAttribute('data-mstyle',m);bs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.m===m)});tab(0)}
+bs.forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.m);var g=document.querySelector('.menup .sec-head');if(g)g.scrollIntoView({behavior:'smooth',block:'start'})})});pick('cards');})();
 </script>
 </body>
 </html>
