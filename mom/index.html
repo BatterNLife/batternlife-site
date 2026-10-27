@@ -734,6 +734,28 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
  .g-col-scrap .g-board{flex-wrap:wrap;padding-block:20px}
  .g-col-scrap .g-board figure{width:38vw;border-width:6px;margin:-6px}
 }
+
+/* ===== Orders page ===== */
+main > section.menup{min-height:0!important;padding-block:clamp(48px,6vw,84px)!important}
+.menu-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:clamp(16px,2vw,26px);align-items:start;margin-top:clamp(24px,3vw,40px)}
+.menu-card{background:var(--card);border:1px solid rgba(153,102,97,.35);box-shadow:0 12px 28px rgba(43,35,30,.08);padding:clamp(22px,2.4vw,32px)}
+.menu-card h3{font-family:var(--sans);font-weight:600;font-size:clamp(1.1rem,1.5vw,1.35rem);letter-spacing:.12em;text-align:center;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid var(--gold)}
+.menu-card ul{list-style:none;margin:0;padding:0;font-family:var(--text);font-weight:500;color:var(--ink);font-size:1rem;line-height:1.35}
+.menu-card li{padding:7px 0 7px 18px;position:relative;border-bottom:1px dashed rgba(153,102,97,.18)}
+.menu-card li:last-child{border-bottom:0}
+.menu-card li::before{content:"";position:absolute;left:2px;top:.95em;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.menu-card li em{font-style:normal;color:var(--ink-soft);font-size:.9em}
+.mc-cake ul{columns:2;column-gap:22px}
+.mc-cake li{break-inside:avoid}
+.order-steps{margin-top:clamp(44px,5vw,72px);text-align:center}
+.order-steps ol{list-style:none;counter-reset:st;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);margin:clamp(22px,3vw,34px) 0 0;padding:0;text-align:left}
+.order-steps li{counter-increment:st;background:var(--card);padding:24px 22px 22px;position:relative;box-shadow:0 10px 24px rgba(43,35,30,.07)}
+.order-steps li::before{content:counter(st);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--mahogany);color:#fff;font:600 1rem/1 var(--sans);margin-bottom:12px}
+.order-steps li b{display:block;font-family:var(--sans);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem;margin-bottom:6px}
+.order-steps li span{font-family:var(--text);color:var(--ink-soft);font-weight:500}
+.order-steps .center-cta{margin-top:30px}
+@media (max-width:960px){.menu-grid{grid-template-columns:1fr 1fr}.mc-cake{grid-column:1/-1}}
+@media (max-width:640px){.menu-grid{grid-template-columns:1fr}.mc-cake ul{columns:1}.order-steps ol{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -945,7 +967,7 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
     </div>
     <div class="gstage" aria-label="Cake gallery"></div>
     <div class="order-cta">
-      <a class="btn solid order-btn" href="/contact/" data-order>Click Here to Submit an Order</a>
+      <a class="btn solid order-btn" href="/orders/">View Menu &amp; Order <span aria-hidden="true">→</span></a>
     </div>
   </div></section>
   <section class="tipsp"><div class="wrap">
@@ -1007,6 +1029,32 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
       <img loading="lazy" decoding="async" width="900" height="600" style="object-position:30% 60%" src="/img/fam_play.webp" alt="Sunny living room with a basket of teddy bears and wooden blocks on the floor">
       <img loading="lazy" decoding="async" width="900" height="1200" style="object-position:45% 22%" src="/img/fam_bake.webp" alt="Melinda frosting sprinkle sugar cookies at a white marble kitchen island">
       <img loading="lazy" decoding="async" width="900" height="675" style="object-position:50% 50%" src="/img/fam_entry.webp" alt="Entryway bench with kids' backpacks and a diaper bag on hooks, family shoes and baby shoes lined up below">
+    </div>
+  </div></section>
+</main>
+
+<main data-page="orders" hidden>
+  <section class="phead"><div class="wrap">
+    <span class="kicker">Custom Orders</span>
+    <h1>Order a <span class="pop">Cake</span></h1>
+    <p>Every cake is made from scratch and designed just for your celebration. Pick your favorite flavors below, then send me your order details.</p>
+    <div class="heart-rule"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.7 4.5c2.1 0 3.8 1.2 5.3 3 1.5-1.8 3.2-3 5.3-3 3.7 0 5.8 3.7 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg></div>
+  </div></section>
+  <section class="menup"><div class="wrap">
+    <div class="sec-head"><h2>The <span class="pop">Menu</span></h2></div>
+    <div class="menu-grid">
+      <article class="menu-card mc-cake"><h3>Cake <span class="pop">Flavors</span></h3><ul><li>Classic Vanilla</li><li>Vanilla Bean</li><li>Brown Butter Vanilla</li><li>Decadent Chocolate</li><li>Classic Marble</li><li>Funfetti</li><li>Red Velvet</li><li>Banana</li><li>Pumpkin</li><li>Old-Fashioned Spice</li><li>Carrot</li><li>Lemon</li><li>Coconut</li><li>Party-Fetti <em>(Funfetti Oreo)</em></li><li>Double Stuf Oreo <em>(Cookies N’ Creme)</em></li><li>Strawberry</li><li>Strawberry Lemon</li><li>Pineapple</li><li>Vanilla Latte</li><li>Chocolate Mocha</li><li>Wedding Cake <em>(White Vanilla Almond)</em></li><li>Bizcocho Mojadito <em>(Puerto Rican Almond Cake)</em></li><li>Bizcocho Dominicano <em>(Dominican Cake)</em></li></ul></article>
+      <article class="menu-card mc-bc"><h3>Buttercream <span class="pop">Flavors</span></h3><ul><li>Classic Vanilla</li><li>Vanilla Bean</li><li>Triple Chocolate</li><li>Funfetti</li><li>Cream Cheese</li><li>Coconut</li><li>Peanut Butter Cup</li><li>Strawberry</li><li>Chocolate Cream Cheese</li><li>Raspberry</li><li>Lemon</li><li>Nutella</li><li>Dulce de Leche</li><li>S’mores</li><li>Snickerdoodle</li><li>Coffee</li><li>Salted Caramel</li><li>Brown Butter</li><li>White Chocolate</li></ul></article>
+      <article class="menu-card mc-fill"><h3>Specialty <span class="pop">Fillings</span></h3><ul><li>Chocolate Bars &amp; Candies</li><li>Fresh Seasonal Fruit</li><li>Fruit Preserves</li><li>Velvety Hazelnut Cream</li><li>Creamy Almond Butter</li><li>Salted Caramel</li><li>Dulce de Leche</li><li>Silky Chocolate Ganache</li></ul></article>
+    </div>
+    <div class="order-steps">
+      <h2>How to <span class="pop">Order</span></h2>
+      <ol>
+        <li><b>Choose your flavors</b><span>Pick a cake flavor, a buttercream and an optional filling.</span></li>
+        <li><b>Send your details</b><span>Tell me your date, number of servings, theme and any inspiration photos.</span></li>
+        <li><b>Get your quote</b><span>I’ll reply with pricing and availability to confirm your order.</span></li>
+      </ol>
+      <div class="center-cta"><a class="btn solid order-btn" href="/contact/" data-order>Start My Order <span aria-hidden="true">→</span></a></div>
     </div>
   </div></section>
 </main>
@@ -1082,7 +1130,7 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
 <footer><div class="wrap">
   <div class="top">
     <div class="fbrand"><p class="fname"><img loading="lazy" decoding="async" width="900" height="264" class="flogo" src="/img/logo_letters_light.webp" alt="Batter N' Life"></p><p class="tag">Something sweet in the mix</p></div>
-    <nav aria-label="Footer"><a href="/">Home</a><a href="/story/">My Story</a><a href="/bake/">Bake Life</a><a href="/mom/">Mom Life</a><a href="/favorites/">Favorites</a><a href="/contact/">Contact</a></nav>
+    <nav aria-label="Footer"><a href="/">Home</a><a href="/story/">My Story</a><a href="/bake/">Bake Life</a><a href="/mom/">Mom Life</a><a href="/favorites/">Favorites</a><a href="/orders/">Orders</a><a href="/contact/">Contact</a></nav>
   </div>
   <div class="base"><span>© 2026 Batter N' Life. All rights reserved. As an Amazon Associate, I earn from qualifying purchases.</span><span>Contact · Privacy Policy · Terms</span></div>
 </div></footer>
@@ -1183,7 +1231,7 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
   function cur(){var p=location.pathname.replace(/^\/+|\/+$/g,'');return p||'home'}
   window.bnlRoute=cur;
   window.bnlGo=function(href){if(href!==location.pathname)history.pushState(null,'',href);route();dispatchEvent(new Event('bnl:route'))};
-  var META={"home": ["Batter N' Life | Where Buttercream Meets Motherhood", "Where buttercream meets motherhood. Custom celebration cakes, decorating tips and real family life as a mom of four, all mixed together.", "https://batternlife.com/"], "story": ["My Story | Batter N' Life", "Meet Melinda: a wife, mom of four and self-taught baker who has created 600+ custom cakes over 10+ years.", "https://batternlife.com/story/"], "bake": ["Bake Life: Custom Cakes & Baking Tips | Batter N' Life", "Browse custom celebration cakes for birthdays, weddings, showers and more, plus decorating tips and reels. Submit a dessert order.", "https://batternlife.com/bake/"], "mom": ["Mom Life | Batter N' Life", "Family routines, everyday mom life and the real, sweet, messy moments of life with four kids.", "https://batternlife.com/mom/"], "favorites": ["Shop My Favorites | Batter N' Life", "The baking tools, kids' gear, home and beauty favorites I actually use and love.", "https://batternlife.com/favorites/"], "contact": ["Contact & Dessert Orders | Batter N' Life", "Order a custom cake or dessert, or reach out about collaborations and brand partnerships.", "https://batternlife.com/contact/"]};
+  var META={"home": ["Batter N' Life | Where Buttercream Meets Motherhood", "Where buttercream meets motherhood. Custom celebration cakes, decorating tips and real family life as a mom of four, all mixed together.", "https://batternlife.com/"], "story": ["My Story | Batter N' Life", "Meet Melinda: a wife, mom of four and self-taught baker who has created 600+ custom cakes over 10+ years.", "https://batternlife.com/story/"], "bake": ["Bake Life: Custom Cakes & Baking Tips | Batter N' Life", "Browse custom celebration cakes for birthdays, weddings, showers and more, plus decorating tips and reels. Submit a dessert order.", "https://batternlife.com/bake/"], "mom": ["Mom Life | Batter N' Life", "Family routines, everyday mom life and the real, sweet, messy moments of life with four kids.", "https://batternlife.com/mom/"], "favorites": ["Shop My Favorites | Batter N' Life", "The baking tools, kids' gear, home and beauty favorites I actually use and love.", "https://batternlife.com/favorites/"], "orders": ["Cake Menu & Custom Orders | Batter N' Life", "Custom cake flavors, buttercreams and specialty fillings, from Brown Butter Vanilla to Bizcocho Mojadito. See the menu and start your order.", "https://batternlife.com/orders/"], "contact": ["Contact & Dessert Orders | Batter N' Life", "Order a custom cake or dessert, or reach out about collaborations and brand partnerships.", "https://batternlife.com/contact/"]};
   function route(){
     var name=cur();if(!document.querySelector('main[data-page="'+name+'"]'))name='home';
     pages.forEach(function(m){m.hidden=m.getAttribute('data-page')!==name});document.documentElement.setAttribute('data-route',name);
