@@ -826,6 +826,7 @@ html:not([data-route="orders"]) .msw{display:none}
 .ofile button{position:absolute;top:-8px;right:-8px;width:26px;height:26px;border-radius:50%;border:0;background:var(--mahogany);color:#fff;font-size:1.1rem;line-height:1;cursor:pointer}
 .ofiles-err{color:var(--mahogany);font-family:var(--sans);font-size:.85rem;margin:8px 0 0}
 .fhint{display:block;margin-top:6px;font-family:var(--text);font-size:.85rem;font-style:italic;letter-spacing:0;text-transform:none;font-weight:400;color:var(--mahogany)}
+.oaddr[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -1131,6 +1132,7 @@ html:not([data-route="orders"]) .msw{display:none}
         <label>Number of Servings<input type="text" name="servings" inputmode="numeric" placeholder="e.g. 25"></label>
         <label>Pickup or Delivery
           <select name="pickup"><option value="" selected>Choose one…</option><option>Pickup</option><option>Delivery</option><option>Other</option></select><small class="fhint">Delivery up to 40 miles from Celina</small></label>
+        <label class="full oaddr" hidden>Delivery Address<input type="text" name="address" autocomplete="street-address" placeholder="Street, city and ZIP code"></label>
         <label class="full">Cake Flavor<select name="cake"><option value="" selected>Choose a flavor…</option><option>Classic Vanilla</option><option>Vanilla Bean</option><option>Brown Butter Vanilla</option><option>Decadent Chocolate</option><option>Marble</option><option>Funfetti</option><option>Red Velvet</option><option>Banana</option><option>Pumpkin</option><option>Spice</option><option>Carrot</option><option>Lemon</option><option>Coconut</option><option>Party-Fetti (Funfetti Oreo)</option><option>Cookies N’ Creme (Double Stuf)</option><option>Strawberry</option><option>Strawberry Lemon</option><option>Pineapple</option><option>Vanilla Latte</option><option>Chocolate Mocha</option><option>Wedding Cake (White Vanilla Almond)</option><option>Bizcocho Mojadito (Puerto Rican Almond Cake)</option><option>Bizcocho Dominicano (Dominican Cake)</option><option>Other</option></select></label>
         <label>Buttercream<select name="buttercream"><option value="" selected>Choose a buttercream…</option><option>Classic Vanilla</option><option>Vanilla Bean</option><option>Triple Chocolate</option><option>Funfetti</option><option>Cream Cheese</option><option>Coconut</option><option>Peanut Butter Cup</option><option>Strawberry</option><option>Strawberry Lemon</option><option>Raspberry</option><option>Lemon</option><option>Nutella</option><option>Dulce de Leche</option><option>S’mores</option><option>Toasted Marshmallow</option><option>Snickerdoodle</option><option>Cookie Butter</option><option>Coffee</option><option>Salted Caramel</option><option>Brown Butter</option><option>White Chocolate</option><option>Other</option></select></label>
         <label>Filling (Optional)<select name="filling"><option value="" selected>No filling</option><option>Chocolate Bars &amp; Candies</option><option>Fresh Seasonal Fruit</option><option>Fruit Preserves</option><option>Velvety Hazelnut Cream</option><option>Creamy Almond Butter</option><option>Salted Caramel</option><option>Dulce de Leche</option><option>Silky Chocolate Ganache</option></select></label>
@@ -1142,7 +1144,7 @@ html:not([data-route="orders"]) .msw{display:none}
         <div class="ofiles-list" aria-live="polite"></div>
         <p class="ofiles-err" role="alert" hidden>You can add up to 3 photos.</p>
       </div>
-      <p class="cform-err" role="alert" hidden>Please fill in your name, a valid email, your event date, and your design details.</p>
+      <p class="cform-err" role="alert" hidden>Please fill in your name, a valid email, your event date, your design details, and a delivery address if you chose delivery.</p>
       <button class="btn solid" type="submit">Submit Order Request <span aria-hidden="true">→</span></button>
       <div class="cform-done" role="status" hidden></div>
     </form>
@@ -1497,11 +1499,11 @@ document.querySelectorAll('[data-scroll]').forEach(function(a){a.addEventListene
 (function(){var f=document.getElementById('order-form');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var el=f.elements,err=f.querySelector('.cform-err'),done=f.querySelector('.cform-done');
  var v=function(n){return (el[n].value||'').trim()};
- var ok=v('name')&&v('email')&&el['email'].checkValidity()&&v('date')&&v('message');err.hidden=!!ok;done.hidden=true;if(!ok)return;
+ var needAddr=v('pickup')==='Delivery';var ok=v('name')&&v('email')&&el['email'].checkValidity()&&v('date')&&v('message')&&(!needAddr||v('address'));err.hidden=!!ok;done.hidden=true;if(!ok)return;
  var d=v('date');try{var p=d.split('-');d=new Date(p[0],p[1]-1,p[2]).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})}catch(x){}
- var body='Name: '+v('name')+'\nContact Number: '+(v('phone')||'-')+'\nEmail: '+v('email')+'\n\nEvent Date: '+d+'\nOccasion: '+(v('occasion')||'-')+'\nServings: '+(v('servings')||'-')+'\nPickup or Delivery: '+(v('pickup')||'-')+'\n\nCake Flavor: '+(v('cake')||'-')+'\nButtercream: '+(v('buttercream')||'-')+'\nFilling: '+(v('filling')||'None')+'\n\nDesign, Theme & Colors:\n'+v('message');
+ var body='Name: '+v('name')+'\nContact Number: '+(v('phone')||'-')+'\nEmail: '+v('email')+'\n\nEvent Date: '+d+'\nOccasion: '+(v('occasion')||'-')+'\nServings: '+(v('servings')||'-')+'\nPickup or Delivery: '+(v('pickup')||'-')+(needAddr?'\nDelivery Address: '+v('address'):'')+'\n\nCake Flavor: '+(v('cake')||'-')+'\nButtercream: '+(v('buttercream')||'-')+'\nFilling: '+(v('filling')||'None')+'\n\nDesign, Theme & Colors:\n'+v('message');
  var subj='Cake Order Request: '+v('name')+' ('+d+')';
- window.bnlSend(f,'batternbaked@gmail.com',subj,{'Name':v('name'),'Contact Number':v('phone')||'-','Email':v('email'),'Event Date':d,'Occasion':v('occasion')||'-','Servings':v('servings')||'-','Pickup or Delivery':v('pickup')||'-','Cake Flavor':v('cake')||'-','Buttercream':v('buttercream')||'-','Filling':v('filling')||'None','Design, Theme & Colors':v('message')},body,'<strong>Thank you!</strong> Your order request was sent. I\'ll reply with pricing and availability soon.')})})();
+ window.bnlSend(f,'batternbaked@gmail.com',subj,{'Name':v('name'),'Contact Number':v('phone')||'-','Email':v('email'),'Event Date':d,'Occasion':v('occasion')||'-','Servings':v('servings')||'-','Pickup or Delivery':v('pickup')||'-','Delivery Address':needAddr?v('address'):'-','Cake Flavor':v('cake')||'-','Buttercream':v('buttercream')||'-','Filling':v('filling')||'None','Design, Theme & Colors':v('message')},body,'<strong>Thank you!</strong> Your order request was sent. I\'ll reply with pricing and availability soon.')})})();
 </script>
 <script>
 (function(){var R=document.documentElement,cards=[].slice.call(document.querySelectorAll('.menu-card')),tabs=[].slice.call(document.querySelectorAll('.menu-tabs button')),bs=document.querySelectorAll('.msw button');
@@ -1522,6 +1524,11 @@ function draw(){list.innerHTML='';f.__bnlFiles.forEach(function(fl,i){var d=docu
 inp.addEventListener('change',function(){var picked=[].slice.call(inp.files||[]);inp.value='';var room=MAX-f.__bnlFiles.length;err.hidden=picked.length<=room;
  Promise.all(picked.slice(0,Math.max(room,0)).map(shrink)).then(function(arr){f.__bnlFiles=f.__bnlFiles.concat(arr).slice(0,MAX);draw()})});
 f.__bnlClear=function(){f.__bnlFiles=[];err.hidden=true;draw()};})();
+</script>
+<script>
+(function(){var f=document.getElementById('order-form');if(!f)return;var sel=f.querySelector('select[name=pickup]'),box=f.querySelector('.oaddr'),inp=box.querySelector('input');
+function upd(){var on=sel.value==='Delivery';box.hidden=!on;inp.required=on;if(!on)inp.value=''}
+sel.addEventListener('change',upd);f.addEventListener('reset',function(){setTimeout(upd,0)});upd()})();
 </script>
 </body>
 </html>
