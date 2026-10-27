@@ -1127,10 +1127,10 @@ html:not([data-route="orders"]) .msw{display:none}
         <label>Filling (Optional)<select name="filling"><option value="" selected>No filling</option><option>Chocolate Bars &amp; Candies</option><option>Fresh Seasonal Fruit</option><option>Fruit Preserves</option><option>Velvety Hazelnut Cream</option><option>Creamy Almond Butter</option><option>Salted Caramel</option><option>Dulce de Leche</option><option>Silky Chocolate Ganache</option></select></label>
         <label class="full">Design, Theme &amp; Colors<textarea name="message" rows="5" required placeholder="Tell me about your cake: theme, colors, number of tiers, names or messages, and anything else."></textarea></label>
       </div>
-      <p class="cform-note">Have inspiration photos? Attach them to the email that opens when you press submit.</p>
+      <p class="cform-note">Have inspiration photos? After you submit, reply to my confirmation email or send them to batternbaked@gmail.com.</p>
       <p class="cform-err" role="alert" hidden>Please fill in your name, a valid email, your event date, and your design details.</p>
       <button class="btn solid" type="submit">Submit Order Request <span aria-hidden="true">→</span></button>
-      <div class="cform-done" role="status" hidden><strong>Almost done!</strong> Your email app is opening with your order ready to send to batternbaked@gmail.com. Add any inspiration photos, then press send.</div>
+      <div class="cform-done" role="status" hidden></div>
     </form>
   </div></section>
 </main>
@@ -1196,7 +1196,7 @@ html:not([data-route="orders"]) .msw{display:none}
     </div>
     <p class="cform-err" role="alert" hidden>Please fill in your name, a valid email, a reason, and a message.</p>
     <button class="btn solid" type="submit">Submit <span aria-hidden="true">→</span></button>
-    <div class="cform-done" role="status" hidden><strong>Almost done!</strong> Your email app is opening with your message ready to send to <span class="cf-to"></span>. Just press send.</div>
+    <div class="cform-done" role="status" hidden></div>
   </form>
   </div></section>
 </main>
@@ -1295,10 +1295,23 @@ html:not([data-route="orders"]) .msw{display:none}
     var to='batternlife@gmail.com';
     var subj=el['reason'].value+' from '+el['name'].value.trim();
     var body='Name or Business: '+el['name'].value.trim()+'\nContact Number: '+(el['phone'].value.trim()||'-')+'\nEmail: '+el['email'].value.trim()+'\nReason: '+el['reason'].value+'\n\n'+el['message'].value.trim();
-    f.querySelector('.cf-to').textContent=to;done.hidden=false;
-    window.location.href='mailto:'+to+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+    window.bnlSend(f,to,subj,{'Name or Business':el['name'].value.trim(),'Contact Number':el['phone'].value.trim()||'-','Email':el['email'].value.trim(),'Reason':el['reason'].value,'Message':el['message'].value.trim()},body,'<strong>Thank you!</strong> Your message was sent. I\'ll get back to you soon.');
   })}
 })();
+</script>
+<script>
+window.bnlSend=function(form,to,subject,fields,mailBody,okMsg){
+  var btn=form.querySelector('button[type=submit]'),done=form.querySelector('.cform-done'),label=btn.innerHTML;
+  btn.disabled=true;btn.innerHTML='Sending…';done.hidden=true;
+  var data={_subject:subject,_template:'table',_captcha:'false'};for(var k in fields)data[k]=fields[k];
+  if(fields.Email)data._replyto=fields.Email;
+  function fallback(){done.innerHTML='<strong>Almost done!</strong> Your email app is opening with your message ready to send to '+to+'. Just press send.';done.hidden=false;
+    window.location.href='mailto:'+to+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(mailBody)}
+  fetch('https://formsubmit.co/ajax/'+to,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)})
+   .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j}})})
+   .then(function(x){if(x.ok&&String(x.j.success)!=='false'){done.innerHTML=okMsg;done.hidden=false;form.reset();form.querySelectorAll('select').forEach(function(sl){sl.selectedIndex=0})}else fallback()})
+   .catch(fallback).then(function(){btn.disabled=false;btn.innerHTML=label;done.scrollIntoView({behavior:'smooth',block:'center'})});
+};
 </script>
 <script>
 (function(){
@@ -1469,8 +1482,8 @@ f.addEventListener('submit',function(e){e.preventDefault();var el=f.elements,err
  var ok=v('name')&&v('email')&&el['email'].checkValidity()&&v('date')&&v('message');err.hidden=!!ok;done.hidden=true;if(!ok)return;
  var d=v('date');try{var p=d.split('-');d=new Date(p[0],p[1]-1,p[2]).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})}catch(x){}
  var body='Name: '+v('name')+'\nContact Number: '+(v('phone')||'-')+'\nEmail: '+v('email')+'\n\nEvent Date: '+d+'\nOccasion: '+(v('occasion')||'-')+'\nServings: '+(v('servings')||'-')+'\nPickup or Delivery: '+(v('pickup')||'-')+'\n\nCake Flavor: '+(v('cake')||'-')+'\nButtercream: '+(v('buttercream')||'-')+'\nFilling: '+(v('filling')||'None')+'\n\nDesign, Theme & Colors:\n'+v('message');
- var subj='Cake Order Request: '+v('name')+' ('+d+')';done.hidden=false;
- window.location.href='mailto:batternbaked@gmail.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body)})})();
+ var subj='Cake Order Request: '+v('name')+' ('+d+')';
+ window.bnlSend(f,'batternbaked@gmail.com',subj,{'Name':v('name'),'Contact Number':v('phone')||'-','Email':v('email'),'Event Date':d,'Occasion':v('occasion')||'-','Servings':v('servings')||'-','Pickup or Delivery':v('pickup')||'-','Cake Flavor':v('cake')||'-','Buttercream':v('buttercream')||'-','Filling':v('filling')||'None','Design, Theme & Colors':v('message')},body,'<strong>Thank you!</strong> Your order request was sent. I\'ll reply with pricing and availability soon.')})})();
 </script>
 <div class="msw" role="group" aria-label="Menu style">Menu style
   <button type="button" data-m="cards">1 Cards</button><button type="button" data-m="tabs">2 Tabs</button><button type="button" data-m="chips">3 Flavor Chips</button><button type="button" data-m="classic">4 Classic Menu</button><button type="button" data-m="accordion">5 Accordion</button>
