@@ -4,10 +4,12 @@
 <meta charset="utf-8">
 <title>Batter N' Life Boutique</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preload" as="image" href="img/kitchen2.webp" imagesrcset="img/kitchen2_760.webp 760w, img/kitchen2.webp 1400w" imagesizes="(max-width:960px) 100vw, 52vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Lora:wght@400;500;600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Lora:wght@400;500;600&family=Jost:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Lora:wght@400;500;600&family=Jost:wght@400;500;600;700&display=swap"></noscript>
 <style>
+img{height:auto}
 :root{
   --bg:#F1E7D8; --bg2:#E8DBC7; --card:#F8F1E6; --blush:#EBDAD3;
   --gold:#D9BF84; --gold-hover:#CDAF6C; --gold-line:#C9A961;
@@ -307,7 +309,7 @@ main#home{scroll-margin-top:var(--navh,85px)}
 
 /* ===== background texture preview ===== */
 :root{--tex:none;--texsize:auto}
-:root{--tex:url("img/logo_doodle2.png")!important;--texsize:1300px auto!important}
+:root{--tex:url("img/logo_doodle2.webp")!important;--texsize:1300px auto!important}
 main > section,.hero .tx{background-image:var(--tex)!important;background-size:var(--texsize)!important;background-repeat:repeat!important}
 
 /* ===== wave borders between sections ===== */
@@ -723,7 +725,7 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
 <body>
 
 <header class="bar"><div class="wrap">
-  <div class="brand"><a class="logo" href="#/" aria-label="Batter N' Life home"><img src="img/logo_letters_flat.png" alt="Batter N' Life"></a>
+  <div class="brand"><a class="logo" href="#/" aria-label="Batter N' Life home"><img width="900" height="264" src="img/logo_letters_flat.webp" alt="Batter N' Life"></a>
   <span class="divider" aria-hidden="true"></span></div>
   <nav aria-label="Main" id="main-nav">
     <a href="#/" aria-current="page">Home</a><a href="#/story">My Story</a><a href="#/bake">Bake Life</a><a href="#/mom">Mom Life</a><a href="#/favorites">Favorites</a><a href="#/contact">Contact</a>
@@ -739,7 +741,7 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
 
 <main id="home" data-page="home">
   <div class="hero">
-    <div class="ph"><img style="object-position:30% 50%" src="img/kitchen2.jpg" alt="Sunny marble kitchen counter with a pink stand mixer, mixing bowl, phone, vlogging camera and a planner"></div>
+    <div class="ph"><img fetchpriority="high" decoding="async" srcset="img/kitchen2_760.webp 760w, img/kitchen2.webp 1400w" sizes="(max-width:960px) 100vw, 52vw" width="1400" height="788" style="object-position:30% 50%" src="img/kitchen2.webp" alt="Sunny marble kitchen counter with a pink stand mixer, mixing bowl, phone, vlogging camera and a planner"></div>
     <div class="tx">
       <span class="kicker">Baking · Family · Real Life</span>
       <h1>Where <span class="pop">buttercream</span> meets <span class="pop">motherhood</span></h1>
@@ -752,7 +754,7 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
   </div>
 
   <section class="intro" id="story"><div class="wrap">
-    <div class="frame"><img src="img/curls.jpg" alt="Portrait of the baker behind Batter N' Life"></div>
+    <div class="frame"><img loading="lazy" decoding="async" width="900" height="900" src="img/curls.webp" alt="Portrait of the baker behind Batter N' Life"></div>
     <div>
       <h2>Hi, I'm <span class="pop">Melinda.</span> Nice to meet you.</h2>
       <p>I'm a wife, mom of four, self-taught baker, and homeschool teacher. Between decorating cakes, homeschooling, and keeping up with…</p>
@@ -768,9 +770,9 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
       <div class="heart-rule"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.7 4.5c2.1 0 3.8 1.2 5.3 3 1.5-1.8 3.2-3 5.3-3 3.7 0 5.8 3.7 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg></div>
     </div>
     <div class="gallery">
-      <div class="big gzoom"><img src="img/rose2.jpg" alt="Tall heart-shaped cake covered in red buttercream roses"></div>
-      <div class="gzoom gz-soccer"><img data-k="soccer" src="img/gal_soccer.jpg" alt="Soccer ball 40th birthday cake with a navy and gold crest"></div>
-      <img src="img/ruffle2.jpg" alt="Pastel ruffled cake on a gold stand">
+      <div class="big gzoom"><img loading="lazy" decoding="async" width="719" height="1000" src="img/rose2.webp" alt="Tall heart-shaped cake covered in red buttercream roses"></div>
+      <div class="gzoom gz-soccer"><img loading="lazy" decoding="async" width="696" height="1000" data-k="soccer" src="img/gal_soccer.webp" alt="Soccer ball 40th birthday cake with a navy and gold crest"></div>
+      <img loading="lazy" decoding="async" width="563" height="1000" src="img/ruffle2.webp" alt="Pastel ruffled cake on a gold stand">
     </div>
     <div class="center-cta"><a class="btn solid" href="#/bake">See More <span aria-hidden="true">→</span></a></div>
   </div></section>
@@ -781,9 +783,9 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
       <p>Life with four kids is full, busy, and beautiful. Here you'll find our homeschool days, family routines, and the real, sweet, messy moments in between.</p>
     </div>
     <div class="mom-row">
-      <img style="object-position:50% 30%" src="img/fam_table.jpg" alt="Mom working on her laptop and planner at the dining table with a mug of cocoa">
-      <img style="object-position:30% 60%" src="img/fam_play.jpg" alt="Sunny living room with a basket of teddy bears and wooden blocks on the floor">
-      <img style="object-position:50% 50%" src="img/fam_entry.jpg" alt="Entryway bench with kids' backpacks and a diaper bag on hooks, family shoes and baby shoes lined up below">
+      <img loading="lazy" decoding="async" width="750" height="1000" style="object-position:50% 30%" src="img/fam_table.webp" alt="Mom working on her laptop and planner at the dining table with a mug of cocoa">
+      <img loading="lazy" decoding="async" width="900" height="600" style="object-position:30% 60%" src="img/fam_play.webp" alt="Sunny living room with a basket of teddy bears and wooden blocks on the floor">
+      <img loading="lazy" decoding="async" width="900" height="675" style="object-position:50% 50%" src="img/fam_entry.webp" alt="Entryway bench with kids' backpacks and a diaper bag on hooks, family shoes and baby shoes lined up below">
     </div>
     <div class="center-cta"><a class="btn solid" href="#/mom">Mom Life <span aria-hidden="true">→</span></a></div>
   </div></section>
@@ -794,16 +796,16 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
       <p>The tools, pans and everyday things I actually use and love.</p>
     </div>
     <div class="shelf">
-      <a class="item" href="#/favorites"><img class="thumb" src="img/fav_tools.jpg" alt="Flat lay of baking tools and ingredients: cupcakes, piping bags and tips, whisks, measuring spoons, flour and sprinkles"><b>Baking Essentials</b></a>
-      <a class="item" href="#/favorites"><img class="thumb" src="img/fav_baby.jpg" alt="Folded knit baby blankets with booties and a teether"><b>Baby &amp; Kids</b></a>
-      <a class="item" href="#/favorites"><img class="thumb" src="img/fav_home.jpg" alt="Warm, neutral entryway with a wood console and woven baskets"><b>Home &amp; Everyday</b></a>
-      <a class="item" href="#/favorites"><img class="thumb" src="img/fav_skin.jpg" alt="Skincare bottles, jars and a scrunchie on a wooden tray by a mirror"><b>Skin &amp; Hair Care</b></a>
+      <a class="item" href="#/favorites"><img loading="lazy" decoding="async" width="800" height="533" class="thumb" src="img/fav_tools.webp" alt="Flat lay of baking tools and ingredients: cupcakes, piping bags and tips, whisks, measuring spoons, flour and sprinkles"><b>Baking Essentials</b></a>
+      <a class="item" href="#/favorites"><img loading="lazy" decoding="async" width="797" height="800" class="thumb" src="img/fav_baby.webp" alt="Folded knit baby blankets with booties and a teether"><b>Baby &amp; Kids</b></a>
+      <a class="item" href="#/favorites"><img loading="lazy" decoding="async" width="800" height="800" class="thumb" src="img/fav_home.webp" alt="Warm, neutral entryway with a wood console and woven baskets"><b>Home &amp; Everyday</b></a>
+      <a class="item" href="#/favorites"><img loading="lazy" decoding="async" width="900" height="600" class="thumb" src="img/fav_skin.webp" alt="Skincare bottles, jars and a scrunchie on a wooden tray by a mirror"><b>Skin &amp; Hair Care</b></a>
     </div>
     <div class="center-cta"><a class="btn solid" href="#/favorites">Shop All Favorites <span aria-hidden="true">→</span></a></div>
   </div></section>
 
   <section class="collab" id="collaborate"><div class="wrap"><div class="cbox">
-    <div class="cphoto"><img src="img/collab_desk.jpg" alt="Kitchen counter with stand mixer, cupcake, laptop and a weekly planner listing cake orders, content, family and homeschool"></div>
+    <div class="cphoto"><img loading="lazy" decoding="async" width="900" height="1350" src="img/collab_desk.webp" alt="Kitchen counter with stand mixer, cupcake, laptop and a weekly planner listing cake orders, content, family and homeschool"></div>
     <div class="cbody">
       <div class="community">
         <h3><small>Our growing</small>Community</h3>
@@ -833,7 +835,7 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
   </div></section>
   <section class="intro storyp"><div class="wrap">
     <h2 class="story-title">Life beyond <span class="pop">buttercream</span></h2>
-    <div class="frame"><img src="img/curls.jpg" alt="Portrait of Melinda, the baker behind Batter N' Life"></div>
+    <div class="frame"><img loading="lazy" decoding="async" width="900" height="900" src="img/curls.webp" alt="Portrait of Melinda, the baker behind Batter N' Life"></div>
     <div class="storytext">
       <p>I'm a wife, mom of four, self-taught baker, and homeschool teacher. Between decorating cakes, homeschooling, and keeping up with everyday life, there's always something going on.</p>
       <p>My love for baking turned into something I never expected. Over 10 years later, I've created more than 600 custom cakes for birthdays, celebrations and every sweet moment in between.</p>
@@ -859,71 +861,71 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
     <div class="bcar">
     <button type="button" class="bcar-btn prev" aria-label="Previous cakes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <div class="bgrid">
-      <figure style="--z:1.35;--zo:50.5% 59.5%"><img data-k="rose2" src="img/rose2.jpg" alt="Tall heart-shaped cake covered in red buttercream roses" style="object-position:50.5% 47.5%" loading="lazy"></figure>
-      <figure style="--z:1;--zo:61.6% 25%"><img data-k="gal_sunflower" src="img/gal_sunflower.jpg" alt="Tall yellow cake with piped buttercream sunflowers and gold leaf" style="object-position:49.6% 15%" loading="lazy"></figure>
-      <figure style="--z:1.1;--zo:50.5% 54.4%"><img data-k="gal_n43" src="img/gal_n43.jpg" alt="Two-tier pastel watercolor &quot;Oh Baby&quot; cake with flowers, gold butterflies and cakesicles" style="object-position:50.5% 54.4%" loading="lazy"></figure>
-      <figure style="--z:1;--zo:50% 38.6%"><img data-k="ruffle2" src="img/ruffle2.jpg" alt="Pastel ruffled cake on a gold stand" style="object-position:50% 38.6%" loading="lazy"></figure>
-      <figure style="--z:1.1;--zo:50.7% 58.7%"><img data-k="flower" src="img/flower.jpg" alt="White cake with hand-piped wildflowers" style="object-position:50.7% 52.7%" loading="lazy"></figure>
-      <figure style="--z:1.15;--zo:48.9% 46%"><img data-k="pirate" src="img/pirate2.jpg" alt="Pirate adventure themed birthday cake" style="object-position:48.9% 46%" loading="lazy"></figure>
-      <figure style="--z:1.37;--zo:52.6% 40.1%"><img data-k="gal_soccer" src="img/gal_soccer.jpg" alt="Soccer ball 40th birthday cake with a navy and gold crest" style="object-position:52.6% 36.1%" loading="lazy"></figure>
-      <figure style="--z:1;--zo:50% 50%"><img data-k="gal_burger" src="img/gal_burger.jpg" alt="3D tomato-and-burger character birthday cake" style="object-position:50% 45%" loading="lazy"></figure>
-      <figure style="--z:1.05;--zo:50% 50%"><img data-k="gal_n62" src="img/gal_n62.jpg" alt="Two-tier hot air balloon cake with clouds, airplanes and bunting" style="object-position:50% 50%" loading="lazy"></figure>
-      <figure style="--z:1.15;--zo:50.3% 67.1%"><img data-k="gal_n50" src="img/gal_n50.jpg" alt="Two-tier Hawaiian birthday cake with hibiscus flowers, ocean waves and bamboo" style="object-position:50.3% 67.1%" loading="lazy"></figure>
-      <figure style="--z:1.4;--zo:52.1% 65.3%"><img data-k="gal_n54" src="img/gal_n54.jpg" alt="Three-tier white wedding cake with navy and coral brushstrokes, gold leaf, a floating top tier and red and white roses" style="object-position:58.1% 53.3%" loading="lazy"></figure>
-      <figure style="--z:1.2;--zo:46.2% 53.5%"><img data-k="gal_n64" src="img/gal_n64.jpg" alt="Three-tier ivory wedding cake with a cascade of purple and lavender flowers" style="object-position:46.2% 53.5%" loading="lazy"></figure>
-      <figure style="--z:1.1;--zo:50.4% 56.8%"><img data-k="gal_tiered" src="img/gal_tiered.jpg" alt="Black tiered cake with cascading red roses and gold butterflies" style="object-position:50.4% 54.8%" loading="lazy"></figure>
-      <figure style="--z:1.65;--zo:49.9% 21.2%"><img data-k="gal_n31" src="img/gal_n31.jpg" alt="Four-tier black wedding cake with red and ivory roses" style="object-position:56.9% 39.2%" loading="lazy"></figure>
-      <figure style="--z:2.45;--zo:50.9% 35%"><img data-k="gal_n55" src="img/gal_n55.jpg" alt="Three-tier semi-naked rustic wedding cake with white roses and greenery on a barrel table" style="object-position:50.9% 47%" loading="lazy"></figure>
-      <figure style="--z:1.25;--zo:56.4% 62.1%"><img data-k="gal_n05" src="img/gal_n05.jpg" alt="Chocolate drip cake loaded with donuts, chocolate bars and gold leaf" style="object-position:56.4% 62.1%" loading="lazy"></figure>
-      <figure style="--z:1.35;--zo:54.9% 63.5%"><img data-k="gal_n48" src="img/gal_n48.jpg" alt="Peanut butter drip cake topped with peanut butter cups and swirls" style="object-position:54.9% 63.5%" loading="lazy"></figure>
-      <figure style="--z:1;--zo:50% 50%"><img data-k="gal_n39" src="img/gal_n39.jpg" alt="Chocolate drip cake piled with glazed donuts, candy bars and gold leaf" style="object-position:50% 50%" loading="lazy"></figure>
-      <figure style="--z:1.05;--zo:50% 50%"><img data-k="gal_n28" src="img/gal_n28.jpg" alt="Chocolate drip cake loaded with cookies, candy bars and gold leaf" style="object-position:50% 50%" loading="lazy"></figure>
-      <figure style="--z:1.15;--zo:55.2% 61.4%"><img data-k="gal_n29" src="img/gal_n29.jpg" alt="Tall chocolate drip cake topped with brownies and gold leaf" style="object-position:55.2% 61.4%" loading="lazy"></figure>
-      <figure style="--z:1.1;--zo:50% 50%"><img data-k="gal_n63" src="img/gal_n63.jpg" alt="Two-tier black and white cake with white sugar flowers and a crystal design" style="object-position:50% 50%" loading="lazy"></figure>
-      <figure style="--z:1.3;--zo:50.4% 64.3%"><img data-k="gal_n08" src="img/gal_n08.jpg" alt="Two-tier pink drip cake with peonies, white flowers and pink chocolate-dipped strawberries" style="object-position:50.4% 64.3%" loading="lazy"></figure>
-      <figure style="--z:1.35;--zo:51.1% 83%"><img data-k="gal_n13" src="img/gal_n13.jpg" alt="Semi-naked cake with teal watercolor, gold leaf and a cascade of white roses and eucalyptus" style="object-position:51.1% 83%" loading="lazy"></figure>
-      <figure style="--z:1.05;--zo:50% 50%"><img data-k="gal_n18" src="img/gal_n18.jpg" alt="White anniversary cake with purple watercolor strokes, fresh roses and a &quot;We Still Do&quot; topper" style="object-position:50% 50%" loading="lazy"></figure>
-      <figure style="--z:1.35;--zo:48.5% 53.5%"><img data-k="gal_n14" src="img/gal_n14.jpg" alt="Tall pink watercolor drip cake with a gold name topper, roses, dried florals, a fondant rainbow and macarons" style="object-position:48.5% 53.5%" loading="lazy"></figure>
-      <figure style="--z:1;--zo:54% 50.1%"><img data-k="gal_n44" src="img/gal_n44.jpg" alt="Pink drip cake with gold-wrapped chocolates, chocolate hearts and pink swirls" style="object-position:54% 50.1%" loading="lazy"></figure>
-      <figure style="--z:1.2;--zo:49.9% 28.6%"><img data-k="gal_n23" src="img/gal_n23.jpg" alt="White and blue football team drip cake with blue-dipped strawberries" style="object-position:49.9% 28.6%" loading="lazy"></figure>
-      <figure style="--z:1.1;--zo:47.9% 59.5%"><img data-k="gal_n03" src="img/gal_n03.jpg" alt="Rainbow striped drip cake topped with lollipops, candy twists and ice cream cones" style="object-position:47.9% 59.5%" loading="lazy"></figure>
-      <figure style="--z:1.25;--zo:46% 60.2%"><img data-k="gal_n04" src="img/gal_n04.jpg" alt="White cake with black chocolate drip, red buttercream swirls and red, yellow and black sprinkles" style="object-position:46% 60.2%" loading="lazy"></figure>
-      <figure style="--z:1.15;--zo:49.8% 69.1%"><img data-k="gal_n30" src="img/gal_n30.jpg" alt="Halloween cake with black and white stripes, green drip and spooky sprinkles" style="object-position:49.8% 69.1%" loading="lazy"></figure>
-      <figure style="--z:1.2;--zo:46.6% 51.7%"><img data-k="gal_n56" src="img/gal_n56.jpg" alt="White confirmation cake with a gold cross and dove, red roses and gold leaf" style="object-position:46.6% 51.7%" loading="lazy"></figure>
-      <figure style="--z:1.15;--zo:50.4% 57.7%"><img data-k="gal_n19" src="img/gal_n19.jpg" alt="Purple buttercream cake with a gold rose design, white roses and gold pearls" style="object-position:50.4% 57.7%" loading="lazy"></figure>
-      <figure style="--z:1.05;--zo:100% 9.1%"><img data-k="gal_n35" src="img/gal_n35.jpg" alt="Terracotta flower pot 80th birthday cake with pink roses, cookie-crumb soil and a garden trowel" style="object-position:100% 9.1%" loading="lazy"></figure>
-      <figure style="--z:1.15;--zo:50% 50%"><img data-k="gal_n25" src="img/gal_n25.jpg" alt="White and blue watercolor birthday cake with blue peonies and gold leaf" style="object-position:50% 50%" loading="lazy"></figure>
-      <figure style="--z:1.3;--zo:59% 71.5%"><img data-k="gal_n06" src="img/gal_n06.jpg" alt="White buttercream cake with pink, navy and gold brushstrokes and a cluster of pink and blue flowers" style="object-position:59% 71.5%" loading="lazy"></figure>
-      <figure style="--z:1.05;--zo:51.5% 42.6%"><img data-k="gal_n60" src="img/gal_n60.jpg" alt="Two-tier pastel rainbow and butterfly cake with pink and green flowers" style="object-position:51.5% 42.6%" loading="lazy"></figure>
-      <figure style="--z:1.2;--zo:49.8% 59.8%"><img data-k="gal_n20" src="img/gal_n20.jpg" alt="Two-tier winter princess sixth birthday cake with a tiara and white snowy trees" style="object-position:49.8% 59.8%" loading="lazy"></figure>
-      <figure style="--z:1;--zo:50.2% 45.1%"><img data-k="gal_n52" src="img/gal_n52.jpg" alt="Two-tier unicorn spa-day sixth birthday cake with a gold horn and cucumber eyes" style="object-position:50.2% 45.1%" loading="lazy"></figure>
-      <figure style="--z:1.05;--zo:50% 50%"><img data-k="gal_n38" src="img/gal_n38.jpg" alt="Two-tier purple storybook house birthday cake with a gate, flowers and butterflies" style="object-position:50% 50%" loading="lazy"></figure>
-      <figure style="--z:1.05;--zo:50% 50%"><img data-k="gal_n61" src="img/gal_n61.jpg" alt="Two-tier pink and blue third birthday cake with donuts, cones and chocolate treats" style="object-position:50% 50%" loading="lazy"></figure>
-      <figure style="--z:1.1;--zo:58.2% 56.2%"><img data-k="gal_n58" src="img/gal_n58.jpg" alt="Pink pumpkin-shaped cake with pink roses and a gold stem" style="object-position:58.2% 56.2%" loading="lazy"></figure>
-      <figure style="--z:1.2;--zo:50.1% 70.4%"><img data-k="gal_n46" src="img/gal_n46.jpg" alt="Black and gold &quot;King&quot; cake with a sculpted golden crown and gold-leaf fault line" style="object-position:50.1% 70.4%" loading="lazy"></figure>
-      <figure style="--z:1.1;--zo:50% 50%"><img data-k="gal_n22" src="img/gal_n22.jpg" alt="Rose gold &quot;Thirty&quot; birthday cake topped with pink and black macarons" style="object-position:50% 50%" loading="lazy"></figure>
-      <figure style="--z:1.25;--zo:55.4% 91.8%"><img data-k="gal_n02" src="img/gal_n02.jpg" alt="Brown and pink designer gift box cake with a fondant bow and gold monogram pattern" style="object-position:55.4% 91.8%" loading="lazy"></figure>
-      <figure style="--z:1.25;--zo:50.1% 47.9%"><img data-k="gal_n59" src="img/gal_n59.jpg" alt="White and gold leaf cake topped with a sculpted golden crown" style="object-position:50.1% 47.9%" loading="lazy"></figure>
-      <figure style="--z:1;--zo:50% 50%"><img data-k="gal_n16" src="img/gal_n16.jpg" alt="Black 80s-themed cake covered in neon piping, retro game and boombox designs and a cassette topper" style="object-position:50% 50%" loading="lazy"></figure>
-      <figure style="--z:1.1;--zo:50% 62.6%"><img data-k="gal_n10" src="img/gal_n10.jpg" alt="Blue superhero fifth birthday cake with a red drip, comic-style toppers and sprinkles" style="object-position:50% 62.6%" loading="lazy"></figure>
-      <figure style="--z:1.25;--zo:48.3% 50.4%"><img data-k="gal_n21" src="img/gal_n21.jpg" alt="Blue and red 13th birthday cake with sneakers, basketballs, gold leaf and candy" style="object-position:48.3% 50.4%" loading="lazy"></figure>
-      <figure style="--z:1.2;--zo:67.5% 48.6%"><img data-k="gal_n01" src="img/gal_n01.jpg" alt="Tall blue and white striped cake topped with cookies, swirls and colorful sprinkles" style="object-position:67.5% 48.6%" loading="lazy"></figure>
-      <figure style="--z:1.3;--zo:55.8% 57.4%"><img data-k="gal_n11" src="img/gal_n11.jpg" alt="Blue 80s-themed 40th birthday cake with a boombox, cassette and retro toppers" style="object-position:55.8% 57.4%" loading="lazy"></figure>
-      <figure style="--z:1.15;--zo:50% 50%"><img data-k="gal_n24" src="img/gal_n24.jpg" alt="Two-tier Baby-Q baby shower cake with a grill top, gingham and sunflowers" style="object-position:50% 50%" loading="lazy"></figure>
-      <figure style="--z:1.05;--zo:50% 50%"><img data-k="gal_n17" src="img/gal_n17.jpg" alt="White quilted graduation cake with a maroon university monogram, grad cap and diploma" style="object-position:50% 50%" loading="lazy"></figure>
-      <figure style="--z:1.15;--zo:100% 99.2%"><img data-k="gal_n12" src="img/gal_n12.jpg" alt="Two-tier safari print cake with giraffe, leopard and zebra patterns and green palm leaves" style="object-position:100% 99.2%" loading="lazy"></figure>
-      <figure style="--z:1.1;--zo:50.5% 43.2%"><img data-k="gal_n42" src="img/gal_n42.jpg" alt="Two-tier games-themed cake with a golden torch, medals, rings and stars" style="object-position:50.5% 43.2%" loading="lazy"></figure>
-      <figure style="--z:1.15;--zo:48.7% 56.5%"><img data-k="gal_n26" src="img/gal_n26.jpg" alt="Green watermelon character cake with a ladybug and antennae" style="object-position:48.7% 56.5%" loading="lazy"></figure>
-      <figure style="--z:1.2;--zo:41% 60.4%"><img data-k="gal_n32" src="img/gal_n32.jpg" alt="Two-tier ivory 70th birthday cake with gold leopard print and pampas grass" style="object-position:41% 60.4%" loading="lazy"></figure>
-      <figure style="--z:1.1;--zo:42.9% 28.9%"><img data-k="gal_n37" src="img/gal_n37.jpg" alt="Cognac-themed cake with a bottle topper and chocolate-dipped strawberries" style="object-position:42.9% 28.9%" loading="lazy"></figure>
-      <figure style="--z:1.2;--zo:49% 62.1%"><img data-k="gal_n09" src="img/gal_n09.jpg" alt="Pink coffee-cup themed drip cake with strawberries, a straw and an upside-down cup on top" style="object-position:49% 62.1%" loading="lazy"></figure>
-      <figure style="--z:1.1;--zo:50.8% 57.8%"><img data-k="gal_n34" src="img/gal_n34.jpg" alt="Two-tier purple ruffle first communion cake with a bible and rosary" style="object-position:50.8% 57.8%" loading="lazy"></figure>
-      <figure style="--z:1;--zo:50% 50%"><img data-k="gal_n51" src="img/gal_n51.jpg" alt="Leopard print heart cake with a June calendar, crown and matching cupcakes" style="object-position:50% 50%" loading="lazy"></figure>
-      <figure style="--z:1;--zo:59.1% 25.4%"><img data-k="gal_n33" src="img/gal_n33.jpg" alt="Two-tier neon laser tag 10th birthday cake with targets, warning signs and a light-up topper" style="object-position:59.1% 25.4%" loading="lazy"></figure>
-      <figure style="--z:1.15;--zo:50.1% 57.4%"><img data-k="gal_n47" src="img/gal_n47.jpg" alt="Two-tier superhero fourth birthday cake with a city skyline and red, blue and gold spheres" style="object-position:50.1% 57.4%" loading="lazy"></figure>
-      <figure style="--z:1.1;--zo:47.2% 55.7%"><img data-k="gal_n36" src="img/gal_n36.jpg" alt="Halloween striped drip cake with a towering stack of spooky treats, donuts and cake pops" style="object-position:47.2% 55.7%" loading="lazy"></figure>
-      <figure style="--z:1.05;--zo:54.9% 71.3%"><img data-k="gal_n40" src="img/gal_n40.jpg" alt="Two-tier monster truck fifth birthday cake with chocolate mud, flames and matching cupcakes" style="object-position:54.9% 71.3%" loading="lazy"></figure>
-      <figure style="--z:1.3;--zo:50.5% 31.3%"><img data-k="gal_n41" src="img/gal_n41.jpg" alt="Orange foam-dart themed eighth birthday cake with a target and colorful splats" style="object-position:50.5% 31.3%" loading="lazy"></figure>
+      <figure style="--z:1.35;--zo:50.5% 59.5%"><img width="719" height="1000" data-k="rose2" src="img/rose2.webp" alt="Tall heart-shaped cake covered in red buttercream roses" style="object-position:50.5% 47.5%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:61.6% 25%"><img width="900" height="1200" data-k="gal_sunflower" src="img/gal_sunflower.webp" alt="Tall yellow cake with piped buttercream sunflowers and gold leaf" style="object-position:49.6% 15%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50.5% 54.4%"><img width="640" height="822" data-k="gal_n43" src="img/gal_n43.webp" alt="Two-tier pastel watercolor &quot;Oh Baby&quot; cake with flowers, gold butterflies and cakesicles" style="object-position:50.5% 54.4%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:50% 38.6%"><img width="563" height="1000" data-k="ruffle2" src="img/ruffle2.webp" alt="Pastel ruffled cake on a gold stand" style="object-position:50% 38.6%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50.7% 58.7%"><img width="563" height="1000" data-k="flower" src="img/flower.webp" alt="White cake with hand-piped wildflowers" style="object-position:50.7% 52.7%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:48.9% 46%"><img width="788" height="1400" data-k="pirate" src="img/pirate2.webp" alt="Pirate adventure themed birthday cake" style="object-position:48.9% 46%" loading="lazy"></figure>
+      <figure style="--z:1.37;--zo:52.6% 40.1%"><img width="696" height="1000" data-k="gal_soccer" src="img/gal_soccer.webp" alt="Soccer ball 40th birthday cake with a navy and gold crest" style="object-position:52.6% 36.1%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:50% 50%"><img width="900" height="900" data-k="gal_burger" src="img/gal_burger.webp" alt="3D tomato-and-burger character birthday cake" style="object-position:50% 45%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:50% 50%"><img width="640" height="782" data-k="gal_n62" src="img/gal_n62.webp" alt="Two-tier hot air balloon cake with clouds, airplanes and bunting" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:50.3% 67.1%"><img width="640" height="812" data-k="gal_n50" src="img/gal_n50.webp" alt="Two-tier Hawaiian birthday cake with hibiscus flowers, ocean waves and bamboo" style="object-position:50.3% 67.1%" loading="lazy"></figure>
+      <figure style="--z:1.4;--zo:52.1% 65.3%"><img width="640" height="939" data-k="gal_n54" src="img/gal_n54.webp" alt="Three-tier white wedding cake with navy and coral brushstrokes, gold leaf, a floating top tier and red and white roses" style="object-position:58.1% 53.3%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:46.2% 53.5%"><img width="640" height="782" data-k="gal_n64" src="img/gal_n64.webp" alt="Three-tier ivory wedding cake with a cascade of purple and lavender flowers" style="object-position:46.2% 53.5%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50.4% 56.8%"><img width="900" height="900" data-k="gal_tiered" src="img/gal_tiered.webp" alt="Black tiered cake with cascading red roses and gold butterflies" style="object-position:50.4% 54.8%" loading="lazy"></figure>
+      <figure style="--z:1.65;--zo:49.9% 21.2%"><img width="640" height="783" data-k="gal_n31" src="img/gal_n31.webp" alt="Four-tier black wedding cake with red and ivory roses" style="object-position:56.9% 39.2%" loading="lazy"></figure>
+      <figure style="--z:2.45;--zo:50.9% 35%"><img width="640" height="780" data-k="gal_n55" src="img/gal_n55.webp" alt="Three-tier semi-naked rustic wedding cake with white roses and greenery on a barrel table" style="object-position:50.9% 47%" loading="lazy"></figure>
+      <figure style="--z:1.25;--zo:56.4% 62.1%"><img width="640" height="783" data-k="gal_n05" src="img/gal_n05.webp" alt="Chocolate drip cake loaded with donuts, chocolate bars and gold leaf" style="object-position:56.4% 62.1%" loading="lazy"></figure>
+      <figure style="--z:1.35;--zo:54.9% 63.5%"><img width="640" height="782" data-k="gal_n48" src="img/gal_n48.webp" alt="Peanut butter drip cake topped with peanut butter cups and swirls" style="object-position:54.9% 63.5%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:50% 50%"><img width="640" height="879" data-k="gal_n39" src="img/gal_n39.webp" alt="Chocolate drip cake piled with glazed donuts, candy bars and gold leaf" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:50% 50%"><img width="640" height="781" data-k="gal_n28" src="img/gal_n28.webp" alt="Chocolate drip cake loaded with cookies, candy bars and gold leaf" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:55.2% 61.4%"><img width="640" height="781" data-k="gal_n29" src="img/gal_n29.webp" alt="Tall chocolate drip cake topped with brownies and gold leaf" style="object-position:55.2% 61.4%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50% 50%"><img width="640" height="782" data-k="gal_n63" src="img/gal_n63.webp" alt="Two-tier black and white cake with white sugar flowers and a crystal design" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.3;--zo:50.4% 64.3%"><img width="640" height="783" data-k="gal_n08" src="img/gal_n08.webp" alt="Two-tier pink drip cake with peonies, white flowers and pink chocolate-dipped strawberries" style="object-position:50.4% 64.3%" loading="lazy"></figure>
+      <figure style="--z:1.35;--zo:51.1% 83%"><img width="640" height="783" data-k="gal_n13" src="img/gal_n13.webp" alt="Semi-naked cake with teal watercolor, gold leaf and a cascade of white roses and eucalyptus" style="object-position:51.1% 83%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:50% 50%"><img width="640" height="781" data-k="gal_n18" src="img/gal_n18.webp" alt="White anniversary cake with purple watercolor strokes, fresh roses and a &quot;We Still Do&quot; topper" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.35;--zo:48.5% 53.5%"><img width="640" height="781" data-k="gal_n14" src="img/gal_n14.webp" alt="Tall pink watercolor drip cake with a gold name topper, roses, dried florals, a fondant rainbow and macarons" style="object-position:48.5% 53.5%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:54% 50.1%"><img width="640" height="640" data-k="gal_n44" src="img/gal_n44.webp" alt="Pink drip cake with gold-wrapped chocolates, chocolate hearts and pink swirls" style="object-position:54% 50.1%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:49.9% 28.6%"><img width="640" height="781" data-k="gal_n23" src="img/gal_n23.webp" alt="White and blue football team drip cake with blue-dipped strawberries" style="object-position:49.9% 28.6%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:47.9% 59.5%"><img width="640" height="783" data-k="gal_n03" src="img/gal_n03.webp" alt="Rainbow striped drip cake topped with lollipops, candy twists and ice cream cones" style="object-position:47.9% 59.5%" loading="lazy"></figure>
+      <figure style="--z:1.25;--zo:46% 60.2%"><img width="640" height="783" data-k="gal_n04" src="img/gal_n04.webp" alt="White cake with black chocolate drip, red buttercream swirls and red, yellow and black sprinkles" style="object-position:46% 60.2%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:49.8% 69.1%"><img width="640" height="748" data-k="gal_n30" src="img/gal_n30.webp" alt="Halloween cake with black and white stripes, green drip and spooky sprinkles" style="object-position:49.8% 69.1%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:46.6% 51.7%"><img width="640" height="783" data-k="gal_n56" src="img/gal_n56.webp" alt="White confirmation cake with a gold cross and dove, red roses and gold leaf" style="object-position:46.6% 51.7%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:50.4% 57.7%"><img width="640" height="781" data-k="gal_n19" src="img/gal_n19.webp" alt="Purple buttercream cake with a gold rose design, white roses and gold pearls" style="object-position:50.4% 57.7%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:100% 9.1%"><img width="640" height="787" data-k="gal_n35" src="img/gal_n35.webp" alt="Terracotta flower pot 80th birthday cake with pink roses, cookie-crumb soil and a garden trowel" style="object-position:100% 9.1%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:50% 50%"><img width="640" height="703" data-k="gal_n25" src="img/gal_n25.webp" alt="White and blue watercolor birthday cake with blue peonies and gold leaf" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.3;--zo:59% 71.5%"><img width="640" height="783" data-k="gal_n06" src="img/gal_n06.webp" alt="White buttercream cake with pink, navy and gold brushstrokes and a cluster of pink and blue flowers" style="object-position:59% 71.5%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:51.5% 42.6%"><img width="640" height="782" data-k="gal_n60" src="img/gal_n60.webp" alt="Two-tier pastel rainbow and butterfly cake with pink and green flowers" style="object-position:51.5% 42.6%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:49.8% 59.8%"><img width="640" height="749" data-k="gal_n20" src="img/gal_n20.webp" alt="Two-tier winter princess sixth birthday cake with a tiara and white snowy trees" style="object-position:49.8% 59.8%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:50.2% 45.1%"><img width="640" height="941" data-k="gal_n52" src="img/gal_n52.webp" alt="Two-tier unicorn spa-day sixth birthday cake with a gold horn and cucumber eyes" style="object-position:50.2% 45.1%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:50% 50%"><img width="640" height="780" data-k="gal_n38" src="img/gal_n38.webp" alt="Two-tier purple storybook house birthday cake with a gate, flowers and butterflies" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:50% 50%"><img width="640" height="782" data-k="gal_n61" src="img/gal_n61.webp" alt="Two-tier pink and blue third birthday cake with donuts, cones and chocolate treats" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:58.2% 56.2%"><img width="640" height="783" data-k="gal_n58" src="img/gal_n58.webp" alt="Pink pumpkin-shaped cake with pink roses and a gold stem" style="object-position:58.2% 56.2%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:50.1% 70.4%"><img width="640" height="782" data-k="gal_n46" src="img/gal_n46.webp" alt="Black and gold &quot;King&quot; cake with a sculpted golden crown and gold-leaf fault line" style="object-position:50.1% 70.4%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50% 50%"><img width="640" height="796" data-k="gal_n22" src="img/gal_n22.webp" alt="Rose gold &quot;Thirty&quot; birthday cake topped with pink and black macarons" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.25;--zo:55.4% 91.8%"><img width="640" height="781" data-k="gal_n02" src="img/gal_n02.webp" alt="Brown and pink designer gift box cake with a fondant bow and gold monogram pattern" style="object-position:55.4% 91.8%" loading="lazy"></figure>
+      <figure style="--z:1.25;--zo:50.1% 47.9%"><img width="640" height="783" data-k="gal_n59" src="img/gal_n59.webp" alt="White and gold leaf cake topped with a sculpted golden crown" style="object-position:50.1% 47.9%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:50% 50%"><img width="640" height="995" data-k="gal_n16" src="img/gal_n16.webp" alt="Black 80s-themed cake covered in neon piping, retro game and boombox designs and a cassette topper" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50% 62.6%"><img width="640" height="782" data-k="gal_n10" src="img/gal_n10.webp" alt="Blue superhero fifth birthday cake with a red drip, comic-style toppers and sprinkles" style="object-position:50% 62.6%" loading="lazy"></figure>
+      <figure style="--z:1.25;--zo:48.3% 50.4%"><img width="640" height="701" data-k="gal_n21" src="img/gal_n21.webp" alt="Blue and red 13th birthday cake with sneakers, basketballs, gold leaf and candy" style="object-position:48.3% 50.4%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:67.5% 48.6%"><img width="640" height="783" data-k="gal_n01" src="img/gal_n01.webp" alt="Tall blue and white striped cake topped with cookies, swirls and colorful sprinkles" style="object-position:67.5% 48.6%" loading="lazy"></figure>
+      <figure style="--z:1.3;--zo:55.8% 57.4%"><img width="640" height="783" data-k="gal_n11" src="img/gal_n11.webp" alt="Blue 80s-themed 40th birthday cake with a boombox, cassette and retro toppers" style="object-position:55.8% 57.4%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:50% 50%"><img width="640" height="781" data-k="gal_n24" src="img/gal_n24.webp" alt="Two-tier Baby-Q baby shower cake with a grill top, gingham and sunflowers" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:50% 50%"><img width="640" height="776" data-k="gal_n17" src="img/gal_n17.webp" alt="White quilted graduation cake with a maroon university monogram, grad cap and diploma" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:100% 99.2%"><img width="640" height="783" data-k="gal_n12" src="img/gal_n12.webp" alt="Two-tier safari print cake with giraffe, leopard and zebra patterns and green palm leaves" style="object-position:100% 99.2%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50.5% 43.2%"><img width="640" height="776" data-k="gal_n42" src="img/gal_n42.webp" alt="Two-tier games-themed cake with a golden torch, medals, rings and stars" style="object-position:50.5% 43.2%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:48.7% 56.5%"><img width="640" height="735" data-k="gal_n26" src="img/gal_n26.webp" alt="Green watermelon character cake with a ladybug and antennae" style="object-position:48.7% 56.5%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:41% 60.4%"><img width="640" height="830" data-k="gal_n32" src="img/gal_n32.webp" alt="Two-tier ivory 70th birthday cake with gold leopard print and pampas grass" style="object-position:41% 60.4%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:42.9% 28.9%"><img width="640" height="752" data-k="gal_n37" src="img/gal_n37.webp" alt="Cognac-themed cake with a bottle topper and chocolate-dipped strawberries" style="object-position:42.9% 28.9%" loading="lazy"></figure>
+      <figure style="--z:1.2;--zo:49% 62.1%"><img width="640" height="783" data-k="gal_n09" src="img/gal_n09.webp" alt="Pink coffee-cup themed drip cake with strawberries, a straw and an upside-down cup on top" style="object-position:49% 62.1%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:50.8% 57.8%"><img width="640" height="781" data-k="gal_n34" src="img/gal_n34.webp" alt="Two-tier purple ruffle first communion cake with a bible and rosary" style="object-position:50.8% 57.8%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:50% 50%"><img width="640" height="782" data-k="gal_n51" src="img/gal_n51.webp" alt="Leopard print heart cake with a June calendar, crown and matching cupcakes" style="object-position:50% 50%" loading="lazy"></figure>
+      <figure style="--z:1;--zo:59.1% 25.4%"><img width="640" height="825" data-k="gal_n33" src="img/gal_n33.webp" alt="Two-tier neon laser tag 10th birthday cake with targets, warning signs and a light-up topper" style="object-position:59.1% 25.4%" loading="lazy"></figure>
+      <figure style="--z:1.15;--zo:50.1% 57.4%"><img width="640" height="804" data-k="gal_n47" src="img/gal_n47.webp" alt="Two-tier superhero fourth birthday cake with a city skyline and red, blue and gold spheres" style="object-position:50.1% 57.4%" loading="lazy"></figure>
+      <figure style="--z:1.1;--zo:47.2% 55.7%"><img width="640" height="801" data-k="gal_n36" src="img/gal_n36.webp" alt="Halloween striped drip cake with a towering stack of spooky treats, donuts and cake pops" style="object-position:47.2% 55.7%" loading="lazy"></figure>
+      <figure style="--z:1.05;--zo:54.9% 71.3%"><img width="640" height="782" data-k="gal_n40" src="img/gal_n40.webp" alt="Two-tier monster truck fifth birthday cake with chocolate mud, flames and matching cupcakes" style="object-position:54.9% 71.3%" loading="lazy"></figure>
+      <figure style="--z:1.3;--zo:50.5% 31.3%"><img width="640" height="755" data-k="gal_n41" src="img/gal_n41.webp" alt="Orange foam-dart themed eighth birthday cake with a target and colorful splats" style="object-position:50.5% 31.3%" loading="lazy"></figure>
     </div>
     <button type="button" class="bcar-btn next" aria-label="Next cakes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     </div>
@@ -939,14 +941,14 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
     </div>
     <div class="tips">
       <article class="tip" data-reels-card="reels-wish">
-        <div class="tip-img"><img src="img/planner.jpg" alt="Planner, notebooks and laptop on the kitchen counter" loading="lazy"></div>
+        <div class="tip-img"><img width="667" height="1000" src="img/planner.webp" alt="Planner, notebooks and laptop on the kitchen counter" loading="lazy"></div>
         <div class="tip-body">
           <h3>What I Wish I Knew</h3>
           <p>The lessons I'd share with myself on day one of starting a baking business, from pricing and planning to saying yes (and no).</p>
           <a class="tip-link" href="#" data-reels="reels-wish">Watch the reels <span aria-hidden="true">→</span></a></div>
       </article>
       <article class="tip" data-reels-card="reels-deco">
-        <div class="tip-img"><img src="img/tip_deco.jpg" alt="Cake decorating tools on a wooden counter: turntable, piping bag, offset spatulas, cake leveler, bench scraper and a cake board with dowels" loading="lazy" style="object-position:50% 65%"></div>
+        <div class="tip-img"><img width="900" height="506" src="img/tip_deco.webp" alt="Cake decorating tools on a wooden counter: turntable, piping bag, offset spatulas, cake leveler, bench scraper and a cake board with dowels" loading="lazy" style="object-position:50% 65%"></div>
         <div class="tip-body">
           <h3>Decorating &amp; Process</h3>
           <p>My process from start to finish: baking, filling, stacking, piping and getting those smooth buttercream finishes.</p>
@@ -970,13 +972,13 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
     </div>
     <div class="tips">
       <article class="tip">
-        <div class="tip-img"><img src="img/fam_table.jpg" alt="Mom working on her laptop and planner at the dining table with a mug of cocoa" loading="lazy" style="object-position:50% 30%"></div>
+        <div class="tip-img"><img width="750" height="1000" src="img/fam_table.webp" alt="Mom working on her laptop and planner at the dining table with a mug of cocoa" loading="lazy" style="object-position:50% 30%"></div>
         <div class="tip-body"><span class="soon">Reels coming soon</span>
           <h3>Homeschool Days</h3>
           <p>How we homeschool four kids: our lessons, schedules, and what a real school day looks like at our house.</p></div>
       </article>
       <article class="tip">
-        <div class="tip-img"><img src="img/fam_play.jpg" alt="Sunny living room with a basket of teddy bears and wooden blocks on the floor" loading="lazy" style="object-position:30% 60%"></div>
+        <div class="tip-img"><img width="900" height="600" src="img/fam_play.webp" alt="Sunny living room with a basket of teddy bears and wooden blocks on the floor" loading="lazy" style="object-position:30% 60%"></div>
         <div class="tip-body"><span class="soon">Reels coming soon</span>
           <h3>Routines &amp; Real Life</h3>
           <p>Morning routines, busy evenings, and all the wifing and momming in between.</p></div>
@@ -988,9 +990,9 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
       <h2>Life in <span class="pop">Pictures</span></h2>
     </div>
     <div class="mom-row">
-      <img style="object-position:30% 60%" src="img/fam_play.jpg" alt="Sunny living room with a basket of teddy bears and wooden blocks on the floor">
-      <img style="object-position:45% 22%" src="img/fam_bake.jpg" alt="Melinda frosting sprinkle sugar cookies at a white marble kitchen island">
-      <img style="object-position:50% 50%" src="img/fam_entry.jpg" alt="Entryway bench with kids' backpacks and a diaper bag on hooks, family shoes and baby shoes lined up below">
+      <img loading="lazy" decoding="async" width="900" height="600" style="object-position:30% 60%" src="img/fam_play.webp" alt="Sunny living room with a basket of teddy bears and wooden blocks on the floor">
+      <img loading="lazy" decoding="async" width="900" height="1200" style="object-position:45% 22%" src="img/fam_bake.webp" alt="Melinda frosting sprinkle sugar cookies at a white marble kitchen island">
+      <img loading="lazy" decoding="async" width="900" height="675" style="object-position:50% 50%" src="img/fam_entry.webp" alt="Entryway bench with kids' backpacks and a diaper bag on hooks, family shoes and baby shoes lined up below">
     </div>
   </div></section>
 </main>
@@ -1004,10 +1006,10 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
   </div></section>
   <section class="faves favp"><div class="wrap">
     <div class="shelf">
-      <a class="item" href="https://www.amazon.com/shop/batternlife/list/FE43IYTSRGB7?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img class="thumb" src="img/fav_tools.jpg" alt="Flat lay of baking tools and ingredients: cupcakes, piping bags and tips, whisks, measuring spoons, flour and sprinkles"><b>Baking Essentials</b></a>
-      <a class="item" href="https://www.amazon.com/shop/batternlife/list/3VZD4BW7Q3N2P?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img class="thumb" src="img/fav_baby.jpg" alt="Folded knit baby blankets with booties and a teether"><b>Baby &amp; Kids</b></a>
-      <a class="item" href="https://www.amazon.com/shop/batternlife/list/2LW1DBUF70SBA?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img class="thumb" src="img/fav_home.jpg" alt="Warm, neutral entryway with a wood console and woven baskets"><b>Home &amp; Everyday</b></a>
-      <a class="item" href="https://www.amazon.com/shop/batternlife/list/3VO4QY6M2GB7A?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img class="thumb" src="img/fav_skin.jpg" alt="Skincare bottles, jars and a scrunchie on a wooden tray by a mirror"><b>Skin &amp; Hair Care</b></a>
+      <a class="item" href="https://www.amazon.com/shop/batternlife/list/FE43IYTSRGB7?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img loading="lazy" decoding="async" width="800" height="533" class="thumb" src="img/fav_tools.webp" alt="Flat lay of baking tools and ingredients: cupcakes, piping bags and tips, whisks, measuring spoons, flour and sprinkles"><b>Baking Essentials</b></a>
+      <a class="item" href="https://www.amazon.com/shop/batternlife/list/3VZD4BW7Q3N2P?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img loading="lazy" decoding="async" width="797" height="800" class="thumb" src="img/fav_baby.webp" alt="Folded knit baby blankets with booties and a teether"><b>Baby &amp; Kids</b></a>
+      <a class="item" href="https://www.amazon.com/shop/batternlife/list/2LW1DBUF70SBA?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img loading="lazy" decoding="async" width="800" height="800" class="thumb" src="img/fav_home.webp" alt="Warm, neutral entryway with a wood console and woven baskets"><b>Home &amp; Everyday</b></a>
+      <a class="item" href="https://www.amazon.com/shop/batternlife/list/3VO4QY6M2GB7A?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img loading="lazy" decoding="async" width="900" height="600" class="thumb" src="img/fav_skin.webp" alt="Skincare bottles, jars and a scrunchie on a wooden tray by a mirror"><b>Skin &amp; Hair Care</b></a>
     </div>
     <div class="center-cta"><a class="btn solid" href="https://a.co/d/0biQYnAP" target="_blank" rel="noopener sponsored">Visit My Amazon Shop <span aria-hidden="true">→</span></a></div>
   </div></section>
@@ -1021,7 +1023,7 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
     <div class="heart-rule"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.7 4.5c2.1 0 3.8 1.2 5.3 3 1.5-1.8 3.2-3 5.3-3 3.7 0 5.8 3.7 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg></div>
   </div></section>
   <section class="collab contactp"><div class="wrap"><div class="cbox">
-    <div class="cphoto"><img src="img/collab_desk.jpg" alt="Kitchen counter with stand mixer, cupcake, laptop and a weekly planner listing cake orders, content, family and homeschool"></div>
+    <div class="cphoto"><img loading="lazy" decoding="async" width="900" height="1350" src="img/collab_desk.webp" alt="Kitchen counter with stand mixer, cupcake, laptop and a weekly planner listing cake orders, content, family and homeschool"></div>
     <div class="cbody">
       <div class="community">
         <h3><small>Our growing</small>Community</h3>
@@ -1065,7 +1067,7 @@ html:not([data-route="bake"]) .gsw,html.arr .gsw,html.adj .gsw{display:none}
 
 <footer><div class="wrap">
   <div class="top">
-    <div class="fbrand"><p class="fname"><img class="flogo" src="img/logo_letters_light.png" alt="Batter N' Life"></p><p class="tag">Something sweet in the mix</p></div>
+    <div class="fbrand"><p class="fname"><img loading="lazy" decoding="async" width="900" height="264" class="flogo" src="img/logo_letters_light.webp" alt="Batter N' Life"></p><p class="tag">Something sweet in the mix</p></div>
     <nav aria-label="Footer"><a href="#/">Home</a><a href="#/story">My Story</a><a href="#/bake">Bake Life</a><a href="#/mom">Mom Life</a><a href="#/favorites">Favorites</a><a href="#/contact">Contact</a></nav>
   </div>
   <div class="base"><span>© 2026 Batter N' Life. All rights reserved. As an Amazon Associate, I earn from qualifying purchases.</span><span>Contact · Privacy Policy · Terms</span></div>
