@@ -758,6 +758,10 @@ main > section.menup{min-height:0!important;padding-block:clamp(48px,6vw,84px)!i
 @media (max-width:640px){.menu-grid{grid-template-columns:1fr}.mc-cake ul{columns:1}.order-steps ol{grid-template-columns:1fr}}
 .duo-cta{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
 .duo-cta .btn{margin-top:0}
+.oform{max-width:860px;margin:clamp(40px,5vw,64px) auto 0;text-align:left}
+.oform label i{font-style:normal;text-transform:none;letter-spacing:0;color:var(--ink-soft);font-weight:400}
+.cform-note{font-family:var(--text);font-size:.95rem;color:var(--ink-soft);margin:14px 0 0}
+.oform input[type=date]{min-height:48px}
 </style>
 </head>
 <body>
@@ -1056,8 +1060,30 @@ main > section.menup{min-height:0!important;padding-block:clamp(48px,6vw,84px)!i
         <li><b>Send your details</b><span>Tell me your date, number of servings, theme and any inspiration photos.</span></li>
         <li><b>Get your quote</b><span>I’ll reply with pricing and availability to confirm your order.</span></li>
       </ol>
-      <div class="center-cta"><a class="btn solid order-btn" href="/contact/" data-order>Start My Order <span aria-hidden="true">→</span></a></div>
     </div>
+    <form class="cform cform-inline oform" id="order-form" novalidate>
+      <h3>Start your <span class="pop">order</span></h3>
+      <p class="cform-sub">Fill in what you know. I'll reply with pricing and availability to confirm your order.</p>
+      <div class="cgrid">
+        <label>Name<input type="text" name="name" autocomplete="name" required></label>
+        <label>Contact Number<input type="tel" name="phone" autocomplete="tel" inputmode="tel"></label>
+        <label class="full">Email<input type="email" name="email" autocomplete="email" required></label>
+        <label>Event Date<input type="date" name="date" required></label>
+        <label>Occasion
+          <select name="occasion"><option value="" selected>Choose one…</option><option>Birthday</option><option>Wedding</option><option>Anniversary</option><option>Baby Shower</option><option>Gender Reveal</option><option>Graduation</option><option>Holiday</option><option>Other</option></select></label>
+        <label>Number of Servings<input type="text" name="servings" inputmode="numeric" placeholder="e.g. 25"></label>
+        <label>Pickup or Delivery
+          <select name="pickup"><option value="" selected>Choose one…</option><option>Pickup</option><option>Delivery</option><option>Not sure yet</option></select></label>
+        <label class="full">Cake Flavor<select name="cake"><option value="" selected>Choose a flavor…</option><option>Classic Vanilla</option><option>Vanilla Bean</option><option>Brown Butter Vanilla</option><option>Decadent Chocolate</option><option>Classic Marble</option><option>Funfetti</option><option>Red Velvet</option><option>Banana</option><option>Pumpkin</option><option>Old-Fashioned Spice</option><option>Carrot</option><option>Lemon</option><option>Coconut</option><option>Party-Fetti (Funfetti Oreo)</option><option>Double Stuf Oreo (Cookies N’ Creme)</option><option>Strawberry</option><option>Strawberry Lemon</option><option>Pineapple</option><option>Vanilla Latte</option><option>Chocolate Mocha</option><option>Wedding Cake (White Vanilla Almond)</option><option>Bizcocho Mojadito (Puerto Rican Almond Cake)</option><option>Bizcocho Dominicano (Dominican Cake)</option><option>Not sure yet</option></select></label>
+        <label>Buttercream<select name="buttercream"><option value="" selected>Choose a buttercream…</option><option>Classic Vanilla</option><option>Vanilla Bean</option><option>Triple Chocolate</option><option>Funfetti</option><option>Cream Cheese</option><option>Coconut</option><option>Peanut Butter Cup</option><option>Strawberry</option><option>Chocolate Cream Cheese</option><option>Raspberry</option><option>Lemon</option><option>Nutella</option><option>Dulce de Leche</option><option>S’mores</option><option>Snickerdoodle</option><option>Coffee</option><option>Salted Caramel</option><option>Brown Butter</option><option>White Chocolate</option><option>Not sure yet</option></select></label>
+        <label>Filling (Optional)<select name="filling"><option value="" selected>No filling</option><option>Chocolate Bars &amp; Candies</option><option>Fresh Seasonal Fruit</option><option>Fruit Preserves</option><option>Velvety Hazelnut Cream</option><option>Creamy Almond Butter</option><option>Salted Caramel</option><option>Dulce de Leche</option><option>Silky Chocolate Ganache</option></select></label>
+        <label class="full">Design, Theme &amp; Colors<textarea name="message" rows="5" required placeholder="Tell me about your cake: theme, colors, number of tiers, names or messages, and anything else."></textarea></label>
+      </div>
+      <p class="cform-note">Have inspiration photos? Attach them to the email that opens when you press submit.</p>
+      <p class="cform-err" role="alert" hidden>Please fill in your name, a valid email, your event date, and your design details.</p>
+      <button class="btn solid" type="submit">Submit Order Request <span aria-hidden="true">→</span></button>
+      <div class="cform-done" role="status" hidden><strong>Almost done!</strong> Your email app is opening with your order ready to send to batternbaked@gmail.com. Add any inspiration photos, then press send.</div>
+    </form>
   </div></section>
 </main>
 
@@ -1083,7 +1109,7 @@ main > section.menup{min-height:0!important;padding-block:clamp(48px,6vw,84px)!i
   <section class="phead"><div class="wrap">
     <span class="kicker">Contact</span>
     <h1>Work With <span class="pop">Me</span></h1>
-    <p>Dessert orders, brand collaborations, partnerships, or just to say hi. Fill out the form below and I'll get back to you.</p>
+    <p>Brand collaborations, partnerships, or just to say hi. Fill out the form below and I'll get back to you. Looking to order a cake? Visit the <a href="/orders/">Orders page</a>.</p>
     <div class="heart-rule"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.7 4.5c2.1 0 3.8 1.2 5.3 3 1.5-1.8 3.2-3 5.3-3 3.7 0 5.8 3.7 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg></div>
   </div></section>
   <section class="collab contactp"><div class="wrap"><div class="cbox">
@@ -1107,7 +1133,7 @@ main > section.menup{min-height:0!important;padding-block:clamp(48px,6vw,84px)!i
   </div>
   <form class="cform cform-inline" id="contact-form" novalidate>
     <h3>Send me a <span class="pop">message</span></h3>
-    <p class="cform-sub">Dessert orders, brand collaborations, or just to say hi. I'd love to hear from you.</p>
+    <p class="cform-sub">Brand collaborations, partnerships, or just to say hi. I'd love to hear from you.</p>
     <div class="cgrid">
       <label class="full">Name or Business<input type="text" name="name" autocomplete="name" required></label>
       <label>Contact Number<input type="tel" name="phone" autocomplete="tel" inputmode="tel"></label>
@@ -1115,7 +1141,6 @@ main > section.menup{min-height:0!important;padding-block:clamp(48px,6vw,84px)!i
       <label class="full">Reason for Contact
         <select name="reason" required>
           <option value="" selected disabled>Choose one…</option>
-          <option value="Dessert Order">Dessert Order</option>
           <option value="Collaboration">Collaboration</option>
           <option value="Other">Other</option>
         </select></label>
@@ -1219,7 +1244,7 @@ main > section.menup{min-height:0!important;padding-block:clamp(48px,6vw,84px)!i
   if(f){f.addEventListener('submit',function(e){e.preventDefault();var err=f.querySelector('.cform-err'),done=f.querySelector('.cform-done'),el=f.elements;
     var ok=el['name'].value.trim()&&el['email'].value.trim()&&el['email'].checkValidity()&&el['reason'].value&&el['message'].value.trim();
     err.hidden=!!ok;done.hidden=true;if(!ok)return;
-    var to=el['reason'].value==='Dessert Order'?'batternbaked@gmail.com':'batternlife@gmail.com';
+    var to='batternlife@gmail.com';
     var subj=el['reason'].value+' from '+el['name'].value.trim();
     var body='Name or Business: '+el['name'].value.trim()+'\nContact Number: '+(el['phone'].value.trim()||'-')+'\nEmail: '+el['email'].value.trim()+'\nReason: '+el['reason'].value+'\n\n'+el['message'].value.trim();
     f.querySelector('.cf-to').textContent=to;done.hidden=false;
@@ -1388,6 +1413,16 @@ addEventListener('bnl:route',function(){if(window.bnlRoute()==='contact'){var se
 </script>
 <script>
 document.querySelectorAll('[data-scroll]').forEach(function(a){a.addEventListener('click',function(){var sel=a.dataset.scroll;setTimeout(function(){var t=document.querySelector(sel),hb=document.querySelector('header.bar');if(t)window.scrollTo({top:t.getBoundingClientRect().top+scrollY-(hb?hb.offsetHeight:0),behavior:'smooth'})},150)})});
+</script>
+<script>
+(function(){var f=document.getElementById('order-form');if(!f)return;
+f.addEventListener('submit',function(e){e.preventDefault();var el=f.elements,err=f.querySelector('.cform-err'),done=f.querySelector('.cform-done');
+ var v=function(n){return (el[n].value||'').trim()};
+ var ok=v('name')&&v('email')&&el['email'].checkValidity()&&v('date')&&v('message');err.hidden=!!ok;done.hidden=true;if(!ok)return;
+ var d=v('date');try{var p=d.split('-');d=new Date(p[0],p[1]-1,p[2]).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})}catch(x){}
+ var body='Name: '+v('name')+'\nContact Number: '+(v('phone')||'-')+'\nEmail: '+v('email')+'\n\nEvent Date: '+d+'\nOccasion: '+(v('occasion')||'-')+'\nServings: '+(v('servings')||'-')+'\nPickup or Delivery: '+(v('pickup')||'-')+'\n\nCake Flavor: '+(v('cake')||'-')+'\nButtercream: '+(v('buttercream')||'-')+'\nFilling: '+(v('filling')||'None')+'\n\nDesign, Theme & Colors:\n'+v('message');
+ var subj='Cake Order Request: '+v('name')+' ('+d+')';done.hidden=false;
+ window.location.href='mailto:batternbaked@gmail.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body)})})();
 </script>
 </body>
 </html>
