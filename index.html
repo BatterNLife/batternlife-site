@@ -1202,7 +1202,7 @@ var x0=null;d.addEventListener('touchstart',function(e){x0=e.touches[0].clientX}
 })();
 </script>
 <script>
-document.querySelectorAll('[data-order]').forEach(function(a){a.addEventListener('click',function(){setTimeout(function(){var f=document.getElementById('contact-form');if(!f)return;var sel=f.querySelector('select[name=reason]');if(sel){sel.value='Dessert Order';sel.dispatchEvent(new Event('change',{bubbles:true}))}var nav=document.querySelector('header.bar');window.scrollTo({top:f.getBoundingClientRect().top+scrollY-(nav?nav.offsetHeight:0)-16,behavior:'smooth'})},120)})});
+window.__bnlOrder=false;document.querySelectorAll('[data-order]').forEach(function(a){a.addEventListener('click',function(){window.__bnlOrder=true;setTimeout(function(){var f=document.getElementById('contact-form');if(!f)return;var sel=f.querySelector('select[name=reason]');if(sel){sel.value='Dessert Order';sel.dispatchEvent(new Event('change',{bubbles:true}))}var nav=document.querySelector('header.bar');window.scrollTo({top:f.getBoundingClientRect().top+scrollY-(nav?nav.offsetHeight:0)-16,behavior:'smooth'})},120)})});
 </script>
 <div class="adj-bar" hidden role="group" aria-label="Adjust gallery photos"><button type="button" class="adj-toggle">Adjust Photos</button><span class="adj-hint">Drag a photo to move it · + / − to zoom</span><button type="button" class="adj-copy">Copy My Settings</button><button type="button" class="arr-toggle">Arrange Order</button><span class="arr-hint">Drag photos into the order you want</span><button type="button" class="arr-copy">Copy My Order</button></div>
 <div class="adj-out" hidden><strong>Your photo settings</strong>: paste these to Claude to make them permanent.<textarea readonly></textarea><button type="button" class="adj-close">Close</button></div>
@@ -1310,6 +1310,9 @@ var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(rende
 new MutationObserver(function(){if(R.dataset.route==='bake')setTimeout(render,30)}).observe(R,{attributes:true,attributeFilter:['data-route']});
 setTimeout(function(){pick('c_center')},60);
 })();
+</script>
+<script>
+addEventListener('hashchange',function(){if(location.hash.indexOf('#/contact')===0){var sel=document.querySelector('#contact-form select[name=reason]');if(sel&&!window.__bnlOrder){sel.value=''}window.__bnlOrder=false}});
 </script>
 </body>
 </html>
