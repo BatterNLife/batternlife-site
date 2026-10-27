@@ -749,10 +749,10 @@ main > section.menup{min-height:0!important;padding-block:clamp(48px,6vw,84px)!i
 .mc-cake li{break-inside:avoid}
 .order-steps{margin-top:clamp(44px,5vw,72px);text-align:center}
 .order-steps ol{list-style:none;counter-reset:st;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);margin:clamp(22px,3vw,34px) 0 0;padding:0;text-align:left}
-.order-steps li{counter-increment:st;background:var(--card);padding:24px 22px 22px;position:relative;box-shadow:0 10px 24px rgba(43,35,30,.07)}
-.order-steps li::before{content:counter(st);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--mahogany);color:#fff;font:600 1rem/1 var(--sans);margin-bottom:12px}
-.order-steps li b{display:block;font-family:var(--sans);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem;margin-bottom:6px}
-.order-steps li span{font-family:var(--text);color:var(--ink-soft);font-weight:500}
+.order-steps li{counter-increment:st;background:var(--card);padding:16px 18px 16px 66px;position:relative;box-shadow:0 10px 24px rgba(43,35,30,.07);min-height:0}
+.order-steps li::before{content:counter(st);position:absolute;left:16px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--mahogany);color:#fff;font:600 1rem/1 var(--sans)}
+.order-steps li b{display:block;font-family:var(--sans);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.86rem;margin-bottom:3px}
+.order-steps li span{font-family:var(--text);color:var(--ink-soft);font-weight:500;font-size:.95rem;line-height:1.4;display:block}
 .order-steps .center-cta{margin-top:30px}
 @media (max-width:960px){.menu-grid{grid-template-columns:1fr 1fr}.mc-cake{grid-column:1/-1}}
 @media (max-width:640px){.menu-grid{grid-template-columns:1fr}.mc-cake ul{columns:1}.order-steps ol{grid-template-columns:1fr}}
@@ -1097,9 +1097,9 @@ html:not([data-route="orders"]) .msw{display:none}
     <div class="order-steps">
       <h2>How to <span class="pop">Order</span></h2>
       <ol>
-        <li><b>Choose your flavors</b><span>Pick a cake flavor, a buttercream and an optional filling.</span></li>
-        <li><b>Send your details</b><span>Tell me your date, number of servings, theme and any inspiration photos.</span></li>
-        <li><b>Get your quote</b><span>I’ll reply with pricing and availability to confirm your order.</span></li>
+        <li><b>Choose your flavors</b><span>Cake, buttercream and filling.</span></li>
+        <li><b>Send your details</b><span>Date, servings and your design ideas.</span></li>
+        <li><b>Get your quote</b><span>I’ll confirm pricing and availability.</span></li>
       </ol>
     </div>
     <div class="sec-head"><h2>The <span class="pop">Menu</span></h2></div>
