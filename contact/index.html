@@ -827,6 +827,13 @@ html:not([data-route="orders"]) .msw{display:none}
 .ofiles-err{color:var(--mahogany);font-family:var(--sans);font-size:.85rem;margin:8px 0 0}
 .fhint{display:block;margin-top:6px;font-family:var(--text);font-size:.85rem;font-style:italic;letter-spacing:0;text-transform:none;font-weight:400;color:var(--mahogany)}
 .oaddr[hidden]{display:none!important}
+.bg-order{max-width:900px;margin:clamp(48px,6vw,80px) auto 0}
+.bg-order .sec-head p{margin-inline:auto}
+.fhint-inline{display:block;margin-top:6px;font-style:italic;color:var(--mahogany);font-size:.95rem}
+.bg-card{background:var(--card);border:1px solid rgba(153,102,97,.45);box-shadow:0 16px 36px rgba(43,35,30,.1);padding:clamp(10px,2vw,22px);margin-top:clamp(18px,2.4vw,28px)}
+.bg-card iframe{display:block;background:#fff}
+.bg-alt{text-align:center;font-family:var(--text);font-size:.92rem;color:var(--ink-soft);margin-top:14px}
+.bg-alt a{color:var(--mahogany);font-weight:600}
 </style>
 </head>
 <body>
@@ -1119,35 +1126,14 @@ html:not([data-route="orders"]) .msw{display:none}
       <article class="menu-card mc-bc" data-g="1"><h3>Buttercream <span class="pop">Flavors</span></h3><ul><li>Classic Vanilla</li><li>Vanilla Bean</li><li>Triple Chocolate</li><li>Funfetti</li><li>Cream Cheese</li><li>Coconut</li><li>Peanut Butter Cup</li><li>Strawberry</li><li>Strawberry Lemon</li><li>Raspberry</li><li>Lemon</li><li>Nutella</li><li>Dulce de Leche</li><li>S’mores</li><li>Toasted Marshmallow</li><li>Snickerdoodle</li><li>Cookie Butter</li><li>Coffee</li><li>Salted Caramel</li><li>Brown Butter</li><li>White Chocolate</li></ul></article>
       <article class="menu-card mc-fill" data-g="1"><h3>Specialty <span class="pop">Fillings</span></h3><ul><li>Chocolate Bars &amp; Candies</li><li>Fresh Seasonal Fruit</li><li>Fruit Preserves</li><li>Velvety Hazelnut Cream</li><li>Creamy Almond Butter</li><li>Salted Caramel</li><li>Dulce de Leche</li><li>Silky Chocolate Ganache</li></ul></article>
     </div>
-    <form class="cform cform-inline oform" id="order-form" novalidate>
-      <h3>Start your <span class="pop">order</span></h3>
-      <p class="cform-sub">Fill in what you know. I'll reply with pricing and availability to confirm your order.</p>
-      <div class="cgrid">
-        <label>Name<input type="text" name="name" autocomplete="name" required></label>
-        <label>Contact Number<input type="tel" name="phone" autocomplete="tel" inputmode="tel"></label>
-        <label class="full">Email<input type="email" name="email" autocomplete="email" required></label>
-        <label>Event Date<input type="date" name="date" required></label>
-        <label>Occasion
-          <select name="occasion"><option value="" selected>Choose one…</option><option>Birthday</option><option>Wedding</option><option>Anniversary</option><option>Baby Shower</option><option>Gender Reveal</option><option>Graduation</option><option>Holiday</option><option>Other</option></select></label>
-        <label>Number of Servings<input type="text" name="servings" inputmode="numeric" placeholder="e.g. 25"></label>
-        <label>Pickup or Delivery
-          <select name="pickup"><option value="" selected>Choose one…</option><option>Pickup</option><option>Delivery</option><option>Other</option></select><small class="fhint">Delivery up to 40 miles from Celina</small></label>
-        <label class="full oaddr" hidden>Delivery Address<input type="text" name="address" autocomplete="street-address" placeholder="Street, city and ZIP code"></label>
-        <label class="full">Cake Flavor<select name="cake"><option value="" selected>Choose a flavor…</option><option>Classic Vanilla</option><option>Vanilla Bean</option><option>Brown Butter Vanilla</option><option>Decadent Chocolate</option><option>Marble</option><option>Funfetti</option><option>Red Velvet</option><option>Banana</option><option>Pumpkin</option><option>Spice</option><option>Carrot</option><option>Lemon</option><option>Coconut</option><option>Party-Fetti (Funfetti Oreo)</option><option>Cookies N’ Creme (Double Stuf)</option><option>Strawberry</option><option>Strawberry Lemon</option><option>Pineapple</option><option>Vanilla Latte</option><option>Chocolate Mocha</option><option>Wedding Cake (White Vanilla Almond)</option><option>Bizcocho Mojadito (Puerto Rican Almond Cake)</option><option>Bizcocho Dominicano (Dominican Cake)</option><option>Other</option></select></label>
-        <label>Buttercream<select name="buttercream"><option value="" selected>Choose a buttercream…</option><option>Classic Vanilla</option><option>Vanilla Bean</option><option>Triple Chocolate</option><option>Funfetti</option><option>Cream Cheese</option><option>Coconut</option><option>Peanut Butter Cup</option><option>Strawberry</option><option>Strawberry Lemon</option><option>Raspberry</option><option>Lemon</option><option>Nutella</option><option>Dulce de Leche</option><option>S’mores</option><option>Toasted Marshmallow</option><option>Snickerdoodle</option><option>Cookie Butter</option><option>Coffee</option><option>Salted Caramel</option><option>Brown Butter</option><option>White Chocolate</option><option>Other</option></select></label>
-        <label>Filling (Optional)<select name="filling"><option value="" selected>No filling</option><option>Chocolate Bars &amp; Candies</option><option>Fresh Seasonal Fruit</option><option>Fruit Preserves</option><option>Velvety Hazelnut Cream</option><option>Creamy Almond Butter</option><option>Salted Caramel</option><option>Dulce de Leche</option><option>Silky Chocolate Ganache</option></select></label>
-        <label class="full">Design, Theme &amp; Colors<textarea name="message" rows="5" required placeholder="Tell me about your cake: theme, colors, number of tiers, names or messages, and anything else."></textarea></label>
+    <div class="bg-order" id="start-order">
+      <div class="sec-head"><h2>Start Your <span class="pop">Order</span></h2>
+        <p>Fill in your details below and I'll reply with pricing and availability. <span class="fhint-inline">Delivery up to 40 miles from Celina.</span></p></div>
+      <div class="bg-card">
+        <iframe id="bakegenie-enquiry" title="Batter N' Life cake order form" src="https://app.bakegenie.co/enquiry/bnb" style="width:100%;border:none;min-height:600px;" scrolling="no" loading="lazy"></iframe>
       </div>
-      <div class="ofiles">
-        <span class="ofiles-lbl">Inspiration Photos <i>(optional, up to 3)</i></span>
-        <label class="ofiles-drop"><input type="file" name="photos" accept="image/*" multiple><span><b>+ Add photos</b> Tap to choose up to 3 pictures</span></label>
-        <div class="ofiles-list" aria-live="polite"></div>
-        <p class="ofiles-err" role="alert" hidden>You can add up to 3 photos.</p>
-      </div>
-      <p class="cform-err" role="alert" hidden>Please fill in your name, a valid email, your event date, your design details, and a delivery address if you chose delivery.</p>
-      <button class="btn solid" type="submit">Submit Order Request <span aria-hidden="true">→</span></button>
-      <div class="cform-done" role="status" hidden></div>
-    </form>
+      <p class="bg-alt">Form not loading? <a href="https://app.bakegenie.co/enquiry/bnb" target="_blank" rel="noopener">Open the order form in a new tab</a>.</p>
+    </div>
   </div></section>
 </main>
 
@@ -1529,6 +1515,16 @@ f.__bnlClear=function(){f.__bnlFiles=[];err.hidden=true;draw()};})();
 (function(){var f=document.getElementById('order-form');if(!f)return;var sel=f.querySelector('select[name=pickup]'),box=f.querySelector('.oaddr'),inp=box.querySelector('input');
 function upd(){var on=sel.value==='Delivery';box.hidden=!on;inp.required=on;if(!on)inp.value=''}
 sel.addEventListener('change',upd);f.addEventListener('reset',function(){setTimeout(upd,0)});upd()})();
+</script>
+<script>
+(function(){var ID="bakegenie-enquiry";function get(){return document.getElementById(ID)}
+window.addEventListener("message",function(ev){if(ev.origin!=="https://app.bakegenie.co")return;var d=ev.data;
+ if(typeof d==="string"){try{d=JSON.parse(d)}catch(e){return}}if(!d||typeof d!=="object")return;
+ var t=d.type;if(!t||String(t).indexOf("BAKEGENIE_")!==0)return;var f=get();if(!f)return;
+ if(t==="BAKEGENIE_HEIGHT"){var h=d.height;if(h&&h>0)f.style.height=h+"px"}
+ if(t==="BAKEGENIE_SCROLL"){var dy=d.deltaY;if(dy)window.scrollBy({top:dy,behavior:"auto"})}
+ if(t==="BAKEGENIE_MODAL_OPEN"){f.scrollIntoView({behavior:"smooth",block:"start"})}});
+ var f=get();if(f&&!f.style.minHeight)f.style.minHeight="100vh";})();
 </script>
 </body>
 </html>
