@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-hfav="split">
+<html lang="en" data-hfav="split" data-mstyle="tabs">
 <head>
 <meta charset="utf-8">
 
@@ -774,7 +774,9 @@ html[data-mstyle="tabs"] .menu-tabs{display:flex;justify-content:center;gap:0;ma
 html[data-mstyle="tabs"] .menu-grid{display:block;max-width:900px;margin:24px auto 0}
 html[data-mstyle="tabs"] .menu-card{display:none}
 html[data-mstyle="tabs"] .menu-card.on{display:block}
-html[data-mstyle="tabs"] .menu-card h3{display:none}
+html[data-mstyle="tabs"] .mc-cake h3{display:none}
+html[data-mstyle="tabs"] .mc-bc,html[data-mstyle="tabs"] .mc-fill{margin-bottom:18px}
+html[data-mstyle="tabs"] .mc-fill ul{columns:3 200px}
 html[data-mstyle="tabs"] .menu-card ul{columns:3 200px;column-gap:28px}
 html[data-mstyle="tabs"] .menu-card li{break-inside:avoid}
 /* 3 Chips */
@@ -808,7 +810,21 @@ html[data-mstyle="accordion"] .menu-card li{break-inside:avoid}
 .msw button{font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit;background:transparent;border:1px solid rgba(251,242,236,.45);padding:7px 11px;cursor:pointer}
 .msw button[aria-pressed="true"]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
 html:not([data-route="orders"]) .msw{display:none}
-.msw{display:none!important} /* msw-hide: style switcher is preview-only */
+.ofiles{margin-top:16px}
+.ofiles-lbl{display:block;font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
+.ofiles-lbl i{font-style:normal;text-transform:none;letter-spacing:0;font-weight:400;color:var(--ink-soft);font-size:.85rem}
+.ofiles-drop{display:block;border:1.5px dashed var(--mahogany);background:#FFFDF9;padding:18px;text-align:center;cursor:pointer;font-family:var(--text);color:var(--ink-soft)}
+.ofiles-drop[hidden]{display:none}
+.ofiles-drop b{display:block;font-family:var(--sans);color:var(--mahogany);letter-spacing:.08em;text-transform:uppercase;font-size:.85rem;margin-bottom:4px}
+.ofiles-drop:hover{background:var(--card)}
+.ofiles-drop input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.ofiles-drop:focus-within{outline:2px solid var(--mahogany);outline-offset:2px}
+.ofiles-list{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.ofiles-list:empty{display:none}
+.ofile{position:relative;width:96px;height:96px;border:1px solid rgba(153,102,97,.4);background:#fff}
+.ofile img{width:100%;height:100%;object-fit:cover;display:block}
+.ofile button{position:absolute;top:-8px;right:-8px;width:26px;height:26px;border-radius:50%;border:0;background:var(--mahogany);color:#fff;font-size:1.1rem;line-height:1;cursor:pointer}
+.ofiles-err{color:var(--mahogany);font-family:var(--sans);font-size:.85rem;margin:8px 0 0}
 </style>
 </head>
 <body>
@@ -1103,11 +1119,11 @@ html:not([data-route="orders"]) .msw{display:none}
       </ol>
     </div>
     <div class="sec-head"><h2>The <span class="pop">Menu</span></h2></div>
-    <div class="menu-tabs" role="tablist" aria-label="Menu sections"><button type="button" role="tab" data-t="0" aria-selected="true">Cake Flavors</button><button type="button" role="tab" data-t="1">Buttercream</button><button type="button" role="tab" data-t="2">Fillings</button></div>
+    <div class="menu-tabs" role="tablist" aria-label="Menu sections"><button type="button" role="tab" data-t="0" aria-selected="true">Cake Flavors</button><button type="button" role="tab" data-t="1">Buttercream &amp; Fillings</button></div>
     <div class="menu-grid">
-      <article class="menu-card mc-cake"><h3>Cake <span class="pop">Flavors</span></h3><ul><li>Classic Vanilla</li><li>Vanilla Bean</li><li>Brown Butter Vanilla</li><li>Decadent Chocolate</li><li>Classic Marble</li><li>Funfetti</li><li>Red Velvet</li><li>Banana</li><li>Pumpkin</li><li>Old-Fashioned Spice</li><li>Carrot</li><li>Lemon</li><li>Coconut</li><li>Party-Fetti <em>(Funfetti Oreo)</em></li><li>Double Stuf Oreo <em>(Cookies N’ Creme)</em></li><li>Strawberry</li><li>Strawberry Lemon</li><li>Pineapple</li><li>Vanilla Latte</li><li>Chocolate Mocha</li><li>Wedding Cake <em>(White Vanilla Almond)</em></li><li>Bizcocho Mojadito <em>(Puerto Rican Almond Cake)</em></li><li>Bizcocho Dominicano <em>(Dominican Cake)</em></li></ul></article>
-      <article class="menu-card mc-bc"><h3>Buttercream <span class="pop">Flavors</span></h3><ul><li>Classic Vanilla</li><li>Vanilla Bean</li><li>Triple Chocolate</li><li>Funfetti</li><li>Cream Cheese</li><li>Coconut</li><li>Peanut Butter Cup</li><li>Strawberry</li><li>Strawberry Lemon</li><li>Raspberry</li><li>Lemon</li><li>Nutella</li><li>Dulce de Leche</li><li>S’mores</li><li>Toasted Marshmallow</li><li>Snickerdoodle</li><li>Cookie Butter</li><li>Coffee</li><li>Salted Caramel</li><li>Brown Butter</li><li>White Chocolate</li></ul></article>
-      <article class="menu-card mc-fill"><h3>Specialty <span class="pop">Fillings</span></h3><ul><li>Chocolate Bars &amp; Candies</li><li>Fresh Seasonal Fruit</li><li>Fruit Preserves</li><li>Velvety Hazelnut Cream</li><li>Creamy Almond Butter</li><li>Salted Caramel</li><li>Dulce de Leche</li><li>Silky Chocolate Ganache</li></ul></article>
+      <article class="menu-card mc-cake" data-g="0"><h3>Cake <span class="pop">Flavors</span></h3><ul><li>Classic Vanilla</li><li>Vanilla Bean</li><li>Brown Butter Vanilla</li><li>Decadent Chocolate</li><li>Classic Marble</li><li>Funfetti</li><li>Red Velvet</li><li>Banana</li><li>Pumpkin</li><li>Old-Fashioned Spice</li><li>Carrot</li><li>Lemon</li><li>Coconut</li><li>Party-Fetti <em>(Funfetti Oreo)</em></li><li>Double Stuf Oreo <em>(Cookies N’ Creme)</em></li><li>Strawberry</li><li>Strawberry Lemon</li><li>Pineapple</li><li>Vanilla Latte</li><li>Chocolate Mocha</li><li>Wedding Cake <em>(White Vanilla Almond)</em></li><li>Bizcocho Mojadito <em>(Puerto Rican Almond Cake)</em></li><li>Bizcocho Dominicano <em>(Dominican Cake)</em></li></ul></article>
+      <article class="menu-card mc-bc" data-g="1"><h3>Buttercream <span class="pop">Flavors</span></h3><ul><li>Classic Vanilla</li><li>Vanilla Bean</li><li>Triple Chocolate</li><li>Funfetti</li><li>Cream Cheese</li><li>Coconut</li><li>Peanut Butter Cup</li><li>Strawberry</li><li>Strawberry Lemon</li><li>Raspberry</li><li>Lemon</li><li>Nutella</li><li>Dulce de Leche</li><li>S’mores</li><li>Toasted Marshmallow</li><li>Snickerdoodle</li><li>Cookie Butter</li><li>Coffee</li><li>Salted Caramel</li><li>Brown Butter</li><li>White Chocolate</li></ul></article>
+      <article class="menu-card mc-fill" data-g="1"><h3>Specialty <span class="pop">Fillings</span></h3><ul><li>Chocolate Bars &amp; Candies</li><li>Fresh Seasonal Fruit</li><li>Fruit Preserves</li><li>Velvety Hazelnut Cream</li><li>Creamy Almond Butter</li><li>Salted Caramel</li><li>Dulce de Leche</li><li>Silky Chocolate Ganache</li></ul></article>
     </div>
     <form class="cform cform-inline oform" id="order-form" novalidate>
       <h3>Start your <span class="pop">order</span></h3>
@@ -1127,7 +1143,12 @@ html:not([data-route="orders"]) .msw{display:none}
         <label>Filling (Optional)<select name="filling"><option value="" selected>No filling</option><option>Chocolate Bars &amp; Candies</option><option>Fresh Seasonal Fruit</option><option>Fruit Preserves</option><option>Velvety Hazelnut Cream</option><option>Creamy Almond Butter</option><option>Salted Caramel</option><option>Dulce de Leche</option><option>Silky Chocolate Ganache</option></select></label>
         <label class="full">Design, Theme &amp; Colors<textarea name="message" rows="5" required placeholder="Tell me about your cake: theme, colors, number of tiers, names or messages, and anything else."></textarea></label>
       </div>
-      <p class="cform-note">Have inspiration photos? After you submit, reply to my confirmation email or send them to batternbaked@gmail.com.</p>
+      <div class="ofiles">
+        <span class="ofiles-lbl">Inspiration Photos <i>(optional, up to 3)</i></span>
+        <label class="ofiles-drop"><input type="file" name="photos" accept="image/*" multiple><span><b>+ Add photos</b> Tap to choose up to 3 pictures</span></label>
+        <div class="ofiles-list" aria-live="polite"></div>
+        <p class="ofiles-err" role="alert" hidden>You can add up to 3 photos.</p>
+      </div>
       <p class="cform-err" role="alert" hidden>Please fill in your name, a valid email, your event date, and your design details.</p>
       <button class="btn solid" type="submit">Submit Order Request <span aria-hidden="true">→</span></button>
       <div class="cform-done" role="status" hidden></div>
@@ -1307,9 +1328,13 @@ window.bnlSend=function(form,to,subject,fields,mailBody,okMsg){
   if(fields.Email)data._replyto=fields.Email;
   function fallback(){done.innerHTML='<strong>Almost done!</strong> Your email app is opening with your message ready to send to '+to+'. Just press send.';done.hidden=false;
     window.location.href='mailto:'+to+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(mailBody)}
-  fetch('https://formsubmit.co/ajax/'+to,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)})
+  var files=form.__bnlFiles||[],req;
+  if(files.length){var fd=new FormData();for(var k2 in data)fd.append(k2,data[k2]);files.forEach(function(fl,i){fd.append('attachment'+(i?i+1:''),fl,fl.name)});req={method:'POST',headers:{Accept:'application/json'},body:fd}}
+  else req={method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)};
+  if(files.length)mailBody+='\n\n(Please attach your '+files.length+' inspiration photo'+(files.length>1?'s':'')+' to this email.)';
+  fetch('https://formsubmit.co/ajax/'+to,req)
    .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j}})})
-   .then(function(x){if(x.ok&&String(x.j.success)!=='false'){done.innerHTML=okMsg;done.hidden=false;form.reset();form.querySelectorAll('select').forEach(function(sl){sl.selectedIndex=0})}else fallback()})
+   .then(function(x){if(x.ok&&String(x.j.success)!=='false'){done.innerHTML=okMsg;done.hidden=false;form.reset();form.querySelectorAll('select').forEach(function(sl){sl.selectedIndex=0});if(form.__bnlClear)form.__bnlClear()}else fallback()})
    .catch(fallback).then(function(){btn.disabled=false;btn.innerHTML=label;done.scrollIntoView({behavior:'smooth',block:'center'})});
 };
 </script>
@@ -1485,16 +1510,25 @@ f.addEventListener('submit',function(e){e.preventDefault();var el=f.elements,err
  var subj='Cake Order Request: '+v('name')+' ('+d+')';
  window.bnlSend(f,'batternbaked@gmail.com',subj,{'Name':v('name'),'Contact Number':v('phone')||'-','Email':v('email'),'Event Date':d,'Occasion':v('occasion')||'-','Servings':v('servings')||'-','Pickup or Delivery':v('pickup')||'-','Cake Flavor':v('cake')||'-','Buttercream':v('buttercream')||'-','Filling':v('filling')||'None','Design, Theme & Colors':v('message')},body,'<strong>Thank you!</strong> Your order request was sent. I\'ll reply with pricing and availability soon.')})})();
 </script>
-<div class="msw" role="group" aria-label="Menu style">Menu style
-  <button type="button" data-m="cards">1 Cards</button><button type="button" data-m="tabs">2 Tabs</button><button type="button" data-m="chips">3 Flavor Chips</button><button type="button" data-m="classic">4 Classic Menu</button><button type="button" data-m="accordion">5 Accordion</button>
-</div>
 <script>
 (function(){var R=document.documentElement,cards=[].slice.call(document.querySelectorAll('.menu-card')),tabs=[].slice.call(document.querySelectorAll('.menu-tabs button')),bs=document.querySelectorAll('.msw button');
-function tab(i){cards.forEach(function(c,j){c.classList.toggle('on',j===i)});tabs.forEach(function(t,j){t.setAttribute('aria-selected',j===i)})}
+function tab(i){cards.forEach(function(c){c.classList.toggle('on',+c.dataset.g===i)});tabs.forEach(function(t,j){t.setAttribute('aria-selected',j===i)})}
 tabs.forEach(function(t,i){t.addEventListener('click',function(){tab(i)})});
 cards.forEach(function(c){c.querySelector('h3').addEventListener('click',function(){if(R.dataset.mstyle==='accordion')c.classList.toggle('on')})});
 function pick(m){R.setAttribute('data-mstyle',m);bs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.m===m)});tab(0)}
-bs.forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.m);var g=document.querySelector('.menup .sec-head');if(g)g.scrollIntoView({behavior:'smooth',block:'start'})})});pick('cards');})();
+bs.forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.m);var g=document.querySelector('.menup .sec-head');if(g)g.scrollIntoView({behavior:'smooth',block:'start'})})});pick('tabs');})();
+</script>
+<script>
+(function(){var f=document.getElementById('order-form');if(!f)return;var inp=f.querySelector('input[name=photos]'),list=f.querySelector('.ofiles-list'),err=f.querySelector('.ofiles-err'),MAX=3;f.__bnlFiles=[];
+function shrink(file){return new Promise(function(res){if(!/^image\//.test(file.type)||/gif$/.test(file.type)){res(file);return}var u=URL.createObjectURL(file),im=new Image();
+ im.onload=function(){var s=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);
+  c.toBlob(function(b){if(!b){res(file);return}res(new File([b],file.name.replace(/\.\w+$/,'')+'.jpg',{type:'image/jpeg'}))},'image/jpeg',.82)};
+ im.onerror=function(){URL.revokeObjectURL(u);res(file)};im.src=u})}
+function draw(){list.innerHTML='';f.__bnlFiles.forEach(function(fl,i){var d=document.createElement('div');d.className='ofile';var im=document.createElement('img');im.alt='Inspiration photo '+(i+1);im.src=URL.createObjectURL(fl);var x=document.createElement('button');x.type='button';x.setAttribute('aria-label','Remove photo '+(i+1));x.innerHTML='&times;';x.onclick=function(){f.__bnlFiles.splice(i,1);err.hidden=true;draw()};d.appendChild(im);d.appendChild(x);list.appendChild(d)});
+ f.querySelector('.ofiles-drop').hidden=f.__bnlFiles.length>=MAX}
+inp.addEventListener('change',function(){var picked=[].slice.call(inp.files||[]);inp.value='';var room=MAX-f.__bnlFiles.length;err.hidden=picked.length<=room;
+ Promise.all(picked.slice(0,Math.max(room,0)).map(shrink)).then(function(arr){f.__bnlFiles=f.__bnlFiles.concat(arr).slice(0,MAX);draw()})});
+f.__bnlClear=function(){f.__bnlFiles=[];err.hidden=true;draw()};})();
 </script>
 </body>
 </html>
