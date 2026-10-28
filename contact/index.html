@@ -838,49 +838,6 @@ header.bar{z-index:40!important;isolation:isolate}
 .bg-card iframe{display:block;background:#fff}
 .bg-alt{text-align:center;font-family:var(--text);font-size:.92rem;color:var(--ink-soft);margin-top:14px}
 .bg-alt a{color:var(--mahogany);font-weight:600}
-.mom-row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
-.mom-row2 img{width:100%;aspect-ratio:3/2;object-fit:cover;box-shadow:0 14px 30px rgba(43,35,30,.16)}
-@media (max-width:760px){.mom-row2{grid-template-columns:1fr;gap:10px}}
-.mom-masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
-.mm-col{display:grid;gap:14px}
-.mom-masonry img{width:100%;height:auto;display:block;box-shadow:0 14px 30px rgba(43,35,30,.16)}
-@media (max-width:760px){.mom-masonry{grid-template-columns:1fr 1fr;gap:10px}.mm-col{gap:10px}.mm-col:nth-child(3){grid-column:1/-1;grid-template-columns:1fr 1fr;align-items:start}.mm-col:nth-child(3) img:first-child{grid-column:1/-1}}
-
-/* ===== Life in Pictures styles ===== */
-.lip figure{margin:0;overflow:hidden;box-shadow:0 14px 30px rgba(43,35,30,.16);background:var(--card)}
-.lip img{width:100%;display:block}
-/* 1 collage (masonry) */
-html[data-lip="collage"] .lip{columns:3 260px;column-gap:14px}
-html[data-lip="collage"] .lip figure{break-inside:avoid;margin-bottom:14px}
-html[data-lip="collage"] .lip img{height:auto}
-/* 2 even grid */
-html[data-lip="grid"] .lip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-html[data-lip="grid"] .lip figure{aspect-ratio:4/5}
-html[data-lip="grid"] .lip img{height:100%;object-fit:cover;object-position:50% 35%}
-@media (max-width:760px){html[data-lip="grid"] .lip{grid-template-columns:1fr 1fr;gap:8px}}
-/* 3 scrapbook */
-html[data-lip="scrap"] .lip{display:flex;flex-wrap:wrap;justify-content:center;gap:26px 8px;padding:20px 0}
-html[data-lip="scrap"] .lip figure{width:clamp(150px,24vw,290px);aspect-ratio:4/5;border:10px solid #FFFDF9;border-bottom-width:34px;transition:transform .3s;box-shadow:0 14px 30px rgba(43,35,30,.2)}
-html[data-lip="scrap"] .lip img{height:100%;object-fit:cover;object-position:50% 35%}
-html[data-lip="scrap"] .lip figure:nth-child(3n+1){transform:rotate(-4deg)}
-html[data-lip="scrap"] .lip figure:nth-child(3n+2){transform:rotate(2.5deg) translateY(-8px)}
-html[data-lip="scrap"] .lip figure:nth-child(3n){transform:rotate(-1.5deg) translateY(6px)}
-html[data-lip="scrap"] .lip figure:hover{transform:rotate(0) scale(1.05);z-index:2}
-@media (max-width:760px){html[data-lip="scrap"] .lip figure{width:42vw;border-width:6px;border-bottom-width:20px}}
-/* 4 slideshow */
-html[data-lip="slide"] .lip{display:none}
-.lip-slide{display:none;max-width:900px;margin:0 auto}
-html[data-lip="slide"] .lip-slide{display:block}
-.ls-main{position:relative;height:clamp(360px,46vw,600px);background:var(--card);box-shadow:0 14px 34px rgba(43,35,30,.14)}
-.ls-main img{width:100%;height:100%;object-fit:contain;display:block}
-.ls-main .g-btn.prev{left:14px}.ls-main .g-btn.next{right:14px}
-.ls-thumbs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
-.ls-thumbs img{width:clamp(54px,7vw,84px);aspect-ratio:1;object-fit:cover;opacity:.55;cursor:pointer;outline:2px solid transparent;outline-offset:2px}
-.ls-thumbs img.on{opacity:1;outline-color:var(--mahogany)}
-.lsw{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 24px);z-index:61;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;background:var(--ink);color:#FBF2EC;padding:8px 10px 8px 16px;font-family:var(--sans);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 10px 26px rgba(43,35,30,.25)}
-.lsw button{font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit;background:transparent;border:1px solid rgba(251,242,236,.45);padding:7px 11px;cursor:pointer}
-.lsw button[aria-pressed="true"]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
-html:not([data-route="mom"]) .lsw{display:none}
 .lsw{display:none!important} /* lsw-hide: preview-only switcher */
 </style>
 </head>
@@ -1151,17 +1108,10 @@ html:not([data-route="mom"]) .lsw{display:none}
     <div class="sec-head">
       <h2>Life in <span class="pop">Pictures</span></h2>
     </div>
-    <div class="lip-slide" aria-label="Family photo slideshow"><div class="ls-main"><img alt=""><button type="button" class="g-btn prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" class="g-btn next" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="ls-thumbs"></div></div>
-    <div class="lip">
-      <figure><img loading="lazy" decoding="async" width="900" height="600" src="/img/fam_wedding.webp" alt="Melinda and her husband on their wedding day with their three oldest children in front of a wooden arch"></figure>
-      <figure><img loading="lazy" decoding="async" width="800" height="1078" src="/img/fam_couple.webp" alt="Melinda and her husband celebrating New Year’s Eve in front of a gold tinsel backdrop"></figure>
-      <figure><img loading="lazy" decoding="async" width="900" height="600" src="/img/fam_baby_heart.webp" alt="Their newborn daughter swaddled in cream, sleeping in a fluffy heart-shaped nest"></figure>
-      <figure><img loading="lazy" decoding="async" width="800" height="1198" src="/img/fam_baby_bow.webp" alt="Their newborn daughter sleeping in a basket with a green bow headband"></figure>
-      <figure><img loading="lazy" decoding="async" width="900" height="600" src="/img/fam_kids.webp" alt="Melinda's four children sitting together in a studio, the baby on her big sister's lap"></figure>
-      <figure><img loading="lazy" decoding="async" width="800" height="1421" src="/img/fam_first_bday.webp" alt="Their daughter smiling in her high chair at her Sweet One donut-themed first birthday, with her smash cake"></figure>
-      <figure><img loading="lazy" decoding="async" width="900" height="675" src="/img/fam_entry.webp" alt="Entryway bench with kids' backpacks and a diaper bag on hooks, family shoes and baby shoes lined up below"></figure>
-      <figure><img loading="lazy" decoding="async" width="900" height="600" src="/img/fam_play.webp" alt="Sunny living room with a basket of teddy bears and wooden blocks on the floor"></figure>
-      <figure><img loading="lazy" decoding="async" width="900" height="1200" src="/img/fam_bake.webp" alt="Melinda frosting sprinkle sugar cookies at a white marble kitchen island"></figure>
+    <div class="mom-row">
+      <img loading="lazy" decoding="async" width="900" height="600" style="object-position:30% 60%" src="/img/fam_play.webp" alt="Sunny living room with a basket of teddy bears and wooden blocks on the floor">
+      <img loading="lazy" decoding="async" width="900" height="1200" style="object-position:45% 22%" src="/img/fam_bake.webp" alt="Melinda frosting sprinkle sugar cookies at a white marble kitchen island">
+      <img loading="lazy" decoding="async" width="900" height="675" style="object-position:50% 50%" src="/img/fam_entry.webp" alt="Entryway bench with kids' backpacks and a diaper bag on hooks, family shoes and baby shoes lined up below">
     </div>
   </div></section>
 </main>
@@ -1581,20 +1531,6 @@ window.addEventListener("message",function(ev){if(ev.origin!=="https://app.bakeg
  if(t==="BAKEGENIE_SCROLL"){var dy=d.deltaY;if(dy)window.scrollBy({top:dy,behavior:"auto"})}
  if(t==="BAKEGENIE_MODAL_OPEN"){f.scrollIntoView({behavior:"smooth",block:"start"})}});
  var f=get();if(f&&!f.style.minHeight)f.style.minHeight="100vh";})();
-</script>
-<div class="lsw" role="group" aria-label="Life in Pictures style">Photo style
-  <button type="button" data-l="collage">1 Collage</button><button type="button" data-l="grid">2 Even Grid</button><button type="button" data-l="scrap">3 Scrapbook</button><button type="button" data-l="slide">4 Slideshow</button>
-</div>
-<script>
-(function(){var R=document.documentElement,imgs=[].slice.call(document.querySelectorAll('.lip img')),box=document.querySelector('.lip-slide');if(!box||!imgs.length)return;
-var main=box.querySelector('.ls-main img'),th=box.querySelector('.ls-thumbs'),k=0;
-imgs.forEach(function(im,i){var t=document.createElement('img');t.src=im.src;t.alt='';t.loading='lazy';t.onclick=function(){show(i)};th.appendChild(t)});
-function show(i){k=(i+imgs.length)%imgs.length;main.src=imgs[k].src;main.alt=imgs[k].alt;[].forEach.call(th.children,function(t,j){t.classList.toggle('on',j===k)})}
-box.querySelector('.prev').onclick=function(){show(k-1)};box.querySelector('.next').onclick=function(){show(k+1)};
-var x0=null;box.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});box.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>40)show(k+(d<0?1:-1));x0=null});
-show(0);var bs=document.querySelectorAll('.lsw button');
-function pick(m){R.setAttribute('data-lip',m);bs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===m)})}
-bs.forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.l);document.querySelector('.momp').scrollIntoView({behavior:'smooth',block:'start'})})});pick('collage')})();
 </script>
 </body>
 </html>
