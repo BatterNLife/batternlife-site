@@ -838,6 +838,13 @@ header.bar{z-index:40!important;isolation:isolate}
 .bg-card iframe{display:block;background:#fff}
 .bg-alt{text-align:center;font-family:var(--text);font-size:.92rem;color:var(--ink-soft);margin-top:14px}
 .bg-alt a{color:var(--mahogany);font-weight:600}
+/* Order shortcuts */
+header.bar .icons a.hdr-order{text-decoration:none!important;display:inline-flex;align-items:center;background:var(--gold);color:var(--ink);font:600 .72rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:10px 16px;margin-right:6px;white-space:nowrap;transition:background .2s,color .2s}
+header.bar .icons a.hdr-order:hover{background:var(--mahogany);color:#fff}
+header.bar nav a.nav-order{display:none}
+.phead .phead-cta{margin-top:20px;padding:11px 22px;font-size:.74rem;letter-spacing:.16em}
+@media (max-width:1180px){header.bar .icons a.hdr-order{padding:9px 12px;font-size:.66rem;letter-spacing:.1em}}
+@media (max-width:960px){header.bar .icons a.hdr-order{display:none}header.bar nav a.nav-order{display:block;color:var(--mahogany)!important;font-weight:600}}
 .lsw{display:none!important} /* lsw-hide: preview-only switcher */
 </style>
 </head>
@@ -847,10 +854,11 @@ header.bar{z-index:40!important;isolation:isolate}
   <div class="brand"><a class="logo" href="/" aria-label="Batter N' Life home"><img width="900" height="264" src="/img/logo_letters_flat.webp" alt="Batter N' Life"></a>
   <span class="divider" aria-hidden="true"></span></div>
   <nav aria-label="Main" id="main-nav">
-    <a href="/" aria-current="page">Home</a><a href="/story/">My Story</a><a href="/bake/">Bake Life</a><a href="/mom/">Mom Life</a><a href="/favorites/">Favorites</a><a href="/contact/">Contact</a>
+    <a href="/" aria-current="page">Home</a><a href="/story/">My Story</a><a href="/bake/">Bake Life</a><a href="/mom/">Mom Life</a><a href="/favorites/">Favorites</a><a href="/contact/">Contact</a><a class="nav-order" href="/orders/">Order a Cake →</a>
   </nav>
   <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   <div class="icons" aria-label="Social media">
+      <a class="hdr-order" href="/orders/">Order a Cake</a>
       <a href="https://www.instagram.com/batternlife" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a>
       <a href="https://www.youtube.com/@batternlife" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3z"/></svg></a>
       <a href="https://www.tiktok.com/@batternlife" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M16 3c.3 2.2 1.9 3.9 4 4.1v3.1c-1.5 0-2.9-.5-4-1.3v6.4a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6 0 .9.1v3.2a2.5 2.5 0 1 0 1.6 2.3V3H16z"/></svg></a>
@@ -971,6 +979,7 @@ header.bar{z-index:40!important;isolation:isolate}
     <span class="kicker">Bake Life</span>
     <h1>Sweet <span class="pop">Creations</span></h1>
     <p>Custom celebration cakes, desserts and decorating inspiration. Each one designed to make your special day a little sweeter.</p>
+    <a class="btn solid phead-cta" href="/orders/">View Menu &amp; Order <span aria-hidden="true">→</span></a>
     <div class="heart-rule"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.7 4.5c2.1 0 3.8 1.2 5.3 3 1.5-1.8 3.2-3 5.3-3 3.7 0 5.8 3.7 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg></div>
   </div></section>
   <section class="bake bakep"><div class="wrap">
