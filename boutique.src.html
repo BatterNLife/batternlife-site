@@ -464,6 +464,25 @@ main > section.latestv{--wavec:var(--blush);background-color:var(--blush);min-he
 .lv .lv-new{position:absolute;top:10px;left:10px;background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:4px 8px}
 @media (max-width:720px){.lv-grid{grid-template-columns:1fr 1fr}}
 html.on-bake /* baking journal cards */
+.note-vid{display:inline-flex;align-items:center;gap:5px;margin-left:10px;padding:2px 8px;background:var(--mahogany);color:#fff;font-size:.58rem;letter-spacing:.14em;vertical-align:1px}
+.nd-video{margin:26px auto 22px;text-align:center}
+.nd-video h3{text-align:left}
+.igmock{width:290px;max-width:100%;margin:10px auto 0;background:#fff;border:1px solid #dbdbdb;border-radius:4px;overflow:hidden;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;text-align:left}
+.igmock-hd{display:flex;align-items:center;gap:8px;padding:9px 10px;font-size:.78rem;color:#262626}
+.igmock-hd i{width:26px;height:26px;border-radius:50%;background:var(--bg2);border:1px solid #eee;flex:none}
+.igmock-hd b{font-weight:600;flex:1}.igmock-hd span{background:#0095f6;color:#fff;font-weight:600;font-size:.72rem;padding:5px 10px;border-radius:6px}
+.igmock-v{position:relative;aspect-ratio:4/5;overflow:hidden}.igmock-v img{width:100%;height:100%;object-fit:cover;display:block}
+.igmock-v::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.18)}
+.igmock-v svg{position:absolute;left:50%;top:50%;width:54px;height:54px;transform:translate(-50%,-60%);z-index:1}
+.igmock-v em{position:absolute;left:0;right:0;top:58%;text-align:center;color:#fff;font-style:normal;font-weight:600;font-size:.8rem;z-index:1}
+.igmock-ft{padding:9px 10px;font-size:.75rem;color:#0095f6;border-top:1px solid #efefef}
+.vsw{position:fixed;left:14px;bottom:14px;z-index:60;display:none;align-items:center;gap:4px;background:var(--ink);color:#fff;padding:6px;font-family:var(--sans);font-size:.72rem;box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.vsw span{padding:0 8px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.vsw button{font:inherit;border:0;background:transparent;color:#fff;padding:6px 10px;cursor:pointer}
+.vsw button[aria-pressed="true"]{background:var(--gold);color:var(--ink)}
+html.on-bake .vsw{display:flex}
+html[data-vid="off"] [data-preview]{display:none}
+
 main > section.notesp{--wavec:var(--bg2);background-color:var(--bg2);min-height:0!important;padding-block:clamp(56px,7vw,96px)!important}
 .notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 30px;max-width:1060px;margin:0 auto;padding-top:14px}
 .note{--lh:1.7rem;position:relative;background:#FFFDF8;text-align:left;display:flex;flex-direction:column;cursor:pointer;border:0;padding:30px 24px 20px;font:inherit;color:inherit;box-shadow:0 2px 0 rgba(43,35,30,.04),0 14px 28px rgba(43,35,30,.13);transition:transform .3s,box-shadow .3s;transform:rotate(-1.2deg)}
@@ -1124,28 +1143,6 @@ main > section.legalp{min-height:0!important;padding-block:clamp(40px,5vw,72px)!
     </div>
     <div class="center-cta"><a class="btn solid" href="https://www.instagram.com/batternlife" target="_blank" rel="noopener">Follow @batternlife <span aria-hidden="true">→</span></a></div>
   </div></section>
-  <section class="tipsp"><div class="wrap">
-    <div class="sec-head">
-      <h2>From My <span class="pop">Kitchen</span></h2>
-      <p>Lessons from 600+ custom cakes to help you on your own baking journey.</p>
-    </div>
-    <div class="tips">
-      <article class="tip" data-reels-card="reels-wish">
-        <div class="tip-img"><img src="@@planner@@" alt="Planner, notebooks and laptop on the kitchen counter" loading="lazy"></div>
-        <div class="tip-body">
-          <h3>What I Wish I Knew</h3>
-          <p>The lessons I'd share with myself on day one of starting a baking business, from pricing and planning to saying yes (and no).</p>
-          <a class="tip-link" href="#" data-reels="reels-wish">Watch the reels <span aria-hidden="true">→</span></a></div>
-      </article>
-      <article class="tip" data-reels-card="reels-deco">
-        <div class="tip-img"><img src="@@tip_deco@@" alt="Cake decorating tools on a wooden counter: turntable, piping bag, offset spatulas, cake leveler, bench scraper and a cake board with dowels" loading="lazy" style="object-position:50% 65%"></div>
-        <div class="tip-body">
-          <h3>Decorating &amp; Process</h3>
-          <p>My process from start to finish: baking, filling, stacking, piping and getting those smooth buttercream finishes.</p>
-          <a class="tip-link" href="#" data-reels="reels-deco">Watch the reels <span aria-hidden="true">→</span></a></div>
-      </article>
-    </div>
-  </div></section>
   <section class="notesp"><div class="wrap">
     <div class="sec-head">
       <h2>Baking <span class="pop">Journal</span></h2>
@@ -1154,7 +1151,7 @@ main > section.legalp{min-height:0!important;padding-block:clamp(40px,5vw,72px)!
     <div class="notes">
       <button type="button" class="note" data-note="n1"><span class="note-polaroid"><img src="@@note_flour@@" alt="" loading="lazy"></span><span class="note-from">From my baking journal</span><span class="note-label">Tip no. 01</span><h3>Welcome to My Baking Journal!</h3><p>Welcome to my little corner of the baking world! Whether you're just getting started or you've been baking for years, there's always something new to learn.</p><span class="note-foot"><span>Nov 6</span><span>Read the card <span aria-hidden="true">→</span></span></span></button>
       <button type="button" class="note" data-note="n2"><span class="note-polaroid"><img src="@@note_butter@@" alt="" loading="lazy"></span><span class="note-from">From my baking journal</span><span class="note-label">Tip no. 02</span><h3>Room Temperature Butter Isn't What You Think!</h3><p>Did you know? Room temperature butter shouldn't be greasy, shiny, or so soft that it's practically melting!</p><span class="note-foot"><span>Nov 6</span><span>Read the card <span aria-hidden="true">→</span></span></span></button>
-      <button type="button" class="note" data-note="n3"><span class="note-polaroid"><img src="@@note_mix@@" alt="" loading="lazy"></span><span class="note-from">From my baking journal</span><span class="note-label">Tip no. 03</span><h3>Don't Overmix That Batter!</h3><p>We've all been there. You're making a cake, everything is going great, and you figure, what's another minute or two of mixing?</p><span class="note-foot"><span>Nov 6</span><span>Read the card <span aria-hidden="true">→</span></span></span></button>
+      <button type="button" class="note" data-note="n3"><span class="note-polaroid"><img src="@@note_mix@@" alt="" loading="lazy"></span><span class="note-from">From my baking journal</span><span class="note-label">Tip no. 03<span class="note-vid" data-preview>▶ Video</span></span><h3>Don't Overmix That Batter!</h3><p>We've all been there. You're making a cake, everything is going great, and you figure, what's another minute or two of mixing?</p><span class="note-foot"><span>Nov 6</span><span>Read the card <span aria-hidden="true">→</span></span></span></button>
     </div>
   </div></section>
 </main>
@@ -1365,70 +1362,6 @@ main > section.legalp{min-height:0!important;padding-block:clamp(40px,5vw,72px)!
 
 
 
-<dialog class="rdialog" id="reels-wish" aria-labelledby="rw-title">
-  <div class="rbox">
-    <button class="cclose" type="button" aria-label="Close">×</button>
-    
-    <h3 id="rw-title">What I Wish <span class="pop">I Knew</span></h3>
-    <p class="rsub">The lessons I'd share with myself on day one of starting a baking business.</p>
-    <div class="reels">
-      <a class="reel" href="https://www.instagram.com/p/DdtxjcdO9y-/" target="_blank" rel="noopener">
-        <div class="reel-thumb"><span class="reel-n">Reel 1</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
-        <div class="reel-body"><h4>What I Wish I Knew, Part 1</h4><span>Watch on Instagram ↗</span></div>
-      </a>
-      <a class="reel" href="https://www.instagram.com/p/Dez83EjBDQp/" target="_blank" rel="noopener">
-        <div class="reel-thumb"><span class="reel-n">Reel 2</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
-        <div class="reel-body"><h4>What I Wish I Knew, Part 2</h4><span>Watch on Instagram ↗</span></div>
-      </a>
-    </div>
-  </div>
-</dialog>
-<dialog class="rdialog" id="reels-deco" aria-labelledby="rd-title">
-  <div class="rbox">
-    <button class="cclose" type="button" aria-label="Close">×</button>
-    
-    <h3 id="rd-title">Decorating &amp; <span class="pop">Process</span></h3>
-    <p class="rsub">My process from start to finish: baking, filling, stacking, piping and getting those smooth buttercream finishes.</p>
-    <div class="reels">
-      <a class="reel" href="https://www.instagram.com/reel/DfJMuLmuuOi/" target="_blank" rel="noopener">
-        <div class="reel-thumb"><span class="reel-n">Reel 1</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
-        <div class="reel-body"><h4>Decorating Video 1</h4><span>Watch on Instagram ↗</span></div>
-      </a>
-      <a class="reel" href="https://www.instagram.com/reel/DfGL5KUss5u/" target="_blank" rel="noopener">
-        <div class="reel-thumb"><span class="reel-n">Reel 2</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
-        <div class="reel-body"><h4>Decorating Video 2</h4><span>Watch on Instagram ↗</span></div>
-      </a>
-      <a class="reel" href="https://www.instagram.com/reel/DeZ3zgNhq5Y/" target="_blank" rel="noopener">
-        <div class="reel-thumb"><span class="reel-n">Reel 3</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
-        <div class="reel-body"><h4>Decorating Video 3</h4><span>Watch on Instagram ↗</span></div>
-      </a>
-      <a class="reel" href="https://www.instagram.com/reel/Dd2w3j9hESq/" target="_blank" rel="noopener">
-        <div class="reel-thumb"><span class="reel-n">Reel 4</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
-        <div class="reel-body"><h4>Decorating Video 4</h4><span>Watch on Instagram ↗</span></div>
-      </a>
-      <a class="reel" href="https://www.instagram.com/reel/Deid4emM6J3/" target="_blank" rel="noopener">
-        <div class="reel-thumb"><span class="reel-n">Reel 5</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
-        <div class="reel-body"><h4>Decorating Video 5</h4><span>Watch on Instagram ↗</span></div>
-      </a>
-      <a class="reel" href="https://www.instagram.com/reel/DeITxUsBn1i/" target="_blank" rel="noopener">
-        <div class="reel-thumb"><span class="reel-n">Reel 6</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
-        <div class="reel-body"><h4>Decorating Video 6</h4><span>Watch on Instagram ↗</span></div>
-      </a>
-      <a class="reel" href="https://www.instagram.com/reel/DdpNaSGhYLj/" target="_blank" rel="noopener">
-        <div class="reel-thumb"><span class="reel-n">Reel 7</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
-        <div class="reel-body"><h4>Decorating Video 7</h4><span>Watch on Instagram ↗</span></div>
-      </a>
-      <a class="reel" href="https://www.instagram.com/reel/DaMQ_M8MFUe/" target="_blank" rel="noopener">
-        <div class="reel-thumb"><span class="reel-n">Reel 8</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
-        <div class="reel-body"><h4>Decorating Video 8</h4><span>Watch on Instagram ↗</span></div>
-      </a>
-      <a class="reel" href="https://www.instagram.com/reel/DT3JpWMjtGW/" target="_blank" rel="noopener">
-        <div class="reel-thumb"><span class="reel-n">Reel 9</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></div>
-        <div class="reel-body"><h4>Decorating Video 9</h4><span>Watch on Instagram ↗</span></div>
-      </a>
-    </div>
-  </div>
-</dialog>
 <script>
 (function(){
   var h=document.querySelector('header.bar'),b=h&&h.querySelector('.menu-btn');
@@ -1685,6 +1618,11 @@ document.querySelectorAll('.rdialog').forEach(function(d){new MutationObserver(f
 <script>(function(){document.querySelectorAll('[data-note]').forEach(function(b){b.addEventListener('click',function(){var d=document.getElementById('note-'+b.dataset.note);if(d)d.showModal()})});document.querySelectorAll('.ndialog').forEach(function(d){d.addEventListener('click',function(e){if(e.target===d||e.target.closest('[data-nclose]'))d.close()})})})();</script>
 <dialog class="ndialog" id="note-n1" aria-label="Welcome to My Baking Journal!"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-img"><img src="@@note_flour@@" alt="" loading="lazy"></div><div class="nd-body"><span class="note-date">Baking Journal · Tip no. 01 · Nov 6, 2026</span><h2>Welcome to My Baking Journal!</h2><p>Welcome to my little corner of the baking world!</p><p>Whether you're just getting started or you've been baking for years, there's always something new to learn. I've spent years experimenting with recipes, making mistakes, and discovering little tricks that make a big difference.</p><p>I created this journal to share some of those tips, lessons, and experiences with you. From baking basics to cake decorating, we'll cover a little bit of everything!</p><h3>Today's Quick Baking Tip: Measure your flour correctly!</h3><p>Did you know that scooping flour directly from the bag with your measuring cup can pack in more flour than your recipe needs?</p><p>Instead, fluff your flour, spoon it gently into your measuring cup, and level it off with a straight edge. Or, if you're like me... grab a kitchen scale and measure! It's my favorite way to get consistent results every time.</p><p>A little extra flour can be the difference between a soft, fluffy cake and a dry, dense one.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
 <dialog class="ndialog" id="note-n2" aria-label="Room Temperature Butter Isn&#x27;t What You Think!"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-img"><img src="@@note_butter@@" alt="" loading="lazy"></div><div class="nd-body"><span class="note-date">Baking Journal · Tip no. 02 · Nov 6, 2026</span><h2>Room Temperature Butter Isn't What You Think!</h2><p>Did you know? Room temperature butter shouldn't be greasy, shiny, or so soft that it's practically melting!</p><p>For most cakes and cookies that use the creaming method, butter should be around 65–68°F (18–20°C). It should feel cool to the touch and give slightly when pressed with your finger.</p><h3>Why does it matter?</h3><p>Butter that's too warm won't hold air as effectively during creaming, which can affect the texture and rise of your baked goods.</p><h3>My Baking Tip</h3><p>If your kitchen is warm, especially here in Texas, don't rely on leaving butter on the counter for a set amount of time. Check its temperature and texture instead!</p><p class="nd-sign">xo, Melinda</p></div></dialog>
-<dialog class="ndialog" id="note-n3" aria-label="Don&#x27;t Overmix That Batter!"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-img"><img src="@@note_mix@@" alt="" loading="lazy"></div><div class="nd-body"><span class="note-date">Baking Journal · Tip no. 03 · Nov 6, 2026</span><h2>Don't Overmix That Batter!</h2><p>We've all been there. You're making a cake, everything is going great, and you figure, what's another minute or two of mixing? 😂</p><p>Well, believe it or not, that extra mixing might be doing more harm than good!</p><p>One thing I've learned over the years is that more mixing doesn't always mean a better cake.</p><p>Once you add your flour, you want to be careful not to overmix. The more you work that batter, the more gluten develops, and that can leave you with a cake that's dense or tough instead of soft and fluffy.</p><h3>Here's My Tip!</h3><p>When adding your dry ingredients, keep your mixer on low and mix just until everything comes together. I also like to stop and scrape down the sides and bottom of my bowl because, trust me, flour loves hiding down there!</p><p>And don't worry if your batter isn't perfectly silky smooth. Depending on the recipe, a few tiny lumps are perfectly fine.</p><p>Of course, some cake recipes use different mixing methods, so always pay attention to what your recipe calls for.</p><p>Remember, sometimes less really is more!</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<dialog class="ndialog" id="note-n3" aria-label="Don&#x27;t Overmix That Batter!"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-img"><img src="@@note_mix@@" alt="" loading="lazy"></div><div class="nd-body"><span class="note-date">Baking Journal · Tip no. 03 · Nov 6, 2026</span><h2>Don't Overmix That Batter!</h2><p>We've all been there. You're making a cake, everything is going great, and you figure, what's another minute or two of mixing? 😂</p><p>Well, believe it or not, that extra mixing might be doing more harm than good!</p><p>One thing I've learned over the years is that more mixing doesn't always mean a better cake.</p><p>Once you add your flour, you want to be careful not to overmix. The more you work that batter, the more gluten develops, and that can leave you with a cake that's dense or tough instead of soft and fluffy.</p><h3>Here's My Tip!</h3><p>When adding your dry ingredients, keep your mixer on low and mix just until everything comes together. I also like to stop and scrape down the sides and bottom of my bowl because, trust me, flour loves hiding down there!</p><p>And don't worry if your batter isn't perfectly silky smooth. Depending on the recipe, a few tiny lumps are perfectly fine.</p><p>Of course, some cake recipes use different mixing methods, so always pay attention to what your recipe calls for.</p><p>Remember, sometimes less really is more!</p><div class="nd-video" data-preview id="nd-vid"><h3>Watch me do it</h3><div class="igmock"><div class="igmock-hd"><i></i><b>batternlife</b><span>View profile</span></div><div class="igmock-v"><img src="@@note_mix@@" alt=""><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.9)"/><path d="M10 8l6 4-6 4z" fill="#262626"/></svg><em>Watch on Instagram</em></div><div class="igmock-ft">View more on Instagram</div></div></div><p class="nd-sign">xo, Melinda</p></div></dialog>
+<div class="vsw" data-preview-sw role="group" aria-label="Video in journal preview"><span>Tip 3 video</span><button type="button" data-vp="end" aria-pressed="true">At the end</button><button type="button" data-vp="mid" aria-pressed="false">In the middle</button><button type="button" data-vp="off" aria-pressed="false">Off</button></div>
+<script>(function(){var h=document.documentElement;if(/(^|\.)batternlife\.com$|pages\.dev$/.test(location.hostname)){document.querySelectorAll('[data-preview],[data-preview-sw]').forEach(function(e){e.remove()});return}
+var v=document.getElementById('nd-vid'),d=document.getElementById('note-n3'),body=d.querySelector('.nd-body'),sign=body.querySelector('.nd-sign'),mid=[].slice.call(body.querySelectorAll('h3')).filter(function(x){return /Here/.test(x.textContent)})[0];
+var b=document.querySelectorAll('[data-vp]');b.forEach(function(x){x.addEventListener('click',function(){b.forEach(function(y){y.setAttribute('aria-pressed',y===x?'true':'false')});var m=x.dataset.vp;if(m==='off'){h.setAttribute('data-vid','off');return}h.removeAttribute('data-vid');if(m==='mid')body.insertBefore(v,mid);else body.insertBefore(v,sign)})});
+function chk(){var m=document.querySelector('main[data-page="bake"]');h.classList.toggle('on-bake',!!m&&!m.hidden)}chk();window.addEventListener('hashchange',function(){setTimeout(chk,30)});new MutationObserver(chk).observe(document.body,{subtree:true,attributes:true,attributeFilter:['hidden']})})();</script>
 </body>
 </html>
