@@ -478,6 +478,36 @@ main > section.latestv{--wavec:var(--blush);background-color:var(--blush);min-he
 .lv svg{position:absolute;left:50%;top:50%;width:46px;height:46px;transform:translate(-50%,-50%);filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}
 .lv .lv-new{position:absolute;top:10px;left:10px;background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:4px 8px}
 @media (max-width:720px){.lv-grid{grid-template-columns:1fr 1fr}}
+html.on-bake /* recipe card notes (preview) */
+main > section.notesp{--wavec:var(--bg2);background-color:var(--bg2);min-height:0!important;padding-block:clamp(56px,7vw,96px)!important}
+.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 30px;max-width:1060px;margin:0 auto;padding-top:14px}
+.note{--lh:1.7rem;position:relative;background:#FFFDF8;text-align:left;display:flex;flex-direction:column;cursor:pointer;border:0;padding:30px 24px 20px;font:inherit;color:inherit;box-shadow:0 2px 0 rgba(43,35,30,.04),0 14px 28px rgba(43,35,30,.13);transition:transform .3s,box-shadow .3s;transform:rotate(-1.2deg)}
+.note:nth-child(2){transform:rotate(.9deg)}.note:nth-child(3){transform:rotate(-.5deg)}
+.note:hover{transform:rotate(0) translateY(-4px);box-shadow:0 20px 36px rgba(43,35,30,.18)}
+.note::before{content:"";position:absolute;top:-12px;left:50%;width:96px;height:26px;transform:translateX(-50%) rotate(-3deg);background:rgba(217,191,132,.72);box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.note:nth-child(2)::before{background:rgba(196,152,146,.6);transform:translateX(-50%) rotate(2deg)}
+.note-from{display:flex;align-items:flex-end;gap:6px;font-family:var(--sans);font-size:.58rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mahogany);padding-bottom:10px;border-bottom:2px solid var(--mahogany);padding-right:52px;white-space:nowrap}
+.note-date{font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mahogany)}
+.note-from b{flex:1;min-width:0;font-weight:500;font-size:.9rem;letter-spacing:.04em;text-transform:none;color:var(--ink);border-bottom:1px solid rgba(153,102,97,.45);padding:0 4px 1px}
+.note-polaroid{position:absolute;top:-10px;right:-14px;width:72px;background:#fff;padding:5px 5px 14px;box-shadow:0 6px 14px rgba(43,35,30,.2);transform:rotate(6deg);z-index:1}
+.note-polaroid img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.note-label{margin-top:14px;font-family:var(--sans);font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mahogany)}
+.note h3{font-family:var(--sans);font-weight:500;font-size:1.1rem;line-height:1.3;margin:2px 0 0;color:var(--ink);text-transform:none;letter-spacing:0;padding-right:58px}
+.note p{margin:10px 0 0;font-size:.9rem;line-height:var(--lh);min-height:calc(var(--lh)*3);background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--lh) - 1px),rgba(120,160,190,.35) calc(var(--lh) - 1px),rgba(120,160,190,.35) var(--lh));display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.note-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:14px;font-family:var(--sans);font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mahogany)}
+.note-foot span:first-child{color:#8a7a72;font-weight:500}
+html[data-notes="off"] section.notesp{display:none}
+@media (max-width:860px){.notes{grid-template-columns:1fr;max-width:460px;gap:40px}}
+.ndialog{border:0;padding:0;max-width:min(720px,calc(100vw - 24px));width:100%;max-height:calc(100vh - 32px);background:var(--card);color:var(--ink)}
+.ndialog::backdrop{background:rgba(43,35,30,.6)}
+.ndialog:focus,.ndialog:focus-visible{outline:none}
+.nd-img{aspect-ratio:16/9;overflow:hidden}.nd-img img{width:100%;height:100%;object-fit:cover;display:block}
+.nd-body{padding:28px clamp(22px,5vw,48px) 36px}
+.nd-body h2{font-family:var(--sans);font-weight:500;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.25;margin:6px 0 14px;text-transform:none;letter-spacing:0}
+.nd-body p{line-height:1.8;margin:0 0 14px}
+.nd-body h3{font-family:var(--sans);font-weight:500;font-size:1.05rem;color:var(--mahogany);margin:22px 0 8px;text-transform:none;letter-spacing:0}
+.nd-sign{font-style:italic;color:var(--mahogany)}
+.nd-x{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.9);font-size:1.4rem;cursor:pointer;color:var(--ink)}
 html.on-bake /* reel popups */
 .rdialog{border:none;padding:0;background:transparent;max-width:min(860px,calc(100vw - 24px));width:100%;max-height:calc(100vh - 32px);overflow:auto}
 .rdialog.emb{max-width:min(1060px,calc(100vw - 24px))}
@@ -1132,6 +1162,17 @@ main > section.legalp{min-height:0!important;padding-block:clamp(40px,5vw,72px)!
       </article>
     </div>
   </div></section>
+  <section class="notesp"><div class="wrap">
+    <div class="sec-head">
+      <h2>Recipe <span class="pop">Box</span></h2>
+      <p>Little tips and lessons, jotted down between batches.</p>
+    </div>
+    <div class="notes">
+      <button type="button" class="note" data-note="n1"><span class="note-polaroid"><img width="900" height="507" src="/img/note_flour.webp" alt="" loading="lazy"></span><span class="note-from">From the recipe box of <b>Melinda</b></span><span class="note-label">Tip no. 01</span><h3>Welcome to My Baking Journal!</h3><p>Welcome to my little corner of the baking world! Whether you're just getting started or you've been baking for years, there's always something new to learn.</p><span class="note-foot"><span>Nov 6</span><span>Read the card <span aria-hidden="true">→</span></span></span></button>
+      <button type="button" class="note" data-note="n2"><span class="note-polaroid"><img width="900" height="507" src="/img/note_butter.webp" alt="" loading="lazy"></span><span class="note-from">From the recipe box of <b>Melinda</b></span><span class="note-label">Tip no. 02</span><h3>Room Temperature Butter Isn't What You Think!</h3><p>Did you know? Room temperature butter shouldn't be greasy, shiny, or so soft that it's practically melting!</p><span class="note-foot"><span>Nov 6</span><span>Read the card <span aria-hidden="true">→</span></span></span></button>
+      <button type="button" class="note" data-note="n3"><span class="note-polaroid"><img width="900" height="600" src="/img/note_mix.webp" alt="" loading="lazy"></span><span class="note-from">From the recipe box of <b>Melinda</b></span><span class="note-label">Tip no. 03</span><h3>Don't Overmix That Batter!</h3><p>We've all been there. You're making a cake, everything is going great, and you figure, what's another minute or two of mixing?</p><span class="note-foot"><span>Nov 6</span><span>Read the card <span aria-hidden="true">→</span></span></span></button>
+    </div>
+  </div></section>
 </main>
 
 <main data-page="mom" hidden>
@@ -1663,5 +1704,9 @@ return '<a class="lv" href="'+esc(p.permalink)+'" target="_blank" rel="noopener"
 function embed(d){if(d.classList.contains('emb'))return;d.classList.add('emb');d.querySelectorAll('a.reel').forEach(function(a){var u=a.href.replace(/\?.*$/,'');var q=document.createElement('blockquote');q.className='instagram-media';q.setAttribute('data-instgrm-permalink',u+'?utm_source=ig_embed');q.setAttribute('data-instgrm-version','14');q.innerHTML='<a class="ig-fallback" href="'+u+'" target="_blank" rel="noopener">Watch this reel on Instagram ↗</a>';var w=document.createElement('div');w.className='igw';w.appendChild(q);a.replaceWith(w)});
 if(window.instgrm){window.instgrm.Embeds.process();return}if(loaded)return;loaded=true;var sc=document.createElement('script');sc.async=true;sc.src='https://www.instagram.com/embed.js';document.body.appendChild(sc)}
 document.querySelectorAll('.rdialog').forEach(function(d){new MutationObserver(function(){if(d.open)embed(d)}).observe(d,{attributes:true,attributeFilter:['open']})})})();</script>
+<script>(function(){document.querySelectorAll('[data-note]').forEach(function(b){b.addEventListener('click',function(){var d=document.getElementById('note-'+b.dataset.note);if(d)d.showModal()})});document.querySelectorAll('.ndialog').forEach(function(d){d.addEventListener('click',function(e){if(e.target===d||e.target.closest('[data-nclose]'))d.close()})})})();</script>
+<dialog class="ndialog" id="note-n1" aria-label="Welcome to My Baking Journal!"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-img"><img width="900" height="507" src="/img/note_flour.webp" alt="" loading="lazy"></div><div class="nd-body"><span class="note-date">Recipe Box · Tip no. 01 · Nov 6, 2026</span><h2>Welcome to My Baking Journal!</h2><p>Welcome to my little corner of the baking world!</p><p>Whether you're just getting started or you've been baking for years, there's always something new to learn. I've spent years experimenting with recipes, making mistakes, and discovering little tricks that make a big difference.</p><p>I created this journal to share some of those tips, lessons, and experiences with you. From baking basics to cake decorating, we'll cover a little bit of everything!</p><h3>Today's Quick Baking Tip: Measure your flour correctly!</h3><p>Did you know that scooping flour directly from the bag with your measuring cup can pack in more flour than your recipe needs?</p><p>Instead, fluff your flour, spoon it gently into your measuring cup, and level it off with a straight edge. Or, if you're like me... grab a kitchen scale and measure! It's my favorite way to get consistent results every time.</p><p>A little extra flour can be the difference between a soft, fluffy cake and a dry, dense one.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<dialog class="ndialog" id="note-n2" aria-label="Room Temperature Butter Isn&#x27;t What You Think!"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-img"><img width="900" height="507" src="/img/note_butter.webp" alt="" loading="lazy"></div><div class="nd-body"><span class="note-date">Recipe Box · Tip no. 02 · Nov 6, 2026</span><h2>Room Temperature Butter Isn't What You Think!</h2><p>Did you know? Room temperature butter shouldn't be greasy, shiny, or so soft that it's practically melting!</p><p>For most cakes and cookies that use the creaming method, butter should be around 65–68°F (18–20°C). It should feel cool to the touch and give slightly when pressed with your finger.</p><h3>Why does it matter?</h3><p>Butter that's too warm won't hold air as effectively during creaming, which can affect the texture and rise of your baked goods.</p><h3>My Baking Tip</h3><p>If your kitchen is warm, especially here in Texas, don't rely on leaving butter on the counter for a set amount of time. Check its temperature and texture instead!</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<dialog class="ndialog" id="note-n3" aria-label="Don&#x27;t Overmix That Batter!"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-img"><img width="900" height="600" src="/img/note_mix.webp" alt="" loading="lazy"></div><div class="nd-body"><span class="note-date">Recipe Box · Tip no. 03 · Nov 6, 2026</span><h2>Don't Overmix That Batter!</h2><p>We've all been there. You're making a cake, everything is going great, and you figure, what's another minute or two of mixing? 😂</p><p>Well, believe it or not, that extra mixing might be doing more harm than good!</p><p>One thing I've learned over the years is that more mixing doesn't always mean a better cake.</p><p>Once you add your flour, you want to be careful not to overmix. The more you work that batter, the more gluten develops, and that can leave you with a cake that's dense or tough instead of soft and fluffy.</p><h3>Here's My Tip!</h3><p>When adding your dry ingredients, keep your mixer on low and mix just until everything comes together. I also like to stop and scrape down the sides and bottom of my bowl because, trust me, flour loves hiding down there!</p><p>And don't worry if your batter isn't perfectly silky smooth. Depending on the recipe, a few tiny lumps are perfectly fine.</p><p>Of course, some cake recipes use different mixing methods, so always pay attention to what your recipe calls for.</p><p>Remember, sometimes less really is more!</p><p class="nd-sign">xo, Melinda</p></div></dialog>
 </body>
 </html>
