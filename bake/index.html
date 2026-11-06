@@ -460,7 +460,16 @@ main > section.tipsp{--wavec:var(--bg);background-color:var(--bg);min-height:0!i
 @media (max-width:960px){.tips{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
 @media (prefers-reduced-motion:reduce){.tip,.tip:hover{transition:none;transform:none}}
 
-/* reel popups */
+/* latest videos */
+main > section.latestv{--wavec:var(--blush);background-color:var(--blush);min-height:0!important;padding-block:clamp(56px,7vw,96px)!important}
+.lv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:960px;margin:0 auto}
+.lv{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:var(--card);box-shadow:0 10px 24px rgba(43,35,30,.12)}
+.lv img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.lv:hover img{transform:scale(1.05)}
+.lv svg{position:absolute;left:50%;top:50%;width:46px;height:46px;transform:translate(-50%,-50%);filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}
+.lv .lv-new{position:absolute;top:10px;left:10px;background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:4px 8px}
+@media (max-width:720px){.lv-grid{grid-template-columns:1fr 1fr}}
+html.on-bake /* reel popups */
 .rdialog{border:none;padding:0;background:transparent;max-width:min(860px,calc(100vw - 24px));width:100%;max-height:calc(100vh - 32px);overflow:auto}
 .rdialog::backdrop{background:rgba(43,35,30,.55)}
 .rdialog[open]{animation:cpop .22s ease-out}
@@ -1072,6 +1081,19 @@ main > section.legalp{min-height:0!important;padding-block:clamp(40px,5vw,72px)!
     </div>
     <div class="gstage" aria-label="Cake gallery"></div>
   </div></section>
+  <section class="latestv"><div class="wrap">
+    <div class="sec-head">
+      <h2>Latest <span class="pop">Videos</span></h2>
+      <p>Fresh from my kitchen to your feed. Tap any video to watch it on Instagram.</p>
+    </div>
+    <div class="lv-grid" data-behold="https://feeds.behold.so/dOp84hcmOoPBDZgpQA6N">
+      <a class="lv" href="https://www.instagram.com/batternlife" target="_blank" rel="noopener" aria-label="Watch on Instagram: Pink coffee-cup drip cake"><span class="lv-new">New</span><img width="640" height="783" src="/img/gal_n09.webp" alt="" loading="lazy"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></a>
+      <a class="lv" href="https://www.instagram.com/batternlife" target="_blank" rel="noopener" aria-label="Watch on Instagram: Halloween striped drip cake"><img width="640" height="801" src="/img/gal_n36.webp" alt="" loading="lazy"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></a>
+      <a class="lv" href="https://www.instagram.com/batternlife" target="_blank" rel="noopener" aria-label="Watch on Instagram: White quilted graduation cake"><img width="640" height="776" src="/img/gal_n17.webp" alt="" loading="lazy"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></a>
+      <a class="lv" href="https://www.instagram.com/batternlife" target="_blank" rel="noopener" aria-label="Watch on Instagram: Monster truck birthday cake"><img width="640" height="782" src="/img/gal_n40.webp" alt="" loading="lazy"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></a>
+    </div>
+    <div class="center-cta"><a class="btn solid" href="https://www.instagram.com/batternlife" target="_blank" rel="noopener">Follow @batternlife <span aria-hidden="true">→</span></a></div>
+  </div></section>
   <section class="tipsp"><div class="wrap">
     <div class="sec-head">
       <h2>From My <span class="pop">Kitchen</span></h2>
@@ -1607,5 +1629,15 @@ window.addEventListener("message",function(ev){if(ev.origin!=="https://app.bakeg
  if(t==="BAKEGENIE_MODAL_OPEN"){f.scrollIntoView({behavior:"smooth",block:"start"})}});
  var f=get();if(f&&!f.style.minHeight)f.style.minHeight="100vh";})();
 </script>
+<script>(function(){var g=document.querySelector('[data-behold]');if(!g)return;var sec=g.closest('section'),live=/batternlife\.com$/.test(location.hostname);
+var play=g.querySelector('.lv svg');play=play?play.outerHTML:'';
+function esc(t){return String(t||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function fail(){if(live&&sec)sec.style.display='none'}
+var ctl=window.AbortController?new AbortController():null;setTimeout(function(){if(ctl)ctl.abort()},9000);
+fetch(g.dataset.behold,ctl?{signal:ctl.signal}:{}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+var v=(d.posts||[]).filter(function(p){return p.mediaType==='VIDEO'&&p.visibility!=='hidden'}).slice(0,4);if(!v.length)return fail();
+g.innerHTML=v.map(function(p,i){var z=p.sizes||{},img=(z.large||z.medium||{}).mediaUrl||p.thumbnailUrl;var cap=(p.prunedCaption||p.caption||'').split('\n')[0].slice(0,110);
+return '<a class="lv" href="'+esc(p.permalink)+'" target="_blank" rel="noopener" aria-label="Watch on Instagram: '+esc(cap)+'">'+(i===0?'<span class="lv-new">New</span>':'')+'<img src="'+esc(img)+'" alt="" loading="lazy">'+play+'</a>'}).join('');
+}).catch(fail)})();</script>
 </body>
 </html>
