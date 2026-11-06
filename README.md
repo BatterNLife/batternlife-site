@@ -11,5 +11,5 @@ Requires Python 3 with Pillow.
 ## Adding a Baking Journal tip
 1. Save the photo as `img/note_<short-name>.jpg`.
 2. In `boutique.src.html`, copy one `<button class="note" ...>` card inside `<div class="notes">` and one matching `<dialog class="ndialog" id="note-...">` near the end of the file. Give both the next number (`data-note="n4"` / `id="note-n4"`, "Tip no. 04"), then update the title, excerpt, date, photo placeholder and body.
-3. Entry order inside the dialog: date line, title, text, then `<p class="nd-sign">xo, Melinda</p>`, then (if there is a reel) the `<div class="nd-video">` block LAST. Cards with a reel get `<span class="note-vid">▶ Video</span>` after the tip number.
+3. Entry order inside the dialog: date line, title, text, then `<p class="nd-sign">xo, Melinda</p>`, then (if there is a reel) the `<div class="nd-video">` block LAST. Videos ALWAYS go at the end of an entry, never in the middle. The previous/next tip arrows are added automatically by script. Cards with a reel get `<span class="note-vid">▶ Video</span>` after the tip number.
 4. Run `build.py`, then `deploy.py`.
