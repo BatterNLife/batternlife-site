@@ -588,11 +588,11 @@ main[data-page="mom"] > section.momj{overflow-x:clip}
 @media (max-width:520px){.mcats{gap:10px}.mc{padding:8px 12px;font-size:.62rem;letter-spacing:.1em}}
 /* layout: featured + staggered */
 .mwrap[data-ms^="feat"] .mmore,.mwrap[data-ms="stagger"] .mmore{display:block}
-.mwrap[data-ms="feat"] .mnotes{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:270px;gap:28px;max-width:1080px;padding-top:14px}
+.mwrap[data-ms="feat"] .mnotes{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-auto-rows:225px;gap:24px;max-width:1000px;padding-top:14px}
 .mwrap[data-ms="feat"] .mnote{height:auto}
-.mwrap[data-ms="feat"] .mnote.mfeat{grid-row:span 2;padding:40px 34px 28px}
-.mwrap[data-ms="feat"] .mnote.mfeat h3{font-size:1.6rem;margin-bottom:14px}
-.mwrap[data-ms="feat"] .mnote.mfeat p{font-size:1.02rem;line-height:1.8;-webkit-line-clamp:9}
+.mwrap[data-ms="feat"] .mnote.mfeat{grid-row:span 2;padding:30px 28px 22px}
+.mwrap[data-ms="feat"] .mnote.mfeat h3{font-size:1.35rem;margin-bottom:10px}
+.mwrap[data-ms="feat"] .mnote.mfeat p{font-size:.96rem;line-height:1.7;-webkit-line-clamp:7}
 .mwrap[data-ms^="feat"] .mnote.mfeat::after{content:"Latest";position:absolute;top:-12px;left:22px;right:auto;bottom:auto;background:linear-gradient(135deg,#e6cd8e,#C9A85E 60%,#b08f45);color:#1f1915;box-shadow:0 3px 6px rgba(43,35,30,.2);font-family:var(--sans);font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:5px 10px;width:auto;height:auto;display:block}
 .mwrap[data-ms="stagger"] .mnotes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;max-width:1080px;padding:14px 0 40px}
 .mwrap[data-ms="stagger"] .mnote:nth-child(even){margin-top:40px}
@@ -648,6 +648,11 @@ main[data-page="mom"] > section.momj{overflow-x:clip}
 .mwrap[data-ms^="feat"] .mnotes .mnote.mfeat::after{top:-26px;left:16px}
 .mwrap[data-ms^="feat"] .mnotes .mnote.mfeat h3{margin-top:0;padding-right:0}
 .mwrap[data-ms^="feat"] .mnotes .mnote.mfeat{padding-top:26px}
+.mwrap[data-ms="feat"] .mnote:not(.mfeat) h3{font-size:.95rem}
+.mwrap[data-ms="feat"] .mnote:not(.mfeat) p{font-size:.82rem;-webkit-line-clamp:3}
+.mwrap[data-ms="feat"] .mnote:not(.mfeat){padding:16px 18px 14px}
+.mwrap[data-ms="feat"] .mnotes .mnote.mfeat h3{font-size:1.35rem}
+@media (max-width:520px){.mwrap[data-ms="feat"] .mnotes .mnote.mfeat{height:260px}.mwrap[data-ms="feat"] .mnotes{grid-template-rows:260px;grid-auto-rows:215px}.mwrap[data-ms="feat"] .mnotes .mnote.mfeat h3{font-size:1.15rem}}
 /* featured: see-more options */
 .mwrap[data-ms^="feat"][data-mm="arrows"] .mfoot,.mwrap[data-ms^="feat"][data-mm="pages"] .mfoot{display:flex}
 .mfoot .mpg{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1f1915;padding:0 10px}
@@ -2026,7 +2031,7 @@ var p=document.createElement('button');p.type='button';p.className='marr mp';p.s
 var n=document.createElement('button');n.type='button';n.className='marr mn';n.setAttribute('aria-label','Next notes');n.innerHTML=R;
 var f=document.createElement('div');f.className='mfoot';var more=document.createElement('button');more.type='button';more.className='mmore';
 w.appendChild(p);w.appendChild(n);w.appendChild(f);w.appendChild(more);
-var mode='arrows',mm='button',sp=0,pg=0,top=0,open=false;function per(){return innerWidth<=520?2:innerWidth<=900?3:4}
+var mode='arrows',mm='arrows',sp=0,pg=0,top=0,open=false;function per(){return innerWidth<=520?2:innerWidth<=900?3:4}
 function clear(){all.forEach(function(c){c.classList.remove('mh','sC','sL','sR','sH','mfeat');c.style.gridRow=''})}
 function render(){clear();f.innerHTML='';more.style.display='';var P=per();
  if(mode==='arrows'){var pp=Math.ceil(N/P);for(var i=0;i<pp;i++){(function(i){var d=document.createElement('button');d.type='button';d.className='mdot';d.setAttribute('aria-label','Page '+(i+1));d.onclick=function(){grid.scrollLeft=i*grid.clientWidth};f.appendChild(d)})(i)}sync()}
@@ -2043,13 +2048,7 @@ grid.addEventListener('click',function(e){if(mode!=='spot')return;var c=e.target
 var sx=null;w.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});w.addEventListener('touchend',function(e){if(mode!=='spot'||sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>50){dx<0?n.onclick():p.onclick()}});
 addEventListener('resize',function(){clearTimeout(w._r);w._r=setTimeout(render,120)});
 window.bnlMomMore=function(v){mm=v;sp=0;open=false;grid.scrollTop=0;render()};window.bnlMomMode=function(m){mode=m;w.dataset.ms=m;pg=0;sp=0;top=0;open=false;grid.scrollTop=0;grid.scrollLeft=0;render()};window.bnlMomCat=function(k){all.forEach(function(x){x.classList.toggle('mcat-hide',k!=='all'&&x.dataset.cat!==k)});cards=all.filter(function(x){return !x.classList.contains('mcat-hide')});N=cards.length;pg=0;sp=0;grid.scrollTop=0;top=0;open=false;grid.scrollLeft=0;render()};[].forEach.call(document.querySelectorAll('[data-mcat]'),function(b){b.onclick=function(){[].forEach.call(document.querySelectorAll('[data-mcat]'),function(y){y.setAttribute('aria-pressed',y===b?'true':'false')});window.bnlMomCat(b.dataset.mcat)}});window.bnlMomMode('feat');
-if(/(^|\.)batternlife\.com$|pages\.dev$/.test(location.hostname))return;var h=document.documentElement;
-var sw=document.createElement('div');sw.className='mamsw';sw.setAttribute('role','group');sw.setAttribute('aria-label','Mom Diaries preview');
-function row(label,key,opts,fn){var t=document.createElement('span');t.textContent=label;sw.appendChild(t);opts.forEach(function(o,i){var b=document.createElement('button');b.type='button';b.dataset[key]=o[0];b.textContent=o[1];b.setAttribute('aria-pressed',i?'false':'true');sw.appendChild(b);b.onclick=function(){[].forEach.call(sw.querySelectorAll('[data-'+key+']'),function(y){y.setAttribute('aria-pressed',y===b?'true':'false')});fn(o[0])}});var br=document.createElement('div');br.style.cssText='flex-basis:100%;height:0';sw.appendChild(br)}
-row('Featured','ms',[['feat','Big left'],['featTop','Big on top'],['featList','Big + list'],['featCenter','Big in center']],function(v){window.bnlMomMode(v)});
-row('See more','mm',[['button','Button'],['arrows','Arrows'],['pages','Page numbers'],['scroll','Scroll']],function(v){window.bnlMomMore(v)});
-sw.removeChild(sw.lastChild);document.body.appendChild(sw);
-function chk(){var m=document.querySelector('main[data-page="mom"]');h.classList.toggle('mamsw-on',!!m&&!m.hidden)}chk();addEventListener('hashchange',function(){setTimeout(chk,30)});new MutationObserver(chk).observe(document.body,{subtree:true,attributes:true,attributeFilter:['hidden']})})();</script>
+})();</script>
 <dialog class="ndialog" id="note-m9" aria-label="A Letter to My First-Time-Mom Self"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-body" style="padding-top:44px"><span class="note-date"><span data-mjs>The Mom Diaries</span> · Notes to Self · Sample</span><h2>A Letter to My First-Time-Mom Self</h2><p>Dear you: you're going to worry about everything. Here's what I wish someone had told you.</p><p>This is a sample entry. A note to yourself could be encouragement, a lesson you learned the hard way, or something you want to remember on the tough days.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
 </body>
 </html>
