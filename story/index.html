@@ -521,6 +521,187 @@ main[data-page="favorites"] > section.favp{--wavec:var(--bg);background-color:va
 main[data-page="orders"] > section.menup{--wavec:var(--blush);background-color:var(--blush)}
 main[data-page="privacy"] > section.legalp{--wavec:var(--bg);background-color:var(--bg)}
 main[data-page="contact"] > section.contactp{--wavec:var(--blush);background-color:var(--blush)}
+.mn-type{display:inline-block;align-self:flex-start;margin:0 0 8px;padding:3px 8px;background:rgba(255,255,255,.55);font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#1f1915}
+/* mom notes: gold heart magnets */
+.mn-pin{display:none}
+.mnote{border-radius:6px;transform:rotate(-1deg)}
+.mnote:nth-child(even){transform:rotate(1.2deg)}
+.mnote::after{display:none}
+.mnote::before{content:none!important}
+
+.mfilter{display:flex;justify-content:center;gap:10px;margin:0 auto 34px;flex-wrap:wrap}
+.mfilter button{border:1.5px solid rgba(153,102,97,.45);background:#FFFDF8;border-radius:999px;padding:9px 20px;font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#1f1915;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.mfilter button:hover{border-color:var(--mahogany)}
+.mfilter button[aria-selected="true"]{background:var(--mahogany);border-color:var(--mahogany);color:#fff}
+.mnote.mf-hide{display:none}
+.mn-stars{display:block;margin:-2px 0 6px;color:#9c7d3c;font-size:.95rem;letter-spacing:2px}
+.rv-stars{color:#C9A85E;font-size:1.3rem;letter-spacing:3px;margin:-4px 0 14px}.rv-stars small{font-family:var(--sans);font-size:.75rem;letter-spacing:.1em;color:var(--mahogany);font-weight:600}
+.rv-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.rv-box{background:var(--blush);padding:16px 18px}.rv-box:last-child{background:#f3ebe0}
+.rv-box h3{margin:0 0 8px!important;font-size:.95rem!important}
+.rv-box ul{margin:0;padding-left:1.1em;line-height:1.7;font-size:.93rem}
+.rv-best{background:#FFFDF8;border-left:3px solid var(--gold);padding:10px 14px}
+.rv-shop{margin:6px 0 10px}
+.rv-disc{font-size:.78rem!important;color:#8a7a72;font-style:italic}
+@media (max-width:560px){.rv-cols{grid-template-columns:1fr}}
+main[data-page="favorites"] > section.favrev{--wavec:var(--blush);background-color:var(--blush);min-height:0!important;padding-block:clamp(56px,7vw,96px)!important}
+.rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,320px));gap:26px;max-width:1040px;margin:0 auto;justify-content:center}
+.rcard{display:flex;flex-direction:column;border:0;padding:0;background:#FFFDF8;text-align:left;font:inherit;color:var(--ink);cursor:pointer;box-shadow:0 12px 26px rgba(43,35,30,.12);transition:transform .25s,box-shadow .25s}
+.rcard:hover{transform:translateY(-4px);box-shadow:0 18px 34px rgba(43,35,30,.18)}
+.rc-img{position:relative;display:block;aspect-ratio:4/3;overflow:hidden}.rc-img img{width:100%;height:100%;object-fit:cover;display:block}
+.rc-cat{position:absolute;left:12px;bottom:12px;background:var(--mahogany);color:#fff;font-family:var(--sans);font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:4px 9px}
+.rc-sample{background:rgba(255,253,248,.85);padding:2px 6px;opacity:1!important}
+.rc-body{display:flex;flex-direction:column;gap:6px;padding:16px 18px 18px;flex:1}
+.rc-stars{color:#C9A85E;letter-spacing:2px}
+.rcard h3{font-family:var(--sans);font-weight:600;font-size:1.05rem;line-height:1.3;margin:0;text-transform:none;letter-spacing:0}
+.rcard p{margin:0;font-size:.9rem;line-height:1.55}
+.rcard .mn-read{padding-top:6px}
+@media (max-width:520px){.rgrid{grid-template-columns:1fr;max-width:400px}}
+/* mom diaries: equal cards, browse + style options */
+.mnote{aspect-ratio:auto!important;height:270px;min-height:0!important}
+@media (max-width:900px){.mnote{height:250px}}
+@media (max-width:520px){.mnote{height:230px}}
+.mwrap{position:relative;max-width:1120px;margin:0 auto}
+main[data-page="mom"] > section.momj{overflow-x:clip}
+.marr{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;border:0;background:#FFFDF8;color:var(--ink);box-shadow:0 6px 16px rgba(43,35,30,.18);cursor:pointer;display:none;place-items:center}
+.marr:hover{background:var(--gold)}.marr svg{width:20px;height:20px}.marr[disabled]{opacity:.35;cursor:default;background:#FFFDF8}
+.marr.mp{left:-6px}.marr.mn{right:-6px}
+.mfoot{display:none;justify-content:center;align-items:center;gap:8px;margin-top:22px}
+.mfoot button{min-width:36px;height:36px;border-radius:999px;border:1.5px solid rgba(153,102,97,.45);background:#FFFDF8;font-family:var(--sans);font-weight:700;font-size:.8rem;color:#1f1915;cursor:pointer;padding:0 10px}
+.mfoot button[aria-current="true"]{background:var(--mahogany);border-color:var(--mahogany);color:#fff}
+.mfoot .mdot{min-width:10px;width:10px;height:10px;padding:0;border:0;background:rgba(153,102,97,.3)}
+.mfoot .mdot[aria-current="true"]{background:var(--mahogany)}
+.mmore{display:none;margin:30px auto 0;border:1.5px solid var(--mahogany);background:transparent;color:var(--mahogany);font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:12px 26px;cursor:pointer}
+.mmore:hover{background:var(--mahogany);color:#fff}
+.mnote.mh{display:none!important}
+/* arrows (slide) */
+.mwrap[data-ms="arrows"] .mnotes{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;gap:26px;padding:30px 12px 30px;margin:0 52px;max-width:none}
+.mwrap[data-ms="arrows"] .mnotes::-webkit-scrollbar{display:none}
+.mwrap[data-ms="arrows"] .mnote{flex:0 0 calc((100% - 78px)/4);scroll-snap-align:start}
+.mwrap[data-ms="arrows"] .marr,.mwrap[data-ms="spot"] .marr{display:grid}
+.mwrap[data-ms="arrows"] .mfoot,.mwrap[data-ms="pages"] .mfoot,.mwrap[data-ms="spot"] .mfoot{display:flex}
+.mwrap[data-ms="more"] .mmore{display:block}
+/* spotlight */
+.mwrap[data-ms="spot"] .mnotes{display:grid;grid-template-columns:100%;justify-items:center;padding:50px 0 50px;max-width:1040px}
+.mwrap[data-ms="spot"] .mnote{grid-area:1/1;width:30%;max-width:300px;transition:transform .5s,opacity .45s}
+.mwrap[data-ms="spot"] .mnote.sC{transform:scale(1.12) rotate(-1deg)!important;z-index:3;opacity:1}
+.mwrap[data-ms="spot"] .mnote.sL{transform:translateX(-108%) scale(.88) rotate(-2deg)!important;opacity:.5;z-index:2}
+.mwrap[data-ms="spot"] .mnote.sR{transform:translateX(108%) scale(.88) rotate(2deg)!important;opacity:.5;z-index:2}
+.mwrap[data-ms="spot"] .mnote.sH{opacity:0;pointer-events:none;transform:scale(.7)!important}
+@media (max-width:900px){.mwrap[data-ms="arrows"] .mnote{flex-basis:calc((100% - 52px)/3)}.mwrap[data-ms="spot"] .mnote{width:42%}}
+@media (max-width:520px){.mwrap[data-ms="arrows"] .mnotes{margin:0;padding:30px 4px}.mwrap[data-ms="arrows"] .mnote{flex-basis:calc((100% - 16px)/2)}.mwrap[data-ms="arrows"] .marr,.mwrap[data-ms="spot"] .marr{top:auto;bottom:-14px;transform:none;width:40px;height:40px}.mwrap[data-ms="spot"] .mnote{width:62%}.mwrap[data-ms="spot"] .mnote.sL{transform:translateX(-80%) scale(.82)!important}.mwrap[data-ms="spot"] .mnote.sR{transform:translateX(80%) scale(.82)!important}}
+/* card styles */
+.mnote{background:#FFFDF8 repeating-linear-gradient(to bottom,transparent 0,transparent 25px,rgba(120,160,190,.28) 25px,rgba(120,160,190,.28) 26px) 0 64px/100% calc(100% - 64px) no-repeat!important;border-top:12px solid var(--nc)!important;border-radius:4px}
+.mn-type{background:var(--nc)}
+.mcats{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 16px;margin:0 auto 26px}
+.mc{display:inline-flex;align-items:center;gap:7px;border:0;cursor:pointer;padding:9px 18px;font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#1f1915;box-shadow:0 2px 4px rgba(43,35,30,.08);-webkit-mask:linear-gradient(90deg,transparent 0,#000 5px,#000 calc(100% - 5px),transparent 100%);mask:linear-gradient(90deg,transparent 0,#000 5px,#000 calc(100% - 5px),transparent 100%);transition:transform .2s,filter .2s}
+.mc svg{width:15px;height:15px}
+.mc:nth-child(1){background:#FFFDF8}.mc:nth-child(2){background:#ECD0C4}.mc:nth-child(3){background:#DFB6A6}.mc:nth-child(4){background:#CC9F92}.mc:nth-child(5){background:#BA8B84}
+.mc:hover{transform:translateY(-2px);filter:brightness(.95)}
+.mc[aria-pressed="true"]{transform:translateY(-2px);box-shadow:inset 0 -3px 0 #C9A85E,0 4px 8px rgba(43,35,30,.15)}
+.mnote.mcat-hide{display:none!important}
+@media (max-width:520px){.mcats{gap:10px}.mc{padding:8px 12px;font-size:.62rem;letter-spacing:.1em}}
+/* layout: featured + staggered */
+.mwrap[data-ms^="feat"] .mmore,.mwrap[data-ms="stagger"] .mmore{display:block}
+.mwrap[data-ms="feat"] .mnotes{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:270px;gap:28px;max-width:1080px;padding-top:14px}
+.mwrap[data-ms="feat"] .mnote{height:auto}
+.mwrap[data-ms="feat"] .mnote.mfeat{grid-row:span 2;padding:40px 34px 28px}
+.mwrap[data-ms="feat"] .mnote.mfeat h3{font-size:1.6rem;margin-bottom:14px}
+.mwrap[data-ms="feat"] .mnote.mfeat p{font-size:1.02rem;line-height:1.8;-webkit-line-clamp:9}
+.mwrap[data-ms^="feat"] .mnote.mfeat::after{content:"Latest";position:absolute;top:-12px;left:22px;right:auto;bottom:auto;background:linear-gradient(135deg,#e6cd8e,#C9A85E 60%,#b08f45);color:#1f1915;box-shadow:0 3px 6px rgba(43,35,30,.2);font-family:var(--sans);font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:5px 10px;width:auto;height:auto;display:block}
+.mwrap[data-ms="stagger"] .mnotes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;max-width:1080px;padding:14px 0 40px}
+.mwrap[data-ms="stagger"] .mnote:nth-child(even){margin-top:40px}
+.mwrap[data-ms="stagger"] .mnote:nth-child(4n+3){margin-top:16px}
+@media (max-width:900px){.mwrap[data-ms="feat"] .mnotes{grid-template-columns:1fr 1fr}.mwrap[data-ms="feat"] .mnote.mfeat{grid-column:span 2;grid-row:span 2}.mwrap[data-ms="stagger"] .mnotes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.mwrap[data-ms="feat"] .mnotes{gap:18px;grid-auto-rows:230px}.mwrap[data-ms="feat"] .mnote.mfeat{grid-row:auto;height:300px;padding:32px 20px 20px}.mwrap[data-ms="feat"] .mnote.mfeat h3{font-size:1.25rem}.mwrap[data-ms="feat"] .mnote.mfeat p{-webkit-line-clamp:7}.mwrap[data-ms="stagger"] .mnotes{gap:16px}.mwrap[data-ms="stagger"] .mnote:nth-child(even){margin-top:28px}.mwrap[data-ms="stagger"] .mnote:nth-child(4n+3){margin-top:0}}
+/* straight cards */
+.mnotes > .mnote.mnote{transform:none}
+.mnotes > .mnote.mnote:hover{transform:translateY(-4px)}
+/* featured variants */
+.mwrap[data-ms^="feat"] .mnote.mfeat h3{font-size:1.6rem;margin-bottom:14px}
+.mwrap[data-ms^="feat"] .mnote.mfeat p{font-size:1.02rem;line-height:1.8}
+.mwrap[data-ms="featTop"] .mnotes,.mwrap[data-ms="featList"] .mnotes,.mwrap[data-ms="featCenter"] .mnotes{display:grid;gap:26px;max-width:1080px;padding-top:14px}
+.mwrap[data-ms="featTop"] .mnotes{grid-template-columns:repeat(4,minmax(0,1fr))}
+.mwrap[data-ms="featTop"] .mnote.mfeat{grid-column:1/-1;height:250px;padding:38px 48px 26px}
+.mwrap[data-ms="featTop"] .mnote.mfeat p{-webkit-line-clamp:3;max-width:760px}
+.mwrap[data-ms="featList"] .mnotes{grid-template-columns:1.35fr 1fr;grid-auto-rows:auto;gap:14px 30px}
+.mwrap[data-ms="featList"] .mnote.mfeat{grid-row:1/span 5;height:auto;min-height:520px;padding:40px 34px 28px}
+.mwrap[data-ms="featList"] .mnote.mfeat p{-webkit-line-clamp:10}
+.mwrap[data-ms="featList"] .mnote:not(.mfeat){height:auto;padding:14px 18px 14px 22px;background:#FFFDF8!important;border-top:0!important;border-left:8px solid var(--nc);display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:12px}
+.mwrap[data-ms="featList"] .mnote:not(.mfeat) p,.mwrap[data-ms="featList"] .mnote:not(.mfeat) .mn-sample{display:none}
+.mwrap[data-ms="featList"] .mnote:not(.mfeat) .mn-type{grid-column:1;margin-bottom:4px;justify-self:start}
+.mwrap[data-ms="featList"] .mnote:not(.mfeat) h3{grid-column:1;margin:0;font-size:1rem}
+.mwrap[data-ms="featList"] .mnote:not(.mfeat) .mn-read{grid-column:2;grid-row:1/span 2;padding:0;font-size:0}
+.mwrap[data-ms="featList"] .mnote:not(.mfeat) .mn-read::after{content:"→";font-size:1.2rem;color:var(--mahogany)}
+.mwrap[data-ms="featCenter"] .mnotes{grid-template-columns:1fr 1.6fr 1fr;grid-auto-rows:270px;grid-auto-flow:dense}
+.mwrap[data-ms="featCenter"] .mnote.mfeat{grid-column:2;grid-row:1/span 2;height:auto;padding:40px 34px 28px}
+.mwrap[data-ms="featCenter"] .mnote.mfeat p{-webkit-line-clamp:9}
+.mwrap[data-ms="featCenter"] .mnote:not(.mfeat){height:auto}
+@media (max-width:900px){.mwrap[data-ms="featTop"] .mnotes{grid-template-columns:1fr 1fr}.mwrap[data-ms="featTop"] .mnote.mfeat{height:270px;padding:34px 28px 22px}
+.mwrap[data-ms="featList"] .mnotes{grid-template-columns:1fr}.mwrap[data-ms="featList"] .mnote.mfeat{grid-row:auto;min-height:0;height:320px}
+.mwrap[data-ms="featCenter"] .mnotes{grid-template-columns:1fr 1fr;grid-auto-rows:250px}.mwrap[data-ms="featCenter"] .mnote.mfeat{grid-column:1/-1;grid-row:span 1;height:auto}}
+@media (max-width:520px){.mwrap[data-ms^="feat"] .mnote.mfeat h3{font-size:1.25rem}.mwrap[data-ms^="feat"] .mnote.mfeat p{font-size:.95rem}.mwrap[data-ms="featTop"] .mnotes,.mwrap[data-ms="featCenter"] .mnotes{gap:16px;grid-auto-rows:230px}.mwrap[data-ms="featTop"] .mnote.mfeat{padding:30px 20px 18px}.mwrap[data-ms="featList"] .mnote.mfeat,.mwrap[data-ms="featCenter"] .mnote.mfeat{height:300px;padding:32px 20px 20px}}
+.mwrap[data-ms^="feat"] .mnote.mfeat .mn-type{position:absolute;top:22px;right:24px;margin:0}
+.mwrap[data-ms^="feat"] .mnote.mfeat .mn-sample{top:auto;bottom:26px;right:24px}
+.mwrap[data-ms^="feat"] .mnote.mfeat h3{margin-top:14px;padding-right:120px}
+@media (max-width:520px){.mwrap[data-ms^="feat"] .mnote.mfeat .mn-type{top:18px;right:16px}.mwrap[data-ms^="feat"] .mnote.mfeat h3{padding-right:0;margin-top:26px}}
+/* category tag: upper right on every note */
+.mnotes .mnote .mn-type{position:absolute;top:18px;right:16px;margin:0;z-index:1}
+.mnotes .mnote .mn-sample{top:auto;bottom:18px;right:16px}
+.mnotes .mnote h3{margin-top:22px}
+.mwrap[data-ms="featList"] .mnote:not(.mfeat){padding:34px 50px 14px 22px;display:block}
+.mwrap[data-ms="featList"] .mnote:not(.mfeat) .mn-type{top:10px;right:14px}
+.mwrap[data-ms="featList"] .mnote:not(.mfeat) h3{margin:0}
+.mwrap[data-ms="featList"] .mnote:not(.mfeat) .mn-read{position:absolute;right:16px;bottom:12px}
+@media (max-width:520px){.mnotes .mnote .mn-sample{display:none}.mwrap[data-ms^="feat"] .mnotes{grid-template-rows:300px}.mwrap[data-ms^="feat"] .mnotes .mnote.mfeat{height:300px;grid-row:auto}}
+/* featured: see-more options */
+.mwrap[data-ms^="feat"][data-mm="arrows"] .mfoot,.mwrap[data-ms^="feat"][data-mm="pages"] .mfoot{display:flex}
+.mfoot .mpg{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1f1915;padding:0 10px}
+.mfoot button[disabled]{opacity:.35;cursor:default}
+.mwrap[data-ms^="feat"][data-mm="scroll"] .mnotes{max-height:620px;overflow-y:auto;overscroll-behavior:contain;padding:14px 10px 10px 4px;scrollbar-width:thin;scrollbar-color:#BA8B84 transparent;-webkit-mask:linear-gradient(#000 calc(100% - 40px),transparent);mask:linear-gradient(#000 calc(100% - 40px),transparent)}
+.mwrap[data-ms^="feat"][data-mm="scroll"] .mnote.mfeat{position:sticky;top:0;align-self:start;z-index:2}
+.mwrap[data-ms^="feat"][data-mm="scroll"] .mnotes{grid-auto-rows:auto;align-content:start}
+.mwrap[data-ms="feat"][data-mm="scroll"] .mnote:not(.mfeat),.mwrap[data-ms="featCenter"][data-mm="scroll"] .mnote:not(.mfeat){height:270px}
+.mwrap[data-ms="feat"][data-mm="scroll"] .mnote.mfeat,.mwrap[data-ms="featCenter"][data-mm="scroll"] .mnote.mfeat{height:568px}
+.mwrap[data-ms="featList"][data-mm="scroll"] .mnote.mfeat{height:560px}
+.mwrap[data-ms^="feat"][data-mm="scroll"]::after{content:"Scroll for more ↓";display:block;text-align:center;margin-top:10px;font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mahogany)}
+@media (max-width:900px){.mwrap[data-ms^="feat"][data-mm="scroll"] .mnote.mfeat{position:static;height:300px!important}}
+/* mom life: preview sections */
+html:not(.pvm) .pvmom{display:none!important}
+html.pvm main[data-page="mom"] > section.momreels{display:none!important}
+main[data-page="mom"] > section.momj{--wavec:var(--blush);background-color:var(--blush);min-height:0!important;padding-block:clamp(56px,7vw,96px)!important}
+main[data-page="mom"] > section.momkids{--wavec:var(--bg);background-color:var(--bg);min-height:0!important;padding-block:clamp(56px,7vw,96px)!important}
+main[data-page="mom"] > section.momfav{--wavec:var(--bg2);background-color:var(--bg2);min-height:0!important;padding-block:clamp(56px,7vw,96px)!important}
+html.pvm main[data-page="mom"] > section.momp{--wavec:var(--bg);background-color:var(--bg)}
+.mnotes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px 26px;max-width:1080px;margin:0 auto;padding-top:14px}
+.mnote{position:relative;background:var(--nc);border:0;padding:34px 20px 18px;text-align:left;font:inherit;color:var(--ink);cursor:pointer;aspect-ratio:1;display:flex;flex-direction:column;box-shadow:0 2px 0 rgba(0,0,0,.03),0 14px 22px -8px rgba(43,35,30,.25);transform:rotate(-2deg);transition:transform .3s,box-shadow .3s}
+.mnote:nth-child(2){transform:rotate(1.6deg)}.mnote:nth-child(3){transform:rotate(-.8deg)}.mnote:nth-child(4){transform:rotate(2.2deg)}
+.mnote::after{content:"";position:absolute;right:0;bottom:0;width:26px;height:26px;background:linear-gradient(135deg,rgba(0,0,0,.08) 0 50%,rgba(255,255,255,.55) 50%)}
+.mnote:hover{transform:rotate(0) translateY(-5px);box-shadow:0 22px 30px -10px rgba(43,35,30,.3)}
+.mn-pin{position:absolute;top:-10px;left:50%;width:26px;height:26px;transform:translateX(-50%)}
+.mn-sample{position:absolute;top:10px;right:10px;font-family:var(--sans);font-size:.56rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#1f1915;opacity:.65}
+.mnote h3{color:#1f1915;font-family:var(--sans);font-weight:700;font-size:1.02rem;line-height:1.3;margin:0 0 8px;text-transform:none;letter-spacing:0}
+.mnote p{margin:0;font-size:.86rem;line-height:1.55;color:#2b231e;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.mn-read{margin-top:auto;padding-top:8px;font-family:var(--sans);font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#1f1915}
+.kcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:980px;margin:0 auto}
+.kcard{background:#FFFDF8;padding:28px 24px;text-align:center;box-shadow:0 10px 24px rgba(43,35,30,.1);border-top:4px solid var(--gold)}
+.kcard:nth-child(2){border-top-color:var(--mahogany)}.kcard:nth-child(3){border-top-color:#cc9f92}
+.kc-ic{display:grid;place-items:center;width:58px;height:58px;margin:0 auto 14px;border-radius:50%;background:var(--blush);color:var(--mahogany)}
+.kc-ic svg{width:30px;height:30px}
+.kcard h3{font-family:var(--sans);font-weight:600;font-size:1.05rem;margin:0 0 8px;text-transform:none;letter-spacing:0}
+.kcard p{margin:0;font-size:.92rem;line-height:1.6}
+.mf-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:760px;margin:0 auto}
+.mf{display:block;position:relative;text-decoration:none;color:var(--ink);background:var(--card);box-shadow:0 10px 24px rgba(43,35,30,.12);overflow:hidden}
+.mf img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s}
+.mf:hover img{transform:scale(1.04)}
+.mf b{display:block;padding:14px;text-align:center;font-family:var(--sans);font-weight:500;font-size:1.05rem;color:var(--mahogany)}
+@media (max-width:900px){.mnotes{grid-template-columns:repeat(2,minmax(0,1fr))}.kcards{grid-template-columns:1fr;max-width:460px}}
+@media (max-width:520px){.mnotes{gap:26px 16px}.mnote{padding:30px 14px 14px}.mnote h3{font-size:.92rem}.mnote p{-webkit-line-clamp:3;font-size:.8rem}.mf-grid{grid-template-columns:1fr;max-width:400px}}
+.mamsw{position:fixed;left:14px;bottom:14px;z-index:60;display:none;flex-wrap:wrap;align-items:center;gap:4px;background:var(--ink);color:#fff;padding:6px;font-family:var(--sans);font-size:.72rem;box-shadow:0 8px 22px rgba(0,0,0,.25);max-width:calc(100vw - 28px)}
+.mamsw span{padding:0 8px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.mamsw button{font:inherit;border:0;background:transparent;color:#fff;padding:6px 10px;cursor:pointer}
+.mamsw button[aria-pressed="true"]{background:var(--gold);color:var(--ink)}
+html.mamsw-on .mamsw{display:flex}
 /* journal browse modes */
 .jwrap{position:relative;max-width:1120px;margin:0 auto}
 .jarrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;border:0;background:#FFFDF8;color:var(--ink);box-shadow:0 6px 16px rgba(43,35,30,.18);cursor:pointer;display:none;place-items:center;transition:background .2s,opacity .2s}
@@ -584,8 +765,8 @@ main > section.notesp{--wavec:var(--bg2);background-color:var(--bg2);min-height:
 .note{--lh:1.7rem;position:relative;background:#FFFDF8;text-align:left;display:flex;flex-direction:column;cursor:pointer;border:0;padding:30px 24px 20px;font:inherit;color:inherit;box-shadow:0 2px 0 rgba(43,35,30,.04),0 14px 28px rgba(43,35,30,.13);transition:transform .3s,box-shadow .3s;transform:rotate(-1.2deg)}
 .note:nth-child(3n+2){transform:rotate(.9deg)}.note:nth-child(3n){transform:rotate(-.5deg)}.note:nth-child(4n){transform:rotate(.6deg)}
 .note:hover{transform:rotate(0) translateY(-4px);box-shadow:0 20px 36px rgba(43,35,30,.18)}
-.note::before{content:"";position:absolute;top:-12px;left:50%;width:96px;height:26px;transform:translateX(-50%) rotate(-3deg);background:rgba(217,191,132,.72);box-shadow:0 1px 2px rgba(0,0,0,.06)}
-.note:nth-child(even)::before{background:rgba(196,152,146,.6);transform:translateX(-50%) rotate(2deg)}
+.note::before{content:"";position:absolute;top:-12px;left:50%;width:96px;height:26px;transform:translateX(-50%) rotate(-3deg);background:rgba(206,170,96,.9);box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.note:nth-child(even)::before{background:rgba(206,170,96,.9);transform:translateX(-50%) rotate(2deg)}
 .note-from{display:flex;align-items:flex-end;gap:6px;font-family:var(--sans);font-size:.58rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mahogany);padding-bottom:10px;border-bottom:2px solid var(--mahogany);padding-right:52px;white-space:nowrap}
 .note-date{font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mahogany)}
 .note-from b{flex:1;min-width:0;font-weight:500;font-size:.9rem;letter-spacing:.04em;text-transform:none;color:var(--ink);border-bottom:1px solid rgba(153,102,97,.45);padding:0 4px 1px}
@@ -1313,6 +1494,35 @@ main > section.legalp{min-height:0!important;padding-block:clamp(40px,5vw,72px)!
       </article>
     </div>
   </div></section>
+  <section class="momj pvmom"><div class="wrap">
+    <div class="sec-head">
+      <h2 data-mjt>The Mom <span class="pop">Diaries</span></h2>
+      <p>Real life with four kids: everyday moments, homeschool days, family trips and a few notes to myself.</p>
+    </div>
+    <nav class="mcats" aria-label="Note categories"><button type="button" class="mc" data-mcat="all" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16"/></svg><span>All</span></button><button type="button" class="mc" data-mcat="life" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><span>Real Life</span></button><button type="button" class="mc" data-mcat="school" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c3 2 7 2 10 0v-5"/></svg><span>Homeschool</span></button><button type="button" class="mc" data-mcat="trips" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13l2-5h14l2 5"/><rect x="3" y="13" width="18" height="5" rx="1"/><circle cx="7" cy="18.5" r="1.5"/><circle cx="17" cy="18.5" r="1.5"/></svg><span>Family Trips</span></button><button type="button" class="mc" data-mcat="notes" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.3-8.9-8.7C1.7 8 3.6 4.5 7 4.5c2 0 3.5 1.1 5 2.8 1.5-1.7 3-2.8 5-2.8 3.4 0 5.3 3.5 3.9 6.8C19 15.7 12 20 12 20z"/></svg><span>Notes to Self</span></button></nav>
+    <div class="mnotes">
+      <button type="button" class="mnote" data-cat="life" data-note="m1" style="--nc:#ECD0C4"><svg class="mn-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6" fill="#C9A85E"/><circle cx="10" cy="7" r="2" fill="rgba(255,255,255,.55)"/><path d="M12 15v6" stroke="#9c7d3c" stroke-width="2" stroke-linecap="round"/></svg><span class="mn-sample">Sample</span><span class="mn-type">Real Life</span><h3>How I Juggle Cake Orders and Four Kids</h3><p>Spoiler: I don't always. But a few small habits keep our house (mostly) running on order weeks.</p><span class="mn-read">Read the note →</span></button>
+      <button type="button" class="mnote" data-cat="school" data-note="m2" style="--nc:#DFB6A6"><svg class="mn-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6" fill="#C9A85E"/><circle cx="10" cy="7" r="2" fill="rgba(255,255,255,.55)"/><path d="M12 15v6" stroke="#9c7d3c" stroke-width="2" stroke-linecap="round"/></svg><span class="mn-sample">Sample</span><span class="mn-type">Homeschool</span><h3>What a Real Homeschool Day Looks Like</h3><p>Lesson plans, snack breaks, a baby on my hip and a cake chilling in the fridge. Here's our actual day.</p><span class="mn-read">Read the note →</span></button>
+      <button type="button" class="mnote" data-cat="life" data-note="m3" style="--nc:#CC9F92"><svg class="mn-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6" fill="#C9A85E"/><circle cx="10" cy="7" r="2" fill="rgba(255,255,255,.55)"/><path d="M12 15v6" stroke="#9c7d3c" stroke-width="2" stroke-linecap="round"/></svg><span class="mn-sample">Sample</span><span class="mn-type">Real Life</span><h3>Our Favorite Holiday Baking Traditions</h3><p>Every December our kitchen turns into a cookie factory. These are the traditions the kids look forward to all year.</p><span class="mn-read">Read the note →</span></button>
+      <button type="button" class="mnote" data-cat="trips" data-note="m4" style="--nc:#BA8B84"><svg class="mn-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6" fill="#C9A85E"/><circle cx="10" cy="7" r="2" fill="rgba(255,255,255,.55)"/><path d="M12 15v6" stroke="#9c7d3c" stroke-width="2" stroke-linecap="round"/></svg><span class="mn-sample">Sample</span><span class="mn-type">Family Trips</span><h3>Road Trip Tips for a Family of Six</h3><p>Snacks, playlists and a few sanity-saving tricks for long drives with four kids in the back seat.</p><span class="mn-read">Read the note →</span></button>
+      <button type="button" class="mnote" data-cat="life" data-note="m5" style="--nc:#ECD0C4"><svg class="mn-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6" fill="#C9A85E"/><circle cx="10" cy="7" r="2" fill="rgba(255,255,255,.55)"/><path d="M12 15v6" stroke="#9c7d3c" stroke-width="2" stroke-linecap="round"/></svg><span class="mn-sample">Sample</span><span class="mn-type">Real Life</span><h3>Birthday Party Planning, Mom to Mom</h3><p>I've made hundreds of party cakes, and thrown a few parties of my own. Here's what actually matters.</p><span class="mn-read">Read the note →</span></button>
+      <button type="button" class="mnote" data-cat="school" data-note="m6" style="--nc:#DFB6A6"><svg class="mn-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6" fill="#C9A85E"/><circle cx="10" cy="7" r="2" fill="rgba(255,255,255,.55)"/><path d="M12 15v6" stroke="#9c7d3c" stroke-width="2" stroke-linecap="round"/></svg><span class="mn-sample">Sample</span><span class="mn-type">Homeschool</span><h3>Our Favorite Field Trips (on a Budget)</h3><p>Museums, farms and free days around town. The outings my kids still talk about.</p><span class="mn-read">Read the note →</span></button>
+      <button type="button" class="mnote" data-cat="life" data-note="m7" style="--nc:#CC9F92"><svg class="mn-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6" fill="#C9A85E"/><circle cx="10" cy="7" r="2" fill="rgba(255,255,255,.55)"/><path d="M12 15v6" stroke="#9c7d3c" stroke-width="2" stroke-linecap="round"/></svg><span class="mn-sample">Sample</span><span class="mn-type">Real Life</span><h3>Easter Baskets for Four Kids</h3><p>How I keep it fun, fair and not over the top, with a few homemade touches.</p><span class="mn-read">Read the note →</span></button>
+      <button type="button" class="mnote" data-cat="life" data-note="m8" style="--nc:#BA8B84"><svg class="mn-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6" fill="#C9A85E"/><circle cx="10" cy="7" r="2" fill="rgba(255,255,255,.55)"/><path d="M12 15v6" stroke="#9c7d3c" stroke-width="2" stroke-linecap="round"/></svg><span class="mn-sample">Sample</span><span class="mn-type">Real Life</span><h3>Sunday Prep That Saves My Week</h3><p>One hour on Sunday means fewer "what's for dinner?" moments all week long.</p><span class="mn-read">Read the note →</span></button>
+      <button type="button" class="mnote" data-cat="notes" data-note="m9" style="--nc:#ECD0C4"><svg class="mn-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6" fill="#C9A85E"/><circle cx="10" cy="7" r="2" fill="rgba(255,255,255,.55)"/><path d="M12 15v6" stroke="#9c7d3c" stroke-width="2" stroke-linecap="round"/></svg><span class="mn-sample">Sample</span><span class="mn-type">Notes to Self</span><h3>A Letter to My First-Time-Mom Self</h3><p>Dear you: you're going to worry about everything. Here's what I wish someone had told you.</p><span class="mn-read">Read the note →</span></button>
+    </div>
+  </div></section>
+  <section class="momkids pvmom"><div class="wrap">
+    <div class="sec-head">
+      <h2>Baking with <span class="pop">Kids</span></h2>
+      <p>Easy, mess-friendly bakes and activities to get little hands in the kitchen.</p>
+    </div>
+    <div class="kcards">
+      <div class="kcard"><span class="kc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h12l-1.5 8h-9z"/><path d="M5 12a3 3 0 0 1 2-5 4 4 0 0 1 7.5-1.5A3.5 3.5 0 0 1 19 9.5 2.5 2.5 0 0 1 19 12"/><path d="M10 12l.5 8M14 12l-.5 8"/></svg></span><h3>Decorate-Your-Own Cupcake Bar</h3><p>Set out frosting, sprinkles and toppings and let everyone make their own masterpiece.</p></div>
+      <div class="kcard"><span class="kc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/><circle cx="10" cy="15" r="1" fill="currentColor"/><circle cx="15.5" cy="15" r="1" fill="currentColor"/></svg></span><h3>Sugar Cookie Decorating Day</h3><p>My go-to rainy-day activity, with tips for keeping the sprinkles (mostly) on the table.</p></div>
+      <div class="kcard"><span class="kc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 20h8"/><path d="M14 11l5-7"/></svg></span><h3>No-Bake Treats for Little Hands</h3><p>Simple recipes the kids can make almost on their own, no oven needed.</p></div>
+    </div>
+  </div></section>
   <section class="worlds momp"><div class="wrap">
     <div class="sec-head">
       <h2>Life in <span class="pop">Pictures</span></h2>
@@ -1367,6 +1577,16 @@ main > section.legalp{min-height:0!important;padding-block:clamp(40px,5vw,72px)!
       <a class="item" href="https://www.amazon.com/shop/batternlife/list/3VO4QY6M2GB7A?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img loading="lazy" decoding="async" width="900" height="600" class="thumb" src="/img/fav_skin.webp" alt="Skincare bottles, jars and a scrunchie on a wooden tray by a mirror"><b>Skin &amp; Hair Care</b></a>
     </div>
     <div class="center-cta"><a class="btn solid" href="https://a.co/d/0biQYnAP" target="_blank" rel="noopener sponsored">Visit My Amazon Shop <span aria-hidden="true">→</span></a></div>
+  </div></section>
+  <section class="favrev pvmom"><div class="wrap">
+    <div class="sec-head">
+      <h2>Honest <span class="pop">Reviews</span></h2>
+      <p>My real thoughts on the products I use every day, the good and the not-so-good.</p>
+    </div>
+    <div class="rgrid">
+      <button type="button" class="rcard" data-note="r1"><span class="rc-img"><img width="900" height="600" src="/img/fav_skin.webp" alt="" loading="lazy"><span class="rc-cat">Skincare</span><span class="mn-sample rc-sample">Sample</span></span><span class="rc-body"><span class="rc-stars" aria-label="5 out of 5 stars">★★★★★</span><h3>The Skincare I Reach for Every Morning</h3><p>Five minutes, four kids, one routine that actually sticks.</p><span class="mn-read">Read the review →</span></span></button>
+      <button type="button" class="rcard" data-note="r2"><span class="rc-img"><img width="797" height="800" src="/img/fav_baby.webp" alt="" loading="lazy"><span class="rc-cat">Kids</span><span class="mn-sample rc-sample">Sample</span></span><span class="rc-body"><span class="rc-stars" aria-label="4.5 out of 5 stars">★★★★½</span><h3>The Lunchbox That Survived All Four Kids</h3><p>Four kids, five years, one lunchbox still going strong.</p><span class="mn-read">Read the review →</span></span></button>
+    </div>
   </div></section>
 </main>
 
@@ -1807,5 +2027,49 @@ window.bnlJournalMode=function(m){mode=m;w.dataset.mode=m;w.classList.remove('op
 window.bnlJournalMode(mode);
 if(/(^|\.)batternlife\.com$|pages\.dev$/.test(location.hostname))return;
 })();</script>
+<script>(function(){if(/(^|\.)batternlife\.com$|pages\.dev$/.test(location.hostname))return;document.documentElement.classList.add('pvm')})();</script>
+<script>(function(){var f=document.querySelector('.mfilter');if(!f)return;var bs=f.querySelectorAll('[data-mf]'),cards=document.querySelectorAll('.mnote');[].forEach.call(bs,function(b){b.onclick=function(){[].forEach.call(bs,function(y){y.setAttribute('aria-selected',y===b?'true':'false')});var c=b.dataset.mf;[].forEach.call(cards,function(n){n.classList.toggle('mf-hide',c!=='all'&&n.dataset.cat!==c)})}})})();</script>
+<dialog class="ndialog" id="note-m1" aria-label="How I Juggle Cake Orders and Four Kids"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-body" style="padding-top:44px"><span class="note-date"><span data-mjs>The Mom Diaries</span> · Real Life · Sample</span><h2>How I Juggle Cake Orders and Four Kids</h2><p>Spoiler: I don't always. But a few small habits keep our house (mostly) running on order weeks.</p><p>This is a sample entry. Share how you plan your week, when you bake, and how the kids pitch in.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<dialog class="ndialog" id="note-m2" aria-label="What a Real Homeschool Day Looks Like"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-body" style="padding-top:44px"><span class="note-date"><span data-mjs>The Mom Diaries</span> · Homeschool · Sample</span><h2>What a Real Homeschool Day Looks Like</h2><p>Lesson plans, snack breaks, a baby on my hip and a cake chilling in the fridge. Here's our actual day.</p><p>This is a sample entry. Walk readers through your schedule, what works for your four kids, and what you'd tell a mom just starting out.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<dialog class="ndialog" id="note-m3" aria-label="Our Favorite Holiday Baking Traditions"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-body" style="padding-top:44px"><span class="note-date"><span data-mjs>The Mom Diaries</span> · Real Life · Sample</span><h2>Our Favorite Holiday Baking Traditions</h2><p>Every December our kitchen turns into a cookie factory. These are the traditions the kids look forward to all year.</p><p>This is a sample entry. Share your family's holiday traditions, favorite recipes, or how you keep the season fun (and not stressful).</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<dialog class="ndialog" id="note-m4" aria-label="Road Trip Tips for a Family of Six"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-body" style="padding-top:44px"><span class="note-date"><span data-mjs>The Mom Diaries</span> · Family Trips · Sample</span><h2>Road Trip Tips for a Family of Six</h2><p>Snacks, playlists and a few sanity-saving tricks for long drives with four kids in the back seat.</p><p>This is a sample entry. Share where you went, what you packed, and what you'd do differently next time.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<dialog class="ndialog" id="note-m5" aria-label="Birthday Party Planning, Mom to Mom"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-body" style="padding-top:44px"><span class="note-date"><span data-mjs>The Mom Diaries</span> · Real Life · Sample</span><h2>Birthday Party Planning, Mom to Mom</h2><p>I've made hundreds of party cakes, and thrown a few parties of my own. Here's what actually matters.</p><p>This is a sample entry. Share your party-planning timeline, how far ahead to order the cake, and the little details that make it special.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<dialog class="ndialog rdlg" id="note-r1" aria-label="The Skincare I Reach for Every Morning"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-img"><img width="900" height="600" src="/img/fav_skin.webp" alt="" loading="lazy"></div><div class="nd-body"><span class="note-date">Honest Reviews · Skincare · Sample</span><h2>The Skincare I Reach for Every Morning</h2><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★ <small>5 / 5</small></div><p>This is a sample review to show the layout. When mornings start with four kids, my routine has to be quick. These are the products that earned a permanent spot on my counter.</p><div class="rv-cols"><div class="rv-box"><h3>What I love</h3><ul><li>Takes under five minutes</li><li>Gentle on my skin, even in the Texas heat</li><li>Lasts for months</li></ul></div><div class="rv-box"><h3>What I'd change</h3><ul><li>The pump bottle is hard to get the last bit out</li></ul></div></div><p class="rv-best"><b>Best for:</b> Busy moms who want a simple routine</p><a class="btn solid rv-shop" href="https://www.amazon.com/shop/batternlife/list/3VO4QY6M2GB7A?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored">Shop my skincare <span aria-hidden="true">→</span></a><p class="rv-disc">As an Amazon Associate, I earn from qualifying purchases. This review reflects my honest opinion.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<dialog class="ndialog rdlg" id="note-r2" aria-label="The Lunchbox That Survived All Four Kids"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-img"><img width="797" height="800" src="/img/fav_baby.webp" alt="" loading="lazy"></div><div class="nd-body"><span class="note-date">Honest Reviews · Kids · Sample</span><h2>The Lunchbox That Survived All Four Kids</h2><div class="rv-stars" aria-label="4.5 out of 5 stars">★★★★½ <small>4.5 / 5</small></div><p>This is a sample review to show the layout. Four kids, five years, and this lunchbox is still going strong. Here's my honest take.</p><div class="rv-cols"><div class="rv-box"><h3>What I love</h3><ul><li>Leak-proof compartments (even with yogurt)</li><li>Dishwasher safe, which is a must in our house</li><li>Small enough for little hands to open</li></ul></div><div class="rv-box"><h3>What I'd change</h3><ul><li>The lid hinge is a little stiff at first</li><li>I wish it came in more colors</li></ul></div></div><p class="rv-best"><b>Best for:</b> Busy families packing lunches every day</p><a class="btn solid rv-shop" href="https://www.amazon.com/shop/batternlife/list/3VZD4BW7Q3N2P?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored">Shop it on Amazon <span aria-hidden="true">→</span></a><p class="rv-disc">As an Amazon Associate, I earn from qualifying purchases. This review reflects my honest opinion.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<dialog class="ndialog" id="note-m6" aria-label="Our Favorite Field Trips (on a Budget)"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-body" style="padding-top:44px"><span class="note-date"><span data-mjs>The Mom Diaries</span> · Homeschool · Sample</span><h2>Our Favorite Field Trips (on a Budget)</h2><p>Museums, farms and free days around town. The outings my kids still talk about.</p><p>This is a sample entry. Share your favorite local field trips and how you turn them into lessons.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<dialog class="ndialog" id="note-m7" aria-label="Easter Baskets for Four Kids"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-body" style="padding-top:44px"><span class="note-date"><span data-mjs>The Mom Diaries</span> · Real Life · Sample</span><h2>Easter Baskets for Four Kids</h2><p>How I keep it fun, fair and not over the top, with a few homemade touches.</p><p>This is a sample entry. Share your basket ideas, traditions, and the treats you bake together.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<dialog class="ndialog" id="note-m8" aria-label="Sunday Prep That Saves My Week"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-body" style="padding-top:44px"><span class="note-date"><span data-mjs>The Mom Diaries</span> · Real Life · Sample</span><h2>Sunday Prep That Saves My Week</h2><p>One hour on Sunday means fewer "what's for dinner?" moments all week long.</p><p>This is a sample entry. Share what you prep, how you plan, and your favorite time-savers.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<script>(function(){var grid=document.querySelector('.mnotes');if(!grid)return;var all=[].slice.call(grid.children),cards=all,N=all.length;
+var w=document.createElement('div');w.className='mwrap';grid.parentNode.insertBefore(w,grid);w.appendChild(grid);
+var L='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',R='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>';
+var p=document.createElement('button');p.type='button';p.className='marr mp';p.setAttribute('aria-label','Previous notes');p.innerHTML=L;
+var n=document.createElement('button');n.type='button';n.className='marr mn';n.setAttribute('aria-label','Next notes');n.innerHTML=R;
+var f=document.createElement('div');f.className='mfoot';var more=document.createElement('button');more.type='button';more.className='mmore';
+w.appendChild(p);w.appendChild(n);w.appendChild(f);w.appendChild(more);
+var mode='arrows',mm='button',sp=0,pg=0,top=0,open=false;function per(){return innerWidth<=520?2:innerWidth<=900?3:4}
+function clear(){all.forEach(function(c){c.classList.remove('mh','sC','sL','sR','sH','mfeat');c.style.gridRow=''})}
+function render(){clear();f.innerHTML='';more.style.display='';var P=per();
+ if(mode==='arrows'){var pp=Math.ceil(N/P);for(var i=0;i<pp;i++){(function(i){var d=document.createElement('button');d.type='button';d.className='mdot';d.setAttribute('aria-label','Page '+(i+1));d.onclick=function(){grid.scrollLeft=i*grid.clientWidth};f.appendChild(d)})(i)}sync()}
+ else if(mode==='pages'){var pp=Math.ceil(N/P);if(pg>=pp)pg=pp-1;cards.forEach(function(c,i){if(Math.floor(i/P)!==pg)c.classList.add('mh')});var pv=document.createElement('button');pv.type='button';pv.textContent='←';pv.setAttribute('aria-label','Previous page');pv.disabled=pg===0;pv.onclick=function(){if(pg>0){pg--;render()}};f.appendChild(pv);for(var i=0;i<pp;i++){(function(i){var d=document.createElement('button');d.type='button';d.textContent=i+1;d.setAttribute('aria-current',i===pg?'true':'false');d.onclick=function(){pg=i;render()};f.appendChild(d)})(i)}var nx=document.createElement('button');nx.type='button';nx.textContent='→';nx.setAttribute('aria-label','Next page');nx.disabled=pg>=pp-1;nx.onclick=function(){if(pg<pp-1){pg++;render()}};f.appendChild(nx)}
+ else if(/^feat/.test(mode)){var lim=mode==='featList'?(innerWidth<=520?4:6):(innerWidth<=520?3:5);if(N)cards[0].classList.add('mfeat');var rest=cards.slice(1),k=lim-1;w.dataset.mm=mm;if(mm==='button'){if(!open)rest.forEach(function(c,i){if(i>=k)c.classList.add('mh')});more.style.display=rest.length>k?'block':'none';more.textContent=open?'Show fewer notes ↑':'See more notes ↓'}else if(mm==='scroll'){more.style.display='none';if(innerWidth>900&&mode!=='featTop'&&N){var cols=mode==='featList'?1:2;cards[0].style.gridRow='1 / span '+Math.max(2,Math.ceil(rest.length/cols))}}else{more.style.display='none';var pp=Math.max(1,Math.ceil(rest.length/k));if(sp>=pp)sp=pp-1;rest.forEach(function(c,i){if(Math.floor(i/k)!==sp)c.classList.add('mh')});if(pp>1){var pv=document.createElement('button');pv.type='button';pv.textContent='←';pv.setAttribute('aria-label','Previous notes');pv.disabled=sp===0;pv.onclick=function(){if(sp>0){sp--;render()}};f.appendChild(pv);if(mm==='pages'){for(var i=0;i<pp;i++){(function(i){var d=document.createElement('button');d.type='button';d.textContent=i+1;d.setAttribute('aria-current',i===sp?'true':'false');d.onclick=function(){sp=i;render()};f.appendChild(d)})(i)}}else{var lb=document.createElement('span');lb.className='mpg';lb.textContent='More notes · '+(sp+1)+' of '+pp;f.appendChild(lb)}var nx=document.createElement('button');nx.type='button';nx.textContent='→';nx.setAttribute('aria-label','More notes');nx.disabled=sp>=pp-1;nx.onclick=function(){if(sp<pp-1){sp++;render()}};f.appendChild(nx)}}}
+ else if(mode==='more'||mode==='stagger'){var lim=mode==='featList'?(innerWidth<=520?4:6):/^feat/.test(mode)?(innerWidth<=520?3:5):mode==='stagger'?(innerWidth<=520?4:8):P;if(!open)cards.forEach(function(c,i){if(i>=lim)c.classList.add('mh')});more.style.display=N>lim?'block':'none';more.textContent=open?'Show fewer notes ↑':'See more notes ↓'}
+ else if(mode==='spot'){cards.forEach(function(c,i){var k=(i-top+N)%N;c.classList.add(k===0?'sC':k===1?'sR':k===N-1?'sL':'sH')});for(var i=0;i<N;i++){(function(i){var d=document.createElement('button');d.type='button';d.className='mdot';d.setAttribute('aria-label','Note '+(i+1));d.setAttribute('aria-current',i===top?'true':'false');d.onclick=function(){top=i;render()};f.appendChild(d)})(i)}p.disabled=false;n.disabled=false}}
+function sync(){if(mode!=='arrows')return;var i=Math.round(grid.scrollLeft/Math.max(1,grid.clientWidth));[].forEach.call(f.children,function(d,j){d.setAttribute('aria-current',j===i?'true':'false')});p.disabled=grid.scrollLeft<=4;n.disabled=grid.scrollLeft+grid.clientWidth>=grid.scrollWidth-4}
+grid.addEventListener('scroll',function(){clearTimeout(grid._t);grid._t=setTimeout(sync,60)});
+p.onclick=function(){if(mode==='spot'){top=(top-1+N)%N;render()}else grid.scrollLeft-=grid.clientWidth};
+n.onclick=function(){if(mode==='spot'){top=(top+1)%N;render()}else grid.scrollLeft+=grid.clientWidth};
+more.onclick=function(){open=!open;render()};
+grid.addEventListener('click',function(e){if(mode!=='spot')return;var c=e.target.closest('.mnote');if(!c)return;if(c.classList.contains('sL')){e.stopPropagation();p.onclick()}else if(c.classList.contains('sR')){e.stopPropagation();n.onclick()}},true);
+var sx=null;w.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});w.addEventListener('touchend',function(e){if(mode!=='spot'||sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>50){dx<0?n.onclick():p.onclick()}});
+addEventListener('resize',function(){clearTimeout(w._r);w._r=setTimeout(render,120)});
+window.bnlMomMore=function(v){mm=v;sp=0;open=false;grid.scrollTop=0;render()};window.bnlMomMode=function(m){mode=m;w.dataset.ms=m;pg=0;sp=0;top=0;open=false;grid.scrollTop=0;grid.scrollLeft=0;render()};window.bnlMomCat=function(k){all.forEach(function(x){x.classList.toggle('mcat-hide',k!=='all'&&x.dataset.cat!==k)});cards=all.filter(function(x){return !x.classList.contains('mcat-hide')});N=cards.length;pg=0;sp=0;grid.scrollTop=0;top=0;open=false;grid.scrollLeft=0;render()};[].forEach.call(document.querySelectorAll('[data-mcat]'),function(b){b.onclick=function(){[].forEach.call(document.querySelectorAll('[data-mcat]'),function(y){y.setAttribute('aria-pressed',y===b?'true':'false')});window.bnlMomCat(b.dataset.mcat)}});window.bnlMomMode('feat');
+if(/(^|\.)batternlife\.com$|pages\.dev$/.test(location.hostname))return;var h=document.documentElement;
+var sw=document.createElement('div');sw.className='mamsw';sw.setAttribute('role','group');sw.setAttribute('aria-label','Mom Diaries preview');
+function row(label,key,opts,fn){var t=document.createElement('span');t.textContent=label;sw.appendChild(t);opts.forEach(function(o,i){var b=document.createElement('button');b.type='button';b.dataset[key]=o[0];b.textContent=o[1];b.setAttribute('aria-pressed',i?'false':'true');sw.appendChild(b);b.onclick=function(){[].forEach.call(sw.querySelectorAll('[data-'+key+']'),function(y){y.setAttribute('aria-pressed',y===b?'true':'false')});fn(o[0])}});var br=document.createElement('div');br.style.cssText='flex-basis:100%;height:0';sw.appendChild(br)}
+row('Featured','ms',[['feat','Big left'],['featTop','Big on top'],['featList','Big + list'],['featCenter','Big in center']],function(v){window.bnlMomMode(v)});
+row('See more','mm',[['button','Button'],['arrows','Arrows'],['pages','Page numbers'],['scroll','Scroll']],function(v){window.bnlMomMore(v)});
+sw.removeChild(sw.lastChild);document.body.appendChild(sw);
+function chk(){var m=document.querySelector('main[data-page="mom"]');h.classList.toggle('mamsw-on',!!m&&!m.hidden)}chk();addEventListener('hashchange',function(){setTimeout(chk,30)});new MutationObserver(chk).observe(document.body,{subtree:true,attributes:true,attributeFilter:['hidden']})})();</script>
+<dialog class="ndialog" id="note-m9" aria-label="A Letter to My First-Time-Mom Self"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-body" style="padding-top:44px"><span class="note-date"><span data-mjs>The Mom Diaries</span> · Notes to Self · Sample</span><h2>A Letter to My First-Time-Mom Self</h2><p>Dear you: you're going to worry about everything. Here's what I wish someone had told you.</p><p>This is a sample entry. A note to yourself could be encouragement, a lesson you learned the hard way, or something you want to remember on the tough days.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
 </body>
 </html>
