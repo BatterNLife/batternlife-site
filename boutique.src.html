@@ -630,6 +630,15 @@ main[data-page="mom"] > section.momj{overflow-x:clip}
 .mwrap[data-ms^="feat"] .mnote.mfeat .mn-sample{top:auto;bottom:26px;right:24px}
 .mwrap[data-ms^="feat"] .mnote.mfeat h3{margin-top:14px;padding-right:120px}
 @media (max-width:520px){.mwrap[data-ms^="feat"] .mnote.mfeat .mn-type{top:18px;right:16px}.mwrap[data-ms^="feat"] .mnote.mfeat h3{padding-right:0;margin-top:26px}}
+/* category tag: upper right on every note */
+.mnotes .mnote .mn-type{position:absolute;top:18px;right:16px;margin:0;z-index:1}
+.mnotes .mnote .mn-sample{top:auto;bottom:18px;right:16px}
+.mnotes .mnote h3{margin-top:22px}
+.mwrap[data-ms="featList"] .mnote:not(.mfeat){padding:34px 50px 14px 22px;display:block}
+.mwrap[data-ms="featList"] .mnote:not(.mfeat) .mn-type{top:10px;right:14px}
+.mwrap[data-ms="featList"] .mnote:not(.mfeat) h3{margin:0}
+.mwrap[data-ms="featList"] .mnote:not(.mfeat) .mn-read{position:absolute;right:16px;bottom:12px}
+@media (max-width:520px){.mnotes .mnote .mn-sample{display:none}.mwrap[data-ms^="feat"] .mnotes{grid-template-rows:300px}.mwrap[data-ms^="feat"] .mnotes .mnote.mfeat{height:300px;grid-row:auto}}
 /* featured: see-more options */
 .mwrap[data-ms^="feat"][data-mm="arrows"] .mfoot,.mwrap[data-ms^="feat"][data-mm="pages"] .mfoot{display:flex}
 .mfoot .mpg{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1f1915;padding:0 10px}
