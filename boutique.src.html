@@ -762,10 +762,10 @@ main > section.notesp{--wavec:var(--bg2);background-color:var(--bg2);min-height:
 .note::before{content:"";position:absolute;top:-12px;left:50%;width:96px;height:26px;transform:translateX(-50%) rotate(-3deg);background:rgba(206,170,96,.9);box-shadow:0 1px 2px rgba(0,0,0,.06)}
 .note:nth-child(even)::before{background:rgba(206,170,96,.9);transform:translateX(-50%) rotate(2deg)}
 section.notesp .note::before{display:none}
-section.notesp .note{min-height:400px}
+section.notesp .note{min-height:0}
 section.notesp .note p{-webkit-line-clamp:6;min-height:calc(var(--lh)*5)}
-section.notesp .note{height:400px}
-@media (max-width:860px){section.notesp .note{min-height:0;height:410px}section.notesp .note p{-webkit-line-clamp:5;min-height:0}}
+section.notesp .note{height:392px}
+@media (max-width:860px){section.notesp .note{min-height:0;height:402px}section.notesp .note p{-webkit-line-clamp:5;min-height:0}}
 .note-from{display:flex;align-items:flex-end;gap:6px;font-family:var(--sans);font-size:.58rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mahogany);padding-bottom:10px;border-bottom:2px solid var(--mahogany);padding-right:52px;white-space:nowrap}
 .note-date{font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mahogany)}
 .note-from b{flex:1;min-width:0;font-weight:500;font-size:.9rem;letter-spacing:.04em;text-transform:none;color:var(--ink);border-bottom:1px solid rgba(153,102,97,.45);padding:0 4px 1px}
