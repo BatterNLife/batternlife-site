@@ -506,6 +506,42 @@ main[data-page="favorites"] > section.favp{--wavec:var(--bg);background-color:va
 main[data-page="orders"] > section.menup{--wavec:var(--blush);background-color:var(--blush)}
 main[data-page="privacy"] > section.legalp{--wavec:var(--bg);background-color:var(--bg)}
 main[data-page="contact"] > section.contactp{--wavec:var(--blush);background-color:var(--blush)}
+/* mom life: preview sections */
+html:not(.pvm) .pvmom{display:none!important}
+html.pvm main[data-page="mom"] > section.momreels{display:none!important}
+main[data-page="mom"] > section.momj{--wavec:var(--blush);background-color:var(--blush);min-height:0!important;padding-block:clamp(56px,7vw,96px)!important}
+main[data-page="mom"] > section.momkids{--wavec:var(--bg);background-color:var(--bg);min-height:0!important;padding-block:clamp(56px,7vw,96px)!important}
+main[data-page="mom"] > section.momfav{--wavec:var(--bg2);background-color:var(--bg2);min-height:0!important;padding-block:clamp(56px,7vw,96px)!important}
+html.pvm main[data-page="mom"] > section.momp{--wavec:var(--bg);background-color:var(--bg)}
+.mnotes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px 26px;max-width:1080px;margin:0 auto;padding-top:14px}
+.mnote{position:relative;background:var(--nc);border:0;padding:34px 20px 18px;text-align:left;font:inherit;color:var(--ink);cursor:pointer;aspect-ratio:1;display:flex;flex-direction:column;box-shadow:0 2px 0 rgba(0,0,0,.03),0 14px 22px -8px rgba(43,35,30,.25);transform:rotate(-2deg);transition:transform .3s,box-shadow .3s}
+.mnote:nth-child(2){transform:rotate(1.6deg)}.mnote:nth-child(3){transform:rotate(-.8deg)}.mnote:nth-child(4){transform:rotate(2.2deg)}
+.mnote::after{content:"";position:absolute;right:0;bottom:0;width:26px;height:26px;background:linear-gradient(135deg,rgba(0,0,0,.08) 0 50%,rgba(255,255,255,.55) 50%)}
+.mnote:hover{transform:rotate(0) translateY(-5px);box-shadow:0 22px 30px -10px rgba(43,35,30,.3)}
+.mn-pin{position:absolute;top:-10px;left:50%;width:26px;height:26px;transform:translateX(-50%)}
+.mn-sample{position:absolute;top:10px;right:10px;font-family:var(--sans);font-size:.56rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mahogany);opacity:.8}
+.mnote h3{font-family:var(--sans);font-weight:600;font-size:1.02rem;line-height:1.3;margin:0 0 8px;text-transform:none;letter-spacing:0}
+.mnote p{margin:0;font-size:.86rem;line-height:1.55;color:#4a3d37;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.mn-read{margin-top:auto;padding-top:8px;font-family:var(--sans);font-size:.64rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mahogany)}
+.kcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:980px;margin:0 auto}
+.kcard{background:#FFFDF8;padding:28px 24px;text-align:center;box-shadow:0 10px 24px rgba(43,35,30,.1);border-top:4px solid var(--gold)}
+.kcard:nth-child(2){border-top-color:var(--mahogany)}.kcard:nth-child(3){border-top-color:#cc9f92}
+.kc-ic{display:grid;place-items:center;width:58px;height:58px;margin:0 auto 14px;border-radius:50%;background:var(--blush);color:var(--mahogany)}
+.kc-ic svg{width:30px;height:30px}
+.kcard h3{font-family:var(--sans);font-weight:600;font-size:1.05rem;margin:0 0 8px;text-transform:none;letter-spacing:0}
+.kcard p{margin:0;font-size:.92rem;line-height:1.6}
+.mf-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:760px;margin:0 auto}
+.mf{display:block;position:relative;text-decoration:none;color:var(--ink);background:var(--card);box-shadow:0 10px 24px rgba(43,35,30,.12);overflow:hidden}
+.mf img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s}
+.mf:hover img{transform:scale(1.04)}
+.mf b{display:block;padding:14px;text-align:center;font-family:var(--sans);font-weight:500;font-size:1.05rem;color:var(--mahogany)}
+@media (max-width:900px){.mnotes{grid-template-columns:repeat(2,minmax(0,1fr))}.kcards{grid-template-columns:1fr;max-width:460px}}
+@media (max-width:520px){.mnotes{gap:26px 16px}.mnote{padding:30px 14px 14px;aspect-ratio:auto;min-height:190px}.mnote h3{font-size:.92rem}.mnote p{-webkit-line-clamp:3;font-size:.8rem}.mf-grid{grid-template-columns:1fr;max-width:400px}}
+.msw{position:fixed;left:14px;bottom:14px;z-index:60;display:none;flex-wrap:wrap;align-items:center;gap:4px;background:var(--ink);color:#fff;padding:6px;font-family:var(--sans);font-size:.72rem;box-shadow:0 8px 22px rgba(0,0,0,.25);max-width:calc(100vw - 28px)}
+.msw span{padding:0 8px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.msw button{font:inherit;border:0;background:transparent;color:#fff;padding:6px 10px;cursor:pointer}
+.msw button[aria-pressed="true"]{background:var(--gold);color:var(--ink)}
+html.msw-on .msw{display:flex}
 /* journal browse modes */
 .jwrap{position:relative;max-width:1120px;margin:0 auto}
 .jarrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;border:0;background:#FFFDF8;color:var(--ink);box-shadow:0 6px 16px rgba(43,35,30,.18);cursor:pointer;display:none;place-items:center;transition:background .2s,opacity .2s}
@@ -1297,6 +1333,40 @@ main > section.legalp{min-height:0!important;padding-block:clamp(40px,5vw,72px)!
       </article>
     </div>
   </div></section>
+  <section class="momj pvmom"><div class="wrap">
+    <div class="sec-head">
+      <h2 data-mjt>Notes from the <span class="pop">Mix</span></h2>
+      <p>Real-life notes from a busy mom of four: routines, parties, dinners and everything in between.</p>
+    </div>
+    <div class="mnotes">
+      <button type="button" class="mnote" data-note="m1" style="--nc:#F6D9D3"><svg class="mn-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6" fill="#996661"/><circle cx="10" cy="7" r="2" fill="rgba(255,255,255,.45)"/><path d="M12 15v6" stroke="#6e4a46" stroke-width="2" stroke-linecap="round"/></svg><span class="mn-sample">Sample</span><h3>How I Juggle Cake Orders and Four Kids</h3><p>Spoiler: I don't always. But a few small habits keep our house (mostly) running on order weeks.</p><span class="mn-read">Read the note →</span></button>
+      <button type="button" class="mnote" data-note="m2" style="--nc:#F5E6BF"><svg class="mn-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6" fill="#996661"/><circle cx="10" cy="7" r="2" fill="rgba(255,255,255,.45)"/><path d="M12 15v6" stroke="#6e4a46" stroke-width="2" stroke-linecap="round"/></svg><span class="mn-sample">Sample</span><h3>Birthday Party Planning, Mom to Mom</h3><p>I've made hundreds of party cakes, and thrown a few parties of my own. Here's what actually matters.</p><span class="mn-read">Read the note →</span></button>
+      <button type="button" class="mnote" data-note="m3" style="--nc:#E3E8D6"><svg class="mn-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6" fill="#996661"/><circle cx="10" cy="7" r="2" fill="rgba(255,255,255,.45)"/><path d="M12 15v6" stroke="#6e4a46" stroke-width="2" stroke-linecap="round"/></svg><span class="mn-sample">Sample</span><h3>My (Real) Morning Routine</h3><p>No 5 a.m. yoga here. Just coffee, a quick plan for the day, and four kids who all need something at once.</p><span class="mn-read">Read the note →</span></button>
+      <button type="button" class="mnote" data-note="m4" style="--nc:#EAD9E6"><svg class="mn-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6" fill="#996661"/><circle cx="10" cy="7" r="2" fill="rgba(255,255,255,.45)"/><path d="M12 15v6" stroke="#6e4a46" stroke-width="2" stroke-linecap="round"/></svg><span class="mn-sample">Sample</span><h3>Easy Weeknight Dinners for Busy Families</h3><p>When I've been baking all day, dinner needs to be quick. These are our go-to meals.</p><span class="mn-read">Read the note →</span></button>
+    </div>
+  </div></section>
+  <section class="momkids pvmom"><div class="wrap">
+    <div class="sec-head">
+      <h2>Baking with <span class="pop">Kids</span></h2>
+      <p>Easy, mess-friendly bakes and activities to get little hands in the kitchen.</p>
+    </div>
+    <div class="kcards">
+      <div class="kcard"><span class="kc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h12l-1.5 8h-9z"/><path d="M5 12a3 3 0 0 1 2-5 4 4 0 0 1 7.5-1.5A3.5 3.5 0 0 1 19 9.5 2.5 2.5 0 0 1 19 12"/><path d="M10 12l.5 8M14 12l-.5 8"/></svg></span><h3>Decorate-Your-Own Cupcake Bar</h3><p>Set out frosting, sprinkles and toppings and let everyone make their own masterpiece.</p></div>
+      <div class="kcard"><span class="kc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/><circle cx="10" cy="15" r="1" fill="currentColor"/><circle cx="15.5" cy="15" r="1" fill="currentColor"/></svg></span><h3>Sugar Cookie Decorating Day</h3><p>My go-to rainy-day activity, with tips for keeping the sprinkles (mostly) on the table.</p></div>
+      <div class="kcard"><span class="kc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 20h8"/><path d="M14 11l5-7"/></svg></span><h3>No-Bake Treats for Little Hands</h3><p>Simple recipes the kids can make almost on their own, no oven needed.</p></div>
+    </div>
+  </div></section>
+  <section class="momfav pvmom"><div class="wrap">
+    <div class="sec-head">
+      <h2>Mom <span class="pop">Favorites</span></h2>
+      <p>The baby, kid and home things that make our busy days a little easier.</p>
+    </div>
+    <div class="mf-grid">
+      <a class="mf" href="https://www.amazon.com/shop/batternlife/list/3VZD4BW7Q3N2P?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img src="@@fav_baby@@" alt="Folded knit baby blankets with booties and a teether" loading="lazy"><b>Baby &amp; Kids</b></a>
+      <a class="mf" href="https://www.amazon.com/shop/batternlife/list/2LW1DBUF70SBA?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img src="@@fav_home@@" alt="Warm, neutral entryway with a wood console and woven baskets" loading="lazy"><b>Home &amp; Everyday</b></a>
+    </div>
+    <div class="center-cta"><a class="btn solid" href="#/favorites">Shop All Favorites <span aria-hidden="true">→</span></a></div>
+  </div></section>
   <section class="worlds momp"><div class="wrap">
     <div class="sec-head">
       <h2>Life in <span class="pop">Pictures</span></h2>
@@ -1785,5 +1855,15 @@ window.bnlJournalMode=function(m){mode=m;w.dataset.mode=m;w.classList.remove('op
 window.bnlJournalMode(mode);
 if(/(^|\.)batternlife\.com$|pages\.dev$/.test(location.hostname))return;
 })();</script>
+<dialog class="ndialog" id="note-m1" aria-label="How I Juggle Cake Orders and Four Kids"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-body" style="padding-top:44px"><span class="note-date"><span data-mjs>Notes from the Mix</span> · Sample entry</span><h2>How I Juggle Cake Orders and Four Kids</h2><p>Spoiler: I don't always. But a few small habits keep our house (mostly) running on order weeks.</p><p>This is a sample entry to show how your Mom Life journal will look. Your own words will go here: the real version of how you plan your week, when you bake, and how the kids pitch in.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<dialog class="ndialog" id="note-m2" aria-label="Birthday Party Planning, Mom to Mom"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-body" style="padding-top:44px"><span class="note-date"><span data-mjs>Notes from the Mix</span> · Sample entry</span><h2>Birthday Party Planning, Mom to Mom</h2><p>I've made hundreds of party cakes, and thrown a few parties of my own. Here's what actually matters.</p><p>This is a sample entry. You could share your timeline for planning a party, how far ahead to order the cake, and the little details that make it feel special without the stress.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<dialog class="ndialog" id="note-m3" aria-label="My (Real) Morning Routine"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-body" style="padding-top:44px"><span class="note-date"><span data-mjs>Notes from the Mix</span> · Sample entry</span><h2>My (Real) Morning Routine</h2><p>No 5 a.m. yoga here. Just coffee, a quick plan for the day, and four kids who all need something at once.</p><p>This is a sample entry. Walk readers through your actual morning, what works, what doesn't, and the one thing that keeps you sane.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<dialog class="ndialog" id="note-m4" aria-label="Easy Weeknight Dinners for Busy Families"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-body" style="padding-top:44px"><span class="note-date"><span data-mjs>Notes from the Mix</span> · Sample entry</span><h2>Easy Weeknight Dinners for Busy Families</h2><p>When I've been baking all day, dinner needs to be quick. These are our go-to meals.</p><p>This is a sample entry. Share a few family-favorite meals, a simple grocery trick, or how you plan the week's dinners.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
+<script>(function(){if(/(^|\.)batternlife\.com$|pages\.dev$/.test(location.hostname))return;var h=document.documentElement;h.classList.add('pvm');
+var N=[['Notes from the','Mix'],['The Mom','Diaries'],['Real Life','Notes'],['Between the','Batter']];
+var sw=document.createElement('div');sw.className='msw';sw.innerHTML='<span>Name</span>'+N.map(function(n,i){return '<button type="button" data-mn="'+i+'" aria-pressed="'+(i?'false':'true')+'">'+n[0]+' '+n[1]+'</button>'}).join('')+'<button type="button" data-mv="0" aria-pressed="false" style="border-left:1px solid rgba(255,255,255,.3);margin-left:4px">See current page</button>';document.body.appendChild(sw);
+[].forEach.call(sw.querySelectorAll('[data-mn]'),function(b){b.onclick=function(){[].forEach.call(sw.querySelectorAll('button'),function(y){y.setAttribute('aria-pressed',y===b?'true':'false')});h.classList.add('pvm');var n=N[+b.dataset.mn];document.querySelector('[data-mjt]').innerHTML=n[0]+' <span class="pop">'+n[1]+'</span>';[].forEach.call(document.querySelectorAll('[data-mjs]'),function(e){e.textContent=n[0]+' '+n[1]})}});
+sw.querySelector('[data-mv]').onclick=function(){[].forEach.call(sw.querySelectorAll('button'),function(y){y.setAttribute('aria-pressed','false')});this.setAttribute('aria-pressed','true');h.classList.remove('pvm')};
+function chk(){var m=document.querySelector('main[data-page="mom"]');h.classList.toggle('msw-on',!!m&&!m.hidden)}chk();window.addEventListener('hashchange',function(){setTimeout(chk,30)});new MutationObserver(chk).observe(document.body,{subtree:true,attributes:true,attributeFilter:['hidden']})})();</script>
 </body>
 </html>
