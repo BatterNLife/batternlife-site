@@ -505,17 +505,22 @@ html[data-jl="tape"] .jumps .jl:nth-child(4){background:var(--gold);color:var(--
 html[data-jl="tape"] .jumps .jl:nth-child(4) svg{color:var(--ink)}
 html[data-jl="tape"] .jumps .jl:hover{transform:rotate(0) translateY(-2px);filter:brightness(.93)}
 @media (max-width:520px){html[data-jl="tape"] .jumps{display:grid}}
-/* page backgrounds: alternate at every wave */
-main[data-page="home"] > section.worlds{--wavec:var(--rose);background-color:var(--rose)}
-main[data-page="home"] > section.faves{--wavec:var(--bg);background-color:var(--bg)}
-main[data-page="home"] > section.collab{--wavec:var(--blush);background-color:var(--blush)}
-main[data-page="bake"] > section.latestv{--wavec:var(--bg2);background-color:var(--bg2)}
+/* page backgrounds: each page has its own pattern (page titles stay beige) */
+main[data-page="home"] > section.intro{--wavec:var(--bg);background-color:var(--bg)}
+main[data-page="home"] > section.bake{--wavec:var(--blush);background-color:var(--blush)}
+main[data-page="home"] > section.worlds{--wavec:var(--bg2);background-color:var(--bg2)}
+main[data-page="home"] > section.faves{--wavec:var(--rose);background-color:var(--rose)}
+main[data-page="home"] > section.collab{--wavec:var(--bg);background-color:var(--bg)}
 main[data-page="bake"] > section.notesp{--wavec:var(--rose);background-color:var(--rose)}
+main[data-page="bake"] > section.latestv{--wavec:var(--bg2);background-color:var(--bg2)}
 main[data-page="bake"] > section.bakecta{--wavec:var(--blush);background-color:var(--blush)}
-main[data-page="mom"] > section.momreels{--wavec:var(--rose);background-color:var(--rose)}
+main[data-page="story"] > section.storyp{--wavec:var(--rose);background-color:var(--rose)}
+main[data-page="mom"] > section.momreels{--wavec:var(--blush);background-color:var(--blush)}
 main[data-page="mom"] > section.momp{--wavec:var(--bg);background-color:var(--bg)}
-main[data-page="orders"] > section.menup,main[data-page="privacy"] > section.legalp{--wavec:var(--bg);background-color:var(--bg)}
-main[data-page="contact"] > section.contactp{--wavec:var(--blush);background-color:var(--blush)}
+main[data-page="favorites"] > section.favp{--wavec:var(--bg);background-color:var(--bg)}
+main[data-page="orders"] > section.menup{--wavec:var(--blush);background-color:var(--blush)}
+main[data-page="privacy"] > section.legalp{--wavec:var(--bg);background-color:var(--bg)}
+main[data-page="contact"] > section.contactp{--wavec:var(--rose);background-color:var(--rose)}
 /* journal browse modes */
 .jwrap{position:relative;max-width:1120px;margin:0 auto}
 .jarrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;border:0;background:#FFFDF8;color:var(--ink);box-shadow:0 6px 16px rgba(43,35,30,.18);cursor:pointer;display:none;place-items:center;transition:background .2s,opacity .2s}
