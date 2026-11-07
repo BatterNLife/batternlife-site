@@ -506,6 +506,23 @@ main[data-page="favorites"] > section.favp{--wavec:var(--bg);background-color:va
 main[data-page="orders"] > section.menup{--wavec:var(--blush);background-color:var(--blush)}
 main[data-page="privacy"] > section.legalp{--wavec:var(--bg);background-color:var(--bg)}
 main[data-page="contact"] > section.contactp{--wavec:var(--rose);background-color:var(--rose)}
+/* preview: proposed background plan */
+html.bgplan main[data-page="home"] > section.intro{--wavec:var(--bg2);background-color:var(--bg2)}
+html.bgplan main[data-page="home"] > section.bake{--wavec:var(--bg);background-color:var(--bg)}
+html.bgplan main[data-page="home"] > section.worlds{--wavec:var(--rose);background-color:var(--rose)}
+html.bgplan main[data-page="home"] > section.faves{--wavec:var(--bg2);background-color:var(--bg2)}
+html.bgplan main[data-page="home"] > section.collab{--wavec:var(--blush);background-color:var(--blush)}
+html.bgplan main[data-page="mom"] > section.momreels{--wavec:var(--bg);background-color:var(--bg)}
+html.bgplan main[data-page="mom"] > section.momp{--wavec:var(--rose);background-color:var(--rose)}
+html.bgplan main[data-page="story"] > section.storyp{--wavec:var(--rose);background-color:var(--rose)}
+html.bgplan main[data-page="favorites"] > section.favp{--wavec:var(--rose);background-color:var(--rose)}
+html.bgplan main[data-page="contact"] > section.contactp{--wavec:var(--rose);background-color:var(--rose)}
+html.bgplan main[data-page="orders"] > section.menup{--wavec:var(--bg);background-color:var(--bg)}
+html.bgplan main[data-page="privacy"] > section.legalp{--wavec:var(--bg);background-color:var(--bg)}
+.bsw{position:fixed;left:14px;bottom:14px;z-index:60;display:flex;align-items:center;gap:4px;background:var(--ink);color:#fff;padding:6px;font-family:var(--sans);font-size:.72rem;box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.bsw span{padding:0 8px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.bsw button{font:inherit;border:0;background:transparent;color:#fff;padding:6px 10px;cursor:pointer}
+.bsw button[aria-pressed="true"]{background:var(--gold);color:var(--ink)}
 /* journal browse modes */
 .jwrap{position:relative;max-width:1120px;margin:0 auto}
 .jarrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;border:0;background:#FFFDF8;color:var(--ink);box-shadow:0 6px 16px rgba(43,35,30,.18);cursor:pointer;display:none;place-items:center;transition:background .2s,opacity .2s}
@@ -645,6 +662,7 @@ main > section.notesp{overflow-x:clip}
 .shelf .item{padding:0;display:flex;flex-direction:column;overflow:hidden}
 .shelf .item img.thumb{aspect-ratio:auto;flex:1;min-height:0;height:auto!important;margin:0!important}
 .shelf .item b{padding:12px 10px}
+main[data-page="favorites"] .shelf .item b{color:var(--mahogany)}
 .shelf .item:nth-child(1){grid-row:1 / span 2}
 .shelf .item:nth-child(1) img.thumb{min-height:420px}
 .shelf .item:nth-child(2){grid-column:2 / span 2}
@@ -1784,5 +1802,7 @@ window.bnlJournalMode=function(m){mode=m;w.dataset.mode=m;w.classList.remove('op
 window.bnlJournalMode(mode);
 if(/(^|\.)batternlife\.com$|pages\.dev$/.test(location.hostname))return;
 })();</script>
+<script>(function(){if(/(^|\.)batternlife\.com$|pages\.dev$/.test(location.hostname))return;var h=document.documentElement;h.classList.add('bgplan');var sw=document.createElement('div');sw.className='bsw';sw.setAttribute('role','group');sw.setAttribute('aria-label','Background colors preview');sw.innerHTML='<span>Colors</span><button type="button" data-bp="1" aria-pressed="true">New plan</button><button type="button" data-bp="0" aria-pressed="false">Current</button>';document.body.appendChild(sw);
+[].forEach.call(sw.querySelectorAll('button'),function(b){b.onclick=function(){[].forEach.call(sw.querySelectorAll('button'),function(y){y.setAttribute('aria-pressed',y===b?'true':'false')});h.classList.toggle('bgplan',b.dataset.bp==='1')}})})();</script>
 </body>
 </html>
