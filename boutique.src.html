@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-hfav="split" data-mstyle="tabs" data-jl="tape" data-mct="circle">
+<html lang="en" data-hfav="split" data-mstyle="tabs" data-jl="tape" data-mct="circle" data-mca="lines">
 <head>
 <meta charset="utf-8">
 <title>Batter N' Life | Where Buttercream Meets Motherhood</title>
@@ -2083,8 +2083,5 @@ addEventListener('resize',function(){clearTimeout(w._r);w._r=setTimeout(render,1
 window.bnlMomMore=function(v){mm=v;sp=0;open=false;grid.scrollTop=0;render()};window.bnlMomMode=function(m){mode=m;w.dataset.ms=m;pg=0;sp=0;top=0;open=false;grid.scrollTop=0;grid.scrollLeft=0;render()};window.bnlMomCat=function(k){all.forEach(function(x){x.classList.toggle('mcat-hide',k!=='all'&&x.dataset.cat!==k)});cards=all.filter(function(x){return !x.classList.contains('mcat-hide')});N=cards.length;pg=0;sp=0;grid.scrollTop=0;top=0;open=false;grid.scrollLeft=0;render()};[].forEach.call(document.querySelectorAll('[data-mcat]'),function(b){b.onclick=function(){[].forEach.call(document.querySelectorAll('[data-mcat]'),function(y){y.setAttribute('aria-pressed',y===b?'true':'false')});window.bnlMomCat(b.dataset.mcat)}});window.bnlMomMode('feat');
 })();</script>
 <dialog class="ndialog" id="note-m9" aria-label="A Letter to My First-Time-Mom Self"><button type="button" class="nd-x" aria-label="Close" data-nclose>×</button><div class="nd-body" style="padding-top:44px"><span class="note-date"><span data-mjs>The Mom Diaries</span> · Notes to Self · Sample</span><h2>A Letter to My First-Time-Mom Self</h2><p>Dear you: you're going to worry about everything. Here's what I wish someone had told you.</p><p>This is a sample entry. A note to yourself could be encouragement, a lesson you learned the hard way, or something you want to remember on the tough days.</p><p class="nd-sign">xo, Melinda</p></div></dialog>
-<script>(function(){if(/(^|\.)batternlife\.com$|pages\.dev$/.test(location.hostname))return;var h=document.documentElement,sw=document.createElement('div');sw.className='mctsw';sw.setAttribute('role','group');sw.setAttribute('aria-label','Category tab styles');sw.innerHTML='<span>All circle</span>'+[['ring','Cream + gold ring'],['gold','All gold'],['lines','Gold lines'],['rose','Light rose'],['mahog','Mahogany + gold']].map(function(o,i){return '<button type="button" data-mca="'+o[0]+'" aria-pressed="'+(i?'false':'true')+'">'+o[1]+'</button>'}).join('');document.body.appendChild(sw);
-[].forEach.call(sw.querySelectorAll('[data-mca]'),function(b){b.onclick=function(){[].forEach.call(sw.querySelectorAll('[data-mca]'),function(y){y.setAttribute('aria-pressed',y===b?'true':'false')});if(b.dataset.mca==='ring')h.removeAttribute('data-mca');else h.setAttribute('data-mca',b.dataset.mca)}});
-function chk(){var m=document.querySelector('main[data-page="mom"]');h.classList.toggle('mctsw-on',!!m&&!m.hidden)}chk();addEventListener('hashchange',function(){setTimeout(chk,30)});new MutationObserver(chk).observe(document.body,{subtree:true,attributes:true,attributeFilter:['hidden']})})();</script>
 </body>
 </html>
