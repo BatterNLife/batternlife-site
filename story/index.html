@@ -715,12 +715,6 @@ html.mctsw-on .mctsw{display:flex}
 .mwrap[data-ms^="feat"] .mnotes .mnote.mfeat .mn-date{right:24px;bottom:22px}
 .mwrap[data-ms^="feat"] .mnotes .mnote.mfeat .mn-sample{right:24px;bottom:40px}
 @media (max-width:520px){.mnotes .mnote:not(.mfeat) .mn-date{position:static;margin-top:auto;padding-top:6px;font-size:.56rem}.mnotes .mnote:not(.mfeat) .mn-read{margin-top:4px;padding-top:0}.mnotes .mnote:not(.mfeat) p{-webkit-line-clamp:2}}
-/* popup: fits the screen, text scrolls inside */
-.ndialog[open]{display:flex;flex-direction:column;max-height:min(95vh,940px);overflow:hidden;border-radius:6px}
-.ndialog[open] > .nd-img{flex:none;aspect-ratio:auto;height:clamp(240px,44vh,405px)}
-.ndialog[open] > .nd-body{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#CC9F92 transparent}
-.ndialog[open] > .nd-x{position:absolute;top:12px;right:12px;float:none;margin:0;z-index:4}
-@media (max-width:520px){.ndialog[open]{max-height:92vh}.ndialog[open] > .nd-img{height:230px}}
 /* featured: see-more options */
 .mwrap[data-ms^="feat"][data-mm="arrows"] .mfoot,.mwrap[data-ms^="feat"][data-mm="pages"] .mfoot{display:flex}
 .mfoot .mpg{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1f1915;padding:0 10px}
@@ -2049,7 +2043,7 @@ document.querySelectorAll('.ndialog').forEach(function(d){new MutationObserver(f
 <script>(function(){var cards=[].slice.call(document.querySelectorAll('.notes [data-note]')),ids=cards.map(function(c){return 'note-'+c.dataset.note});
 var L='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',R='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>';
 function title(i){var c=cards[i];return c?c.querySelector('h3').textContent:''}
-function go(from,to){var a=document.getElementById(ids[from]),b=document.getElementById(ids[to]);if(!b)return;a.close();b.showModal();b.scrollTop=0;var bb=b.querySelector('.nd-body');if(bb)bb.scrollTop=0}
+function go(from,to){var a=document.getElementById(ids[from]),b=document.getElementById(ids[to]);if(!b)return;a.close();b.showModal();b.scrollTop=0}
 ids.forEach(function(id,i){var d=document.getElementById(id);if(!d)return;var body=d.querySelector('.nd-body'),pg=document.createElement('nav');pg.className='nd-pager';pg.setAttribute('aria-label','More tips');
 if(i>0){var p=document.createElement('button');p.type='button';p.className='nd-arrow nd-prev';p.setAttribute('aria-label','Previous tip');p.innerHTML=L;p.onclick=function(){go(i,i-1)};d.appendChild(p);
 var pp=document.createElement('button');pp.type='button';pp.innerHTML='<small>← Previous tip</small><span></span>';pp.querySelector('span').textContent=title(i-1);pp.onclick=function(){go(i,i-1)};pg.appendChild(pp)}
