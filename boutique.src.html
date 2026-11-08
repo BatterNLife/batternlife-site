@@ -758,9 +758,7 @@ html.pvm .livemom{display:none!important}
 .lip-grid[data-s="v"]{display:grid;grid-template-columns:repeat(5,1fr);overflow-y:auto;scrollbar-width:thin;scrollbar-color:#CC9F92 transparent;padding-right:6px}
 @media (max-width:1000px){.lip-grid[data-s="v"]{grid-template-columns:repeat(4,1fr)}}
 @media (max-width:640px){.lip-grid[data-s="v"]{grid-template-columns:repeat(3,1fr)}}
-.lip-grid[data-s="auto"]{overflow:hidden;grid-auto-columns:calc((100% - 4*var(--gap))/5)}
-@media (max-width:1000px){.lip-grid[data-s="auto"]{grid-auto-columns:calc((100% - 3*var(--gap))/4)}}
-@media (max-width:640px){.lip-grid[data-s="auto"]{grid-auto-columns:calc((100% - 2*var(--gap))/2.6)}}
+.lip-grid[data-s="auto"]{overflow:hidden;grid-auto-columns:calc((100% - 2*var(--gap))/3)}
 .lip-track{display:contents}
 .lip-grid[data-s="auto"] .lip{animation:lipglide var(--dur,70s) linear infinite}
 @media (hover:hover) and (pointer:fine){.lip-grid[data-s="auto"]:hover .lip{animation-play-state:paused}}
