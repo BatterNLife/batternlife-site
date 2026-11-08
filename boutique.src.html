@@ -784,8 +784,10 @@ html:has(dialog[open]) .lipsw{display:none!important}
 .lip-wrap[data-f="gold"] .lip{background:#fffaf4;padding:7px;border:2px solid #D9BF84;box-shadow:0 4px 12px rgba(60,40,30,.1)}
 .lip-wrap[data-f="rose"] .lip{background:#ECD0C4;padding:7px;box-shadow:0 4px 12px rgba(60,40,30,.12)}
 .lip-wrap[data-f="mahog"] .lip{background:#fff;padding:5px;outline:1.5px solid #996661;outline-offset:-1.5px;box-shadow:0 4px 12px rgba(60,40,30,.1)}
+.lip-wrap[data-f="sgold"] .lip{background:#D9BF84;padding:7px;box-shadow:0 5px 14px rgba(60,40,30,.15)}
+.lip-wrap[data-f="smahog"] .lip{background:#996661;padding:7px;box-shadow:0 5px 14px rgba(60,40,30,.18)}
 .lip-wrap[data-f="round"] .lip{background:#fff;padding:5px;border-radius:16px;box-shadow:0 6px 16px rgba(60,40,30,.14)}.lip-wrap[data-f="round"] .lip img{border-radius:12px}
-@media (max-width:640px){.lip-wrap[data-f="white"] .lip,.lip-wrap[data-f="gold"] .lip,.lip-wrap[data-f="rose"] .lip{padding:4px}.lip-wrap[data-f="pola"] .lip{padding:4px 4px 16px}}
+@media (max-width:640px){.lip-wrap[data-f="white"] .lip,.lip-wrap[data-f="gold"] .lip,.lip-wrap[data-f="rose"] .lip,.lip-wrap[data-f="sgold"] .lip,.lip-wrap[data-f="smahog"] .lip{padding:4px}.lip-wrap[data-f="pola"] .lip{padding:4px 4px 16px}}
 .lipsw .sep{width:100%;height:0;padding:0}
 /* featured: see-more options */
 .mwrap[data-ms^="feat"][data-mm="arrows"] .mfoot,.mwrap[data-ms^="feat"][data-mm="pages"] .mfoot{display:flex}
@@ -1978,7 +1980,7 @@ g.addEventListener('pointerup',end);g.addEventListener('pointercancel',end);
 document.querySelector('.arr-copy').addEventListener('click',function(){var t='Cake gallery order:\n'+figs().map(function(f,i){var im=f.querySelector('img');return (i+1)+'. '+im.dataset.k+' ('+im.alt.split(' with ')[0]+')'}).join('\n');ta.value=t;out.querySelector('strong').textContent='Your gallery order';out.hidden=false;ta.focus();ta.select();try{navigator.clipboard&&navigator.clipboard.writeText(t)}catch(e){}});
 })();
 </script>
-<div class="mamsw lipsw" role="group" aria-label="Life in Pictures scrolling"><span>Photo scroll</span><button type="button" data-s="h" aria-pressed="true">1 Swipe Sideways</button><button type="button" data-s="arrows">2 Arrows</button><button type="button" data-s="auto">3 Auto-Glide</button><button type="button" data-s="v">4 Scroll Down in Box</button><i class="sep"></i><span>Frame</span><button type="button" data-f="none" aria-pressed="true">A None</button><button type="button" data-f="white">B White</button><button type="button" data-f="pola">C Polaroid</button><button type="button" data-f="gold">D Gold Line</button><button type="button" data-f="rose">E Rose Mat</button><button type="button" data-f="mahog">F Mahogany Line</button><button type="button" data-f="round">G Rounded</button></div>
+<div class="mamsw lipsw" role="group" aria-label="Life in Pictures scrolling"><span>Photo scroll</span><button type="button" data-s="h" aria-pressed="true">1 Swipe Sideways</button><button type="button" data-s="arrows">2 Arrows</button><button type="button" data-s="auto">3 Auto-Glide</button><button type="button" data-s="v">4 Scroll Down in Box</button><i class="sep"></i><span>Frame</span><button type="button" data-f="none" aria-pressed="true">A None</button><button type="button" data-f="white">B White</button><button type="button" data-f="pola">C Polaroid</button><button type="button" data-f="gold">D Gold Line</button><button type="button" data-f="rose">E Rose Mat</button><button type="button" data-f="mahog">F Mahogany Line</button><button type="button" data-f="round">G Rounded</button><button type="button" data-f="sgold">H Solid Gold</button><button type="button" data-f="smahog">I Solid Mahogany</button></div>
 <script>(function(){var w=document.querySelector('.lip-wrap'),g=w&&w.querySelector('.lip-grid');if(!g)return;
 var orig=[].slice.call(g.querySelectorAll('.lip'));orig.forEach(function(f,i){f.dataset.i=i});
 var pv=w.querySelector('.lip-arr.p'),nx=w.querySelector('.lip-arr.n'),hint=w.querySelector('.lip-hint');
