@@ -1033,6 +1033,10 @@ main[data-page="favorites"] > section.favguides{--wavec:var(--blush);background-
 .gp-shop{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:#D9BF84;color:#2B231E;padding:8px 18px;text-decoration:none}
 .gp-shop:hover{background:#C9AC6B}
 @media (max-width:640px){.gp-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.gboard.big .gb-k{font-size:1.6rem}.gboard.big .gb-t .gi{width:40px;height:40px}}
+/* favorites page: 5 categories (big left + 2x2) */
+main[data-page="favorites"] .shelf .item:nth-child(2){grid-column:auto}
+main[data-page="favorites"] .shelf .item:nth-child(n+2) img.thumb{aspect-ratio:1}
+@media (max-width:760px){main[data-page="favorites"] .shelf .item:nth-child(2){grid-column:auto}}
 /* featured: see-more options */
 .mwrap[data-ms^="feat"][data-mm="arrows"] .mfoot,.mwrap[data-ms^="feat"][data-mm="pages"] .mfoot{display:flex}
 .mfoot .mpg{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1f1915;padding:0 10px}
@@ -1950,6 +1954,7 @@ main > section.legalp{min-height:0!important;padding-block:clamp(40px,5vw,72px)!
       <a class="item" href="https://www.amazon.com/shop/batternlife/list/3VZD4BW7Q3N2P?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img class="thumb" src="@@fav_baby@@" alt="Folded knit baby blankets with booties and a teether"><b>Baby &amp; Kids</b></a>
       <a class="item" href="https://www.amazon.com/shop/batternlife/list/2LW1DBUF70SBA?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img class="thumb" src="@@fav_home@@" alt="Warm, neutral entryway with a wood console and woven baskets"><b>Home &amp; Everyday</b></a>
       <a class="item" href="https://www.amazon.com/shop/batternlife/list/3VO4QY6M2GB7A?ref_=aipsflist&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img class="thumb" src="@@fav_skin@@" alt="Skincare bottles, jars and a scrunchie on a wooden tray by a mirror"><b>Skin &amp; Hair Care</b></a>
+      <a class="item" href="https://www.amazon.com/shop/batternlife/list/2C53JZ4WZWS5R?ref_=aip_sf_list_spv_ons_mixed_d&amp;tag=melindajimene-20&amp;originMarketplaceId=ATVPDKIKX0DER" target="_blank" rel="noopener sponsored"><img class="thumb" src="@@fav_school@@" alt="Homeschool desk with pencils, markers, spiral notebooks, a pink pen, sticky notes, books and a globe"><b>Homeschool Finds</b></a>
     </div>
     <div class="center-cta"><a class="btn solid" href="https://a.co/d/0biQYnAP" target="_blank" rel="noopener sponsored">Visit My Amazon Shop <span aria-hidden="true">→</span></a></div>
   </div></section>
