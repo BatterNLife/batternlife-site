@@ -1986,7 +1986,7 @@ window.bnlSend=function(form,to,subject,fields,mailBody,okMsg){
 <script>(function(){var g=document.querySelector('.lip-grid'),d=document.querySelector('.lbox-mom');if(!g||!d)return;var li=d.querySelector('img'),k=0,figs=function(){return [].slice.call(g.querySelectorAll('.lip:not(.clone)'))};
 function show(i){var f=figs();k=(i+f.length)%f.length;var im=f[k].querySelector('img');li.src=im.currentSrc||im.src;li.alt=im.alt;
 var c=f[k].querySelector('figcaption'),p=f[k].dataset.post,nd=document.getElementById('note-'+p);d.querySelector('.lbm-t').textContent=c?c.textContent:'';
-var lk=d.querySelector('.lbm-link');lk.hidden=!nd;if(nd){lk.textContent='From the post: '+nd.getAttribute('aria-label')+' \u2192';lk.dataset.post=p}}
+var lk=d.querySelector('.lbm-link');lk.hidden=!nd;if(nd){lk.textContent='Read the story behind this photo \u2192';lk.setAttribute('aria-label','Read the story behind this photo: '+nd.getAttribute('aria-label'));lk.dataset.post=p}}
 d.querySelector('.lbm-link').addEventListener('click',function(){var nd=document.getElementById('note-'+this.dataset.post);if(!nd)return;d.close();nd.showModal();nd.scrollTop=0});
 g.addEventListener('click',function(e){var f=e.target.closest('.lip');if(!f)return;show(+f.dataset.i);d.showModal()});
 d.querySelector('.lbox-prev').addEventListener('click',function(){show(k-1)});d.querySelector('.lbox-next').addEventListener('click',function(){show(k+1)});
