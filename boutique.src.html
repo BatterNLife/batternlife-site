@@ -857,7 +857,8 @@ html:has(dialog[open]) .lipsw{display:none!important}
 .lip-wrap[data-a="bare"] .lip-arr svg{width:34px;height:34px}
 .lip-wrap[data-a="bare"] .lip-arr.p{left:-44px}.lip-wrap[data-a="bare"] .lip-arr.n{right:-44px}
 .lip-wrap[data-a="square"] .lip-arr{border-radius:0;width:40px;height:64px;background:#fffaf4;border:1.5px solid #D9BF84}
-.lip-wrap[data-a="below"] .lip-arr{position:static;transform:none;width:38px;height:38px;box-shadow:none}
+.lip-wrap[data-a="below"] .lip-arr{position:static;transform:none;width:38px;height:38px;box-shadow:none;background:#D9BF84;border-color:#D9BF84;color:#2B231E}
+.lip-wrap[data-a="below"] .lip-arr:hover:not(:disabled){background:#C9AC6B;border-color:#C9AC6B}
 .lip-wrap[data-a="text"] .lip-arr{width:auto;height:auto;border-radius:0;padding:9px 14px;gap:6px;font-family:Jost,sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;background:#fffaf4}
 .lip-wrap[data-a="text"] .lip-arr-t{display:inline}
 .lip-wrap[data-a="text"] .lip-arr svg{width:14px;height:14px}
@@ -869,7 +870,7 @@ html:has(dialog[open]) .lipsw{display:none!important}
 @media (max-width:1240px){.lip-wrap[data-a="bare"] .lip-arr.p,.lip-wrap[data-a="long"] .lip-arr.p{left:-8px}.lip-wrap[data-a="bare"] .lip-arr.n,.lip-wrap[data-a="long"] .lip-arr.n{right:-8px}.lip-wrap[data-a="bare"] .lip-arr,.lip-wrap[data-a="long"] .lip-arr{background:rgba(255,250,244,.85);border-radius:50%}}
 @media (max-width:640px){.lip-wrap[data-a="text"] .lip-arr{padding:7px 10px;font-size:10.5px}}
 /* gold-line frame driven by vars */
-.lip-wrap{--mat:5px;--matc:#fffaf4;--linec:#D9BF84}
+.lip-wrap{--mat:5px;--matc:#F8F1E6;--linec:#D9BF84}
 .lip-wrap[data-f="gold"] .lip{background:var(--matc)!important;padding:var(--mat)!important;border:2px solid var(--linec)!important}
 @media (max-width:640px){.lip-wrap[data-f="gold"] .lip{padding:calc(var(--mat)*.6)!important}}
 /* featured: see-more options */
@@ -2066,7 +2067,7 @@ g.addEventListener('pointerup',end);g.addEventListener('pointercancel',end);
 document.querySelector('.arr-copy').addEventListener('click',function(){var t='Cake gallery order:\n'+figs().map(function(f,i){var im=f.querySelector('img');return (i+1)+'. '+im.dataset.k+' ('+im.alt.split(' with ')[0]+')'}).join('\n');ta.value=t;out.querySelector('strong').textContent='Your gallery order';out.hidden=false;ta.focus();ta.select();try{navigator.clipboard&&navigator.clipboard.writeText(t)}catch(e){}});
 })();
 </script>
-<div class="mamsw lipsw" role="group" aria-label="Life in Pictures frame options"><span>Border Size</span><button type="button" data-v="mat" data-val="7">1 Current</button><button type="button" data-v="mat" data-val="5" aria-pressed="true">2 Slightly Thinner</button><button type="button" data-v="mat" data-val="4">3 Thinner</button><button type="button" data-v="mat" data-val="3">4 Thin</button><button type="button" data-v="mat" data-val="2">5 Very Thin</button><i class="sep"></i><span>Border Color</span><button type="button" data-v="matc" data-val="#fffaf4" aria-pressed="true">A Cream</button><button type="button" data-v="matc" data-val="#ffffff">B Pure White</button><button type="button" data-v="matc" data-val="#F6EBD3">C Ivory</button><button type="button" data-v="matc" data-val="#F9E6E0">D Blush White</button><button type="button" data-v="matc" data-val="#EFE4D6">E Linen</button><button type="button" data-v="matc" data-val="#A08779">F Light Espresso</button><button type="button" data-v="matc" data-val="#E8C3B5">G Soft Rose</button><button type="button" data-v="matc" data-val="#BA8B84">H Deep Rose</button><i class="sep"></i><span>Line Color</span><button type="button" data-v="line" data-val="#D9BF84" aria-pressed="true">Gold</button><button type="button" data-v="line" data-val="#996661">Mahogany</button><button type="button" data-v="line" data-val="#CC9F92">Dusty Rose</button><button type="button" data-v="line" data-val="#DFB6A6">Soft Rose</button><button type="button" data-v="line" data-val="#BA8B84">Deep Rose</button><button type="button" data-v="line" data-val="#C9B8A8">Taupe</button><button type="button" data-v="line" data-val="#2B231E">Espresso</button></div>
+
 <script>(function(){var w=document.querySelector('.lip-wrap'),g=w&&w.querySelector('.lip-grid');if(!g)return;
 var orig=[].slice.call(g.querySelectorAll('.lip'));orig.forEach(function(f,i){f.dataset.i=i});
 var pv=w.querySelector('.lip-arr.p'),nx=w.querySelector('.lip-arr.n'),dots=w.querySelector('.lip-dots');
