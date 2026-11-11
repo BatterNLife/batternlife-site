@@ -2418,16 +2418,22 @@ window.addEventListener("message",function(ev){if(ev.origin!=="https://app.bakeg
  if(t==="BAKEGENIE_MODAL_OPEN"){f.scrollIntoView({behavior:"smooth",block:"start"})}});
  var f=get();if(f&&!f.style.minHeight)f.style.minHeight="100vh";})();
 </script>
-<script>(function(){var g=document.querySelector('[data-behold]');if(!g)return;var sec=g.closest('section'),live=/batternlife\.com$/.test(location.hostname);
+<script>(function(){var g=document.querySelector('[data-behold]');if(!g)return;var sec=g.closest('section'),home=document.getElementById('home');
+var live=/(^|\.)batternlife\.com$|pages\.dev$/.test(location.hostname);if(!live)return;/* preview never uses Behold views */
+var KEY='bnl_behold_v1',TTL=12*36e5,started=false;
 var play=g.querySelector('.lv svg');play=play?play.outerHTML:'';
 function esc(t){return String(t||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-function fail(){if(live&&sec)sec.style.display='none'}
+function render(v){g.innerHTML=v.map(function(p,i){return '<a class="lv" href="'+esc(p.u)+'" target="_blank" rel="noopener" aria-label="Watch on Instagram: '+esc(p.c)+'">'+(i===0?'<span class="lv-new">New</span>':'')+'<img src="'+esc(p.i)+'" alt="" loading="lazy">'+play+'</a>'}).join('')}
+function read(){try{return JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){return null}}
+function load(){if(started)return;started=true;var c=read();if(c&&c.v&&c.v.length){render(c.v);if(Date.now()-c.t<TTL)return}
 var ctl=window.AbortController?new AbortController():null;setTimeout(function(){if(ctl)ctl.abort()},9000);
-fetch(g.dataset.behold,ctl?{signal:ctl.signal}:{}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
-var v=(d.posts||[]).filter(function(p){return p.mediaType==='VIDEO'&&p.visibility!=='hidden'}).slice(0,4);if(!v.length)return fail();
-g.innerHTML=v.map(function(p,i){var z=p.sizes||{},img=(z.large||z.medium||{}).mediaUrl||p.thumbnailUrl;var cap=(p.prunedCaption||p.caption||'').split('\n')[0].slice(0,110);
-return '<a class="lv" href="'+esc(p.permalink)+'" target="_blank" rel="noopener" aria-label="Watch on Instagram: '+esc(cap)+'">'+(i===0?'<span class="lv-new">New</span>':'')+'<img src="'+esc(img)+'" alt="" loading="lazy">'+play+'</a>'}).join('');
-}).catch(fail)})();</script>
+fetch(g.dataset.behold,ctl?{signal:ctl.signal,cache:'no-cache'}:{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+var v=(d.posts||[]).filter(function(p){return p.mediaType==='VIDEO'&&p.visibility!=='hidden'}).slice(0,4).map(function(p){var z=p.sizes||{};return{u:p.permalink,i:(z.large||z.medium||{}).mediaUrl||p.thumbnailUrl,c:(p.prunedCaption||p.caption||'').split('\n')[0].slice(0,110)}});
+if(!v.length)throw 0;render(v);try{localStorage.setItem(KEY,JSON.stringify({t:Date.now(),v:v}))}catch(e){}
+}).catch(function(){if(!(c&&c.v&&c.v.length)&&sec)sec.style.display='none'})}
+function check(){if(home&&!home.hidden)load()}
+if(home)new MutationObserver(check).observe(home,{attributes:true,attributeFilter:['hidden']});
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',check);else setTimeout(check,0)})();</script>
 <script>(function(){if(!/(^|\.)batternlife\.com$|pages\.dev$/.test(location.hostname))return;var loaded=false;
 function embed(d){if(d.classList.contains('emb'))return;d.classList.add('emb');d.querySelectorAll('a.reel').forEach(function(a){var u=a.href.replace(/\?.*$/,'');var q=document.createElement('blockquote');q.className='instagram-media';q.setAttribute('data-instgrm-permalink',u+'?utm_source=ig_embed');q.setAttribute('data-instgrm-version','14');q.innerHTML='<a class="ig-fallback" href="'+u+'" target="_blank" rel="noopener">Watch this reel on Instagram ↗</a>';var w=document.createElement('div');w.className='igw';w.appendChild(q);a.replaceWith(w)});
 if(window.instgrm){window.instgrm.Embeds.process();return}if(loaded)return;loaded=true;var sc=document.createElement('script');sc.async=true;sc.src='https://www.instagram.com/embed.js';document.body.appendChild(sc)}
