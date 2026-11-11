@@ -2439,7 +2439,7 @@ window.addEventListener("message",function(ev){if(ev.origin!=="https://app.bakeg
  if(t==="BAKEGENIE_MODAL_OPEN"){f.scrollIntoView({behavior:"smooth",block:"start"})}});
  var f=get();if(f&&!f.style.minHeight)f.style.minHeight="100vh";})();
 </script>
-<script>(function(){var g=document.querySelector('[data-behold]');if(!g)return;var sec=g.closest('section'),home=document.getElementById('home');
+<script>(function(){var g=document.querySelector('[data-behold]');if(!g)return;var sec=g.closest('section'),home=g.closest('main');
 var live=/(^|\.)batternlife\.com$|pages\.dev$/.test(location.hostname);if(!live)return;/* preview never uses Behold views */
 var KEY='bnl_behold_v1',TTL=12*36e5,started=false;
 var play=g.querySelector('.lv svg');play=play?play.outerHTML:'';
