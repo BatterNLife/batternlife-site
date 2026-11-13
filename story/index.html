@@ -1869,7 +1869,7 @@ main > section.legalp{min-height:0!important;padding-block:clamp(40px,5vw,72px)!
       <h2>Latest <span class="pop">Videos</span></h2>
       <p>My newest cakes, tips and a peek behind the scenes. Follow along on Instagram so you never miss a new video.</p>
     </div>
-    <div class="lv-grid" data-behold="https://feeds.behold.so/XgZawr0iZtoGP0DSlVek">
+    <div class="lv-grid" data-reels>
       <a class="lv" href="https://www.instagram.com/batternlife" target="_blank" rel="noopener" aria-label="Watch on Instagram: Pink coffee-cup drip cake"><span class="lv-new">New</span><img width="640" height="783" src="/img/gal_n09.webp" alt="" loading="lazy"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></a>
       <a class="lv" href="https://www.instagram.com/batternlife" target="_blank" rel="noopener" aria-label="Watch on Instagram: Halloween striped drip cake"><img width="640" height="801" src="/img/gal_n36.webp" alt="" loading="lazy"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></a>
       <a class="lv" href="https://www.instagram.com/batternlife" target="_blank" rel="noopener" aria-label="Watch on Instagram: White quilted graduation cake"><img width="640" height="776" src="/img/gal_n17.webp" alt="" loading="lazy"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.92)"/><path d="M10 8l6 4-6 4z" fill="#996661"/></svg></a>
@@ -2439,9 +2439,9 @@ window.addEventListener("message",function(ev){if(ev.origin!=="https://app.bakeg
  if(t==="BAKEGENIE_MODAL_OPEN"){f.scrollIntoView({behavior:"smooth",block:"start"})}});
  var f=get();if(f&&!f.style.minHeight)f.style.minHeight="100vh";})();
 </script>
-<script>(function(){var g=document.querySelector('[data-behold]');if(!g)return;var sec=g.closest('section'),home=g.closest('main');
-var live=/(^|\.)batternlife\.com$|pages\.dev$/.test(location.hostname);if(!live)return;/* preview never uses Behold views */
-var KEY='bnl_reels_v2',TTL=3*36e5,started=false;
+<script>(function(){var g=document.querySelector('[data-reels]');if(!g)return;var sec=g.closest('section'),home=g.closest('main');
+var live=/(^|\.)batternlife\.com$|pages\.dev$/.test(location.hostname);if(!live)return;/* only runs on the live site */
+var KEY='bnl_reels_v3',TTL=3*36e5,started=false;
 var play=g.querySelector('.lv svg');play=play?play.outerHTML:'';
 function esc(t){return String(t||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function render(v){g.innerHTML=v.map(function(p,i){return '<a class="lv" href="'+esc(p.u)+'" target="_blank" rel="noopener" aria-label="Watch on Instagram: '+esc(p.c)+'">'+(i===0?'<span class="lv-new">New</span>':'')+'<img src="'+esc(p.i)+'" alt="" loading="lazy">'+play+'</a>'}).join('')}
@@ -2449,11 +2449,8 @@ function read(){try{return JSON.parse(localStorage.getItem(KEY)||'null')}catch(e
 function load(){if(started)return;started=true;var c=read();if(c&&c.v&&c.v.length){render(c.v);if(Date.now()-c.t<TTL)return}
 function get(u){var ctl=window.AbortController?new AbortController():null;setTimeout(function(){if(ctl)ctl.abort()},9000);return fetch(u,ctl?{signal:ctl.signal,cache:'no-cache'}:{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()})}
 function save(v){render(v);try{localStorage.setItem(KEY,JSON.stringify({t:Date.now(),v:v}))}catch(e){}}
-/* 1st choice: our own Instagram connection (/api/reels). Fallback: Behold. */
+/* latest Instagram videos from our own Worker (/api/reels) */
 get('/api/reels').then(function(d){var v=(d.posts||[]).filter(function(p){return p.u&&p.i}).slice(0,4);if(!v.length)throw 0;save(v)})
-.catch(function(){return get(g.dataset.behold).then(function(d){
-var v=(d.posts||[]).filter(function(p){return p.mediaType==='VIDEO'&&p.visibility!=='hidden'}).slice(0,4).map(function(p){var z=p.sizes||{};return{u:p.permalink,i:(z.large||z.medium||{}).mediaUrl||p.thumbnailUrl,c:(p.prunedCaption||p.caption||'').split('\n')[0].slice(0,110)}});
-if(!v.length)throw 0;save(v)})})
 .catch(function(){if(!(c&&c.v&&c.v.length)&&sec)sec.style.display='none'})}
 function check(){if(home&&!home.hidden)load()}
 if(home)new MutationObserver(check).observe(home,{attributes:true,attributeFilter:['hidden']});
