@@ -53,10 +53,10 @@ DESC_MAIN="Cakes, kids and everything in between. Custom cake orders, baking tip
 PAGES={
  'home':('/',TITLE_MAIN,DESC_MAIN),
  'story':('/story/',"My Story | Batter N' Life","Meet Melinda: a wife, mom of four and self-taught baker who has created 600+ custom cakes over 10+ years."),
- 'bake':('/bake/',"Custom Cakes in Celina, TX | Serving DFW | Batter N' Life","Custom celebration cakes made to order in Celina, TX, serving the DFW area. Perfect for birthdays, weddings, showers and more. Browse my cake gallery and baking tips, then submit a dessert order."),
+ 'bake':('/bake/',"Custom Cakes in Celina, TX | Batter N' Baked","Batter N' Baked makes custom celebration cakes to order in Celina, TX, serving the DFW area. Perfect for birthdays, weddings, showers and more. Browse my cake gallery and baking tips, then submit a dessert order."),
  'mom':('/mom/',"Mom Life | Batter N' Life","Family routines, everyday mom life and the real, sweet, messy moments of life with four kids."),
  'favorites':('/favorites/',"Shop My Favorites | Batter N' Life","The baking tools, kids' gear, home and beauty favorites I actually use and love."),
- 'orders':('/orders/',"Cake Menu & Custom Cake Orders | Celina, TX & DFW | Batter N' Life","Custom cake flavors, buttercreams and specialty fillings, from Brown Butter Vanilla to Bizcocho Mojadito. Located in Celina, TX, serving DFW. See the menu and start your order."),
+ 'orders':('/orders/',"Cake Menu & Custom Cake Orders | Batter N' Baked | Celina, TX","Order a custom cake from Batter N' Baked. Cake flavors, buttercreams and specialty fillings, from Brown Butter Vanilla to Bizcocho Mojadito. Located in Celina, TX, serving DFW. See the menu and start your order."),
  'privacy':('/privacy/',"Privacy Policy | Batter N' Life","How Batter N' Life collects, uses, and protects the information you share through the website."),
  'contact':('/contact/',"Contact & Collaborations | Batter N' Life","Reach out about brand collaborations, partnerships, or just to say hi."),
 }
@@ -67,7 +67,8 @@ SCHEMA={"@context":"https://schema.org","@graph":[
   "email":"batternlife@gmail.com","founder":{"@type":"Person","name":"Melinda","jobTitle":"Baker, cake decorator and content creator"},
   "knowsAbout":["Custom cakes","Cake decorating","Baking tips","Motherhood","Family life"],
   "address":{"@type":"PostalAddress","addressLocality":"Celina","addressRegion":"TX","addressCountry":"US"},"areaServed":[{"@type":"Place","name":"Celina, Texas"},{"@type":"Place","name":"Dallas-Fort Worth, Texas"}],"makesOffer":{"@type":"Offer","areaServed":[{"@type":"Place","name":"Celina, Texas"},{"@type":"Place","name":"Dallas-Fort Worth, Texas"}],"itemOffered":{"@type":"Service","serviceType":"Custom cakes","name":"Custom celebration cakes and desserts"}},
-  "sameAs":["https://www.instagram.com/batternlife","https://www.youtube.com/@batternlife","https://www.tiktok.com/@batternlife","https://www.facebook.com/batternlife"]}]}
+  "sameAs":["https://www.instagram.com/batternlife","https://www.youtube.com/@batternlife","https://www.tiktok.com/@batternlife","https://www.facebook.com/batternlife"]},
+ {"@type":"Bakery","name":"Batter N' Baked","url":SITE+"/bake/","image":SITE+"/img/og.jpg","email":"batternbaked@gmail.com","description":"Custom celebration cakes made to order in Celina, TX, serving the DFW area.","address":{"@type":"PostalAddress","addressLocality":"Celina","addressRegion":"TX","addressCountry":"US"},"areaServed":[{"@type":"Place","name":"Celina, Texas"},{"@type":"Place","name":"Dallas-Fort Worth, Texas"}],"parentOrganization":{"@type":"Organization","name":"Batter N' Life","url":SITE+"/"},"sameAs":["https://www.instagram.com/batternbaked"]}]}
 ROUTER_OLD_START="(function(){\n  var pages=document.querySelectorAll('main[data-page]'),tabs=document.querySelectorAll('header.bar nav a');"
 PATH_ROUTER=r'''(function(){
   var pages=document.querySelectorAll('main[data-page]'),tabs=document.querySelectorAll('header.bar nav a');
