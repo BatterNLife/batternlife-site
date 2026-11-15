@@ -32,7 +32,7 @@ def build(mode):
             w,h=dims[k]; tag=tag.replace('<img ','<img width="%d" height="%d" '%(w,h),1)
         if k=='kitchen2':
             tag=tag.replace('<img ','<img fetchpriority="high" decoding="async" srcset="@@kitchen2_760@@ 760w, @@kitchen2@@ 1400w" sizes="(max-width:960px) 100vw, 52vw" ',1)
-        elif k.startswith('logo_letters_flat'): pass
+        elif k.startswith('logo_letters_flat') or k=='logo_twotone': pass
         elif 'loading=' not in tag: tag=tag.replace('<img ','<img loading="lazy" decoding="async" ',1)
         return tag
     s=re.sub(r'<img [^>]*src="@@\w+@@"[^>]*>',fix,s)
