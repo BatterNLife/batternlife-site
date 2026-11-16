@@ -1621,12 +1621,10 @@ main > section.legalp{min-height:0!important;padding-block:clamp(40px,5vw,72px)!
 @media (max-width:760px){html body main > section:not(#_nx),html[data-hfav] body main > section#favorites{padding-bottom:72px!important}}
 </style>
 <style id="logo4c">header.bar .logo img{width:clamp(130px,11vw,165px)!important;opacity:1!important}@media (max-width:900px){header.bar .logo img{width:112px!important}}</style>
-<style id="title-clear">/* notebook lines start below each card title */
-.mnote{background-position:0 var(--lt,64px)!important;background-size:100% calc(100% - var(--lt,64px))!important}
+<style id="title-clear">/* Mom Diaries cards: notebook lines sit under each line of text (none behind titles) */
+.mnote{background:#FFFDF8!important}
+.mnote p{background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(1lh - 1px),rgba(120,160,190,.3) calc(1lh - 1px),rgba(120,160,190,.3) 1lh)!important}
 </style>
-<script>(function(){function set(c){var h=c.querySelector('h3');if(!h||!c.offsetParent)return;var t=h.getBoundingClientRect().bottom-c.getBoundingClientRect().top-c.clientTop+4;if(t<=89){c.style.removeProperty('--lt');return}c.style.setProperty('--lt',(64+26*Math.ceil((t-89)/26))+'px')}
-function run(){var cs=document.querySelectorAll('.mnote');if(window.ResizeObserver){var ro=new ResizeObserver(function(es){es.forEach(function(e){set(e.target)})});cs.forEach(function(c){ro.observe(c)})}else{cs.forEach(set);addEventListener('resize',function(){cs.forEach(set)})}}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run()})();</script>
 </head>
 <body>
 
