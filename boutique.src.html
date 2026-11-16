@@ -1624,7 +1624,7 @@ main > section.legalp{min-height:0!important;padding-block:clamp(40px,5vw,72px)!
 <style id="title-clear">/* notebook lines start below each card title */
 .mnote{background-position:0 var(--lt,64px)!important;background-size:100% calc(100% - var(--lt,64px))!important}
 </style>
-<script>(function(){function set(c){var h=c.querySelector('h3');if(!h||!c.offsetParent)return;var t=h.getBoundingClientRect().bottom-c.getBoundingClientRect().top-c.clientTop+6;c.style.setProperty('--lt',Math.max(64,Math.round(t))+'px')}
+<script>(function(){function set(c){var h=c.querySelector('h3');if(!h||!c.offsetParent)return;var t=h.getBoundingClientRect().bottom-c.getBoundingClientRect().top-c.clientTop+4;if(t<=89){c.style.removeProperty('--lt');return}c.style.setProperty('--lt',(64+26*Math.ceil((t-89)/26))+'px')}
 function run(){var cs=document.querySelectorAll('.mnote');if(window.ResizeObserver){var ro=new ResizeObserver(function(es){es.forEach(function(e){set(e.target)})});cs.forEach(function(c){ro.observe(c)})}else{cs.forEach(set);addEventListener('resize',function(){cs.forEach(set)})}}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run()})();</script>
 </head>
