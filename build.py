@@ -114,7 +114,10 @@ def build_site():
     html=re.sub(r"\{var h=location\.hash;if\(h===''\|\|h==='#'\|\|h==='#/'\|\|h==='#/home'\)\{e\.preventDefault\(\);window\.scrollTo\(\{top:0,behavior:'smooth'\}\)\}else\{e\.preventDefault\(\);location\.hash='#/'\}\}",
         "{e.preventDefault();if(window.bnlRoute()==='home')window.scrollTo({top:0,behavior:'smooth'});else window.bnlGo('/')}",html)
     html=html.replace("addEventListener('hashchange',function(){if(location.hash.indexOf('#/contact')===0){","addEventListener('bnl:route',function(){if(window.bnlRoute()==='contact'){")
-    assert 'location.hash' not in html.replace("location.hash.indexOf('#/')===0){var o=location.hash","")
+    _chk=html.replace("location.hash.indexOf('#/')===0){var o=location.hash","")
+    if '/* shareable post links' in _chk:  # post links use #slug on purpose (not routing)
+        _a=_chk.index('/* shareable post links'); _chk=_chk[:_a]+_chk[_chk.index('</script>',_a):]
+    assert 'location.hash' not in _chk
     html=re.sub(r'<title>[^<]*</title>','',html,1)
     html=re.sub(r'<meta name="description" content="[^"]*">\n?','',html,1)
     html=html.replace('</style>','.lsw{display:none!important} /* lsw-hide: preview-only switcher */\n</style>',1)
