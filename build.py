@@ -72,7 +72,7 @@ SCHEMA={"@context":"https://schema.org","@graph":[
 ROUTER_OLD_START="(function(){\n  var pages=document.querySelectorAll('main[data-page]'),tabs=document.querySelectorAll('header.bar nav a');"
 PATH_ROUTER=r'''(function(){
   var pages=document.querySelectorAll('main[data-page]'),tabs=document.querySelectorAll('header.bar nav a');
-  function cur(){var p=location.pathname.replace(/^\/+|\/+$/g,'');return p||'home'}
+  function cur(){var p=location.pathname.replace(/^\/+|\/+$/g,'').split('/')[0];return p||'home'}
   window.bnlRoute=cur;
   window.bnlGo=function(href){if(href!==location.pathname)history.pushState(null,'',href);route();dispatchEvent(new Event('bnl:route'))};
   var META=__META__;

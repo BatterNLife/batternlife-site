@@ -36,6 +36,12 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname === '/api/reels') return reels(request, env, ctx);
+    // Short post links: /mom/potato or /bake/details show that page; the page opens the post.
+    const post = url.pathname.match(/^\/(mom|bake)\/([a-z0-9]+)\/?$/);
+    if (post) {
+      const r = await env.ASSETS.fetch(new Request(new URL('/' + post[1] + '/', url).toString(), request));
+      return new Response(r.body, { status: r.status === 404 ? 404 : 200, headers: r.headers });
+    }
     return env.ASSETS.fetch(request);
   }
 };
