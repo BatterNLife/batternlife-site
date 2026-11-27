@@ -1637,19 +1637,24 @@ main > section.legalp{min-height:0!important;padding-block:clamp(40px,5vw,72px)!
 .hdm-text h2{font-size:clamp(2rem,3.6vw,3rem)}@media (min-width:761px){.hdm-photo{aspect-ratio:auto;min-height:100%}}
 @media (max-width:760px){.hdm-card{grid-template-columns:1fr}.hdm-text{align-items:center;text-align:center}}</style>
 <style id="nm">header.bar .logo{flex-direction:column;align-items:center;gap:2px}
-.nm-by{display:none;font-family:var(--sans);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#B8892A;font-weight:500;line-height:1;margin-top:1px}
+.nm-by{display:none;font-family:var(--sans);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:#996661;font-weight:500;line-height:1;margin-top:1px}
 html[data-nm2] .nm-by{display:block}
-html[data-nm2="a"] .nm-by{font-size:.6rem;letter-spacing:.16em}
-html[data-nm2="b"] .nm-by{font-size:.56rem;letter-spacing:.08em}
-html[data-nm2="c"] .nm-by{font-size:.52rem;letter-spacing:.22em}
-html[data-nm2="d"] .nm-by{text-transform:none;font-size:.74rem;letter-spacing:.03em}
-html[data-nm2="e"] .nm-by{text-transform:none;font-family:var(--text);font-style:italic;font-weight:400;font-size:.8rem;letter-spacing:0}
-html[data-nm2="f"] .nm-by{font-size:.58rem;letter-spacing:.12em;color:var(--mahogany)}
-.nmsw{position:fixed;left:14px;bottom:14px;z-index:61;display:none;flex-direction:column;gap:3px;background:var(--ink);color:#fff;padding:8px;font-family:var(--sans);font-size:.72rem;box-shadow:0 8px 22px rgba(0,0,0,.25)}
+html[data-nmc="gold"] .nm-by{color:#B8892A}
+html[data-nmc="rose"] .nm-by{color:#996661}
+html[data-nmc="mauve"] .nm-by{color:#AC7D78}
+html[data-nmc="rosewood"] .nm-by{color:#6E3F37}
+html[data-nmc="espresso"] .nm-by{color:#2B231E}
+html[data-nmf="jostlow"] .nm-by{text-transform:none;font-size:.7rem;letter-spacing:.02em}
+html[data-nmf="loracaps"] .nm-by{font-family:var(--text);font-weight:500;font-size:.58rem;letter-spacing:.1em}
+html[data-nmf="loraital"] .nm-by{font-family:var(--text);font-style:italic;font-weight:400;text-transform:none;font-size:.78rem;letter-spacing:0}
+html[data-nmf="playfair"] .nm-by{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:.58rem;letter-spacing:.1em}
+.nmsw{position:fixed;left:14px;bottom:14px;z-index:61;display:none;flex-direction:column;gap:6px;background:var(--ink);color:#fff;padding:8px;font-family:var(--sans);font-size:.72rem;box-shadow:0 8px 22px rgba(0,0,0,.25);max-width:calc(100vw - 28px)}
 html.pvm .nmsw{display:flex}html:has(dialog[open]) .nmsw{display:none!important}
-.nmsw b{padding:0 6px 2px;letter-spacing:.12em;text-transform:uppercase}
-.nmsw button{font:inherit;border:0;background:transparent;color:#fff;padding:5px 10px;cursor:pointer;text-align:left}
-.nmsw button[aria-pressed="true"]{background:var(--gold);color:var(--ink)}</style>
+.nmsw .g{display:flex;flex-wrap:wrap;align-items:center;gap:2px}
+.nmsw b{padding:0 6px;letter-spacing:.12em;text-transform:uppercase;min-width:52px}
+.nmsw button{font:inherit;border:0;background:transparent;color:#fff;padding:5px 8px;cursor:pointer}
+.nmsw button[aria-pressed="true"]{background:var(--gold);color:var(--ink)}
+.nmsw i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px;border:1px solid rgba(255,255,255,.5)}</style>
 </head>
 <body>
 
@@ -2615,7 +2620,13 @@ function open(){var h=want();if(!h)return;var d=document.querySelector('dialog.n
 if(live&&location.pathname.indexOf(d.dataset.page)!==0){location.replace(d.dataset.page+h);return}
 document.querySelectorAll('dialog[open]').forEach(function(x){if(x!==d)x.close()});if(!d.open){d.showModal();d.scrollTop=0}}
 addEventListener('hashchange',open);addEventListener('popstate',open);if(document.readyState==='complete')setTimeout(open,60);else addEventListener('load',function(){setTimeout(open,60)})})();</script>
-<div class="nmsw" role="group" aria-label="by Melinda styles (preview only)"><b>"by Melinda" style</b><button type="button" data-v="" aria-pressed="true">Off (live now)</button><button type="button" data-v="a" aria-pressed="false">A · caps, smaller</button><button type="button" data-v="b" aria-pressed="false">B · caps, tight spacing</button><button type="button" data-v="c" aria-pressed="false">C · caps, tiny</button><button type="button" data-v="d" aria-pressed="false">D · "by Melinda", no caps</button><button type="button" data-v="e" aria-pressed="false">E · Lora italic</button><button type="button" data-v="f" aria-pressed="false">F · caps, rose</button></div>
-<script>(function(){var w=document.querySelector('.nmsw');if(!w)return;var h=document.documentElement;w.querySelectorAll('button').forEach(function(b){b.onclick=function(){w.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});if(b.dataset.v)h.dataset.nm2=b.dataset.v;else delete h.dataset.nm2}})})();</script>
+<div class="nmsw" role="group" aria-label="by Melinda options (preview only)">
+<div class="g" data-k="nm2"><b>Show</b><button type="button" data-v="on" aria-pressed="true">On</button><button type="button" data-v="" aria-pressed="false">Off</button></div>
+<div class="g" data-k="nmc"><b>Color</b><button type="button" data-v="rose" aria-pressed="true"><i style="background:#996661"></i>Rose</button><button type="button" data-v="mauve" aria-pressed="false"><i style="background:#AC7D78"></i>Mauve</button><button type="button" data-v="rosewood" aria-pressed="false"><i style="background:#6E3F37"></i>Rosewood</button><button type="button" data-v="gold" aria-pressed="false"><i style="background:#B8892A"></i>Gold</button><button type="button" data-v="espresso" aria-pressed="false"><i style="background:#2B231E"></i>Espresso</button></div>
+<div class="g" data-k="nmf"><b>Font</b><button type="button" data-v="jost" aria-pressed="true">Jost caps</button><button type="button" data-v="jostlow" aria-pressed="false">Jost lowercase</button><button type="button" data-v="loracaps" aria-pressed="false">Lora caps</button><button type="button" data-v="loraital" aria-pressed="false">Lora italic</button><button type="button" data-v="playfair" aria-pressed="false">Playfair caps</button></div>
+</div>
+<script>(function(){var w=document.querySelector('.nmsw');if(!w)return;var h=document.documentElement;
+w.querySelectorAll('.g').forEach(function(g){var k=g.dataset.k;function set(b){g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});if(b.dataset.v)h.dataset[k]=b.dataset.v;else delete h.dataset[k]}
+g.querySelectorAll('button').forEach(function(b){b.onclick=function(){set(b)}});if(h.classList.contains('pvm'))set(g.querySelector('[aria-pressed="true"]'))})})();</script>
 </body>
 </html>
