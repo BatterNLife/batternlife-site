@@ -48,11 +48,11 @@ if __name__=='__main__':
 # ================= SEO + real page addresses (live site only) =================
 import json
 SITE='https://batternlife.com'
-TITLE_MAIN="Batter N' Life | Where Buttercream Meets Motherhood"
+TITLE_MAIN="Melinda | Batter N' Life | Where Buttercream Meets Motherhood"
 DESC_MAIN="Cakes, kids and everything in between. Custom cake orders, baking tips and real life as a mom of four."
 PAGES={
  'home':('/',TITLE_MAIN,DESC_MAIN),
- 'story':('/story/',"My Story | Batter N' Life","Meet Melinda: a wife, mom of four and self-taught baker who has created 600+ custom cakes over 10+ years."),
+ 'story':('/story/',"My Story | Melinda | Batter N' Life","Meet Melinda: a wife, mom of four and self-taught baker who has created 600+ custom cakes over 10+ years."),
  'bake':('/bake/',"Custom Cakes in Celina, TX | Batter N' Baked","Batter N' Baked makes custom celebration cakes to order in Celina, TX, serving the DFW area. Perfect for birthdays, weddings, showers and more. Browse my cake gallery and baking tips, then submit a dessert order."),
  'mom':('/mom/',"Mom Life | Batter N' Life","Family routines, everyday mom life and the real, sweet, messy moments of life with four kids."),
  'favorites':('/favorites/',"Shop My Favorites | Batter N' Life","The baking tools, kids' gear, home and beauty favorites I actually use and love."),
@@ -62,7 +62,7 @@ PAGES={
 }
 SCHEMA={"@context":"https://schema.org","@graph":[
  {"@type":"WebSite","name":"Batter N' Life","url":SITE+"/","description":DESC_MAIN},
- {"@type":"Organization","name":"Batter N' Life","url":SITE+"/","logo":SITE+"/img/logo_letters_flat.webp","image":SITE+"/img/og.jpg",
+ {"@type":"Organization","name":"Batter N' Life","founder":{"@type":"Person","name":"Melinda"},"url":SITE+"/","logo":SITE+"/img/logo_letters_flat.webp","image":SITE+"/img/og.jpg",
   "description":"A baking and motherhood lifestyle brand: custom celebration cakes, baking tips, family life and favorite finds.",
   "email":"batternlife@gmail.com","founder":{"@type":"Person","name":"Melinda","jobTitle":"Baker, cake decorator and content creator"},
   "knowsAbout":["Custom cakes","Cake decorating","Baking tips","Motherhood","Family life"],
