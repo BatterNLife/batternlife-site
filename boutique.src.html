@@ -1637,15 +1637,18 @@ main > section.legalp{min-height:0!important;padding-block:clamp(40px,5vw,72px)!
 .hdm-text h2{font-size:clamp(2rem,3.6vw,3rem)}@media (min-width:761px){.hdm-photo{aspect-ratio:auto;min-height:100%}}
 @media (max-width:760px){.hdm-card{grid-template-columns:1fr}.hdm-text{align-items:center;text-align:center}}</style>
 <style id="nm">header.bar .logo{flex-direction:column;align-items:center;gap:2px}
-.nm-by{display:none;font-family:var(--sans);font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:#B8892A;font-weight:500;padding-left:.32em}
-html[data-nm2="on"] .nm-by{display:block}
-.nm-hi{display:none;font-family:var(--text);font-style:italic;font-size:1.25rem;color:var(--mahogany);margin:-4px 0 10px}
-html[data-nm3="on"] .nm-hi{display:block}
-.nm-s1{display:none}html[data-nm5="on"] .nm-s0{display:none}html[data-nm5="on"] .nm-s1{display:inline}
-.nmsw{position:fixed;left:14px;bottom:14px;z-index:61;display:none;flex-direction:column;gap:4px;background:var(--ink);color:#fff;padding:8px;font-family:var(--sans);font-size:.72rem;box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.nm-by{display:none;font-family:var(--sans);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#B8892A;font-weight:500;line-height:1;margin-top:1px}
+html[data-nm2] .nm-by{display:block}
+html[data-nm2="a"] .nm-by{font-size:.6rem;letter-spacing:.16em}
+html[data-nm2="b"] .nm-by{font-size:.56rem;letter-spacing:.08em}
+html[data-nm2="c"] .nm-by{font-size:.52rem;letter-spacing:.22em}
+html[data-nm2="d"] .nm-by{text-transform:none;font-size:.74rem;letter-spacing:.03em}
+html[data-nm2="e"] .nm-by{text-transform:none;font-family:var(--text);font-style:italic;font-weight:400;font-size:.8rem;letter-spacing:0}
+html[data-nm2="f"] .nm-by{font-size:.58rem;letter-spacing:.12em;color:var(--mahogany)}
+.nmsw{position:fixed;left:14px;bottom:14px;z-index:61;display:none;flex-direction:column;gap:3px;background:var(--ink);color:#fff;padding:8px;font-family:var(--sans);font-size:.72rem;box-shadow:0 8px 22px rgba(0,0,0,.25)}
 html.pvm .nmsw{display:flex}html:has(dialog[open]) .nmsw{display:none!important}
 .nmsw b{padding:0 6px 2px;letter-spacing:.12em;text-transform:uppercase}
-.nmsw button{font:inherit;border:0;background:transparent;color:#fff;padding:6px 10px;cursor:pointer;text-align:left}
+.nmsw button{font:inherit;border:0;background:transparent;color:#fff;padding:5px 10px;cursor:pointer;text-align:left}
 .nmsw button[aria-pressed="true"]{background:var(--gold);color:var(--ink)}</style>
 </head>
 <body>
@@ -1671,7 +1674,6 @@ html.pvm .nmsw{display:flex}html:has(dialog[open]) .nmsw{display:none!important}
     <div class="ph"><img style="object-position:30% 50%" src="@@kitchen2@@" alt="Sunny marble kitchen counter with a pink stand mixer, mixing bowl, phone, vlogging camera and a planner"></div>
     <div class="tx">
       <span class="kicker">Baking · Family · Real Life</span>
-      <span class="nm-hi">Hi, I'm Melinda</span>
       <h1>Where <span class="pop">buttercream</span> meets <span class="pop">motherhood</span></h1>
       <p class="lede">Desserts, baking and decorating tips, homeschool mornings, mom life, favorite finds, and the sweet, messy middle of everyday life.</p>
       <div class="cta">
@@ -1757,7 +1759,7 @@ html.pvm .nmsw{display:flex}html:has(dialog[open]) .nmsw{display:none!important}
 <main data-page="story" hidden>
   <section class="phead"><div class="wrap">
     <span class="kicker">My Story</span>
-    <h1><span class="nm-s0">Hi, I'm <span class="pop">Melinda</span></span><span class="nm-s1">Meet <span class="pop">Melinda</span></span></h1>
+    <h1>Meet <span class="pop">Melinda</span></h1>
     <p>Pull up a chair. Here's how it all started.</p>
     <div class="heart-rule"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.7 4.5c2.1 0 3.8 1.2 5.3 3 1.5-1.8 3.2-3 5.3-3 3.7 0 5.8 3.7 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg></div>
   </div></section>
@@ -2613,7 +2615,7 @@ function open(){var h=want();if(!h)return;var d=document.querySelector('dialog.n
 if(live&&location.pathname.indexOf(d.dataset.page)!==0){location.replace(d.dataset.page+h);return}
 document.querySelectorAll('dialog[open]').forEach(function(x){if(x!==d)x.close()});if(!d.open){d.showModal();d.scrollTop=0}}
 addEventListener('hashchange',open);addEventListener('popstate',open);if(document.readyState==='complete')setTimeout(open,60);else addEventListener('load',function(){setTimeout(open,60)})})();</script>
-<div class="nmsw" role="group" aria-label="Name options (preview only)"><b>Name options</b><button type="button" data-k="nm2" aria-pressed="false">2 · "by Melinda" under logo</button><button type="button" data-k="nm3" aria-pressed="false">3 · "Hi, I'm Melinda" on Home</button><button type="button" data-k="nm5" aria-pressed="false">5 · "Meet Melinda" on My Story</button></div>
-<script>(function(){var w=document.querySelector('.nmsw');if(!w)return;w.querySelectorAll('button').forEach(function(b){b.onclick=function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);document.documentElement.dataset[b.dataset.k]=on?'on':'off'}})})();</script>
+<div class="nmsw" role="group" aria-label="by Melinda styles (preview only)"><b>"by Melinda" style</b><button type="button" data-v="" aria-pressed="true">Off (live now)</button><button type="button" data-v="a" aria-pressed="false">A · caps, smaller</button><button type="button" data-v="b" aria-pressed="false">B · caps, tight spacing</button><button type="button" data-v="c" aria-pressed="false">C · caps, tiny</button><button type="button" data-v="d" aria-pressed="false">D · "by Melinda", no caps</button><button type="button" data-v="e" aria-pressed="false">E · Lora italic</button><button type="button" data-v="f" aria-pressed="false">F · caps, rose</button></div>
+<script>(function(){var w=document.querySelector('.nmsw');if(!w)return;var h=document.documentElement;w.querySelectorAll('button').forEach(function(b){b.onclick=function(){w.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});if(b.dataset.v)h.dataset.nm2=b.dataset.v;else delete h.dataset.nm2}})})();</script>
 </body>
 </html>
